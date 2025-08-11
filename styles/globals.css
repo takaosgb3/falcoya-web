@@ -2017,6 +2017,31 @@ body {
     overscroll-behavior-y: contain;
   }
   
+  /* モバイルナビゲーション最適化 */
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .nav-logo {
+    order: 1;
+  }
+  
+  .nav-controls {
+    order: 2;
+  }
+  
+  .nav-menu {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .language-switcher {
+    scale: 0.9;
+  }
+  
   /* タッチフレンドリーなインタラクション */
   .nav-menu a,
   .lang-btn,
@@ -2090,8 +2115,8 @@ body {
     gap: 1rem;
     font-size: 0.875rem;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: visible;
+    justify-content: center;
   }
   
   .nav-menu li {
@@ -2141,5 +2166,35 @@ body {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     will-change: transform;
+  }
+}
+
+/* 更に小さいモバイルデバイス対応 */
+@media (max-width: 480px) {
+  .navbar {
+    top: 50px; /* prototype-noticeとの重なりを避ける */
+  }
+  
+  .nav-container {
+    padding: 0.75rem;
+  }
+  
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .language-switcher {
+    scale: 0.8;
+  }
+  
+  .lang-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+  
+  .hero {
+    margin-top: 130px; /* より多くのスペース確保 */
   }
 }
