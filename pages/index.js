@@ -282,14 +282,16 @@ export default function Home() {
             
             <div className="code-block">
               <div className="code-header">Falco Detection Example</div>
-              <pre><code><span className="error">*** XSS Attack Detected ***</span>
-
-<span className="key">Priority:</span> <span className="value">Warning</span>
-<span className="key">Rule:</span> <span className="error">Nginx XSS Attack</span>
-
-<span className="key">Time:</span> <span className="value">2024-08-11T10:30:45.123Z</span>
-<span className="key">Source IP:</span> <span className="value">192.168.1.100</span>
-<span className="key">Request:</span> <span className="value">GET /?q=&lt;script&gt;alert('xss')&lt;/script&gt;</span></code></pre>
+              <div className="code-content">
+                <div className="error">*** XSS Attack Detected ***</div>
+                <div>&nbsp;</div>
+                <div><span className="key">Priority:</span> <span className="value">Warning</span></div>
+                <div><span className="key">Rule:</span> <span className="error">Nginx XSS Attack</span></div>
+                <div>&nbsp;</div>
+                <div><span className="key">Time:</span> <span className="value">2024-08-11T10:30:45.123Z</span></div>
+                <div><span className="key">Source IP:</span> <span className="value">192.168.1.100</span></div>
+                <div><span className="key">Request:</span> <span className="value">GET /?q=&lt;script&gt;alert('xss')&lt;/script&gt;</span></div>
+              </div>
             </div>
           </div>
         </div>
