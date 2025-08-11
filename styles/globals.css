@@ -21,6 +21,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: 'Inter', 'Noto Sans JP', sans-serif;
   color: var(--text-primary);
@@ -28,6 +33,8 @@ body {
   background: #FFFFFF;
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 /* Particle Canvas */
@@ -1999,6 +2006,26 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  /* モバイルスクロール最適化 */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+  
+  /* タッチフレンドリーなインタラクション */
+  .nav-menu a,
+  .lang-btn,
+  .read-more-btn,
+  .post-tag {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
   .prototype-notice {
     padding: 0.5rem 0;
   }
@@ -2066,5 +2093,45 @@ body {
   
   .example-cards {
     grid-template-columns: 1fr;
+  }
+  
+  /* モバイルコンテンツ最適化 */
+  .article-content,
+  .blog-content {
+    line-height: 1.8;
+  }
+  
+  .code-block {
+    margin: 1rem -1rem;
+    border-radius: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .code-block pre {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .table-of-contents {
+    position: static;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    max-height: none;
+    overflow-y: visible;
+  }
+  
+  .article-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* スムーズスクロールの改善 */
+  .article-content img,
+  .blog-image {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
   }
 }
