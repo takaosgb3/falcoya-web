@@ -186,8 +186,8 @@ export default function Home() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/img/falcoya-logo-small.png" alt="falco-plugin-nginx" />
-            <span>falco-plugin-nginx</span>
+            <img src="/img/falcoya-logo-small.png" alt="FALCOYA" />
+            <span>FALCOYA</span>
           </div>
           <ul className="nav-menu">
             <li><a href="#about">About</a></li>
@@ -352,14 +352,15 @@ export default function Home() {
               <span className="terminal-dot yellow"></span>
               <span className="terminal-dot green"></span>
             </div>
-            <pre><code>$ curl -sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh | sudo bash
+            <pre><code>{`$ curl -sSL https://raw.githubusercontent.com/takaosgb3/\\
+  falco-plugin-nginx/main/install.sh | sudo bash
 
 ✓ Downloading falco-plugin-nginx...
 ✓ Installing plugin to /usr/share/falco/plugins/
 ✓ Installing rules to /etc/falco/
 ✓ Configuring /etc/falco/falco.yaml
 
-Installation completed successfully!</code></pre>
+Installation completed successfully!`}</code></pre>
           </div>
         </div>
       </section>
