@@ -46,16 +46,6 @@ export default function Home() {
         title: "脅威検知機能",
         overview: "falco-plugin-nginxは、4つのカテゴリ・10種類のセキュリティルールで包括的な脅威検知を実現します",
         codeHeader: "Falco 検知例",
-        example: {
-          title: "*** XSS攻撃検知 ***",
-          priority: "優先度:",
-          priorityValue: "警告",
-          rule: "ルール:",
-          ruleValue: "Nginx XSS攻撃",
-          time: "時刻:",
-          sourceIp: "送信元IP:",
-          request: "リクエスト:"
-        },
         rulesFooter: "📚 詳細なルールリファレンスを見る",
         rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md"
       },
@@ -134,16 +124,6 @@ export default function Home() {
         title: "Threat Detection Features",
         overview: "falco-plugin-nginx provides comprehensive threat detection with 4 categories and 10 types of security rules",
         codeHeader: "Falco Detection Example",
-        example: {
-          title: "*** XSS Attack Detected ***",
-          priority: "Priority:",
-          priorityValue: "Warning",
-          rule: "Rule:",
-          ruleValue: "Nginx XSS Attack",
-          time: "Time:",
-          sourceIp: "Source IP:",
-          request: "Request:"
-        },
         rulesFooter: "📚 View Detailed Rules Reference",
         rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md"
       },
@@ -478,14 +458,14 @@ export default function Home() {
             <div className="code-block">
               <div className="code-header">{content[language].detection.codeHeader}</div>
               <div className="code-content">
-                <div className="error">{content[language].detection.example.title}</div>
+                <div className="error">*** XSS Attack Detected ***</div>
                 <div>&nbsp;</div>
-                <div><span className="key">{content[language].detection.example.priority}</span> <span className="value">{content[language].detection.example.priorityValue}</span></div>
-                <div><span className="key">{content[language].detection.example.rule}</span> <span className="error">{content[language].detection.example.ruleValue}</span></div>
+                <div><span className="key">Priority:</span> <span className="value">Warning</span></div>
+                <div><span className="key">Rule:</span> <span className="error">Nginx XSS Attack</span></div>
                 <div>&nbsp;</div>
-                <div><span className="key">{content[language].detection.example.time}</span> <span className="value">2024-08-11T10:30:45.123Z</span></div>
-                <div><span className="key">{content[language].detection.example.sourceIp}</span> <span className="value">192.168.1.100</span></div>
-                <div><span className="key">{content[language].detection.example.request}</span> <span className="value">GET /?q=&lt;script&gt;alert('xss')&lt;/script&gt;</span></div>
+                <div><span className="key">Time:</span> <span className="value">2024-08-11T10:30:45.123Z</span></div>
+                <div><span className="key">Source IP:</span> <span className="value">192.168.1.100</span></div>
+                <div><span className="key">Request:</span> <span className="value">GET /?q=&lt;script&gt;alert('xss')&lt;/script&gt;</span></div>
               </div>
             </div>
           </div>
