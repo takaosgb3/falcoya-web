@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/img/flcoya-favicon-32.png" />
       </Head>
       <Component {...pageProps} />
+      <SpeedInsights />
     </>
   )
 }
