@@ -5,7 +5,7 @@ import { useState } from 'react'
 const blogPosts = [
   {
     id: 'falco-nginx-security-tutorial',
-    title: 'Falco + Nginx プラグインで Web 攻撃をリアルタイム検知！AWS EC2 完全実践ガイド',
+    title: 'Falco + Nginx プラグインで Web 攻撃をリアルタイム検知！AWS EC2環境で試してみる',
     description: 'FalcoとNginxプラグインを使用してWebアプリケーションの攻撃をリアルタイムで検知する方法を、AWS EC2環境での実践を通じて詳しく解説します。SQLインジェクション、XSS、ディレクトリトラバーサルなどの攻撃パターンの検証からカスタムルールの作成まで包括的にカバーします。',
     date: '2025-08-11',
     readTime: '15分',
