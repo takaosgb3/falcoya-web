@@ -17,7 +17,8 @@ export default function Home() {
         about: "About",
         github: "GitHub", 
         installation: "Installation",
-        detection: "Detection"
+        detection: "Detection",
+        blog: "Blog"
       },
       hero: {
         badge: "Falco Plugin for Nginx",
@@ -233,7 +234,8 @@ export default function Home() {
         about: "About",
         github: "GitHub",
         installation: "Installation", 
-        detection: "Detection"
+        detection: "Detection",
+        blog: "Blog"
       },
       hero: {
         badge: "Falco Plugin for Nginx",
@@ -660,6 +662,7 @@ export default function Home() {
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">{content[language].nav.github}</a></li>
             <li><a href="#installation">{content[language].nav.installation}</a></li>
             <li><a href="#detection">{content[language].nav.detection}</a></li>
+            <li><a href="/blog">{content[language].nav.blog}</a></li>
           </ul>
           <div className="nav-controls">
             <div className="language-switcher">
