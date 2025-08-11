@@ -81,11 +81,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>FALCOYA - Falco + Nginxログで攻撃を可視化</title>
-        <meta name="description" content="セキュリティ検知のノイズを削り、本物の脅威だけを残す。Falcoを使ったコンテナセキュリティの次世代スタンダード。" />
+        <title>falco-plugin-nginx - リアルタイムWebセキュリティ監視</title>
+        <meta name="description" content="NginxアクセスログをリアルタイムでFalcoが監視。SQL injection、XSS、Directory traversalなどの脅威を即座に検知するオープンソースプラグイン。" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="FALCOYA - Falco + Nginxログで攻撃を可視化" />
-        <meta property="og:description" content="セキュリティ検知のノイズを削り、本物の脅威だけを残す。" />
+        <meta property="og:title" content="falco-plugin-nginx - リアルタイムWebセキュリティ監視" />
+        <meta property="og:description" content="NginxアクセスログをリアルタイムでFalcoが監視し、Webアプリケーションへの脅威を即座に検知。" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
@@ -93,14 +93,14 @@ export default function Home() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/img/flcoya-logo.png" alt="FALCOYA" />
-            <span>FALCOYA</span>
+            <img src="/img/flcoya-logo.png" alt="falco-plugin-nginx" />
+            <span>falco-plugin-nginx</span>
           </div>
           <ul className="nav-menu">
             <li><a href="#about">About</a></li>
-            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="#demo">Demo</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#detection">Detection</a></li>
           </ul>
           <button className="search-icon" aria-label="Search">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -119,53 +119,55 @@ export default function Home() {
           <div className="hero-content">
             <div className="hero-badge">
               <span className="badge-icon">🛡️</span>
-              <span className="badge-text">セキュリティオープンソースプロジェクト</span>
+              <span className="badge-text">Falco Plugin for Nginx</span>
             </div>
             <h1>
-              Craft more than detect.
+              Real-time Web Security
               <br />
-              <span className="subtitle">小さな調整で、大きく静かな安全を。</span>
+              <span className="subtitle">NginxアクセスログをFalcoでリアルタイム監視</span>
             </h1>
             <p className="hero-description">
-              セキュリティ検知の<strong>ノイズを削り</strong>、<strong>本物の脅威だけを残す</strong>。
+              シンプルなワンライナーで<strong>簡単インストール</strong>。
               <br />
-              Falcoを使ったコンテナセキュリティの次世代スタンダードを体験してください。
+              SQL injection、XSS、Directory traversalなどの脅威を<strong>リアルタイムで検知</strong>し、Webアプリケーションを保護します。
             </p>
             <div className="hero-buttons">
-              <a href="#quick-start" className="cta-button primary">
+              <a href="#installation" className="cta-button primary">
                 <span className="cta-icon">▶️</span>
-                <span className="cta-text">Start now</span>
+                <span className="cta-text">インストール</span>
               </a>
-              <a href="#examples" className="cta-button secondary">
-                <span className="cta-icon">📈</span>
-                <span className="cta-text">Proofを見る</span>
+              <a href="https://github.com/takaosgb3/falco-plugin-nginx" className="cta-button secondary">
+                <span className="cta-icon">📁</span>
+                <span className="cta-text">GitHub</span>
               </a>
             </div>
             
             <div className="hero-stats">
               <div className="stat-item">
-                <div className="stat-number" data-target="98">0</div>
-                <div className="stat-label">精度改善</div>
+                <div className="stat-number" data-target="5">0</div>
+                <div className="stat-label">種類の脅威検知</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number" data-target="3">0</div>
-                <div className="stat-label">分で導入</div>
+                <div className="stat-number" data-target="1">0</div>
+                <div className="stat-label">コマンドでインストール</div>
               </div>
               <div className="stat-item">
                 <div className="stat-number" data-target="24">0</div>
-                <div className="stat-label">7無停止</div>
+                <div className="stat-label">7監視</div>
               </div>
             </div>
             
             <div className="code-block">
               <div className="code-header">falco-plugin-nginx</div>
-              <pre><code><span className="comment"># XSS attack detected</span>
-<span className="key">HostName:</span> <span className="value">Unexpected one request</span>
-<span className="key">using method.:</span> <span className="value">GET method="/evil.js"</span>
-<span className="key">Hostname:</span> <span className="value">falco-1</span>
-<span className="key">Procname id:</span> <span className="value">falco&lt;?=f74d03f67</span>
-<span className="key">Container-name:</span> <span className="value">web-nginx</span>
-<span className="key">Rule:</span> <span className="error">XSS attempt</span></code></pre>
+              <pre><code><span className="comment"># ワンライナーインストール</span>
+<span className="key">curl</span> <span className="value">-sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh</span> | sudo bash
+
+<span className="comment"># Falcoで脅威検知開始</span>
+<span className="key">sudo systemctl start falco</span>
+
+<span className="error">*** XSS Attack Detected ***</span>
+<span className="key">Priority:</span> <span className="value">Warning</span>
+<span className="key">Rule:</span> <span className="error">Nginx XSS Attack</span></code></pre>
             </div>
           </div>
         </div>
@@ -174,85 +176,127 @@ export default function Home() {
 
       <section id="about" className="about">
         <div className="container">
-          <h2>このプロジェクトについて</h2>
+          <h2>falco-plugin-nginxとは</h2>
           <ul className="about-list">
-            <li><span className="bullet">•</span> Nginxログから攻撃を検知：SQL、XSS、Path Traversal各種</li>
-            <li><span className="bullet">•</span> 攻撃警報をFalcoプラグインで検知</li>
-            <li><span className="bullet">•</span> 簡単：プロトタイプ実装、多彩な警告</li>
+            <li><span className="bullet">•</span> <strong>Go言語</strong>で開発されたFalco用プラグイン</li>
+            <li><span className="bullet">•</span> <strong>Nginx 1.14.0+</strong> のCombinedログフォーマットに対応</li>
+            <li><span className="bullet">•</span> <strong>ローオーバーヘッド</strong>でリアルタイム監視を実現</li>
+            <li><span className="bullet">•</span> <strong>Falco 0.36.0+</strong> と <strong>Linux x86_64</strong> で動作</li>
           </ul>
         </div>
       </section>
 
-      <section id="examples" className="examples">
+      <section id="detection" className="examples">
         <div className="container">
-          <h2>検知例</h2>
+          <h2>脅威検知機能</h2>
           <div className="example-cards">
             <div className="example-card">
-              <h3>SQL Injection試行検知</h3>
-              <p>悪意のあるSQLクエリを検出し、データベースへの不正アクセスを防ぎます</p>
-              <a href="#" className="link-button">ルールを見る</a>
+              <h3>SQL Injection 検知</h3>
+              <p>NginxアクセスログからSQL injection攻撃をリアルタイムで検知し、データベースへの不正アクセスを防止</p>
+              <a href="https://github.com/takaosgb3/falco-plugin-nginx#rules" className="link-button">ルール詳細</a>
             </div>
             <div className="example-card">
-              <h3>XSS攻撃試行検知</h3>
-              <p>クロスサイトスクリプティング攻撃をリアルタイムで検知します</p>
-              <a href="#" className="link-button">ルールを見る</a>
+              <h3>XSS 攻撃検知</h3>
+              <p>Cross-Site Scripting (XSS) 攻撃の試みをリアルタイム監視し、Webアプリケーションを保護</p>
+              <a href="https://github.com/takaosgb3/falco-plugin-nginx#rules" className="link-button">ルール詳細</a>
             </div>
             <div className="example-card">
-              <h3>Path Traversal検知</h3>
-              <p>ディレクトリトラバーサル攻撃による不正なファイルアクセスを防御します</p>
-              <a href="#" className="link-button">ルールを見る</a>
+              <h3>Directory Traversal 検知</h3>
+              <p>パストラバーサル攻撃を検知し、意図しないファイルアクセスをブロック</p>
+              <a href="https://github.com/takaosgb3/falco-plugin-nginx#rules" className="link-button">ルール詳細</a>
+            </div>
+            <div className="example-card">
+              <h3>Command Injection 検知</h3>
+              <p>コマンドインジェクション攻撃を識別し、システム上での不正なコマンド実行を防止</p>
+              <a href="https://github.com/takaosgb3/falco-plugin-nginx#rules" className="link-button">ルール詳細</a>
+            </div>
+            <div className="example-card">
+              <h3>Brute Force 攻撃検知</h3>
+              <p>ブルートフォース攻撃やセキュリティスキャナーを識別し、不正アクセスを監視</p>
+              <a href="https://github.com/takaosgb3/falco-plugin-nginx#rules" className="link-button">ルール詳細</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="quick-start" className="quick-start">
+      <section id="installation" className="quick-start">
         <div className="container">
-          <h2>5分で試す</h2>
+          <h2>インストール方法</h2>
           <div className="steps">
             <div className="step">
               <span className="step-number">1</span>
-              <h3>リポジトリをクローン</h3>
+              <h3>ワンライナーインストール</h3>
               <div className="code-inline">
-                <code>git clone https://github.com/falcoya/falcoya</code>
+                <code>curl -sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh | sudo bash</code>
               </div>
             </div>
             <div className="step">
               <span className="step-number">2</span>
-              <h3>Docker Composeで起動</h3>
+              <h3>Falcoを起動</h3>
               <div className="code-inline">
-                <code>docker-compose up -d</code>
+                <code>sudo systemctl start falco</code>
               </div>
             </div>
             <div className="step">
               <span className="step-number">3</span>
-              <h3>攻撃シミュレーションとアラート確認</h3>
+              <h3>ログで確認</h3>
               <div className="code-inline">
-                <code>curl http://localhost/test?id=&apos;OR&apos;1&apos;=&apos;1</code>
+                <code>sudo journalctl -u falco -f</code>
               </div>
             </div>
           </div>
+          
+          <div className="installation-note">
+            <h3>要件</h3>
+            <ul>
+              <li>Falco 0.36.0 以上</li>
+              <li>Linux x86_64</li>
+              <li>Nginx 1.14.0+ (Combined ログフォーマット)</li>
+            </ul>
+          </div>
+          
           <div className="terminal-preview">
             <div className="terminal-header">
               <span className="terminal-dot red"></span>
               <span className="terminal-dot yellow"></span>
               <span className="terminal-dot green"></span>
             </div>
-            <pre><code>$ git clone https://github.com/falcoya/falcoya
-Cloning into &apos;falcoya&apos;...
+            <pre><code>$ curl -sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh | sudo bash
 
-$ docker-compose up -d
-Creating network &quot;falcoya_default&quot; with the default driver
-Creating falcoya_nginx_1 ... done
-Creating falcoya_falco_1 ... done</code></pre>
+✓ Downloading falco-plugin-nginx...
+✓ Installing plugin to /usr/share/falco/plugins/
+✓ Installing rules to /etc/falco/
+✓ Configuring /etc/falco/falco.yaml
+
+Installation completed successfully!</code></pre>
           </div>
         </div>
       </section>
 
-      <footer id="contact" className="footer">
+      <footer className="footer">
         <div className="container">
-          <p className="footer-text">セキュリティの未来を一緒に作りましょう</p>
-          <a href="#" className="cta-button">お問い合わせ</a>
+          <div className="footer-content">
+            <div className="footer-section">
+              <h4>falco-plugin-nginx</h4>
+              <p>Nginxアクセスログをリアルタイムで監視し、Webアプリケーションへの脅威を検知するFalcoプラグイン</p>
+            </div>
+            <div className="footer-section">
+              <h4>リンク</h4>
+              <ul>
+                <li><a href="https://github.com/takaosgb3/falco-plugin-nginx">GitHubリポジトリ</a></li>
+                <li><a href="https://github.com/takaosgb3/falco-plugin-nginx/blob/main/README.md">ドキュメント</a></li>
+                <li><a href="https://github.com/takaosgb3/falco-plugin-nginx/issues">問題報告</a></li>
+              </ul>
+            </div>
+            <div className="footer-section">
+              <h4>ライセンス</h4>
+              <p>Apache License 2.0</p>
+              <p>Open Source Software</p>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>&copy; 2024 falco-plugin-nginx. Licensed under Apache License 2.0</p>
+          </div>
         </div>
       </footer>
     </>
