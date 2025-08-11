@@ -204,7 +204,7 @@ export default function FalcoNginxTutorial() {
                   </div>
                 </div>
 
-                <h3>検知対象の攻撃パターン</h3>
+                <h3>検知対象の攻撃パターン例</h3>
                 <div className="attack-patterns">
                   <table className="attack-table">
                     <thead>
