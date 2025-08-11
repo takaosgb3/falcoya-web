@@ -186,7 +186,7 @@ export default function Home() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/img/flcoya-logo.png" alt="falco-plugin-nginx" />
+            <img src="/img/falcoya-logo-small.png" alt="falco-plugin-nginx" />
             <span>falco-plugin-nginx</span>
           </div>
           <ul className="nav-menu">
@@ -208,7 +208,7 @@ export default function Home() {
         <div className="hero-glow"></div>
         <div className="hero-container">
           <div className="hero-left">
-            <img src="/img/flcoya-hero-120.png" alt="FALCOYA" className="hero-logo floating" />
+            <img src="/img/falcoya-logo-small.png" alt="FALCOYA" className="hero-logo floating" />
           </div>
           <div className="hero-content">
             <div className="hero-badge pulse">
