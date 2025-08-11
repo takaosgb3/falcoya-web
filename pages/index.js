@@ -554,7 +554,6 @@ Installation completed successfully!`}</code></pre>
               <ul>
                 <li><a href="https://github.com/takaosgb3/falco-plugin-nginx">GitHubリポジトリ</a></li>
                 <li><a href="https://github.com/takaosgb3/falco-plugin-nginx/blob/main/README.md">ドキュメント</a></li>
-                <li><a href="https://github.com/takaosgb3/falco-plugin-nginx/issues">問題報告</a></li>
               </ul>
             </div>
             <div className="footer-section">
@@ -564,7 +563,7 @@ Installation completed successfully!`}</code></pre>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2024 falco-plugin-nginx. Licensed under Apache License 2.0</p>
+            <p>&copy; 2025 falco-plugin-nginx by FALCOYA. Licensed under Apache License 2.0</p>
           </div>
         </div>
       </footer>
