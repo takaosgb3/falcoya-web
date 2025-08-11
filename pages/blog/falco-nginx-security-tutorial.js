@@ -162,6 +162,49 @@ export default function FalcoNginxTutorial() {
                   </div>
                 </div>
 
+                <h3>動作原理の詳細</h3>
+                <div className="principle-explanation">
+                  <div className="principle-step">
+                    <h4>📥 Step 1: ログファイル監視</h4>
+                    <p>falco-plugin-nginxは、Falcoフレームワークの一部として動作し、Nginxのアクセスログファイル（/var/log/nginx/access.log）を<strong>tail -f</strong>のようにリアルタイムで監視します。新しいログエントリが追加されるたびに、即座に読み取りとパースが実行されます。</p>
+                  </div>
+                  
+                  <div className="principle-step">
+                    <h4>🔍 Step 2: ログ解析とパターン抽出</h4>
+                    <p>各ログエントリから以下の要素を抽出・解析します：</p>
+                    <ul>
+                      <li><strong>IPアドレス</strong>: リクエスト送信元の特定</li>
+                      <li><strong>HTTPメソッド</strong>: GET/POST等の判定</li>
+                      <li><strong>リクエストパス</strong>: アクセス対象URLの検査</li>
+                      <li><strong>クエリパラメータ</strong>: 攻撃パターンが潜む主要領域</li>
+                      <li><strong>User-Agent</strong>: 攻撃ツールの特定</li>
+                      <li><strong>レスポンスステータス</strong>: 攻撃の成否判定</li>
+                    </ul>
+                  </div>
+
+                  <div className="principle-step">
+                    <h4>🎯 Step 3: ルールエンジンによる脅威判定</h4>
+                    <p>抽出された情報は、事前定義されたYAMLベースのルールセット（nginx_rules.yaml）と照合されます。このルールエンジンは以下の処理を行います：</p>
+                    <ul>
+                      <li><strong>パターンマッチング</strong>: 正規表現や文字列パターンによる攻撃検知</li>
+                      <li><strong>重要度判定</strong>: Critical/Warning/Notice/Infoのレベル分類</li>
+                      <li><strong>コンテキスト分析</strong>: IPアドレス、パス、パラメータの組み合わせ評価</li>
+                      <li><strong>ホワイトリスト処理</strong>: 正当なトラフィックの除外</li>
+                    </ul>
+                  </div>
+
+                  <div className="principle-step">
+                    <h4>🚨 Step 4: アラート生成と出力</h4>
+                    <p>脅威が検知された場合、構造化されたアラートが生成されます：</p>
+                    <ul>
+                      <li><strong>検知ログ</strong>: タイムスタンプ付きの詳細情報</li>
+                      <li><strong>攻撃分類</strong>: SQLi/XSS/CMDi等のカテゴリ</li>
+                      <li><strong>送信元情報</strong>: IPアドレス、User-Agent等</li>
+                      <li><strong>攻撃内容</strong>: 実際のペイロードと検知理由</li>
+                    </ul>
+                  </div>
+                </div>
+
                 <h3>検知対象の攻撃パターン</h3>
                 <div className="attack-patterns">
                   <table className="attack-table">
