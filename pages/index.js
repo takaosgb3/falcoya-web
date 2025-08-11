@@ -82,7 +82,7 @@ export default function Home() {
     <>
       <Head>
         <title>falco-plugin-nginx - リアルタイムWebセキュリティ監視</title>
-        <meta name="description" content="NginxアクセスログをリアルタイムでFalcoが監視。SQL injection、XSS、Directory traversalなどの脅威を即座に検知するオープンソースプラグイン。" />
+        <meta name="description" content="攻撃の兆候を鮮明に。Falco + Nginxログで攻撃を可視化。SQLi・XSS・パストラバーサル・DDoSなどの攻撃パターンを検知するプラグイン。" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="falco-plugin-nginx - リアルタイムWebセキュリティ監視" />
         <meta property="og:description" content="NginxアクセスログをリアルタイムでFalcoが監視し、Webアプリケーションへの脅威を即座に検知。" />
@@ -122,14 +122,14 @@ export default function Home() {
               <span className="badge-text">Falco Plugin for Nginx</span>
             </div>
             <h1>
-              Real-time Web Security
+              攻撃の兆候を、鮮明に。
               <br />
-              <span className="subtitle">NginxアクセスログをFalcoでリアルタイム監視</span>
+              <span className="subtitle">Falco + Nginxログで、攻撃を可視化。</span>
             </h1>
             <p className="hero-description">
-              シンプルなワンライナーで<strong>簡単インストール</strong>。
+              falco-plugin-nginx は、NginxアクセスログをFalcoで解析し、
               <br />
-              SQL injection、XSS、Directory traversalなどの脅威を<strong>リアルタイムで検知</strong>し、Webアプリケーションを保護します。
+              <strong>SQLi・XSS・パストラバーサル・DDoS</strong> などの攻撃パターンを検知するプラグインです。
             </p>
             <div className="hero-buttons">
               <a href="#installation" className="cta-button primary">
