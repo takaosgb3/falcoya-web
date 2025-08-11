@@ -95,9 +95,8 @@ export default function FalcoNginxTutorial() {
                 <a href="#installation">4. インストール</a>
                 <a href="#test-setup">5. テスト環境の構築</a>
                 <a href="#attack-tests">6. 攻撃パターンの実践検証</a>
-                <a href="#detection-analysis">7. 検知ログの詳細分析</a>
-                <a href="#custom-rules">8. カスタムルールの作成</a>
-                <a href="#conclusion">9. まとめ</a>
+                <a href="#custom-rules">7. カスタムルールの作成</a>
+                <a href="#conclusion">8. まとめ</a>
               </nav>
             </aside>
 
@@ -442,7 +441,7 @@ export default function FalcoNginxTutorial() {
 
               {/* Custom Rules */}
               <section id="custom-rules">
-                <h2>8. カスタムルールの作成</h2>
+                <h2>7. カスタムルールの作成</h2>
                 
                 <h3>ルール構造の理解</h3>
                 <p>Falcoのルールは3つの要素で構成されています：</p>
@@ -523,7 +522,7 @@ export default function FalcoNginxTutorial() {
 
               {/* Conclusion */}
               <section id="conclusion">
-                <h2>9. まとめ</h2>
+                <h2>8. まとめ</h2>
                 
                 <h3>今回達成したこと</h3>
                 <div className="achievement-list">
