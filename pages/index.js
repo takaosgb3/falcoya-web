@@ -268,7 +268,7 @@ export default function Home() {
                 <div className="stat-label">コマンドでインストール</div>
               </div>
               <div className="stat-item glass">
-                <div className="stat-number">24X7</div>
+                <div className="stat-display">24X7</div>
                 <div className="stat-label">監視</div>
               </div>
             </div>
