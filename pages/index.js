@@ -233,9 +233,9 @@ export default function Home() {
               <span className="subtitle typing-text-delay">Falco + Nginxログで、攻撃を可視化。</span>
             </h1>
             <p className="hero-description">
-              falco-plugin-nginx は、NginxアクセスログをFalcoで解析し、
+              falco-plugin-nginx は、リアルタイムでNginxアクセスログをFalcoで解析し、
               <br />
-              <strong>SQLi・XSS・パストラバーサル・DDoS</strong> などの攻撃パターンを検知するプラグインです。
+              <strong>SQLi・XSS・パストラバーサル・DDoS</strong> などの攻撃パターンを即時に検知するプラグインです。
             </p>
             <div className="hero-buttons">
               <a href="#installation" className="cta-button primary">

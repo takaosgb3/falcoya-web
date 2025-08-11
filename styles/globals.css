@@ -273,12 +273,13 @@ body {
   height: 150px;
   filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.15));
   border-radius: 16px;
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
   padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .hero-bg-circle {
@@ -939,7 +940,7 @@ body {
 /* Quick Start Section */
 .quick-start {
   padding: 4rem 0;
-  background: var(--bg-gray);
+  background: var(--bg-white);
 }
 
 .quick-start h2 {
@@ -947,6 +948,7 @@ body {
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
+  color: var(--text-primary);
 }
 
 .steps {
@@ -998,20 +1000,38 @@ body {
 }
 
 .copy-button {
-  background: var(--text-primary);
-  color: white;
-  border: none;
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--primary-blue);
+  border: 1px solid rgba(79, 70, 229, 0.2);
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.875rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.1);
 }
 
 .copy-button:hover {
-  background: var(--text-secondary);
+  background: rgba(79, 70, 229, 0.15);
+  border-color: var(--primary-blue);
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.copy-button:active {
+  transform: translateY(0);
+}
+
+.copy-button::before {
+  content: "📋";
+  font-size: 0.75rem;
+  opacity: 0.8;
 }
 
 .code-inline code {
