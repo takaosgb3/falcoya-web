@@ -208,7 +208,7 @@ export default function Home() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/img/alcoya-logo-c.png" alt="FALCOYA" />
+            <img src="/img/falcoya-logo-c.png" alt="FALCOYA" />
             <span>FALCOYA</span>
           </div>
           <ul className="nav-menu">
@@ -230,7 +230,7 @@ export default function Home() {
         <div className="hero-glow"></div>
         <div className="hero-container">
           <div className="hero-left">
-            <img src="/img/alcoya-logo-c.png" alt="FALCOYA" className="hero-logo floating" />
+            <img src="/img/falcoya-logo-c.png" alt="FALCOYA" className="hero-logo floating" />
           </div>
           <div className="hero-content">
             <div className="hero-badge pulse">
