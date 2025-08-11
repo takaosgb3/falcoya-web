@@ -97,8 +97,7 @@ export default function FalcoNginxTutorial() {
                 <a href="#attack-tests">6. 攻撃パターンの実践検証</a>
                 <a href="#detection-analysis">7. 検知ログの詳細分析</a>
                 <a href="#custom-rules">8. カスタムルールの作成</a>
-                <a href="#production-considerations">9. 運用時の考慮事項</a>
-                <a href="#conclusion">10. まとめ</a>
+                <a href="#conclusion">9. まとめ</a>
               </nav>
             </aside>
 
@@ -524,7 +523,7 @@ export default function FalcoNginxTutorial() {
 
               {/* Conclusion */}
               <section id="conclusion">
-                <h2>10. まとめ</h2>
+                <h2>9. まとめ</h2>
                 
                 <h3>今回達成したこと</h3>
                 <div className="achievement-list">
@@ -539,10 +538,6 @@ export default function FalcoNginxTutorial() {
                   <div className="achievement-item">
                     <h4>✅ ルール理解</h4>
                     <p>検知ロジックとカスタマイズ方法を習得</p>
-                  </div>
-                  <div className="achievement-item">
-                    <h4>✅ 運用知識</h4>
-                    <p>パフォーマンス最適化と外部連携の方法を学習</p>
                   </div>
                 </div>
 
