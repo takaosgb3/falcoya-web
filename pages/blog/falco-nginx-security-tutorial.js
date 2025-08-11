@@ -8,7 +8,7 @@ export default function FalcoNginxTutorial() {
   return (
     <>
       <Head>
-        <title>Falco + Nginx プラグインで Web 攻撃をリアルタイム検知！AWS EC2 完全実践ガイド - FALCOYA Blog</title>
+        <title>Falco + Nginx プラグインで Web 攻撃をリアルタイム検知！AWS EC2環境で試してみる - FALCOYA Blog</title>
         <meta name="description" content="FalcoとNginxプラグインを使用してWebアプリケーションの攻撃をリアルタイムで検知する方法を、AWS EC2環境での実践を通じて詳しく解説します。" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Falco + Nginx プラグインで Web 攻撃をリアルタイム検知！" />
@@ -66,7 +66,7 @@ export default function FalcoNginxTutorial() {
           
           <h1 className="article-title">
             Falco + Nginx プラグインで Web 攻撃をリアルタイム検知！<br/>
-            <span className="subtitle">AWS EC2 完全実践ガイド</span>
+            <span className="subtitle">AWS EC2環境で試してみる</span>
           </h1>
           
           <div className="article-tags">
