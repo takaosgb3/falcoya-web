@@ -149,7 +149,7 @@ export default function FalcoNginxTutorial() {
                   </div>
                   <div className="feature-item">
                     <h4>🔗 既存システム連携</h4>
-                    <p>SIEM・Slack・ログ管理システムとシームレスに統合</p>
+                    <p>ログ管理システムとシームレスに統合</p>
                   </div>
                 </div>
               </section>
@@ -174,7 +174,7 @@ export default function FalcoNginxTutorial() {
                     <div className="arrow">⬇️</div>
                     <div className="flow-item rule-item">📋 検知ルール<br/><small>nginx_rules.yaml</small></div>
                     <div className="arrow">⬇️</div>
-                    <div className="flow-item alert-item">🚨 アラート生成・通知<br/><small>SIEM/Slack/ログ出力</small></div>
+                    <div className="flow-item alert-item">🚨 アラート生成・通知<br/><small>ログ出力</small></div>
                   </div>
                 </div>
 
