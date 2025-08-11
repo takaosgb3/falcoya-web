@@ -141,7 +141,7 @@ export default function FalcoNginxTutorial() {
               <section id="architecture">
                 <h2>2. システム構成と動作原理</h2>
                 
-                <h3>全体アーキテクチャ</h3>
+                <h3>全体アーキテクチャー</h3>
                 <div className="architecture-diagram">
                   <div className="diagram-title">
                     <h4>📊 システムアーキテクチャフロー</h4>
