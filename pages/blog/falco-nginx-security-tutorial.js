@@ -25,7 +25,6 @@ export default function FalcoNginxTutorial() {
             </Link>
           </div>
           <ul className="nav-menu">
-            <li><Link href="/#about">About</Link></li>
             <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">GitHub</Link></li>
             <li><Link href="/#installation">Installation</Link></li>
             <li><Link href="/#detection">Detection</Link></li>

@@ -2,18 +2,32 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 
-const blogPosts = [
-  {
-    id: 'falco-nginx-security-tutorial',
-    title: 'Falco + Nginx プラグインで Web 攻撃をリアルタイム検知！AWS EC2環境で試してみる',
-    description: 'FalcoとNginxプラグインを使用してWebアプリケーションの攻撃をリアルタイムで検知する方法を、AWS EC2環境での実践を通じて詳しく解説します。SQLインジェクション、XSS、ディレクトリトラバーサルなどの攻撃パターンの検証からカスタムルールの作成まで包括的にカバーします。',
-    date: '2025-08-11',
-    readTime: '15分',
-    tags: ['Falco', 'Nginx', 'セキュリティ', 'AWS', 'EC2', 'Web攻撃検知'],
-    category: 'セキュリティ',
-    slug: 'falco-nginx-security-tutorial'
-  }
-]
+const blogPosts = {
+  ja: [
+    {
+      id: 'falco-nginx-security-tutorial',
+      title: 'Falco + Nginx プラグインで Web 攻撃をリアルタイム検知！AWS EC2環境で試してみる',
+      description: 'FalcoとNginxプラグインを使用してWebアプリケーションの攻撃をリアルタイムで検知する方法を、AWS EC2環境での実践を通じて詳しく解説します。SQLインジェクション、XSS、ディレクトリトラバーサルなどの攻撃パターンの検証からカスタムルールの作成まで包括的にカバーします。',
+      date: '2025-08-11',
+      readTime: '15分',
+      tags: ['Falco', 'Nginx', 'セキュリティ', 'AWS', 'EC2', 'Web攻撃検知'],
+      category: 'セキュリティ',
+      slug: 'falco-nginx-security-tutorial'
+    }
+  ],
+  en: [
+    {
+      id: 'falco-nginx-security-tutorial-en',
+      title: 'Real-time Web Attack Detection with Falco + Nginx Plugin! Try it on AWS EC2',
+      description: 'A comprehensive guide on detecting web application attacks in real-time using Falco and Nginx plugin through hands-on practice in AWS EC2 environment. Covers verification of attack patterns like SQL injection, XSS, directory traversal, and custom rule creation.',
+      date: '2025-08-11', 
+      readTime: '15 min',
+      tags: ['Falco', 'Nginx', 'Security', 'AWS', 'EC2', 'Web Attack Detection'],
+      category: 'Security',
+      slug: 'falco-nginx-security-tutorial-en'
+    }
+  ]
+}
 
 export default function BlogIndex() {
   const [language, setLanguage] = useState('ja')
@@ -56,7 +70,6 @@ export default function BlogIndex() {
             </Link>
           </div>
           <ul className="nav-menu">
-            <li><Link href="/#about">About</Link></li>
             <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">GitHub</Link></li>
             <li><Link href="/#installation">Installation</Link></li>
             <li><Link href="/#detection">Detection</Link></li>
@@ -102,7 +115,7 @@ export default function BlogIndex() {
               <h2>{content[language].recentPosts}</h2>
               
               <div className="blog-posts">
-                {blogPosts.map((post) => (
+                {blogPosts[language].map((post) => (
                   <article key={post.id} className="blog-post-card">
                     <div className="post-meta">
                       <span className="post-date">{post.date}</span>
