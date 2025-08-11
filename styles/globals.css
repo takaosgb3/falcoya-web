@@ -213,16 +213,10 @@ body {
 }
 
 .nav-logo img {
-  height: 40px;
+  height: 50px;
   width: auto;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   display: block;
-}
-
-.nav-logo span {
-  line-height: 1;
-  display: flex;
-  align-items: center;
 }
 
 .nav-menu {

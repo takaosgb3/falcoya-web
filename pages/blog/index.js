@@ -53,7 +53,6 @@ export default function BlogIndex() {
           <div className="nav-logo">
             <Link href="/">
               <img src="/img/falcoya-logo-c.png" alt="FALCOYA" />
-              <span>FALCOYA</span>
             </Link>
           </div>
           <ul className="nav-menu">
