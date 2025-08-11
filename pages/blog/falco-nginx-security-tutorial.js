@@ -347,11 +347,11 @@ export default function FalcoNginxTutorial() {
 # 管理画面への不正アクセス検知ルール
 - rule: NGINX Unauthorized Admin Access
   desc: Detect unauthorized access to admin pages
-  condition: >
+  condition: &gt;
     is_nginx_event and 
     (nginx.path startswith "/admin" or nginx.path in (admin_paths)) and
     not (nginx.ip in (admin_ips))
-  output: >
+  output: &gt;
     [UNAUTHORIZED ADMIN ACCESS] Suspicious admin access detected
     (ip=%nginx.ip method=%nginx.method path=%nginx.path ua="%nginx.ua" 
      status=%nginx.status size=%nginx.size)
