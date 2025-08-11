@@ -144,7 +144,7 @@ export default function FalcoNginxTutorial() {
                     <p>Go言語実装でオーバーヘッド最小、本番環境での安定稼働</p>
                   </div>
                   <div className="feature-item">
-                    <h4>📝 直感的ルール作成</h4>
+                    <h4>📝 柔軟なルール作成</h4>
                     <p>YAML形式で攻撃パターンを柔軟に定義・カスタマイズ</p>
                   </div>
                 </div>
