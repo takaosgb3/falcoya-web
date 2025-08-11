@@ -6,6 +6,18 @@ export default function Home() {
   const [particles, setParticles] = useState([])
   const canvasRef = useRef(null)
 
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      // Simple feedback - you could enhance this with a toast notification
+      const button = document.querySelector('.copy-button')
+      const originalText = button.textContent
+      button.textContent = 'Copied!'
+      setTimeout(() => {
+        button.textContent = originalText
+      }, 1000)
+    })
+  }
+
   useEffect(() => {
     // Particle animation
     const initParticles = () => {
@@ -280,32 +292,179 @@ export default function Home() {
       <section id="detection" className="examples">
         <div className="container">
           <h2>脅威検知機能</h2>
-          <div className="example-cards">
-            <div className="example-card">
-              <h3>SQL Injection 検知</h3>
-              <p>NginxアクセスログからSQL injection攻撃をリアルタイムで検知し、データベースへの不正アクセスを防止</p>
-              <a href="https://github.com/takaosgb3/falco-plugin-nginx#rules" className="link-button">ルール詳細</a>
+          <div className="detection-overview">
+            <p>falco-plugin-nginxは、4つのカテゴリ・10種類のセキュリティルールで包括的な脅威検知を実現します</p>
+          </div>
+          
+          <div className="rule-categories">
+            <div className="category-section">
+              <h3 className="category-title">
+                <span className="severity-badge critical">CRITICAL</span>
+                セキュリティ攻撃検知ルール
+              </h3>
+              <div className="rule-grid">
+                <div className="rule-card">
+                  <div className="rule-header">
+                    <h4>SQL Injection 攻撃検知</h4>
+                    <span className="severity-indicator critical">🔴</span>
+                  </div>
+                  <p>悪意のあるSQL文の挿入を検知し、データベースへの不正アクセスを即座にブロック</p>
+                  <div className="detection-patterns">
+                    <strong>検知パターン例:</strong>
+                    <ul>
+                      <li><code>' OR 1=1</code> - 認証回避</li>
+                      <li><code>UNION SELECT</code> - データ窃取</li>
+                      <li><code>; DROP TABLE</code> - データ破壊</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="rule-card">
+                  <div className="rule-header">
+                    <h4>Command Injection 攻撃検知</h4>
+                    <span className="severity-indicator critical">🔴</span>
+                  </div>
+                  <p>システムコマンドの不正実行を検知し、サーバー乗っ取りを防止</p>
+                  <div className="detection-patterns">
+                    <strong>検知パターン例:</strong>
+                    <ul>
+                      <li><code>;ls -la</code> - コマンド連結</li>
+                      <li><code>|cat /etc/passwd</code> - パイプ実行</li>
+                      <li><code>$(whoami)</code> - コマンド置換</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="example-card">
-              <h3>XSS 攻撃検知</h3>
-              <p>Cross-Site Scripting (XSS) 攻撃の試みをリアルタイム監視し、Webアプリケーションを保護</p>
-              <a href="https://github.com/takaosgb3/falco-plugin-nginx#rules" className="link-button">ルール詳細</a>
+
+            <div className="category-section">
+              <h3 className="category-title">
+                <span className="severity-badge warning">WARNING</span>
+                Web攻撃検知ルール
+              </h3>
+              <div className="rule-grid">
+                <div className="rule-card">
+                  <div className="rule-header">
+                    <h4>XSS 攻撃検知</h4>
+                    <span className="severity-indicator warning">🟡</span>
+                  </div>
+                  <p>クロスサイトスクリプティング攻撃を検知し、悪意のあるスクリプト実行を防止</p>
+                  <div className="detection-patterns">
+                    <strong>検知パターン例:</strong>
+                    <ul>
+                      <li><code>&lt;script&gt;alert('xss')&lt;/script&gt;</code></li>
+                      <li><code>javascript:void(0)</code></li>
+                      <li><code>onerror="alert(1)"</code></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="rule-card">
+                  <div className="rule-header">
+                    <h4>Path Traversal 攻撃検知</h4>
+                    <span className="severity-indicator warning">🟡</span>
+                  </div>
+                  <p>ディレクトリトラバーサル攻撃を検知し、意図しないファイルアクセスをブロック</p>
+                  <div className="detection-patterns">
+                    <strong>検知パターン例:</strong>
+                    <ul>
+                      <li><code>../../../etc/passwd</code></li>
+                      <li><code>..\\..\\windows\\system32</code></li>
+                      <li><code>/etc/shadow</code></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="rule-card">
+                  <div className="rule-header">
+                    <h4>機密ファイルアクセス検知</h4>
+                    <span className="severity-indicator warning">🟡</span>
+                  </div>
+                  <p>重要な設定ファイルへの不正アクセスを監視し、情報漏洩を防止</p>
+                  <div className="detection-patterns">
+                    <strong>検知パターン例:</strong>
+                    <ul>
+                      <li><code>.env</code> - 環境変数ファイル</li>
+                      <li><code>.git/config</code> - Git設定</li>
+                      <li><code>wp-config.php</code> - WordPress設定</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="example-card">
-              <h3>Directory Traversal 検知</h3>
-              <p>パストラバーサル攻撃を検知し、意図しないファイルアクセスをブロック</p>
-              <a href="https://github.com/takaosgb3/falco-plugin-nginx#rules" className="link-button">ルール詳細</a>
+
+            <div className="category-section">
+              <h3 className="category-title">
+                <span className="severity-badge notice">NOTICE</span>
+                偵察・認証攻撃検知ルール
+              </h3>
+              <div className="rule-grid">
+                <div className="rule-card">
+                  <div className="rule-header">
+                    <h4>セキュリティスキャン検知</h4>
+                    <span className="severity-indicator notice">🔵</span>
+                  </div>
+                  <p>攻撃前の偵察活動を検知し、事前に脅威を把握</p>
+                  <div className="detection-patterns">
+                    <strong>検知対象:</strong>
+                    <ul>
+                      <li>自動化ツールによる大量アクセス</li>
+                      <li>脆弱性スキャナーの活動</li>
+                      <li>システム情報の収集試行</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="rule-card">
+                  <div className="rule-header">
+                    <h4>ブルートフォース攻撃検知</h4>
+                    <span className="severity-indicator notice">🔵</span>
+                  </div>
+                  <p>総当たり攻撃による認証突破の試みを検知</p>
+                  <div className="detection-patterns">
+                    <strong>検知対象:</strong>
+                    <ul>
+                      <li>連続した認証失敗</li>
+                      <li>辞書攻撃パターン</li>
+                      <li>異常なログイン試行</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="example-card">
-              <h3>Command Injection 検知</h3>
-              <p>コマンドインジェクション攻撃を識別し、システム上での不正なコマンド実行を防止</p>
-              <a href="https://github.com/takaosgb3/falco-plugin-nginx#rules" className="link-button">ルール詳細</a>
+
+            <div className="category-section">
+              <h3 className="category-title">
+                <span className="severity-badge info">INFO</span>
+                システム監視ルール
+              </h3>
+              <div className="rule-grid">
+                <div className="rule-card">
+                  <div className="rule-header">
+                    <h4>システム異常状態監視</h4>
+                    <span className="severity-indicator info">🟢</span>
+                  </div>
+                  <p>Webサーバーの異常な動作やエラー状態を監視し、システムの健全性を確保</p>
+                  <div className="detection-patterns">
+                    <strong>監視項目:</strong>
+                    <ul>
+                      <li>大量の4xx/5xxエラー</li>
+                      <li>異常なレスポンス時間</li>
+                      <li>リソース枯渇の兆候</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="example-card">
-              <h3>Brute Force 攻撃検知</h3>
-              <p>ブルートフォース攻撃やセキュリティスキャナーを識別し、不正アクセスを監視</p>
-              <a href="https://github.com/takaosgb3/falco-plugin-nginx#rules" className="link-button">ルール詳細</a>
-            </div>
+          </div>
+
+          <div className="rules-footer">
+            <a href="https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md" 
+               className="rules-detail-link" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              📚 詳細なルールリファレンスを見る
+            </a>
           </div>
         </div>
       </section>
@@ -317,8 +476,16 @@ export default function Home() {
             <div className="step">
               <span className="step-number">1</span>
               <h3>ワンライナーインストール</h3>
-              <div className="code-inline">
-                <code>curl -sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh | sudo bash</code>
+              <div className="code-inline-container">
+                <div className="code-inline">
+                  <code>curl -sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh | sudo bash</code>
+                </div>
+                <button 
+                  className="copy-button"
+                  onClick={() => copyToClipboard('curl -sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh | sudo bash')}
+                >
+                  Copy
+                </button>
               </div>
             </div>
             <div className="step">
