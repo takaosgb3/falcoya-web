@@ -269,7 +269,7 @@ export default function Home() {
               </div>
               <div className="stat-item glass">
                 <div className="stat-number" data-target="24">0</div>
-                <div className="stat-label">7監視</div>
+                <div className="stat-label">X7<br />監視</div>
               </div>
             </div>
             
