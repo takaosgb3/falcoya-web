@@ -55,7 +55,9 @@ export default function Home() {
           time: "時刻:",
           sourceIp: "送信元IP:",
           request: "リクエスト:"
-        }
+        },
+        rulesFooter: "📚 詳細なルールリファレンスを見る",
+        rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md"
       },
       installation: {
         title: "インストール方法",
@@ -141,7 +143,9 @@ export default function Home() {
           time: "Time:",
           sourceIp: "Source IP:",
           request: "Request:"
-        }
+        },
+        rulesFooter: "📚 View Detailed Rules Reference",
+        rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md"
       },
       installation: {
         title: "Installation Guide",
@@ -672,11 +676,11 @@ export default function Home() {
           </div>
 
           <div className="rules-footer">
-            <a href="https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md" 
+            <a href={content[language].detection.rulesLink} 
                className="rules-detail-link" 
                target="_blank" 
                rel="noopener noreferrer">
-              📚 詳細なルールリファレンスを見る
+              {content[language].detection.rulesFooter}
             </a>
           </div>
         </div>
