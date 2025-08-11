@@ -166,7 +166,7 @@ export default function FalcoNginxTutorial() {
                     <div className="arrow">⬇️</div>
                     <div className="flow-item log-item">📄 アクセスログファイル<br/><small>/var/log/nginx/access.log</small></div>
                     <div className="arrow">⬇️</div>
-                    <div className="flow-item plugin-item">🔍 falco-plugin-nginx<br/><small>リアルタイム解析</small></div>
+                    <div className="flow-item plugin-item">🔍 Falco + falco-plugin-nginx<br/><small>リアルタイム解析</small></div>
                     <div className="arrow">⬇️</div>
                     <div className="flow-item rule-item">📋 検知ルール<br/><small>nginx_rules.yaml</small></div>
                     <div className="arrow">⬇️</div>
