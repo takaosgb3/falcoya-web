@@ -67,9 +67,9 @@
     <div class="container">
       <h2>このプロジェクトについて</h2>
       <ul class="about-list">
-        <li><span class="bullet">•</span> 種々：内県は：反査め編察が想潰も表買</li>
-        <li><span class="bullet">•</span> 抜組プロゲラミン複候指商制作</li>
-        <li><span class="bullet">•</span> 前障：プロトタイプ実現、多点茶</li>
+        <li><span class="bullet">•</span> Nginxログから攻撃を検知：SQL、XSS、Path Traversal各種</li>
+        <li><span class="bullet">•</span> 攻撃警報をFalcoプラグインで検知</li>
+        <li><span class="bullet">•</span> 簡単：プロトタイプ実装、多彩な警告</li>
       </ul>
     </div>
   </section>
@@ -80,17 +80,17 @@
       <div class="example-cards">
         <div class="example-card">
           <h3>SQL Injection試行検知</h3>
-          <p>子役を狙くとも悪意あるSQLクエリ検出する</p>
+          <p>悪意のあるSQLクエリを検出し、データベースへの不正アクセスを防ぎます</p>
           <a href="#" class="link-button">ルールを見る</a>
         </div>
         <div class="example-card">
           <h3>XSS攻撃試行検知</h3>
-          <p>これにSOS プロ ジェルクラ フトみ嘩無る</p>
+          <p>クロスサイトスクリプティング攻撃をリアルタイムで検知します</p>
           <a href="#" class="link-button">ルールを見る</a>
         </div>
         <div class="example-card">
           <h3>Path Traversal検知</h3>
-          <p>ファイル参照抜けの試みをとらえなど</p>
+          <p>ディレクトリトラバーサル攻撃による不正なファイルアクセスを防御します</p>
           <a href="#" class="link-button">ルールを見る</a>
         </div>
       </div>
@@ -103,21 +103,21 @@
       <div class="steps">
         <div class="step">
           <span class="step-number">1</span>
-          <h3>ダウンロードと仕をわり</h3>
+          <h3>リポジトリをクローン</h3>
           <div class="code-inline">
             <code>git clone https://github.com/falcoya/falcoya</code>
           </div>
         </div>
         <div class="step">
           <span class="step-number">2</span>
-          <h3>Docker Composeで実施</h3>
+          <h3>Docker Composeで起動</h3>
           <div class="code-inline">
             <code>docker-compose up -d</code>
           </div>
         </div>
         <div class="step">
           <span class="step-number">3</span>
-          <h3>攻撃シミュレーションar Alert クリレック</h3>
+          <h3>攻撃シミュレーションとアラート確認</h3>
           <div class="code-inline">
             <code>curl http://localhost/test?id='OR'1'='1</code>
           </div>
@@ -129,9 +129,13 @@
           <span class="terminal-dot yellow"></span>
           <span class="terminal-dot green"></span>
         </div>
-        <pre><code>git clone https://github.com/falcoya/falcoya
+        <pre><code>$ git clone https://github.com/falcoya/falcoya
+Cloning into 'falcoya'...
 
-docker run httpen</code></pre>
+$ docker-compose up -d
+Creating network "falcoya_default" with the default driver
+Creating falcoya_nginx_1 ... done
+Creating falcoya_falco_1 ... done</code></pre>
       </div>
     </div>
   </section>
