@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FALCOYA - Falco + Nginxログで攻撃を可視化</title>
+  <link rel="icon" type="image/x-icon" href="img/flcoya-favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/flcoya-favicon-32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -15,7 +17,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <img src="flcoya-logo.png" alt="FALCOYA" />
+        <img src="img/flcoya-logo.png" alt="FALCOYA" />
         <span>FALCOYA</span>
       </div>
       <ul class="nav-menu">
@@ -24,38 +26,50 @@
         <li><a href="#demo">Demo</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="search-icon" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
     </div>
   </nav>
 
   <header class="hero">
     <div class="hero-container">
       <div class="hero-left">
-        <img src="flcoya-logo.png" alt="FALCOYA" class="hero-logo" />
+        <img src="img/flcoya-hero-120.png" alt="FALCOYA" class="hero-logo" />
       </div>
       <div class="hero-content">
         <h1>Falco + Nginxログで、<br>攻撃を可視化する。</h1>
-        <p class="hero-description">falco-plugin-nginx は、NginxアクセスログをFalcoで解析するOSSプラグインのOSSプラン。</p>
-        <a href="https://github.com" class="cta-button">GitHubで見る</a>
+        <p class="hero-description">falco-plugin-nginx は、NginxアクセスログをFalcoで解析し、攻撃パターンを検知するOSSプラグインです。</p>
+        <div class="hero-buttons">
+          <a href="https://github.com" class="cta-button primary">GitHubで見る</a>
+          <a href="#demo" class="cta-button secondary">動作デモを見る</a>
+        </div>
         
         <div class="code-block">
           <div class="code-header">falco-plugin-nginx</div>
-          <pre><code>HostName: Unexpected one request
-using method.: GET method="/evil.js"
-Hostname: falco-1
-Procname id: falco><?=f74d03f67
-Container-name: web-nginx
-Rule: XSS attempt</code></pre>
+          <pre><code><span class="comment"># XSS attack detected</span>
+<span class="key">HostName:</span> <span class="value">Unexpected one request</span>
+<span class="key">using method.:</span> <span class="value">GET method="/evil.js"</span>
+<span class="key">Hostname:</span> <span class="value">falco-1</span>
+<span class="key">Procname id:</span> <span class="value">falco><?=f74d03f67</span>
+<span class="key">Container-name:</span> <span class="value">web-nginx</span>
+<span class="key">Rule:</span> <span class="error">XSS attempt</span></code></pre>
         </div>
       </div>
     </div>
+    <div class="hero-bg-circle"></div>
   </header>
 
   <section id="about" class="about">
     <div class="container">
       <h2>このプロジェクトについて</h2>
       <ul class="about-list">
-        <li>Nginxログから攻撃｜SQL、XS、XSS各種</li>
-        <li>攻撃警報をFalco プログ検知</li>
+        <li><span class="bullet">•</span> 種々：内県は：反査め編察が想潰も表買</li>
+        <li><span class="bullet">•</span> 抜組プロゲラミン複候指商制作</li>
+        <li><span class="bullet">•</span> 前障：プロトタイプ実現、多点茶</li>
       </ul>
     </div>
   </section>
@@ -79,6 +93,45 @@ Rule: XSS attempt</code></pre>
           <p>ファイル参照抜けの試みをとらえなど</p>
           <a href="#" class="link-button">ルールを見る</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quick-start" class="quick-start">
+    <div class="container">
+      <h2>5分で試す</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <h3>ダウンロードと仕をわり</h3>
+          <div class="code-inline">
+            <code>git clone https://github.com/falcoya/falcoya</code>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <h3>Docker Composeで実施</h3>
+          <div class="code-inline">
+            <code>docker-compose up -d</code>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <h3>攻撃シミュレーションar Alert クリレック</h3>
+          <div class="code-inline">
+            <code>curl http://localhost/test?id='OR'1'='1</code>
+          </div>
+        </div>
+      </div>
+      <div class="terminal-preview">
+        <div class="terminal-header">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+        </div>
+        <pre><code>git clone https://github.com/falcoya/falcoya
+
+docker run httpen</code></pre>
       </div>
     </div>
   </section>
