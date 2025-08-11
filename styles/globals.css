@@ -2089,6 +2089,14 @@ body {
   .nav-menu {
     gap: 1rem;
     font-size: 0.875rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .nav-menu li {
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   
   .example-cards {

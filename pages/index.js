@@ -14,7 +14,6 @@ export default function Home() {
       description: "攻撃の兆候を鮮明に。Falco + Nginxログで攻撃を可視化。SQLi・XSS・パストラバーサル・DDoSなどの攻撃パターンを検知するプラグイン。",
       ogDescription: "NginxアクセスログをリアルタイムでFalcoが監視し、Webアプリケーションへの脅威を即座に検知。",
       nav: {
-        about: "About",
         github: "GitHub", 
         installation: "Installation",
         detection: "Detection",
@@ -231,7 +230,6 @@ export default function Home() {
       description: "Detect attack patterns clearly. Visualize attacks with Falco + Nginx logs. Plugin that detects SQLi, XSS, Path Traversal, DDoS and other attack patterns.",
       ogDescription: "Falco monitors Nginx access logs in real-time and instantly detects threats to web applications.",
       nav: {
-        about: "About",
         github: "GitHub",
         installation: "Installation", 
         detection: "Detection",
@@ -658,7 +656,6 @@ export default function Home() {
             <span>FALCOYA</span>
           </div>
           <ul className="nav-menu">
-            <li><a href="#about">{content[language].nav.about}</a></li>
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">{content[language].nav.github}</a></li>
             <li><a href="#installation">{content[language].nav.installation}</a></li>
             <li><a href="#detection">{content[language].nav.detection}</a></li>
