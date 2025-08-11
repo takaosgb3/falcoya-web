@@ -382,6 +382,45 @@ curl localhost`}</code></pre>
                 </div>
               </section>
 
+              {/* Test Setup */}
+              <section id="test-setup">
+                <h2>5. テスト環境の構築</h2>
+                
+                <h3>インストール成功の確認</h3>
+                <p>インストールが正常に完了すると、以下のような画面が表示されます：</p>
+                
+                <div className="image-container">
+                  <img src="/img/install-s.png" alt="インストール成功画面" className="blog-image" />
+                  <p className="image-caption">falco-plugin-nginxインストール成功時の画面</p>
+                </div>
+
+                <h3>テスト環境のセットアップ</h3>
+                <p>SETUP_TEST_CONTENT=yesオプションでインストールした場合、攻撃テスト用のサンプルサイトが自動構築されます：</p>
+                
+                <div className="image-container">
+                  <img src="/img/test-site.png" alt="テストサイト画面" className="blog-image" />
+                  <p className="image-caption">セキュリティテスト専用サイト - 各種攻撃パターンのテストエンドポイントを提供</p>
+                </div>
+
+                <h3>トラブルシューティング</h3>
+                <p>インストール時にエラーが発生した場合の対処方法：</p>
+                
+                <div className="image-container">
+                  <img src="/img/install-e.png" alt="インストール完了とテスト案内" className="blog-image" />
+                  <p className="image-caption">インストール完了後の次のステップとテスト方法の案内</p>
+                </div>
+                
+                <div className="info-box">
+                  <h4>💡 テスト環境の特徴</h4>
+                  <ul>
+                    <li><strong>専用テストページ</strong>: 各攻撃パターン専用のエンドポイント</li>
+                    <li><strong>URL エンコーディング対応</strong>: 実際の攻撃と同様の形式でテスト</li>
+                    <li><strong>検知確認機能</strong>: リアルタイムでFalcoアラートを確認可能</li>
+                    <li><strong>安全な環境</strong>: 隔離されたテスト専用環境</li>
+                  </ul>
+                </div>
+              </section>
+
               {/* Attack Tests */}
               <section id="attack-tests">
                 <h2>6. 攻撃パターンの実践検証</h2>
