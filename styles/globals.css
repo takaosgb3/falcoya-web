@@ -388,16 +388,16 @@ body {
 }
 
 .cta-button.primary {
-  background: var(--text-primary);
-  color: white;
-  box-shadow: 0 4px 20px rgba(31, 41, 55, 0.4);
-  border: 1px solid var(--text-primary);
+  background: white;
+  color: var(--text-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
 }
 
 .cta-button.primary:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 30px rgba(31, 41, 55, 0.6);
-  filter: brightness(1.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  background: var(--bg-gray);
 }
 
 .cta-button.secondary {
