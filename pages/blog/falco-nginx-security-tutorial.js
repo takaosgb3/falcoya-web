@@ -338,11 +338,6 @@ curl localhost`}</code></pre>
                   <pre><code>curl -sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh | sudo bash</code></pre>
                 </div>
 
-                <div className="image-container">
-                  <img src="/img/install-s.png" alt="インストール成功画面" className="blog-image" />
-                  <p className="image-caption">インストール完了時の画面表示例</p>
-                </div>
-
                 <h3>📋 テスト環境付きインストール</h3>
                 <p>攻撃テスト用のサンプルサイトも同時にセットアップする場合：</p>
                 
@@ -350,11 +345,6 @@ curl localhost`}</code></pre>
                   <div className="code-header">テスト環境付きインストール</div>
                   <pre><code>curl -sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh \
   | sudo SETUP_TEST_CONTENT=yes bash</code></pre>
-                </div>
-
-                <div className="image-container">
-                  <img src="/img/test-site.png" alt="テストサイト画面" className="blog-image" />
-                  <p className="image-caption">テスト環境で構築されるサンプルサイト</p>
                 </div>
                 
                 <div className="info-box">
@@ -371,14 +361,7 @@ curl localhost`}</code></pre>
 
                 <div className="warning-box">
                   <h4>⚠️ インストール時の注意事項</h4>
-                  <p>システム環境によってはエラーが発生する場合があります。以下のような問題が起きた場合の対処法:</p>
-                  
-                  <div className="image-container">
-                    <img src="/img/install-e.png" alt="インストールエラー画面" className="blog-image" />
-                    <p className="image-caption">インストール時のエラー例と対処方法</p>
-                  </div>
-                  
-                  <p>権限エラーやカーネルバージョンの問題が発生した場合は、システムの更新やFalcoの依存関係を確認してください。</p>
+                  <p>権限エラーやカーネルバージョンの問題が発生した場合は、システムの更新やFalcoの依存関係を確認してください。また、インストール完了後は必ずテスト環境で動作確認を行ってください。</p>
                 </div>
               </section>
 
@@ -402,12 +385,12 @@ curl localhost`}</code></pre>
                   <p className="image-caption">セキュリティテスト専用サイト - 各種攻撃パターンのテストエンドポイントを提供</p>
                 </div>
 
-                <h3>トラブルシューティング</h3>
-                <p>インストール時にエラーが発生した場合の対処方法：</p>
+                <h3>インストール完了とテスト準備</h3>
+                <p>インストールが完了すると、次のステップとしてテスト方法が案内されます：</p>
                 
                 <div className="image-container">
                   <img src="/img/install-e.png" alt="インストール完了とテスト案内" className="blog-image" />
-                  <p className="image-caption">インストール完了後の次のステップとテスト方法の案内</p>
+                  <p className="image-caption">インストール完了後のテスト方法案内 - 各種攻撃パターンのテストコマンドとFalcoログ監視方法を表示</p>
                 </div>
                 
                 <div className="info-box">
