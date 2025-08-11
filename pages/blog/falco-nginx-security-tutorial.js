@@ -292,21 +292,6 @@ export default function FalcoNginxTutorial() {
                   </table>
                 </div>
 
-                <h3>EC2インスタンス作成手順</h3>
-                <div className="setup-steps">
-                  <div className="step-item">
-                    <h4>1. AMI選択</h4>
-                    <p>Ubuntu Server 22.04 LTS (HVM) を選択</p>
-                  </div>
-                  <div className="step-item">
-                    <h4>2. セキュリティグループ設定</h4>
-                    <p>HTTP (80), SSH (22) ポートを許可</p>
-                  </div>
-                  <div className="step-item">
-                    <h4>3. キーペア設定</h4>
-                    <p>SSH接続用のキーペアを作成・設定</p>
-                  </div>
-                </div>
 
               </section>
 
