@@ -721,5 +721,5 @@ curl -X POST -H 'Content-type: application/json' \
 
 ---
 
-*最終更新: 2025年1月*  
+*最終更新: 2025年8月*  
 *著者: FALCOYA Security Team*

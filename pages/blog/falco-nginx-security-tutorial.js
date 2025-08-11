@@ -59,7 +59,7 @@ export default function FalcoNginxTutorial() {
           </nav>
           
           <div className="article-meta">
-            <span className="article-date">2025年1月11日</span>
+            <span className="article-date">2025年8月11日</span>
             <span className="article-read-time">約15分</span>
             <span className="article-category">セキュリティ</span>
           </div>
