@@ -1,10 +1,77 @@
 import Head from 'next/head'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Home() {
   const statsRefs = useRef([])
+  const [particles, setParticles] = useState([])
+  const canvasRef = useRef(null)
 
   useEffect(() => {
+    // Particle animation
+    const initParticles = () => {
+      const canvas = canvasRef.current
+      if (!canvas) return
+      
+      const ctx = canvas.getContext('2d')
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      
+      const particlesArray = []
+      const numberOfParticles = 100
+      
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width
+          this.y = Math.random() * canvas.height
+          this.size = Math.random() * 3 + 1
+          this.speedX = Math.random() * 3 - 1.5
+          this.speedY = Math.random() * 3 - 1.5
+          this.opacity = Math.random() * 0.5 + 0.2
+        }
+        
+        update() {
+          this.x += this.speedX
+          this.y += this.speedY
+          
+          if (this.x > canvas.width) this.x = 0
+          else if (this.x < 0) this.x = canvas.width
+          
+          if (this.y > canvas.height) this.y = 0
+          else if (this.y < 0) this.y = canvas.height
+        }
+        
+        draw() {
+          ctx.fillStyle = `rgba(79, 70, 229, ${this.opacity})`
+          ctx.beginPath()
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+          ctx.fill()
+        }
+      }
+      
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle())
+      }
+      
+      const animate = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        particlesArray.forEach(particle => {
+          particle.update()
+          particle.draw()
+        })
+        requestAnimationFrame(animate)
+      }
+      
+      animate()
+      
+      const handleResize = () => {
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+      }
+      
+      window.addEventListener('resize', handleResize)
+      return () => window.removeEventListener('resize', handleResize)
+    }
+
     // Counter animation
     const animateCounter = () => {
       const counters = document.querySelectorAll('.stat-number')
@@ -69,12 +136,37 @@ export default function Home() {
       return () => window.removeEventListener('scroll', handleScroll)
     }
 
+    // Scroll animation
+    const initScrollAnimation = () => {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      }, observerOptions)
+      
+      const animateElements = document.querySelectorAll('.scroll-fade-in')
+      animateElements.forEach(el => observer.observe(el))
+      
+      return () => observer.disconnect()
+    }
+
+    const cleanupParticles = initParticles()
+    const cleanupScrollAnimation = initScrollAnimation()
     animateCounter()
     initSmoothScroll()
     const cleanupNavbar = initNavbarScroll()
 
     return () => {
       if (cleanupNavbar) cleanupNavbar()
+      if (cleanupParticles) cleanupParticles()
+      if (cleanupScrollAnimation) cleanupScrollAnimation()
     }
   }, [])
 
@@ -90,6 +182,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
+      <canvas ref={canvasRef} className="particle-canvas" />
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
@@ -112,19 +205,20 @@ export default function Home() {
       </nav>
 
       <header className="hero">
+        <div className="hero-glow"></div>
         <div className="hero-container">
           <div className="hero-left">
-            <img src="/img/flcoya-hero-120.png" alt="FALCOYA" className="hero-logo" />
+            <img src="/img/flcoya-hero-120.png" alt="FALCOYA" className="hero-logo floating" />
           </div>
           <div className="hero-content">
-            <div className="hero-badge">
+            <div className="hero-badge pulse">
               <span className="badge-icon">🛡️</span>
               <span className="badge-text">Falco Plugin for Nginx</span>
             </div>
             <h1>
-              攻撃の兆候を、鮮明に。
+              <span className="typing-text">攻撃の兆候を、鮮明に。</span>
               <br />
-              <span className="subtitle">Falco + Nginxログで、攻撃を可視化。</span>
+              <span className="subtitle typing-text-delay">Falco + Nginxログで、攻撃を可視化。</span>
             </h1>
             <p className="hero-description">
               falco-plugin-nginx は、NginxアクセスログをFalcoで解析し、
@@ -143,15 +237,15 @@ export default function Home() {
             </div>
             
             <div className="hero-stats">
-              <div className="stat-item">
+              <div className="stat-item glass">
                 <div className="stat-number" data-target="5">0</div>
                 <div className="stat-label">種類の脅威検知</div>
               </div>
-              <div className="stat-item">
+              <div className="stat-item glass">
                 <div className="stat-number" data-target="1">0</div>
                 <div className="stat-label">コマンドでインストール</div>
               </div>
-              <div className="stat-item">
+              <div className="stat-item glass">
                 <div className="stat-number" data-target="24">0</div>
                 <div className="stat-label">7監視</div>
               </div>
