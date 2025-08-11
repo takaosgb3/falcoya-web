@@ -131,25 +131,25 @@ export default function FalcoNginxTutorial() {
                   </ul>
                 </div>
 
-                <h3>Falcoが提供するソリューション</h3>
-                <p><strong>Falco</strong>は、CNCF（Cloud Native Computing Foundation）に所属するオープンソースのランタイムセキュリティツールで、以下の特徴があります：</p>
+                <h3>Falco + Nginxプラグインが提供するソリューション</h3>
+                <p><strong>falco-plugin-nginx</strong>は、CNCF所属のFalcoとNginxを連携させるプラグインで、以下の特徴により革新的なWebセキュリティ監視を実現します：</p>
                 
                 <div className="feature-grid">
                   <div className="feature-item">
-                    <h4>✅ リアルタイム検知</h4>
-                    <p>カーネルレベルでのイベント監視</p>
+                    <h4>🔍 リアルタイム攻撃検知</h4>
+                    <p>Nginxアクセスログを即座に解析し、SQLi・XSSなどの攻撃を瞬時に発見</p>
                   </div>
                   <div className="feature-item">
-                    <h4>✅ 軽量</h4>
-                    <p>システムパフォーマンスへの影響が最小限</p>
+                    <h4>⚡ 超軽量動作</h4>
+                    <p>Go言語実装でオーバーヘッド最小、本番環境での安定稼働</p>
                   </div>
                   <div className="feature-item">
-                    <h4>✅ 柔軟なルール</h4>
-                    <p>YAML形式で直感的にカスタマイズ可能</p>
+                    <h4>📝 直感的ルール作成</h4>
+                    <p>YAML形式で攻撃パターンを柔軟に定義・カスタマイズ</p>
                   </div>
                   <div className="feature-item">
-                    <h4>✅ 統合性</h4>
-                    <p>既存のCI/CDパイプラインやSIEMツールと連携しやすい</p>
+                    <h4>🔗 既存システム連携</h4>
+                    <p>SIEM・Slack・ログ管理システムとシームレスに統合</p>
                   </div>
                 </div>
               </section>
@@ -160,18 +160,21 @@ export default function FalcoNginxTutorial() {
                 
                 <h3>全体アーキテクチャ</h3>
                 <div className="architecture-diagram">
+                  <div className="diagram-title">
+                    <h4>📊 システムアーキテクチャフロー</h4>
+                  </div>
                   <div className="diagram-container">
-                    <div className="flow-item">攻撃者/正規ユーザー</div>
-                    <div className="arrow">↓</div>
-                    <div className="flow-item">Nginx Webサーバー</div>
-                    <div className="arrow">↓</div>
-                    <div className="flow-item">アクセスログファイル</div>
-                    <div className="arrow">↓</div>
-                    <div className="flow-item">falco-plugin-nginx</div>
-                    <div className="arrow">↓</div>
-                    <div className="flow-item">検知ルール</div>
-                    <div className="arrow">↓</div>
-                    <div className="flow-item">アラート生成・通知</div>
+                    <div className="flow-item user-item">🔰 攻撃者/正規ユーザー</div>
+                    <div className="arrow">⬇️</div>
+                    <div className="flow-item server-item">🌐 Nginx Webサーバー</div>
+                    <div className="arrow">⬇️</div>
+                    <div className="flow-item log-item">📄 アクセスログファイル<br/><small>/var/log/nginx/access.log</small></div>
+                    <div className="arrow">⬇️</div>
+                    <div className="flow-item plugin-item">🔍 falco-plugin-nginx<br/><small>リアルタイム解析</small></div>
+                    <div className="arrow">⬇️</div>
+                    <div className="flow-item rule-item">📋 検知ルール<br/><small>nginx_rules.yaml</small></div>
+                    <div className="arrow">⬇️</div>
+                    <div className="flow-item alert-item">🚨 アラート生成・通知<br/><small>SIEM/Slack/ログ出力</small></div>
                   </div>
                 </div>
 

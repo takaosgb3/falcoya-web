@@ -1669,6 +1669,18 @@ body {
   padding: 2rem;
   border-radius: 12px;
   margin: 2rem 0;
+  border: 2px solid var(--border-color);
+}
+
+.diagram-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.diagram-title h4 {
+  color: var(--primary-blue);
+  font-size: 1.25rem;
+  margin: 0;
 }
 
 .diagram-container {
@@ -1685,6 +1697,23 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-weight: 500;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.user-item { border-left: 4px solid #10B981; }
+.server-item { border-left: 4px solid #3B82F6; }
+.log-item { border-left: 4px solid #F59E0B; }
+.plugin-item { border-left: 4px solid #8B5CF6; }
+.rule-item { border-left: 4px solid #EF4444; }
+.alert-item { border-left: 4px solid #F97316; }
+
+.flow-item small {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  font-weight: 400;
 }
 
 .arrow {
