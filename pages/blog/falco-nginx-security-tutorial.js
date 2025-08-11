@@ -353,12 +353,12 @@ export default function FalcoNginxTutorial() {
               <section id="test-setup">
                 <h2>5. テスト環境の構築</h2>
                 
-                <h3>インストール成功の確認</h3>
-                <p>インストールが正常に完了すると、以下のような画面が表示されます：</p>
+                <h3>インストール実行中の画面</h3>
+                <p>ワンライナーコマンドを実行すると、インストール処理が開始されます：</p>
                 
                 <div className="image-container">
-                  <img src="/img/install-s.png" alt="インストール成功画面" className="blog-image" />
-                  <p className="image-caption">falco-plugin-nginxインストール成功時の画面</p>
+                  <img src="/img/install-s.png" alt="インストール開始画面" className="blog-image" />
+                  <p className="image-caption">falco-plugin-nginxインストール開始時の画面 - 依存関係のチェックと各コンポーネントのダウンロードが進行</p>
                 </div>
 
                 <h3>テスト環境のセットアップ</h3>
