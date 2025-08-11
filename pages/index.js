@@ -47,7 +47,145 @@ export default function Home() {
         overview: "falco-plugin-nginxは、4つのカテゴリ・10種類のセキュリティルールで包括的な脅威検知を実現します",
         codeHeader: "Falco 検知例",
         rulesFooter: "📚 詳細なルールリファレンスを見る",
-        rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md"
+        rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md",
+        categories: [
+          {
+            id: "critical",
+            title: "セキュリティ攻撃検知ルール",
+            severity: "CRITICAL",
+            severityColor: "critical",
+            rules: [
+              {
+                name: "SQL Injection 攻撃検知",
+                indicator: "🔴",
+                description: "悪意のあるSQL文の挿入を検知し、データベースへの不正アクセスを即座にブロック",
+                patterns: {
+                  title: "検知パターン例:",
+                  items: [
+                    { code: "' OR 1=1", desc: "認証回避" },
+                    { code: "UNION SELECT", desc: "データ窃取" },
+                    { code: "; DROP TABLE", desc: "データ破壊" }
+                  ]
+                }
+              },
+              {
+                name: "Command Injection 攻撃検知", 
+                indicator: "🔴",
+                description: "システムコマンドの不正実行を検知し、サーバー乗っ取りを防止",
+                patterns: {
+                  title: "検知パターン例:",
+                  items: [
+                    { code: ";ls -la", desc: "コマンド連結" },
+                    { code: "|cat /etc/passwd", desc: "パイプ実行" },
+                    { code: "$(whoami)", desc: "コマンド置換" }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            id: "warning",
+            title: "Web攻撃検知ルール",
+            severity: "WARNING", 
+            severityColor: "warning",
+            rules: [
+              {
+                name: "XSS 攻撃検知",
+                indicator: "🟡",
+                description: "クロスサイトスクリプティング攻撃を検知し、悪意のあるスクリプト実行を防止",
+                patterns: {
+                  title: "検知パターン例:",
+                  items: [
+                    { code: "<script>alert('xss')</script>", desc: "" },
+                    { code: "javascript:void(0)", desc: "" },
+                    { code: "onerror=\"alert(1)\"", desc: "" }
+                  ]
+                }
+              },
+              {
+                name: "Path Traversal 攻撃検知",
+                indicator: "🟡", 
+                description: "ディレクトリトラバーサル攻撃を検知し、意図しないファイルアクセスをブロック",
+                patterns: {
+                  title: "検知パターン例:",
+                  items: [
+                    { code: "../../../etc/passwd", desc: "" },
+                    { code: "..\\\\..\\\\windows\\\\system32", desc: "" },
+                    { code: "/etc/shadow", desc: "" }
+                  ]
+                }
+              },
+              {
+                name: "機密ファイルアクセス検知",
+                indicator: "🟡",
+                description: "重要な設定ファイルへの不正アクセスを監視し、情報漏洩を防止",
+                patterns: {
+                  title: "検知パターン例:",
+                  items: [
+                    { code: ".env", desc: "環境変数ファイル" },
+                    { code: ".git/config", desc: "Git設定" },
+                    { code: "wp-config.php", desc: "WordPress設定" }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            id: "notice",
+            title: "偵察・認証攻撃検知ルール",
+            severity: "NOTICE",
+            severityColor: "notice", 
+            rules: [
+              {
+                name: "セキュリティスキャン検知",
+                indicator: "🔵",
+                description: "攻撃前の偵察活動を検知し、事前に脅威を把握",
+                patterns: {
+                  title: "検知対象:",
+                  items: [
+                    { code: "", desc: "自動化ツールによる大量アクセス" },
+                    { code: "", desc: "脆弱性スキャナーの活動" },
+                    { code: "", desc: "システム情報の収集試行" }
+                  ]
+                }
+              },
+              {
+                name: "ブルートフォース攻撃検知",
+                indicator: "🔵",
+                description: "総当たり攻撃による認証突破の試みを検知",
+                patterns: {
+                  title: "検知対象:",
+                  items: [
+                    { code: "", desc: "連続した認証失敗" },
+                    { code: "", desc: "辞書攻撃パターン" },
+                    { code: "", desc: "異常なログイン試行" }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            id: "info",
+            title: "システム監視ルール", 
+            severity: "INFO",
+            severityColor: "info",
+            rules: [
+              {
+                name: "システム異常状態監視",
+                indicator: "🟢",
+                description: "Webサーバーの異常な動作やエラー状態を監視し、システムの健全性を確保",
+                patterns: {
+                  title: "監視項目:",
+                  items: [
+                    { code: "", desc: "大量の4xx/5xxエラー" },
+                    { code: "", desc: "異常なレスポンス時間" },
+                    { code: "", desc: "リソース枯渇の兆候" }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       },
       installation: {
         title: "インストール方法",
@@ -125,7 +263,145 @@ export default function Home() {
         overview: "falco-plugin-nginx provides comprehensive threat detection with 4 categories and 10 types of security rules",
         codeHeader: "Falco Detection Example",
         rulesFooter: "📚 View Detailed Rules Reference",
-        rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md"
+        rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md",
+        categories: [
+          {
+            id: "critical",
+            title: "Security Attack Detection Rules",
+            severity: "CRITICAL",
+            severityColor: "critical",
+            rules: [
+              {
+                name: "SQL Injection Attack Detection",
+                indicator: "🔴",
+                description: "Detects malicious SQL statement injection and instantly blocks unauthorized database access",
+                patterns: {
+                  title: "Detection Pattern Examples:",
+                  items: [
+                    { code: "' OR 1=1", desc: "Authentication bypass" },
+                    { code: "UNION SELECT", desc: "Data extraction" },
+                    { code: "; DROP TABLE", desc: "Data destruction" }
+                  ]
+                }
+              },
+              {
+                name: "Command Injection Attack Detection", 
+                indicator: "🔴",
+                description: "Detects unauthorized system command execution and prevents server takeover",
+                patterns: {
+                  title: "Detection Pattern Examples:",
+                  items: [
+                    { code: ";ls -la", desc: "Command chaining" },
+                    { code: "|cat /etc/passwd", desc: "Pipe execution" },
+                    { code: "$(whoami)", desc: "Command substitution" }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            id: "warning",
+            title: "Web Attack Detection Rules",
+            severity: "WARNING", 
+            severityColor: "warning",
+            rules: [
+              {
+                name: "XSS Attack Detection",
+                indicator: "🟡",
+                description: "Detects cross-site scripting attacks and prevents malicious script execution",
+                patterns: {
+                  title: "Detection Pattern Examples:",
+                  items: [
+                    { code: "<script>alert('xss')</script>", desc: "" },
+                    { code: "javascript:void(0)", desc: "" },
+                    { code: "onerror=\"alert(1)\"", desc: "" }
+                  ]
+                }
+              },
+              {
+                name: "Path Traversal Attack Detection",
+                indicator: "🟡", 
+                description: "Detects directory traversal attacks and blocks unintended file access",
+                patterns: {
+                  title: "Detection Pattern Examples:",
+                  items: [
+                    { code: "../../../etc/passwd", desc: "" },
+                    { code: "..\\\\..\\\\windows\\\\system32", desc: "" },
+                    { code: "/etc/shadow", desc: "" }
+                  ]
+                }
+              },
+              {
+                name: "Sensitive File Access Detection",
+                indicator: "🟡",
+                description: "Monitors unauthorized access to important configuration files and prevents information leakage",
+                patterns: {
+                  title: "Detection Pattern Examples:",
+                  items: [
+                    { code: ".env", desc: "Environment variable files" },
+                    { code: ".git/config", desc: "Git configuration" },
+                    { code: "wp-config.php", desc: "WordPress configuration" }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            id: "notice",
+            title: "Reconnaissance & Authentication Attack Detection Rules",
+            severity: "NOTICE",
+            severityColor: "notice", 
+            rules: [
+              {
+                name: "Security Scan Detection",
+                indicator: "🔵",
+                description: "Detects reconnaissance activities before attacks and identifies threats in advance",
+                patterns: {
+                  title: "Detection Targets:",
+                  items: [
+                    { code: "", desc: "High-volume access by automated tools" },
+                    { code: "", desc: "Vulnerability scanner activity" },
+                    { code: "", desc: "System information gathering attempts" }
+                  ]
+                }
+              },
+              {
+                name: "Brute Force Attack Detection",
+                indicator: "🔵",
+                description: "Detects brute force attempts to break through authentication",
+                patterns: {
+                  title: "Detection Targets:",
+                  items: [
+                    { code: "", desc: "Consecutive authentication failures" },
+                    { code: "", desc: "Dictionary attack patterns" },
+                    { code: "", desc: "Abnormal login attempts" }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            id: "info",
+            title: "System Monitoring Rules", 
+            severity: "INFO",
+            severityColor: "info",
+            rules: [
+              {
+                name: "System Anomaly State Monitoring",
+                indicator: "🟢",
+                description: "Monitors abnormal web server behavior and error states to ensure system health",
+                patterns: {
+                  title: "Monitoring Items:",
+                  items: [
+                    { code: "", desc: "High volume of 4xx/5xx errors" },
+                    { code: "", desc: "Abnormal response times" },
+                    { code: "", desc: "Resource exhaustion signs" }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       },
       installation: {
         title: "Installation Guide",
@@ -494,67 +770,38 @@ export default function Home() {
           </div>
           
           <div className="rule-categories">
-            <div className="category-section">
-              <h3 className="category-title">
-                <span className="severity-badge critical">CRITICAL</span>
-                セキュリティ攻撃検知ルール
-              </h3>
-              <div className="rule-grid">
-                <div className="rule-card">
-                  <div className="rule-header">
-                    <h4>SQL Injection 攻撃検知</h4>
-                    <span className="severity-indicator critical">🔴</span>
-                  </div>
-                  <p>悪意のあるSQL文の挿入を検知し、データベースへの不正アクセスを即座にブロック</p>
-                  <div className="detection-patterns">
-                    <strong>検知パターン例:</strong>
-                    <ul>
-                      <li><code>' OR 1=1</code> - 認証回避</li>
-                      <li><code>UNION SELECT</code> - データ窃取</li>
-                      <li><code>; DROP TABLE</code> - データ破壊</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="rule-card">
-                  <div className="rule-header">
-                    <h4>Command Injection 攻撃検知</h4>
-                    <span className="severity-indicator critical">🔴</span>
-                  </div>
-                  <p>システムコマンドの不正実行を検知し、サーバー乗っ取りを防止</p>
-                  <div className="detection-patterns">
-                    <strong>検知パターン例:</strong>
-                    <ul>
-                      <li><code>;ls -la</code> - コマンド連結</li>
-                      <li><code>|cat /etc/passwd</code> - パイプ実行</li>
-                      <li><code>$(whoami)</code> - コマンド置換</li>
-                    </ul>
-                  </div>
+            {content[language].detection.categories.map((category) => (
+              <div key={category.id} className="category-section">
+                <h3 className="category-title">
+                  <span className={`severity-badge ${category.severityColor}`}>{category.severity}</span>
+                  {category.title}
+                </h3>
+                <div className="rule-grid">
+                  {category.rules.map((rule, index) => (
+                    <div key={index} className="rule-card">
+                      <div className="rule-header">
+                        <h4>{rule.name}</h4>
+                        <span className={`severity-indicator ${category.severityColor}`}>{rule.indicator}</span>
+                      </div>
+                      <p>{rule.description}</p>
+                      <div className="detection-patterns">
+                        <strong>{rule.patterns.title}</strong>
+                        <ul>
+                          {rule.patterns.items.map((item, itemIndex) => (
+                            <li key={itemIndex}>
+                              {item.code && <code>{item.code}</code>}
+                              {item.desc && (item.code ? ` - ${item.desc}` : item.desc)}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
 
-            <div className="category-section">
-              <h3 className="category-title">
-                <span className="severity-badge warning">WARNING</span>
-                Web攻撃検知ルール
-              </h3>
-              <div className="rule-grid">
-                <div className="rule-card">
-                  <div className="rule-header">
-                    <h4>XSS 攻撃検知</h4>
-                    <span className="severity-indicator warning">🟡</span>
-                  </div>
-                  <p>クロスサイトスクリプティング攻撃を検知し、悪意のあるスクリプト実行を防止</p>
-                  <div className="detection-patterns">
-                    <strong>検知パターン例:</strong>
-                    <ul>
-                      <li><code>&lt;script&gt;alert('xss')&lt;/script&gt;</code></li>
-                      <li><code>javascript:void(0)</code></li>
-                      <li><code>onerror="alert(1)"</code></li>
-                    </ul>
-                  </div>
-                </div>
 
                 <div className="rule-card">
                   <div className="rule-header">
