@@ -1759,6 +1759,11 @@ body {
 }
 
 /* Environment Setup Styles */
+#environment {
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
 .spec-table, .requirement-table table {
   width: 100%;
   border-collapse: collapse;
@@ -1797,6 +1802,17 @@ body {
 .step-item h4 {
   color: var(--primary-blue);
   margin-bottom: 0.5rem;
+}
+
+/* Ensure environment section visibility */
+.requirement-table {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.requirement-table table {
+  display: table !important;
+  width: 100% !important;
 }
 
 .arrow {
