@@ -141,7 +141,7 @@ export default function FalcoNginxTutorial() {
                   </div>
                   <div className="feature-item">
                     <h4>⚡ 超軽量動作</h4>
-                    <p>Go言語実装でオーバーヘッド最小、本番環境での安定稼働</p>
+                    <p>Go言語実装でオーバーヘッド最小</p>
                   </div>
                   <div className="feature-item">
                     <h4>📝 柔軟なルール作成</h4>
