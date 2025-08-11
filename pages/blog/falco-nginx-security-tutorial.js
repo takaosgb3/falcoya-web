@@ -147,10 +147,6 @@ export default function FalcoNginxTutorial() {
                     <h4>📝 直感的ルール作成</h4>
                     <p>YAML形式で攻撃パターンを柔軟に定義・カスタマイズ</p>
                   </div>
-                  <div className="feature-item">
-                    <h4>🔗 既存システム連携</h4>
-                    <p>ログ管理システムとシームレスに統合</p>
-                  </div>
                 </div>
               </section>
 
