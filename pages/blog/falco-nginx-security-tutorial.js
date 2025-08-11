@@ -550,9 +550,6 @@ export default function FalcoNginxTutorial() {
                 </ul>
 
 
-                <div className="final-message">
-                  <p><strong>この実践ガイドがWebアプリケーションセキュリティの向上に役立つことを願っています。セキュリティは継続的な取り組みです。定期的な見直しと改善を続けて、より安全なWebサービスを提供していきましょう！</strong> 🛡️</p>
-                </div>
               </section>
 
             </article>
