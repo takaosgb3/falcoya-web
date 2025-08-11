@@ -232,22 +232,6 @@ body {
   list-style: none;
 }
 
-.search-icon {
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: 0.5rem;
-  margin-left: 1rem;
-  transition: all 0.3s ease;
-  border-radius: 8px;
-}
-
-.search-icon:hover {
-  color: var(--neon-blue);
-  background: rgba(0, 210, 255, 0.1);
-  transform: scale(1.1);
-}
 
 .nav-menu a {
   color: var(--text-secondary);
@@ -2084,10 +2068,6 @@ body {
   
   .steps {
     grid-template-columns: 1fr;
-  }
-  
-  .search-icon {
-    display: none;
   }
   
   .hero-container {
