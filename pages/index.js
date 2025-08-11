@@ -93,6 +93,13 @@ export default function Home() {
           if (entry.isIntersecting) {
             const counter = entry.target
             const target = parseInt(counter.getAttribute('data-target'))
+            
+            // Skip animation for non-numeric targets
+            if (isNaN(target)) {
+              observer.unobserve(counter)
+              return
+            }
+            
             const increment = target / 50
             let current = 0
             
@@ -268,7 +275,7 @@ export default function Home() {
                 <div className="stat-label">コマンドでインストール</div>
               </div>
               <div className="stat-item glass">
-                <div className="stat-display">24X7</div>
+                <div className="stat-number" data-target="">24X7</div>
                 <div className="stat-label">監視</div>
               </div>
             </div>
