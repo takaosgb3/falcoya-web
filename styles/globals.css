@@ -1078,6 +1078,21 @@ body {
   gap: 0.5rem;
 }
 
+.code-block-with-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.code-block-with-copy .code-inline {
+  width: 100%;
+}
+
+.code-block-with-copy .copy-button {
+  align-self: flex-end;
+  margin: 0;
+}
+
 .code-inline {
   background: #1F2937;
   padding: 0.75rem;

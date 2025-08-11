@@ -822,7 +822,7 @@ export default function Home() {
                 <span className="step-number">{step.number}</span>
                 <h3>{step.title}</h3>
                 {index === 0 ? (
-                  <div className="code-inline-container">
+                  <div className="code-block-with-copy">
                     <div className="code-inline">
                       <code>{step.command}</code>
                     </div>
