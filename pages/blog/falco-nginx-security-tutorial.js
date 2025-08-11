@@ -308,22 +308,6 @@ export default function FalcoNginxTutorial() {
                   </div>
                 </div>
 
-                <h3>初期設定コマンド</h3>
-                <div className="code-block">
-                  <div className="code-header">システム初期化</div>
-                  <pre><code>{`# システム更新
-sudo apt update && sudo apt upgrade -y
-
-# 基本ツールインストール
-sudo apt install -y nginx curl jq htop
-
-# Nginxサービス開始
-sudo systemctl start nginx
-sudo systemctl enable nginx
-
-# 動作確認
-curl localhost`}</code></pre>
-                </div>
               </section>
 
               {/* Installation */}
