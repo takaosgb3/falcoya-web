@@ -284,7 +284,7 @@ export default function FalcoNginxTutorial() {
                       <tr>
                         <td><strong>ストレージ</strong></td>
                         <td>10GB以上</td>
-                        <td>ログファイル保存用</td>
+                        <td>ログファイル保存用(必要な場合)</td>
                       </tr>
                     </tbody>
                   </table>
