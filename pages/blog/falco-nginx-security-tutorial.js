@@ -144,7 +144,7 @@ export default function FalcoNginxTutorial() {
                 <h3>全体アーキテクチャー</h3>
                 <div className="architecture-diagram">
                   <div className="diagram-title">
-                    <h4>📊 システムアーキテクチャフロー</h4>
+                    <h4>📊 システムアーキテクチャーフロー</h4>
                   </div>
                   <div className="diagram-container">
                     <div className="flow-item user-item">👥 攻撃者/正規ユーザー</div>
