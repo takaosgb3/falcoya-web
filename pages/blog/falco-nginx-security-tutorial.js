@@ -160,7 +160,7 @@ export default function FalcoNginxTutorial() {
                     <h4>📊 システムアーキテクチャフロー</h4>
                   </div>
                   <div className="diagram-container">
-                    <div className="flow-item user-item">🔰 攻撃者/正規ユーザー</div>
+                    <div className="flow-item user-item">👥 攻撃者/正規ユーザー</div>
                     <div className="arrow">⬇️</div>
                     <div className="flow-item server-item">🌐 Nginx Webサーバー</div>
                     <div className="arrow">⬇️</div>
