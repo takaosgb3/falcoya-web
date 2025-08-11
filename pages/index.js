@@ -195,6 +195,16 @@ export default function Home() {
       </Head>
 
       <canvas ref={canvasRef} className="particle-canvas" />
+      
+      <div className="prototype-notice">
+        <div className="notice-container">
+          <span className="notice-icon">⚠️</span>
+          <span className="notice-text">
+            <strong>開発段階のお知らせ:</strong> falco-plugin-nginx は現在プロトタイプ公開段階です。開発更新・デバッグを高頻度で実施中のため、予期しない動作が発生する可能性があります。
+          </span>
+        </div>
+      </div>
+
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">

@@ -144,12 +144,49 @@ body {
   transform: translateY(0);
 }
 
+/* Prototype Notice */
+.prototype-notice {
+  background: linear-gradient(90deg, #FEF3C7, #FDE68A);
+  border-bottom: 2px solid #F59E0B;
+  padding: 0.75rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+.notice-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 2rem;
+}
+
+.notice-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.notice-text {
+  font-size: 0.875rem;
+  color: #92400E;
+  line-height: 1.4;
+}
+
+.notice-text strong {
+  color: #78350F;
+  font-weight: 600;
+}
+
 /* Navigation */
 .navbar {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   position: fixed;
-  top: 0;
+  top: 50px;
   width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -233,7 +270,7 @@ body {
 
 /* Hero Section */
 .hero {
-  margin-top: 70px;
+  margin-top: 120px;
   padding: 3rem 2rem;
   background: transparent;
   position: relative;
@@ -1143,6 +1180,26 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .prototype-notice {
+    padding: 0.5rem 0;
+  }
+  
+  .notice-container {
+    padding: 0 1rem;
+  }
+  
+  .notice-text {
+    font-size: 0.8rem;
+  }
+  
+  .navbar {
+    top: 45px;
+  }
+  
+  .hero {
+    margin-top: 115px;
+  }
+  
   .hero-bg-circle {
     width: 300px;
     height: 300px;
