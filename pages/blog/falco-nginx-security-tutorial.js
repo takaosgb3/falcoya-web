@@ -219,6 +219,86 @@ export default function FalcoNginxTutorial() {
                 </div>
               </section>
 
+              {/* Environment Setup */}
+              <section id="environment">
+                <h2>3. 環境準備 - AWS EC2セットアップ</h2>
+                
+                <h3>推奨環境仕様</h3>
+                <p>効果的なテスト環境を構築するための推奨仕様:</p>
+                
+                <div className="requirement-table">
+                  <table className="spec-table">
+                    <thead>
+                      <tr>
+                        <th>項目</th>
+                        <th>推奨値</th>
+                        <th>説明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>インスタンスタイプ</strong></td>
+                        <td>t2.micro以上</td>
+                        <td>無料利用枠でも動作</td>
+                      </tr>
+                      <tr>
+                        <td><strong>OS</strong></td>
+                        <td>Ubuntu 22.04 LTS</td>
+                        <td>長期サポート版</td>
+                      </tr>
+                      <tr>
+                        <td><strong>カーネル</strong></td>
+                        <td>5.8以上</td>
+                        <td>modern eBPF対応</td>
+                      </tr>
+                      <tr>
+                        <td><strong>メモリ</strong></td>
+                        <td>1GB以上</td>
+                        <td>Falco動作に最低限必要</td>
+                      </tr>
+                      <tr>
+                        <td><strong>ストレージ</strong></td>
+                        <td>10GB以上</td>
+                        <td>ログファイル保存用</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h3>EC2インスタンス作成手順</h3>
+                <div className="setup-steps">
+                  <div className="step-item">
+                    <h4>1. AMI選択</h4>
+                    <p>Ubuntu Server 22.04 LTS (HVM) を選択</p>
+                  </div>
+                  <div className="step-item">
+                    <h4>2. セキュリティグループ設定</h4>
+                    <p>HTTP (80), SSH (22) ポートを許可</p>
+                  </div>
+                  <div className="step-item">
+                    <h4>3. キーペア設定</h4>
+                    <p>SSH接続用のキーペアを作成・設定</p>
+                  </div>
+                </div>
+
+                <h3>初期設定コマンド</h3>
+                <div className="code-block">
+                  <div className="code-header">システム初期化</div>
+                  <pre><code>{`# システム更新
+sudo apt update && sudo apt upgrade -y
+
+# 基本ツールインストール
+sudo apt install -y nginx curl jq htop
+
+# Nginxサービス開始
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+# 動作確認
+curl localhost`}</code></pre>
+                </div>
+              </section>
+
               {/* Installation */}
               <section id="installation">
                 <h2>4. インストール - ワンライナーで簡単導入</h2>
@@ -231,6 +311,11 @@ export default function FalcoNginxTutorial() {
                   <pre><code>curl -sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh | sudo bash</code></pre>
                 </div>
 
+                <div className="image-container">
+                  <img src="/img/install-s.png" alt="インストール成功画面" className="blog-image" />
+                  <p className="image-caption">インストール完了時の画面表示例</p>
+                </div>
+
                 <h3>📋 テスト環境付きインストール</h3>
                 <p>攻撃テスト用のサンプルサイトも同時にセットアップする場合：</p>
                 
@@ -238,6 +323,11 @@ export default function FalcoNginxTutorial() {
                   <div className="code-header">テスト環境付きインストール</div>
                   <pre><code>curl -sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh \
   | sudo SETUP_TEST_CONTENT=yes bash</code></pre>
+                </div>
+
+                <div className="image-container">
+                  <img src="/img/test-site.png" alt="テストサイト画面" className="blog-image" />
+                  <p className="image-caption">テスト環境で構築されるサンプルサイト</p>
                 </div>
                 
                 <div className="info-box">
@@ -250,6 +340,18 @@ export default function FalcoNginxTutorial() {
                     <li>Falco設定の更新</li>
                     <li>サービスの起動・有効化</li>
                   </ol>
+                </div>
+
+                <div className="warning-box">
+                  <h4>⚠️ インストール時の注意事項</h4>
+                  <p>システム環境によってはエラーが発生する場合があります。以下のような問題が起きた場合の対処法:</p>
+                  
+                  <div className="image-container">
+                    <img src="/img/install-e.png" alt="インストールエラー画面" className="blog-image" />
+                    <p className="image-caption">インストール時のエラー例と対処方法</p>
+                  </div>
+                  
+                  <p>権限エラーやカーネルバージョンの問題が発生した場合は、システムの更新やFalcoの依存関係を確認してください。</p>
                 </div>
               </section>
 
@@ -267,6 +369,11 @@ export default function FalcoNginxTutorial() {
 
                 <h3>攻撃テストの実行</h3>
                 
+                <div className="image-container">
+                  <img src="/img/atack.png" alt="攻撃テスト実行画面" className="blog-image" />
+                  <p className="image-caption">実際の攻撃テスト実行とリアルタイム検知の様子</p>
+                </div>
+
                 <h4>1. SQL Injection攻撃</h4>
                 <div className="attack-demo">
                   <div className="code-block">
@@ -305,6 +412,14 @@ export default function FalcoNginxTutorial() {
                       <pre><code><span className="log-warning">Warning [NGINX XSS]</span> ip=127.0.0.1 method=GET path=/search.php qs=q=%3Cscript%3Ealert(1)%3C/script%3E ua=curl/7.81.0 status=200</code></pre>
                     </div>
                   </div>
+                </div>
+
+                <h3>検知結果の確認</h3>
+                <p>実行した攻撃パターンがすべて検知されていることを確認できます：</p>
+                
+                <div className="image-container">
+                  <img src="/img/detection.png" alt="検知ログ画面" className="blog-image" />
+                  <p className="image-caption">Falcoによる各種攻撃パターンの検知ログ</p>
                 </div>
               </section>
 

@@ -1716,6 +1716,89 @@ body {
   font-weight: 400;
 }
 
+/* Blog Image Styles */
+.image-container {
+  margin: 2rem 0;
+  text-align: center;
+  background: var(--bg-gray);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.blog-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.blog-image:hover {
+  transform: scale(1.02);
+}
+
+.image-caption {
+  margin: 1rem 0 0 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.warning-box {
+  background: #FEF3C7;
+  border: 2px solid #F59E0B;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.warning-box h4 {
+  color: #92400E;
+  margin-bottom: 1rem;
+}
+
+/* Environment Setup Styles */
+.spec-table, .requirement-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: var(--bg-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spec-table th, .spec-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spec-table th {
+  background: var(--bg-gray);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.setup-steps {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.step-item {
+  background: var(--bg-gray);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.step-item h4 {
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
 .arrow {
   color: var(--primary-blue);
   font-size: 1.5rem;
