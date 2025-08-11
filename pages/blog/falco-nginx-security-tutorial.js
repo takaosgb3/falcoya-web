@@ -119,18 +119,6 @@ export default function FalcoNginxTutorial() {
                   <li><strong>コマンドインジェクション</strong>: サーバー上での任意コマンド実行</li>
                 </ul>
 
-                <h3>従来のセキュリティ対策の限界</h3>
-                <p>従来のWAF（Web Application Firewall）や静的解析ツールでは、以下の課題がありました：</p>
-                
-                <div className="highlight-box">
-                  <ul>
-                    <li><strong>遅延検知</strong>: ログ分析が後追いになりがち</li>
-                    <li><strong>複雑な設定</strong>: 専門知識が必要で導入コストが高い</li>
-                    <li><strong>誤検知</strong>: 正常なトラフィックまでブロックしてしまう</li>
-                    <li><strong>可視性の不足</strong>: 攻撃の全体像が把握しにくい</li>
-                  </ul>
-                </div>
-
                 <h3>Falco + Nginxプラグインが提供するソリューション</h3>
                 <p><strong>falco-plugin-nginx</strong>は、CNCF所属のFalcoとNginxを連携させるプラグインで、以下の特徴により革新的なWebセキュリティ監視を実現します：</p>
                 
