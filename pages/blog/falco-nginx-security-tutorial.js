@@ -98,7 +98,7 @@ export default function FalcoNginxTutorial() {
                 <a href="#detection-analysis">7. 検知ログの詳細分析</a>
                 <a href="#custom-rules">8. カスタムルールの作成</a>
                 <a href="#production-considerations">9. 運用時の考慮事項</a>
-                <a href="#conclusion">10. まとめと次のステップ</a>
+                <a href="#conclusion">10. まとめ</a>
               </nav>
             </aside>
 
@@ -332,7 +332,7 @@ export default function FalcoNginxTutorial() {
                 <h4>管理画面への不正アクセス検知</h4>
                 <div className="code-block">
                   <div className="code-header">/etc/falco/rules.d/local_nginx_rules.yaml</div>
-                  <pre><code># 管理系パスのリスト
+                  <pre><code>{`# 管理系パスのリスト
 - list: admin_paths
   items: ["/admin", "/administrator", "/wp-admin", "/phpmyadmin"]
 
@@ -347,16 +347,16 @@ export default function FalcoNginxTutorial() {
 # 管理画面への不正アクセス検知ルール
 - rule: NGINX Unauthorized Admin Access
   desc: Detect unauthorized access to admin pages
-  condition: &gt;
+  condition: >
     is_nginx_event and 
     (nginx.path startswith "/admin" or nginx.path in (admin_paths)) and
     not (nginx.ip in (admin_ips))
-  output: &gt;
+  output: >
     [UNAUTHORIZED ADMIN ACCESS] Suspicious admin access detected
     (ip=%nginx.ip method=%nginx.method path=%nginx.path ua="%nginx.ua" 
      status=%nginx.status size=%nginx.size)
   priority: Critical
-  tags: [nginx, web, unauthorized, admin]</code></pre>
+  tags: [nginx, web, unauthorized, admin]`}</code></pre>
                 </div>
 
                 <div className="validation-steps">
@@ -388,7 +388,7 @@ export default function FalcoNginxTutorial() {
 
               {/* Conclusion */}
               <section id="conclusion">
-                <h2>10. まとめと次のステップ</h2>
+                <h2>10. まとめ</h2>
                 
                 <h3>今回達成したこと</h3>
                 <div className="achievement-list">
@@ -418,36 +418,6 @@ export default function FalcoNginxTutorial() {
                   <li><strong>統合性</strong>: 既存のモニタリング・アラート基盤との連携が容易</li>
                 </ul>
 
-                <div className="next-steps">
-                  <h3>次のステップ</h3>
-                  
-                  <div className="step-card">
-                    <h4>1. 本番環境への適用</h4>
-                    <ul>
-                      <li>段階的デプロイによる安全な導入</li>
-                      <li>既存のセキュリティ機構との併用</li>
-                      <li>継続的な監視と調整</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="step-card">
-                    <h4>2. 高度な機能の活用</h4>
-                    <ul>
-                      <li>Machine Learningによるアノマリ検知</li>
-                      <li>Kubernetesでのコンテナセキュリティ</li>
-                      <li>クラウドサービスとの統合</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="step-card">
-                    <h4>3. セキュリティ体制の強化</h4>
-                    <ul>
-                      <li>インシデント対応の自動化</li>
-                      <li>チームのスキル向上</li>
-                      <li>継続的な改善プロセス</li>
-                    </ul>
-                  </div>
-                </div>
 
                 <div className="final-message">
                   <p><strong>この実践ガイドがWebアプリケーションセキュリティの向上に役立つことを願っています。セキュリティは継続的な取り組みです。定期的な見直しと改善を続けて、より安全なWebサービスを提供していきましょう！</strong> 🛡️</p>
