@@ -3,61 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>falcoya</title>
+  <title>FALCOYA - Falco + Nginxログで攻撃を可視化</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Sora:wght@600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="flcoya-logo.png" alt="FALCOYA" />
+        <span>FALCOYA</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="https://github.com" target="_blank">GitHub</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <header class="hero">
-    <img src="flcoya-logo.png" alt="falcoya logo" class="logo" />
-    <h1>Craft more than detect.</h1>
-    <p class="sub">小さな調整で、大きく静かな安全を。</p>
-    <a href="#plans" class="cta">Start now</a>
+    <div class="hero-container">
+      <div class="hero-left">
+        <img src="flcoya-logo.png" alt="FALCOYA" class="hero-logo" />
+      </div>
+      <div class="hero-content">
+        <h1>Falco + Nginxログで、<br>攻撃を可視化する。</h1>
+        <p class="hero-description">falco-plugin-nginx は、NginxアクセスログをFalcoで解析するOSSプラグインのOSSプラン。</p>
+        <a href="https://github.com" class="cta-button">GitHubで見る</a>
+        
+        <div class="code-block">
+          <div class="code-header">falco-plugin-nginx</div>
+          <pre><code>HostName: Unexpected one request
+using method.: GET method="/evil.js"
+Hostname: falco-1
+Procname id: falco><?=f74d03f67
+Container-name: web-nginx
+Rule: XSS attempt</code></pre>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <section id="metrics" class="metrics">
-    <div class="metric" data-target="98">0</div>
-    <div class="metric" data-target="3">0</div>
-    <div class="metric" data-target="24">0</div>
-  </section>
-
-  <section id="proof" class="proof">
-    <h2>Proof</h2>
-    <p>ノイズを削り、本物の脅威だけを残す。</p>
-  </section>
-
-  <section id="how" class="how">
-    <h2>How</h2>
-    <ul>
-      <li>Falco ルール最適化</li>
-      <li>リアルタイム警告</li>
-      <li>OSS コミュニティへの貢献</li>
-    </ul>
-  </section>
-
-  <section id="plans" class="plans">
-    <h2>Plans</h2>
-    <div class="plan">
-      <h3>Starter</h3>
-      <p>PoC 向け</p>
-    </div>
-    <div class="plan">
-      <h3>Guild</h3>
-      <p>成果物を共有</p>
-    </div>
-    <div class="plan">
-      <h3>Enterprise</h3>
-      <p>カスタム支援</p>
+  <section id="about" class="about">
+    <div class="container">
+      <h2>このプロジェクトについて</h2>
+      <ul class="about-list">
+        <li>Nginxログから攻撃｜SQL、XS、XSS各種</li>
+        <li>攻撃警報をFalco プログ検知</li>
+      </ul>
     </div>
   </section>
 
-  <footer class="cta-section">
-    <p>Join us.</p>
-    <a href="#" class="cta">Guild 招待</a>
+  <section id="examples" class="examples">
+    <div class="container">
+      <h2>検知例</h2>
+      <div class="example-cards">
+        <div class="example-card">
+          <h3>SQL Injection試行検知</h3>
+          <p>子役を狙くとも悪意あるSQLクエリ検出する</p>
+          <a href="#" class="link-button">ルールを見る</a>
+        </div>
+        <div class="example-card">
+          <h3>XSS攻撃試行検知</h3>
+          <p>これにSOS プロ ジェルクラ フトみ嘩無る</p>
+          <a href="#" class="link-button">ルールを見る</a>
+        </div>
+        <div class="example-card">
+          <h3>Path Traversal検知</h3>
+          <p>ファイル参照抜けの試みをとらえなど</p>
+          <a href="#" class="link-button">ルールを見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="footer">
+    <div class="container">
+      <p class="footer-text">セキュリティの未来を一緒に作りましょう</p>
+      <a href="#" class="cta-button">お問い合わせ</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
