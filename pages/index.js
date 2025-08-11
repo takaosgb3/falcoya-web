@@ -158,16 +158,13 @@ export default function Home() {
             </div>
             
             <div className="code-block">
-              <div className="code-header">falco-plugin-nginx</div>
-              <pre><code><span className="comment"># ワンライナーインストール</span>
-<span className="key">curl</span> <span className="value">-sSL https://raw.githubusercontent.com/takaosgb3/falco-plugin-nginx/main/install.sh</span> | sudo bash
-
-<span className="comment"># Falcoで脅威検知開始</span>
-<span className="key">sudo systemctl start falco</span>
-
-<span className="error">*** XSS Attack Detected ***</span>
+              <div className="code-header">Falco Detection Example</div>
+              <pre><code><span className="error">*** XSS Attack Detected ***</span>
 <span className="key">Priority:</span> <span className="value">Warning</span>
-<span className="key">Rule:</span> <span className="error">Nginx XSS Attack</span></code></pre>
+<span className="key">Rule:</span> <span className="error">Nginx XSS Attack</span>
+<span className="key">Time:</span> <span className="value">2024-08-11T10:30:45.123Z</span>
+<span className="key">Source IP:</span> <span className="value">192.168.1.100</span>
+<span className="key">Request:</span> <span className="value">GET /?q=&lt;script&gt;alert('xss')&lt;/script&gt;</span></code></pre>
             </div>
           </div>
         </div>
