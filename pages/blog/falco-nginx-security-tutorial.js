@@ -117,7 +117,9 @@ export default function FalcoNginxTutorial() {
                 </ul>
 
                 <h3>Falco + Nginxプラグインが提供するソリューション</h3>
-                <p><strong>falco-plugin-nginx</strong>は、CNCF所属のFalcoとNginxを連携させるプラグインで、以下の特徴により革新的なWebセキュリティ監視を実現します：</p>
+                <p><strong>falco-plugin-nginx</strong> は、CNCF プロジェクトである Falco に Nginx アクセスログ解析機能を追加するプラグインです。これにより、Nginx を経由したリクエストから SQLインジェクション、XSS、ディレクトリトラバーサル、コマンドインジェクションなどの攻撃パターンをリアルタイムに検知できます。</p>
+                
+                <p>主な特徴：</p>
                 
                 <div className="feature-grid">
                   <div className="feature-item">
