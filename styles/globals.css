@@ -2116,6 +2116,13 @@ body {
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: contain;
     font-size: 16px; /* 最小フォントサイズ確保 */
+    overflow-x: hidden; /* 横スクロールを完全に防止 */
+  }
+  
+  /* コンテナの横スクロール防止 */
+  main, section, article, div {
+    max-width: 100%;
+    overflow-x: hidden;
   }
   
   /* ナビゲーションのモバイル対応 */
@@ -2575,153 +2582,252 @@ body {
   /* 記事ページ最適化 */
   .article-header {
     margin-top: 95px;
-    padding: 3rem 1rem 2rem;
+    padding: 2rem 1rem 1.5rem;
   }
   
   .breadcrumb {
-    font-size: 0.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   
   .article-meta {
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
   }
   
   .article-date, .article-read-time, .article-category {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.7rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
   }
   
   .article-title {
-    font-size: 1.75rem;
-    line-height: 1.3;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.35;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
   
   .article-title .subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 0.5rem;
+    display: block;
   }
   
   .article-tags {
-    gap: 0.4rem;
+    gap: 0.3rem;
+    flex-wrap: wrap;
   }
   
   .article-tags .tag {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.7rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
   }
   
   .article-main {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
   
   .article-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
+  /* 目次を折りたたみ可能に */
   .table-of-contents {
     position: static;
     width: 100%;
-    margin-bottom: 2rem;
-    padding: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
     max-height: none;
     order: -1;
+    background: var(--bg-gray);
+    border-radius: 8px;
   }
   
   .table-of-contents h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .table-of-contents nav {
+    max-height: 200px;
+    overflow-y: auto;
   }
   
   .table-of-contents a {
-    font-size: 0.85rem;
-    padding: 0.4rem 0;
+    font-size: 0.8rem;
+    padding: 0.3rem 0;
+    display: block;
   }
   
+  /* 記事本文の読みやすさ向上 */
   .article-content {
-    line-height: 1.7;
+    line-height: 1.8;
+    padding: 0 0.5rem;
   }
   
   .article-content h2 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
     margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom-width: 1px;
   }
   
   .article-content h3 {
-    font-size: 1.25rem;
-    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
     margin-bottom: 0.75rem;
   }
   
   .article-content h4 {
-    font-size: 1.1rem;
-    margin-top: 1.25rem;
+    font-size: 1.05rem;
+    margin-top: 1.5rem;
     margin-bottom: 0.5rem;
   }
   
   .article-content p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
   
   .article-content ul, .article-content ol {
-    font-size: 0.95rem;
-    padding-left: 1.5rem;
+    font-size: 1rem;
+    padding-left: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
   }
   
   .article-content code {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 0.85rem;
+    padding: 0.15rem 0.3rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    word-break: break-all;
   }
   
   .highlight-box, .info-box, .warning-box {
-    padding: 1.25rem;
-    margin: 1.5rem 0;
+    padding: 1rem;
+    margin: 1.5rem -0.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
   }
   
   .feature-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.75rem;
   }
   
   .feature-item {
-    padding: 1.25rem;
-  }
-  
-  .architecture-diagram {
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-  }
-  
-  .flow-item {
-    min-width: 150px;
-    max-width: 250px;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
-  }
-  
-  .image-container {
-    margin: 1.5rem -1rem;
     padding: 1rem;
   }
   
+  .architecture-diagram {
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  
+  .flow-item {
+    min-width: 120px;
+    max-width: 200px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  /* 画像の最適化 */
+  .image-container {
+    margin: 1.5rem 0;
+    padding: 0;
+  }
+  
+  .blog-image,
+  .article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
   .image-caption {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  /* テーブルのモバイル最適化 */
+  .spec-table,
+  .attack-table,
+  .article-content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.5rem 0;
+  }
+  
+  .spec-table th,
+  .spec-table td,
+  .attack-table th,
+  .attack-table td {
+    padding: 0.5rem;
     font-size: 0.8rem;
+    white-space: nowrap;
   }
   
-  .spec-table th, .spec-table td {
-    padding: 0.75rem;
-    font-size: 0.85rem;
+  /* コードブロックの最適化 */
+  .article-content pre {
+    margin: 1.5rem -0.5rem;
+    padding: 1rem 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    background: #1F2937;
+    border-radius: 6px;
   }
   
-  .attack-table th, .attack-table td {
-    padding: 0.75rem;
-    font-size: 0.85rem;
+  .article-content pre code {
+    display: block;
+    padding: 0;
+    background: transparent;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    white-space: pre;
+    word-break: normal;
+    overflow-x: auto;
+  }
+  
+  /* 横スクロール可能な要素の視覚的フィードバック */
+  .spec-table::-webkit-scrollbar,
+  .attack-table::-webkit-scrollbar,
+  .article-content pre::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .spec-table::-webkit-scrollbar-track,
+  .attack-table::-webkit-scrollbar-track,
+  .article-content pre::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+  
+  .spec-table::-webkit-scrollbar-thumb,
+  .attack-table::-webkit-scrollbar-thumb,
+  .article-content pre::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
   }
   
   /* パフォーマンス最適化 */
@@ -2732,10 +2838,16 @@ body {
     will-change: transform;
   }
   
-  /* 横スクロール防止 */
-  pre, code {
-    word-wrap: break-word;
+  /* 基本的な横スクロール防止 */
+  .article-content {
     overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* 長いURLやテキストの折り返し */
+  .article-content a {
+    word-break: break-all;
   }
 }
 
@@ -2821,5 +2933,27 @@ body {
   .notice-text {
     font-size: 0.75rem;
     line-height: 1.3;
+  }
+  
+  /* 記事ページの追加最適化 */
+  .article-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  
+  .article-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .article-content h3 {
+    font-size: 1.15rem;
+  }
+  
+  .article-content h4 {
+    font-size: 1rem;
+  }
+  
+  .table-of-contents nav {
+    max-height: 150px;
   }
 }
