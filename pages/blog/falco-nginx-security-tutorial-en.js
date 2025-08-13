@@ -1,10 +1,30 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function FalcoNginxTutorialEn() {
   const [language, setLanguage] = useState('en')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
+  // 画面サイズ変更時にモバイルメニューを閉じる
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 767) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('orientationchange', handleResize)
+    
+    // 初回実行
+    handleResize()
+    
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('orientationchange', handleResize)
+    }
+  }, [])
   
   return (
     <>

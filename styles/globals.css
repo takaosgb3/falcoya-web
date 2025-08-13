@@ -2073,6 +2073,21 @@ body {
   border: 1px solid rgba(79, 70, 229, 0.1);
 }
 
+/* タブレット以上のデバイスでモバイルメニューを確実に非表示 */
+@media (min-width: 768px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+  
+  .mobile-menu {
+    display: none !important;
+  }
+  
+  .desktop-menu {
+    display: flex !important;
+  }
+}
+
 /* Responsive - モバイル専用（768px未満） */
 @media (max-width: 767px) {
   /* モバイルスクロール最適化 */

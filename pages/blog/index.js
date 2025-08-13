@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const blogPosts = {
   ja: [
@@ -32,6 +32,26 @@ const blogPosts = {
 export default function BlogIndex() {
   const [language, setLanguage] = useState('ja')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
+  // 画面サイズ変更時にモバイルメニューを閉じる
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 767) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('orientationchange', handleResize)
+    
+    // 初回実行
+    handleResize()
+    
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('orientationchange', handleResize)
+    }
+  }, [])
   
   const content = {
     ja: {
