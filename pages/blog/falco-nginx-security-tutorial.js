@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 export default function FalcoNginxTutorial() {
   const [language, setLanguage] = useState('ja')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const router = useRouter()
   
   // 画面サイズ変更時にモバイルメニューを閉じる
   useEffect(() => {
@@ -68,13 +70,20 @@ export default function FalcoNginxTutorial() {
             <div className="language-switcher">
               <button 
                 className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
-                onClick={() => setLanguage('ja')}
+                onClick={() => {
+                  setLanguage('ja')
+                  // 既に日本語ページにいるので何もしない
+                }}
               >
                 日本語
               </button>
               <button 
                 className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-                onClick={() => setLanguage('en')}
+                onClick={() => {
+                  setLanguage('en')
+                  // 英語版の記事ページへリダイレクト
+                  router.push('/blog/falco-nginx-security-tutorial-en')
+                }}
               >
                 English
               </button>
