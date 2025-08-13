@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import { useEffect, useRef, useState } from 'react'
+import { useLanguage } from '../utils/languageUtils'
 
 export default function Home() {
   const statsRefs = useRef([])
   const [particles, setParticles] = useState([])
   const canvasRef = useRef(null)
-  const [language, setLanguage] = useState('ja') // 'ja' or 'en'
+  const [language, setLanguage] = useLanguage() // localStorageで管理
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // 多言語コンテンツデータ

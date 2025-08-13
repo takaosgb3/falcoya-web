@@ -2,9 +2,10 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { useLanguage } from '../../utils/languageUtils'
 
 export default function FalcoNginxTutorialEn() {
-  const [language, setLanguage] = useState('en')
+  const [language, setLanguage] = useLanguage() // localStorageで管理
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
   
@@ -90,9 +91,11 @@ export default function FalcoNginxTutorialEn() {
               <button 
                 className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
                 onClick={() => {
-                  setLanguage('ja')
-                  // 日本語版の記事ページへリダイレクト
-                  router.push('/blog/falco-nginx-security-tutorial')
+                  if (language !== 'ja') {
+                    setLanguage('ja')
+                    // 日本語版の記事ページへリダイレクト
+                    router.push('/blog/falco-nginx-security-tutorial')
+                  }
                 }}
               >
                 日本語
@@ -100,8 +103,10 @@ export default function FalcoNginxTutorialEn() {
               <button 
                 className={`lang-btn ${language === 'en' ? 'active' : ''}`}
                 onClick={() => {
-                  setLanguage('en')
-                  // 既に英語ページにいるので何もしない
+                  if (language !== 'en') {
+                    setLanguage('en')
+                    // 既に英語ページにいるので何もしない
+                  }
                 }}
               >
                 English

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { useLanguage } from '../../utils/languageUtils'
 
 const blogPosts = {
   ja: [
@@ -30,7 +31,7 @@ const blogPosts = {
 }
 
 export default function BlogIndex() {
-  const [language, setLanguage] = useState('ja')
+  const [language, setLanguage] = useLanguage() // localStorageで管理
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   
   // 画面サイズ変更時にモバイルメニューを閉じる

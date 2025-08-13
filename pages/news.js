@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { useLanguage } from '../utils/languageUtils'
 
 export default function News() {
-  const [language, setLanguage] = useState('ja')
+  const [language, setLanguage] = useLanguage() // localStorageで管理
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState('all')
 
