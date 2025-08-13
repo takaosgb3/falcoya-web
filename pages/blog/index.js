@@ -60,7 +60,14 @@ export default function BlogIndex() {
       readMore: "続きを読む",
       allPosts: "すべての記事",
       categories: "カテゴリー",
-      recentPosts: "最新記事"
+      recentPosts: "最新記事",
+      nav: {
+        github: "GitHub",
+        installation: "Installation",
+        detection: "Detection",
+        blog: "ブログ",
+        news: "ニュース"
+      }
     },
     en: {
       title: "FALCOYA Blog", 
@@ -69,7 +76,14 @@ export default function BlogIndex() {
       readMore: "Read More",
       allPosts: "All Posts",
       categories: "Categories", 
-      recentPosts: "Recent Posts"
+      recentPosts: "Recent Posts",
+      nav: {
+        github: "GitHub",
+        installation: "Installation",
+        detection: "Detection",
+        blog: "Blog",
+        news: "News"
+      }
     }
   }
 
@@ -103,10 +117,11 @@ export default function BlogIndex() {
           
           {/* デスクトップメニュー */}
           <ul className="nav-menu desktop-menu">
-            <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">GitHub</Link></li>
-            <li><Link href="/#installation">Installation</Link></li>
-            <li><Link href="/#detection">Detection</Link></li>
-            <li><Link href="/blog" className="active">Blog</Link></li>
+            <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">{content[language].nav.github}</Link></li>
+            <li><Link href="/#installation">{content[language].nav.installation}</Link></li>
+            <li><Link href="/#detection">{content[language].nav.detection}</Link></li>
+            <li><Link href="/blog" className="active">{content[language].nav.blog}</Link></li>
+            <li><Link href="/news">{content[language].nav.news}</Link></li>
           </ul>
           
           <div className="nav-controls">
@@ -130,10 +145,11 @@ export default function BlogIndex() {
         {/* モバイルメニュー */}
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>GitHub</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>Installation</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>Detection</a></li>
-            <li><a href="/blog" className="active" onClick={() => setMobileMenuOpen(false)}>Blog</a></li>
+            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.github}</a></li>
+            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.installation}</a></li>
+            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.detection}</a></li>
+            <li><a href="/blog" className="active" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</a></li>
+            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.news}</a></li>
           </ul>
         </div>
       </nav>

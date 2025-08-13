@@ -18,7 +18,8 @@ export default function Home() {
         github: "GitHub", 
         installation: "Installation",
         detection: "Detection",
-        blog: "Blog"
+        blog: "Blog",
+        news: "News"
       },
       hero: {
         badge: "Falco Plugin for Nginx",
@@ -234,7 +235,8 @@ export default function Home() {
         github: "GitHub",
         installation: "Installation", 
         detection: "Detection",
-        blog: "Blog"
+        blog: "Blog",
+        news: "News"
       },
       hero: {
         badge: "Falco Plugin for Nginx",
@@ -693,6 +695,7 @@ export default function Home() {
             <li><a href="#installation">{content[language].nav.installation}</a></li>
             <li><a href="#detection">{content[language].nav.detection}</a></li>
             <li><a href="/blog">{content[language].nav.blog}</a></li>
+            <li><a href="/news">{content[language].nav.news}</a></li>
           </ul>
           
           <div className="nav-controls">
@@ -720,6 +723,7 @@ export default function Home() {
             <li><a href="#installation" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.installation}</a></li>
             <li><a href="#detection" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.detection}</a></li>
             <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</a></li>
+            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.news}</a></li>
           </ul>
         </div>
       </nav>
