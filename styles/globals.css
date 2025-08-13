@@ -280,10 +280,6 @@ body {
   background: var(--bg-gray);
 }
 
-/* デスクトップメニューを明示的にクラス化 */
-.desktop-menu {
-  display: flex;
-}
 
 .nav-container {
   max-width: 1200px;
@@ -311,11 +307,16 @@ body {
 }
 
 .nav-menu {
-  display: flex;
-  gap: 2rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+/* デスクトップメニューを明示的にクラス化 */
+.desktop-menu {
+  display: flex;
+  gap: 2rem;
+}
 
 .nav-menu a {
   color: var(--text-secondary);
