@@ -32,7 +32,7 @@ export default function Home() {
           monitoring: "監視"
         }
       },
-      prototypeNotice: "開発段階のお知らせ: falco-plugin-nginx は現在プロトタイプ公開段階です。開発更新・デバッグを高頻度で実施中のため、予期しない動作が発生する可能性があります。",
+      prototypeNotice: "falco-plugin-nginx は現在プロトタイプ公開段階です。開発更新・デバッグを高頻度で実施中のため、予期しない動作が発生する可能性があります。",
       about: {
         title: "falco-plugin-nginxとは",
         items: [
@@ -248,7 +248,7 @@ export default function Home() {
           monitoring: "Monitoring"
         }
       },
-      prototypeNotice: "Development Notice: falco-plugin-nginx is currently in prototype release stage. High-frequency development updates and debugging are in progress, so unexpected behavior may occur.",
+      prototypeNotice: "falco-plugin-nginx is currently in prototype release stage. High-frequency development updates and debugging are in progress, so unexpected behavior may occur.",
       about: {
         title: "About falco-plugin-nginx",
         items: [
