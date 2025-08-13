@@ -61,13 +61,20 @@ export default function BlogIndex() {
       allPosts: "すべての記事",
       categories: "カテゴリー",
       recentPosts: "最新記事",
+      tagCloud: "タグクラウド",
       nav: {
         github: "GitHub",
         installation: "インストール",
         detection: "検知機能",
         blog: "ブログ",
         news: "ニュース"
-      }
+      },
+      categoryList: [
+        { name: "セキュリティ", count: 1 },
+        { name: "チュートリアル", count: 1 },
+        { name: "Falco", count: 1 }
+      ],
+      tags: ["Falco", "Nginx", "セキュリティ", "AWS", "EC2", "Web攻撃検知"]
     },
     en: {
       title: "FALCOYA Blog", 
@@ -77,13 +84,20 @@ export default function BlogIndex() {
       allPosts: "All Posts",
       categories: "Categories", 
       recentPosts: "Recent Posts",
+      tagCloud: "Tag Cloud",
       nav: {
         github: "GitHub",
         installation: "Installation",
         detection: "Detection",
         blog: "Blog",
         news: "News"
-      }
+      },
+      categoryList: [
+        { name: "Security", count: 1 },
+        { name: "Tutorials", count: 1 },
+        { name: "Falco", count: 1 }
+      ],
+      tags: ["Falco", "Nginx", "Security", "AWS", "EC2", "Web Attack Detection"]
     }
   }
 
@@ -210,21 +224,20 @@ export default function BlogIndex() {
               <div className="sidebar-widget">
                 <h3>{content[language].categories}</h3>
                 <ul className="category-list">
-                  <li><a href="#security">セキュリティ</a> (1)</li>
-                  <li><a href="#tutorials">チュートリアル</a> (1)</li>
-                  <li><a href="#falco">Falco</a> (1)</li>
+                  {content[language].categoryList.map((category, index) => (
+                    <li key={index}>
+                      <a href={`#${category.name.toLowerCase()}`}>{category.name}</a> ({category.count})
+                    </li>
+                  ))}
                 </ul>
               </div>
               
               <div className="sidebar-widget">
-                <h3>タグクラウド</h3>
+                <h3>{content[language].tagCloud}</h3>
                 <div className="tag-cloud">
-                  <span className="tag">Falco</span>
-                  <span className="tag">Nginx</span>
-                  <span className="tag">セキュリティ</span>
-                  <span className="tag">AWS</span>
-                  <span className="tag">EC2</span>
-                  <span className="tag">Web攻撃検知</span>
+                  {content[language].tags.map((tag, index) => (
+                    <span key={index} className="tag">{tag}</span>
+                  ))}
                 </div>
               </div>
             </aside>
@@ -238,19 +251,24 @@ export default function BlogIndex() {
           <div className="footer-content">
             <div className="footer-section">
               <h4>falco-plugin-nginx</h4>
-              <p>Nginxアクセスログをリアルタイムで監視し、Webアプリケーションへの脅威を検知するFalcoプラグイン</p>
+              <p>{language === 'ja' 
+                ? 'Nginxアクセスログをリアルタイムで監視し、Webアプリケーションへの脅威を検知するFalcoプラグイン'
+                : 'Falco plugin that monitors Nginx access logs in real-time and detects threats to web applications'}
+              </p>
             </div>
             <div className="footer-section">
-              <h4>リンク</h4>
+              <h4>{language === 'ja' ? 'リンク' : 'Links'}</h4>
               <ul>
-                <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx">GitHubリポジトリ</Link></li>
-                <li><Link href="/blog">ブログ</Link></li>
+                <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx">
+                  {language === 'ja' ? 'GitHubリポジトリ' : 'GitHub Repository'}
+                </Link></li>
+                <li><Link href="/blog">{language === 'ja' ? 'ブログ' : 'Blog'}</Link></li>
               </ul>
             </div>
             <div className="footer-section">
-              <h4>ライセンス</h4>
+              <h4>{language === 'ja' ? 'ライセンス' : 'License'}</h4>
               <p>Apache License 2.0</p>
-              <p>オープンソースソフトウェア</p>
+              <p>{language === 'ja' ? 'オープンソースソフトウェア' : 'Open Source Software'}</p>
             </div>
           </div>
           <div className="footer-bottom">
