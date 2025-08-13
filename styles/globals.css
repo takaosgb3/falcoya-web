@@ -2439,7 +2439,153 @@ body {
   }
   
   /* ブログ・記事ページ最適化 */
-  .blog-grid,
+  .blog-header {
+    margin-top: 95px;
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+  
+  .blog-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .blog-description {
+    font-size: 0.95rem;
+  }
+  
+  .blog-main {
+    padding: 2rem 0;
+  }
+  
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .blog-sidebar {
+    order: 2;
+    margin-top: 2rem;
+  }
+  
+  .blog-content {
+    order: 1;
+  }
+  
+  .blog-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .blog-post-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .post-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .post-date, .post-read-time, .post-category {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .post-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .post-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .post-tags {
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .post-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .read-more-btn {
+    font-size: 0.9rem;
+  }
+  
+  .sidebar-widget {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sidebar-widget h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .category-list li {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .tag-cloud .tag {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+  }
+  
+  /* 記事ページ最適化 */
+  .article-header {
+    margin-top: 95px;
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .breadcrumb {
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-date, .article-read-time, .article-category {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+  
+  .article-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-title .subtitle {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .article-tags {
+    gap: 0.4rem;
+  }
+  
+  .article-tags .tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+  
+  .article-main {
+    padding: 2rem 0;
+  }
+  
   .article-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -2451,11 +2597,99 @@ body {
     margin-bottom: 2rem;
     padding: 1rem;
     max-height: none;
+    order: -1;
   }
   
-  .article-content,
-  .blog-content {
-    line-height: 1.8;
+  .table-of-contents h3 {
+    font-size: 1rem;
+  }
+  
+  .table-of-contents a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+  }
+  
+  .article-content {
+    line-height: 1.7;
+  }
+  
+  .article-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .article-content h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .article-content h4 {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .article-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  
+  .article-content ul, .article-content ol {
+    font-size: 0.95rem;
+    padding-left: 1.5rem;
+  }
+  
+  .article-content code {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .highlight-box, .info-box, .warning-box {
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .feature-item {
+    padding: 1.25rem;
+  }
+  
+  .architecture-diagram {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .flow-item {
+    min-width: 150px;
+    max-width: 250px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .image-container {
+    margin: 1.5rem -1rem;
+    padding: 1rem;
+  }
+  
+  .image-caption {
+    font-size: 0.8rem;
+  }
+  
+  .spec-table th, .spec-table td {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .attack-table th, .attack-table td {
+    padding: 0.75rem;
+    font-size: 0.85rem;
   }
   
   /* パフォーマンス最適化 */
