@@ -8,6 +8,24 @@ export default function FalcoNginxTutorialEn() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
   
+  // Navigation text
+  const navText = {
+    ja: {
+      github: "GitHub",
+      installation: "インストール",
+      detection: "検知機能",
+      blog: "ブログ",
+      news: "ニュース"
+    },
+    en: {
+      github: "GitHub",
+      installation: "Installation",
+      detection: "Detection",
+      blog: "Blog",
+      news: "News"
+    }
+  }
+  
   // 画面サイズ変更時にモバイルメニューを閉じる
   useEffect(() => {
     const handleResize = () => {
@@ -60,10 +78,11 @@ export default function FalcoNginxTutorialEn() {
           
           {/* Desktop menu */}
           <ul className="nav-menu desktop-menu">
-            <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">GitHub</Link></li>
-            <li><Link href="/#installation">Installation</Link></li>
-            <li><Link href="/#detection">Detection</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">{navText[language].github}</Link></li>
+            <li><Link href="/#installation">{navText[language].installation}</Link></li>
+            <li><Link href="/#detection">{navText[language].detection}</Link></li>
+            <li><Link href="/blog">{navText[language].blog}</Link></li>
+            <li><Link href="/news">{navText[language].news}</Link></li>
           </ul>
           
           <div className="nav-controls">
@@ -94,10 +113,11 @@ export default function FalcoNginxTutorialEn() {
         {/* Mobile menu */}
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>GitHub</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>Installation</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>Detection</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</a></li>
+            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
+            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
+            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
+            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
+            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
           </ul>
         </div>
       </nav>
