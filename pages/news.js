@@ -19,78 +19,7 @@ export default function News() {
         feature: "新機能",
         bugfix: "バグ修正"
       },
-      items: [
-        {
-          id: "2025-01-13-v1.0.0",
-          date: "2025-01-13",
-          category: "release",
-          type: "major",
-          title: "v1.0.0 正式リリース予定",
-          content: "falco-plugin-nginx の正式版 v1.0.0 をリリース予定です。プロダクション環境での利用を想定した安定版となります。",
-          highlights: [
-            "パフォーマンスの大幅改善",
-            "エンタープライズ向け機能の追加",
-            "包括的なドキュメントの整備"
-          ],
-          link: null
-        },
-        {
-          id: "2024-12-20-security-rules",
-          date: "2024-12-20",
-          category: "security",
-          type: "important",
-          title: "新しいセキュリティルールセットを追加",
-          content: "最新の脅威に対応する5つの新しい検知ルールを追加しました。Log4Shell、Spring4Shell などの重要な脆弱性に対応。",
-          highlights: [
-            "Log4Shell (CVE-2021-44228) 検知ルール",
-            "Spring4Shell (CVE-2022-22965) 検知ルール",
-            "新しいSQLインジェクションパターン"
-          ],
-          link: "https://github.com/takaosgb3/falco-plugin-nginx/releases"
-        },
-        {
-          id: "2024-12-01-performance",
-          date: "2024-12-01",
-          category: "feature",
-          type: "enhancement",
-          title: "パフォーマンス最適化アップデート",
-          content: "ログ処理速度を50%向上させる最適化を実装。大規模環境でのCPU使用率を30%削減。",
-          highlights: [
-            "並列処理の最適化",
-            "メモリ使用量の削減",
-            "リアルタイム処理の改善"
-          ],
-          link: null
-        },
-        {
-          id: "2024-11-15-bugfix",
-          date: "2024-11-15",
-          category: "bugfix",
-          type: "patch",
-          title: "v0.9.5 バグ修正リリース",
-          content: "特定の条件下でのfalse positiveを修正。IPv6アドレスのパース処理を改善。",
-          highlights: [
-            "IPv6アドレス処理の修正",
-            "False positive率の低減",
-            "ログローテーション対応の改善"
-          ],
-          link: "https://github.com/takaosgb3/falco-plugin-nginx/releases/tag/v0.9.5"
-        },
-        {
-          id: "2024-11-01-aws-integration",
-          date: "2024-11-01",
-          category: "feature",
-          type: "new",
-          title: "AWS CloudWatch統合機能を追加",
-          content: "検知アラートをAWS CloudWatchに直接送信する機能を追加。AWS環境でのモニタリングが容易に。",
-          highlights: [
-            "CloudWatch Logs統合",
-            "CloudWatch Metrics対応",
-            "SNS通知連携"
-          ],
-          link: null
-        }
-      ]
+      items: []
     },
     en: {
       title: "News & Updates",
@@ -102,78 +31,7 @@ export default function News() {
         feature: "Features",
         bugfix: "Bug Fixes"
       },
-      items: [
-        {
-          id: "2025-01-13-v1.0.0",
-          date: "2025-01-13",
-          category: "release",
-          type: "major",
-          title: "v1.0.0 Official Release Coming Soon",
-          content: "The official v1.0.0 release of falco-plugin-nginx is planned. This will be a stable version intended for production environments.",
-          highlights: [
-            "Major performance improvements",
-            "Enterprise features added",
-            "Comprehensive documentation"
-          ],
-          link: null
-        },
-        {
-          id: "2024-12-20-security-rules",
-          date: "2024-12-20",
-          category: "security",
-          type: "important",
-          title: "New Security Ruleset Added",
-          content: "Added 5 new detection rules to address latest threats. Covers critical vulnerabilities like Log4Shell and Spring4Shell.",
-          highlights: [
-            "Log4Shell (CVE-2021-44228) detection rule",
-            "Spring4Shell (CVE-2022-22965) detection rule",
-            "New SQL injection patterns"
-          ],
-          link: "https://github.com/takaosgb3/falco-plugin-nginx/releases"
-        },
-        {
-          id: "2024-12-01-performance",
-          date: "2024-12-01",
-          category: "feature",
-          type: "enhancement",
-          title: "Performance Optimization Update",
-          content: "Implemented optimizations that improve log processing speed by 50%. Reduced CPU usage by 30% in large-scale environments.",
-          highlights: [
-            "Parallel processing optimization",
-            "Memory usage reduction",
-            "Real-time processing improvements"
-          ],
-          link: null
-        },
-        {
-          id: "2024-11-15-bugfix",
-          date: "2024-11-15",
-          category: "bugfix",
-          type: "patch",
-          title: "v0.9.5 Bug Fix Release",
-          content: "Fixed false positives under specific conditions. Improved IPv6 address parsing.",
-          highlights: [
-            "IPv6 address handling fix",
-            "False positive rate reduction",
-            "Log rotation support improvements"
-          ],
-          link: "https://github.com/takaosgb3/falco-plugin-nginx/releases/tag/v0.9.5"
-        },
-        {
-          id: "2024-11-01-aws-integration",
-          date: "2024-11-01",
-          category: "feature",
-          type: "new",
-          title: "AWS CloudWatch Integration Added",
-          content: "Added functionality to send detection alerts directly to AWS CloudWatch. Makes monitoring easier in AWS environments.",
-          highlights: [
-            "CloudWatch Logs integration",
-            "CloudWatch Metrics support",
-            "SNS notification integration"
-          ],
-          link: null
-        }
-      ]
+      items: []
     }
   }
 
@@ -319,47 +177,53 @@ export default function News() {
         </div>
 
         <div className="news-timeline">
-          {filteredNews.map((item) => (
-            <article key={item.id} className="news-item">
-              <div className="news-date">
-                <span className="date-text">{formatDate(item.date)}</span>
-              </div>
-              
-              <div className="news-content">
-                <div className="news-header-row">
-                  <span className="category-icon">{getCategoryIcon(item.category)}</span>
-                  <span className={`news-type ${getTypeColor(item.type)}`}>
-                    {item.type.toUpperCase()}
-                  </span>
-                  <span className="news-category">
-                    {content.categories[item.category]}
-                  </span>
+          {filteredNews.length === 0 ? (
+            <div className="no-news">
+              <p>{language === 'ja' ? '現在、お知らせはありません。' : 'No news available at this time.'}</p>
+            </div>
+          ) : (
+            filteredNews.map((item) => (
+              <article key={item.id} className="news-item">
+                <div className="news-date">
+                  <span className="date-text">{formatDate(item.date)}</span>
                 </div>
                 
-                <h2 className="news-title">{item.title}</h2>
-                <p className="news-description">{item.content}</p>
-                
-                {item.highlights && item.highlights.length > 0 && (
-                  <ul className="news-highlights">
-                    {item.highlights.map((highlight, idx) => (
-                      <li key={idx}>{highlight}</li>
-                    ))}
-                  </ul>
-                )}
-                
-                {item.link && (
-                  <a 
-                    href={item.link} 
-                    className="news-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
-                  </a>
-                )}
-              </div>
-            </article>
-          ))}
+                <div className="news-content">
+                  <div className="news-header-row">
+                    <span className="category-icon">{getCategoryIcon(item.category)}</span>
+                    <span className={`news-type ${getTypeColor(item.type)}`}>
+                      {item.type.toUpperCase()}
+                    </span>
+                    <span className="news-category">
+                      {content.categories[item.category]}
+                    </span>
+                  </div>
+                  
+                  <h2 className="news-title">{item.title}</h2>
+                  <p className="news-description">{item.content}</p>
+                  
+                  {item.highlights && item.highlights.length > 0 && (
+                    <ul className="news-highlights">
+                      {item.highlights.map((highlight, idx) => (
+                        <li key={idx}>{highlight}</li>
+                      ))}
+                    </ul>
+                  )}
+                  
+                  {item.link && (
+                    <a 
+                      href={item.link} 
+                      className="news-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))
+          )}
         </div>
       </main>
 
@@ -399,6 +263,13 @@ export default function News() {
       </footer>
 
       <style jsx>{`
+        .no-news {
+          text-align: center;
+          padding: 60px 20px;
+          color: var(--text-secondary);
+          font-size: 1.1rem;
+        }
+
         .news-container {
           min-height: 100vh;
           padding-top: 120px;
