@@ -6,6 +6,7 @@ export default function Home() {
   const [particles, setParticles] = useState([])
   const canvasRef = useRef(null)
   const [language, setLanguage] = useState('ja') // 'ja' or 'en'
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // 多言語コンテンツデータ
   const content = {
@@ -655,12 +656,26 @@ export default function Home() {
             <img src="/img/falcoya-logo-c.png" alt="FALCOYA" />
             <span>FALCOYA</span>
           </div>
-          <ul className="nav-menu">
+          
+          {/* ハンバーガーメニューボタン（モバイルのみ表示） */}
+          <button 
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menu"
+          >
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+          </button>
+          
+          {/* デスクトップメニュー */}
+          <ul className="nav-menu desktop-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">{content[language].nav.github}</a></li>
             <li><a href="#installation">{content[language].nav.installation}</a></li>
             <li><a href="#detection">{content[language].nav.detection}</a></li>
             <li><a href="/blog">{content[language].nav.blog}</a></li>
           </ul>
+          
           <div className="nav-controls">
             <div className="language-switcher">
               <button 
@@ -677,6 +692,16 @@ export default function Home() {
               </button>
             </div>
           </div>
+        </div>
+        
+        {/* モバイルメニュー */}
+        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+          <ul className="mobile-nav-menu">
+            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.github}</a></li>
+            <li><a href="#installation" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.installation}</a></li>
+            <li><a href="#detection" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.detection}</a></li>
+            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</a></li>
+          </ul>
         </div>
       </nav>
 
