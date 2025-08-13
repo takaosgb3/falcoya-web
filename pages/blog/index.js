@@ -63,8 +63,8 @@ export default function BlogIndex() {
       recentPosts: "最新記事",
       nav: {
         github: "GitHub",
-        installation: "Installation",
-        detection: "Detection",
+        installation: "インストール",
+        detection: "検知機能",
         blog: "ブログ",
         news: "ニュース"
       }
