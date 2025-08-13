@@ -12,6 +12,13 @@ export default function News() {
     ja: {
       title: "ニュース & アップデート",
       description: "falco-plugin-nginx の最新情報、リリースノート、セキュリティアップデートをお届けします",
+      nav: {
+        github: "GitHub",
+        installation: "インストール",
+        detection: "検知機能",
+        blog: "ブログ",
+        news: "ニュース"
+      },
       categories: {
         all: "すべて",
         release: "リリース",
@@ -55,6 +62,13 @@ export default function News() {
     en: {
       title: "News & Updates",
       description: "Latest news, release notes, and security updates for falco-plugin-nginx",
+      nav: {
+        github: "GitHub",
+        installation: "Installation",
+        detection: "Detection",
+        blog: "Blog",
+        news: "News"
+      },
       categories: {
         all: "All",
         release: "Release",
@@ -184,11 +198,11 @@ export default function News() {
           </button>
           
           <ul className="nav-menu desktop-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><Link href="/#installation">Installation</Link></li>
-            <li><Link href="/#detection">Detection</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/news" className="active">News</Link></li>
+            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">{content.nav.github}</a></li>
+            <li><Link href="/#installation">{content.nav.installation}</Link></li>
+            <li><Link href="/#detection">{content.nav.detection}</Link></li>
+            <li><Link href="/blog">{content.nav.blog}</Link></li>
+            <li><Link href="/news" className="active">{content.nav.news}</Link></li>
           </ul>
           
           <div className="nav-controls">
@@ -211,11 +225,11 @@ export default function News() {
         
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>GitHub</a></li>
-            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>Installation</a></Link></li>
-            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>Detection</a></Link></li>
-            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>Blog</a></Link></li>
-            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)} className="active">News</a></Link></li>
+            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{content.nav.github}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{content.nav.installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{content.nav.detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{content.nav.blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)} className="active">{content.nav.news}</a></Link></li>
           </ul>
         </div>
       </nav>

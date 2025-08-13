@@ -16,10 +16,10 @@ export default function Home() {
       ogDescription: "NginxアクセスログをリアルタイムでFalcoが監視し、Webアプリケーションへの脅威を即座に検知。",
       nav: {
         github: "GitHub", 
-        installation: "Installation",
-        detection: "Detection",
-        blog: "Blog",
-        news: "News"
+        installation: "インストール",
+        detection: "検知機能",
+        blog: "ブログ",
+        news: "ニュース"
       },
       hero: {
         badge: "Falco Plugin for Nginx",
