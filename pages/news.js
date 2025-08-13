@@ -21,6 +21,21 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-11-blog-post",
+          date: "2025-08-11",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグインで Web 攻撃をリアルタイム検知！」を公開",
+          content: "AWS EC2環境でFalcoとNginxプラグインを使用してWebアプリケーションの攻撃をリアルタイムで検知する方法について、実践的なチュートリアル記事を公開しました。",
+          highlights: [
+            "AWS EC2環境でのセットアップ手順",
+            "SQLインジェクション、XSS、ディレクトリトラバーサルの検証",
+            "カスタムルールの作成方法",
+            "実際の攻撃シミュレーション例"
+          ],
+          link: "https://falcoya.dev/blog/falco-nginx-security-tutorial"
+        },
+        {
           id: "2025-08-11-website-launch",
           date: "2025-08-11",
           category: "release",
@@ -48,6 +63,21 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-11-blog-post",
+          date: "2025-08-11",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Real-time Web Attack Detection with Falco + Nginx Plugin!\" Published",
+          content: "A practical tutorial article on detecting web application attacks in real-time using Falco and Nginx plugin in AWS EC2 environment has been published.",
+          highlights: [
+            "Setup instructions in AWS EC2 environment",
+            "Verification of SQL injection, XSS, and directory traversal",
+            "Custom rule creation methods",
+            "Real attack simulation examples"
+          ],
+          link: "https://falcoya.dev/blog/falco-nginx-security-tutorial-en"
+        },
         {
           id: "2025-08-11-website-launch",
           date: "2025-08-11",
