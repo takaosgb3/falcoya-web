@@ -9,9 +9,8 @@ export default function FalcoNginxTutorial() {
   // 画面サイズ変更時にモバイルメニューを閉じる
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 767) {
-        setMobileMenuOpen(false)
-      }
+      // 画面幅に関わらず、リサイズ時は必ずメニューを閉じる
+      setMobileMenuOpen(false)
     }
 
     window.addEventListener('resize', handleResize)
