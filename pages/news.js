@@ -19,7 +19,23 @@ export default function News() {
         feature: "新機能",
         bugfix: "バグ修正"
       },
-      items: []
+      items: [
+        {
+          id: "2025-08-11-website-launch",
+          date: "2025-08-11",
+          category: "release",
+          type: "major",
+          title: "FALCOYA Webサイトを公開しました",
+          content: "falco-plugin-nginxの公式Webサイト falcoya.dev を公開しました。NginxアクセスログをFalcoで解析し、SQL InjectionやXSSなどの攻撃パターンを検知するプラグインです。",
+          highlights: [
+            "プロジェクト概要とドキュメント",
+            "インストールガイド",
+            "セキュリティ検知ルールの詳細",
+            "技術ブログの公開"
+          ],
+          link: "https://falcoya.dev"
+        }
+      ]
     },
     en: {
       title: "News & Updates",
@@ -31,7 +47,23 @@ export default function News() {
         feature: "Features",
         bugfix: "Bug Fixes"
       },
-      items: []
+      items: [
+        {
+          id: "2025-08-11-website-launch",
+          date: "2025-08-11",
+          category: "release",
+          type: "major",
+          title: "FALCOYA Website Launched",
+          content: "The official website for falco-plugin-nginx, falcoya.dev, has been launched. The plugin analyzes Nginx access logs with Falco to detect attack patterns such as SQL Injection and XSS.",
+          highlights: [
+            "Project overview and documentation",
+            "Installation guide",
+            "Security detection rules details",
+            "Technical blog publication"
+          ],
+          link: "https://falcoya.dev"
+        }
+      ]
     }
   }
 
