@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const blogPosts = {
   ja: [
@@ -31,6 +31,26 @@ const blogPosts = {
 
 export default function BlogIndex() {
   const [language, setLanguage] = useState('ja')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
+  // 画面サイズ変更時にモバイルメニューを閉じる
+  useEffect(() => {
+    const handleResize = () => {
+      // 画面幅に関わらず、リサイズ時は必ずメニューを閉じる
+      setMobileMenuOpen(false)
+    }
+
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('orientationchange', handleResize)
+    
+    // 初回実行
+    handleResize()
+    
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('orientationchange', handleResize)
+    }
+  }, [])
   
   const content = {
     ja: {
@@ -69,12 +89,26 @@ export default function BlogIndex() {
               <img src="/img/falcoya-logo-c.png" alt="FALCOYA" />
             </Link>
           </div>
-          <ul className="nav-menu">
+          
+          {/* ハンバーガーメニューボタン（モバイルのみ表示） */}
+          <button 
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menu"
+          >
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+          </button>
+          
+          {/* デスクトップメニュー */}
+          <ul className="nav-menu desktop-menu">
             <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">GitHub</Link></li>
             <li><Link href="/#installation">Installation</Link></li>
             <li><Link href="/#detection">Detection</Link></li>
             <li><Link href="/blog" className="active">Blog</Link></li>
           </ul>
+          
           <div className="nav-controls">
             <div className="language-switcher">
               <button 
@@ -91,6 +125,16 @@ export default function BlogIndex() {
               </button>
             </div>
           </div>
+        </div>
+        
+        {/* モバイルメニュー */}
+        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+          <ul className="mobile-nav-menu">
+            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>GitHub</a></li>
+            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>Installation</a></li>
+            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>Detection</a></li>
+            <li><a href="/blog" className="active" onClick={() => setMobileMenuOpen(false)}>Blog</a></li>
+          </ul>
         </div>
       </nav>
 

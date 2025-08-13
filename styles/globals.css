@@ -201,6 +201,90 @@ body {
   transition: all 0.3s ease;
 }
 
+/* ハンバーガーメニューボタン（デフォルトは非表示） */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1002;
+}
+
+.hamburger-line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-primary);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger-line.open:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* モバイルメニュー（デフォルトは非表示） */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-menu {
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.mobile-nav-menu li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mobile-nav-menu li:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav-menu a {
+  display: block;
+  padding: 1rem 2rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-menu a:active {
+  background: var(--bg-gray);
+}
+
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -227,11 +311,16 @@ body {
 }
 
 .nav-menu {
-  display: flex;
-  gap: 2rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+/* デスクトップメニューを明示的にクラス化 */
+.desktop-menu {
+  display: flex;
+  gap: 2rem;
+}
 
 .nav-menu a {
   color: var(--text-secondary);
@@ -1988,8 +2077,35 @@ body {
   border: 1px solid rgba(79, 70, 229, 0.1);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* タブレット以上のデバイスでモバイルメニューを確実に非表示 */
+@media (min-width: 768px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+  
+  .mobile-menu {
+    display: none !important;
+    transform: translateY(-100%) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  
+  .mobile-menu.open {
+    display: none !important;
+  }
+  
+  .desktop-menu {
+    display: flex !important;
+  }
+  
+  .nav-menu {
+    display: flex !important;
+    gap: 2rem;
+  }
+}
+
+/* Responsive - モバイル専用（768px未満） */
+@media (max-width: 767px) {
   /* モバイルスクロール最適化 */
   html {
     -webkit-text-size-adjust: 100%;
@@ -1999,31 +2115,59 @@ body {
   body {
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: contain;
+    font-size: 16px; /* 最小フォントサイズ確保 */
   }
   
-  /* モバイルナビゲーション最適化 */
+  /* ナビゲーションのモバイル対応 */
+  .navbar {
+    padding: 0;
+  }
+  
   .nav-container {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
   }
   
   .nav-logo {
-    order: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-logo img {
+    height: 40px;
+  }
+  
+  .nav-logo span {
+    font-size: 1.1rem;
+  }
+  
+  /* デスクトップメニューを非表示 */
+  .desktop-menu {
+    display: none !important;
+  }
+  
+  /* ハンバーガーメニューを表示 */
+  .mobile-menu-toggle {
+    display: block;
+    order: 3;
+  }
+  
+  /* モバイルメニューを有効化 */
+  .mobile-menu {
+    display: block;
   }
   
   .nav-controls {
     order: 2;
-  }
-  
-  .nav-menu {
-    order: 3;
-    width: 100%;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: 10px;
   }
   
   .language-switcher {
-    scale: 0.9;
+    transform: scale(0.9);
   }
   
   /* タッチフレンドリーなインタラクション */
@@ -2051,8 +2195,16 @@ body {
     top: 45px;
   }
   
+  /* ヒーローセクション */
   .hero {
-    margin-top: 115px;
+    margin-top: 100px;
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+  
+  .hero-glow {
+    width: 400px;
+    height: 400px;
   }
   
   .hero-bg-circle {
@@ -2062,67 +2214,413 @@ body {
     right: -50px;
   }
   
-  .hero-buttons {
-    justify-content: center;
-  }
-  
-  .steps {
-    grid-template-columns: 1fr;
-  }
-  
   .hero-container {
     flex-direction: column;
     text-align: center;
+    gap: 2rem;
+  }
+  
+  .hero-logo {
+    width: 120px;
+    height: 120px;
+    padding: 15px;
   }
   
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
   }
   
   .hero-content h1 .subtitle {
     font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    min-height: 48px; /* タップしやすいサイズ */
   }
   
   .hero-stats {
-    gap: 1.5rem;
-  }
-  
-  .stat-number {
-    font-size: 2rem;
-  }
-  
-  .nav-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
-    font-size: 0.875rem;
-    flex-wrap: nowrap;
-    overflow-x: visible;
     justify-content: center;
   }
   
-  .nav-menu li {
-    white-space: nowrap;
-    flex-shrink: 0;
+  .stat-item {
+    flex: 1;
+    min-width: 100px;
+    padding: 1rem;
   }
   
+  .stat-number {
+    font-size: 1.75rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  /* コードブロック */
+  .code-block {
+    margin: 1.5rem 0;
+    font-size: 0.75rem;
+  }
+  
+  .code-header {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .code-content {
+    padding: 1rem;
+    font-size: 0.75rem;
+    overflow-x: auto;
+  }
+  
+  /* セクション間隔調整 */
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .about {
+    padding: 3rem 0;
+  }
+  
+  .about h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-list {
+    gap: 0.75rem;
+  }
+  
+  .about-list li {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  /* 検知機能セクション */
+  .examples {
+    padding: 3rem 0;
+  }
+  
+  .examples h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .detection-overview p {
+    font-size: 1rem;
+  }
+  
+  .rule-categories {
+    gap: 2rem;
+  }
+  
+  .category-section {
+    padding: 1.5rem;
+  }
+  
+  .category-title {
+    font-size: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .rule-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .rule-card {
+    padding: 1.25rem;
+  }
+  
+  .rule-header h4 {
+    font-size: 1rem;
+  }
+  
+  .rule-card p {
+    font-size: 0.9rem;
+  }
+  
+  .detection-patterns {
+    padding: 0.75rem;
+  }
+  
+  .detection-patterns strong {
+    font-size: 0.85rem;
+  }
+  
+  .detection-patterns li {
+    font-size: 0.85rem;
+  }
+  
+  .detection-patterns code {
+    font-size: 0.75rem;
+    padding: 0.1rem 0.3rem;
+  }
+  
+  /* インストールセクション */
+  .quick-start {
+    padding: 3rem 0;
+  }
+  
+  .quick-start h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .step {
+    padding: 1.25rem;
+  }
+  
+  .step h3 {
+    font-size: 0.95rem;
+  }
+  
+  .code-block-with-copy {
+    gap: 0.5rem;
+  }
+  
+  .code-inline {
+    padding: 0.5rem;
+  }
+  
+  .code-inline code {
+    font-size: 0.8rem;
+    word-break: break-all;
+  }
+  
+  .copy-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    min-height: 44px;
+  }
+  
+  .terminal-preview {
+    margin: 0 -1rem;
+  }
+  
+  .terminal-preview pre {
+    padding: 1rem;
+    font-size: 0.7rem;
+  }
+  
+  .installation-note {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .installation-note h3 {
+    font-size: 1.1rem;
+  }
+  
+  .installation-note li {
+    font-size: 0.9rem;
+  }
+  
+  /* フッター */
+  .footer {
+    padding: 3rem 0 2rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+  
+  .footer-section p,
+  .footer-section a {
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+  
+  /* その他の調整 */
   .example-cards {
     grid-template-columns: 1fr;
   }
   
-  /* モバイルコンテンツ最適化 */
-  .article-content,
+  /* ブログ・記事ページ最適化 */
+  .blog-header {
+    margin-top: 95px;
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+  
+  .blog-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .blog-description {
+    font-size: 0.95rem;
+  }
+  
+  .blog-main {
+    padding: 2rem 0;
+  }
+  
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .blog-sidebar {
+    order: 2;
+    margin-top: 2rem;
+  }
+  
   .blog-content {
-    line-height: 1.8;
+    order: 1;
   }
   
-  .code-block {
-    margin: 1rem -1rem;
-    border-radius: 8px;
-    -webkit-overflow-scrolling: touch;
+  .blog-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
   }
   
-  .code-block pre {
-    padding: 1rem;
+  .blog-post-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .post-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .post-date, .post-read-time, .post-category {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .post-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .post-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .post-tags {
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .post-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .read-more-btn {
+    font-size: 0.9rem;
+  }
+  
+  .sidebar-widget {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sidebar-widget h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .category-list li {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .tag-cloud .tag {
     font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+  }
+  
+  /* 記事ページ最適化 */
+  .article-header {
+    margin-top: 95px;
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .breadcrumb {
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-date, .article-read-time, .article-category {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+  
+  .article-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-title .subtitle {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .article-tags {
+    gap: 0.4rem;
+  }
+  
+  .article-tags .tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+  
+  .article-main {
+    padding: 2rem 0;
+  }
+  
+  .article-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .table-of-contents {
@@ -2130,51 +2628,198 @@ body {
     width: 100%;
     margin-bottom: 2rem;
     padding: 1rem;
-    border-radius: 8px;
     max-height: none;
-    overflow-y: visible;
+    order: -1;
   }
   
-  .article-grid {
+  .table-of-contents h3 {
+    font-size: 1rem;
+  }
+  
+  .table-of-contents a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+  }
+  
+  .article-content {
+    line-height: 1.7;
+  }
+  
+  .article-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .article-content h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .article-content h4 {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .article-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  
+  .article-content ul, .article-content ol {
+    font-size: 0.95rem;
+    padding-left: 1.5rem;
+  }
+  
+  .article-content code {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .highlight-box, .info-box, .warning-box {
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  
+  .feature-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   
-  /* スムーズスクロールの改善 */
+  .feature-item {
+    padding: 1.25rem;
+  }
+  
+  .architecture-diagram {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .flow-item {
+    min-width: 150px;
+    max-width: 250px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .image-container {
+    margin: 1.5rem -1rem;
+    padding: 1rem;
+  }
+  
+  .image-caption {
+    font-size: 0.8rem;
+  }
+  
+  .spec-table th, .spec-table td {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .attack-table th, .attack-table td {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  /* パフォーマンス最適化 */
   .article-content img,
   .blog-image {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     will-change: transform;
   }
+  
+  /* 横スクロール防止 */
+  pre, code {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 }
 
-/* 更に小さいモバイルデバイス対応 */
+/* 更に小さいモバイルデバイス対応 (iPhone SE, etc.) */
 @media (max-width: 480px) {
   .navbar {
-    top: 50px; /* prototype-noticeとの重なりを避ける */
+    top: 45px;
   }
   
   .nav-container {
-    padding: 0.75rem;
+    padding: 0.6rem 0.75rem;
   }
   
-  .nav-menu {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    font-size: 0.8rem;
+  .nav-logo img {
+    height: 35px;
+  }
+  
+  .nav-logo span {
+    font-size: 1rem;
   }
   
   .language-switcher {
-    scale: 0.8;
+    transform: scale(0.85);
   }
   
   .lang-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.7rem;
+  }
+  
+  .mobile-menu {
+    top: 90px;
   }
   
   .hero {
-    margin-top: 130px; /* より多くのスペース確保 */
+    margin-top: 95px;
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+  
+  .hero-content h1 .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+  }
+  
+  .cta-button {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+  }
+  
+  .stat-item {
+    min-width: 90px;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  /* 通知バー調整 */
+  .prototype-notice {
+    padding: 0.4rem 0;
+  }
+  
+  .notice-container {
+    padding: 0 0.75rem;
+    gap: 0.5rem;
+  }
+  
+  .notice-icon {
+    font-size: 1rem;
+  }
+  
+  .notice-text {
+    font-size: 0.75rem;
+    line-height: 1.3;
   }
 }
