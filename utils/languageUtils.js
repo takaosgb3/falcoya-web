@@ -21,11 +21,20 @@ export const setStoredLanguage = (lang) => {
 }
 
 export const useLanguage = () => {
-  const [language, setLanguageState] = useState('ja')
+  // 初期値をクライアントサイドで取得するために関数を使用
+  const [language, setLanguageState] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return getStoredLanguage()
+    }
+    return 'ja'
+  })
 
   useEffect(() => {
-    // クライアントサイドで言語を取得
-    setLanguageState(getStoredLanguage())
+    // クライアントサイドで再度確認（SSR対応）
+    const storedLang = getStoredLanguage()
+    if (storedLang !== language) {
+      setLanguageState(storedLang)
+    }
   }, [])
 
   const setLanguage = (lang) => {
