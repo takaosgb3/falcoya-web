@@ -104,4 +104,3 @@ OSS開発は派手な機能追加だけじゃなく、裏側の地道な修正�
 そして、こうして記録を残すことで、次にこの道を歩く誰かを助けたいと思います。
 	•	GitHub: github.com/takaosgb3/falco-plugin-nginx
 	•	TKのLinkedIn: https://www.linkedin.com/in/tk-shimizu/
-

@@ -29,8 +29,8 @@ export default function News() {
       },
       items: [
         {
-          id: "2025-08-27-oss-development-blog-part2",
-          date: "2025-08-27",
+          id: "2025-08-16-oss-development-blog-part2",
+          date: "2025-08-16",
           category: "feature",
           type: "new",
           title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の15日目から22日目」を公開",
@@ -45,8 +45,8 @@ export default function News() {
           link: "https://falcoya.dev/blog/falco-plugin-development-days15-22"
         },
         {
-          id: "2025-08-20-oss-development-blog",
-          date: "2025-08-20",
+          id: "2025-08-16-oss-development-blog",
+          date: "2025-08-16",
           category: "feature",
           type: "new",
           title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の7日間」を公開",
@@ -111,8 +111,8 @@ export default function News() {
       },
       items: [
         {
-          id: "2025-08-27-oss-development-blog-part2",
-          date: "2025-08-27",
+          id: "2025-08-16-oss-development-blog-part2",
+          date: "2025-08-16",
           category: "feature",
           type: "new",
           title: "Blog Post \"Falco + Nginx Plugin Development: Days 15-22 of Falcoya\" Published",
@@ -127,8 +127,8 @@ export default function News() {
           link: "https://falcoya.dev/blog/falco-plugin-development-days15-22-en"
         },
         {
-          id: "2025-08-20-oss-development-blog",
-          date: "2025-08-20",
+          id: "2025-08-16-oss-development-blog",
+          date: "2025-08-16",
           category: "feature",
           type: "new",
           title: "Blog Post \"Falco + Nginx Plugin Development: 7 Days of Falcoya\" Published",
