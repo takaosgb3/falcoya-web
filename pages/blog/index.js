@@ -6,10 +6,20 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days23-27',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の23日目から27日目',
+      description: 'OSSの波に揉まれ、ドキュメントに救われた日々。プロジェクト管理の見直し、セキュリティ修正、コードレビューなど、地道だけど重要な5日間の記録。',
+      date: '2025-08-16',
+      readTime: '8分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'プロジェクト管理', 'ドキュメント', 'セキュリティ'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days23-27'
+    },
+    {
       id: 'falco-plugin-development-days15-22',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の15日目から22日目',
       description: '初めてのアラートの喜びと、ノイズに溺れる苦しみが同居した8日間。CI/CDの安定化、検知ルールの精度調整、Dockerでの再現環境構築など、OSS開発の実態を物語形式で綴ります。',
-      date: '2025-08-27',
+      date: '2025-08-16',
       readTime: '12分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'Docker', '検知ルール'],
       category: 'OSS開発',
@@ -19,7 +29,7 @@ const blogPosts = {
       id: 'falco-plugin-development-7days',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の7日間',
       description: 'FalcoでNginxログを解析し攻撃を検知するプラグインの開発過程。7日間の失敗と学びを包み隠さずお届けします。OSS開発の実態を物語形式で綴った開発記録。',
-      date: '2025-08-20',
+      date: '2025-08-16',
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'Go言語', 'CI/CD', 'GitHub Actions'],
       category: 'OSS開発',
@@ -38,10 +48,20 @@ const blogPosts = {
   ],
   en: [
     {
+      id: 'falco-plugin-development-days23-27-en',
+      title: 'Falco + Nginx Plugin Development: Days 23-27 of Falcoya',
+      description: 'Days tossed by OSS waves and saved by documentation. Project management review, security fixes, code reviews - 5 days of steady but important work.',
+      date: '2025-08-16',
+      readTime: '8 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'Project Management', 'Documentation', 'Security'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days23-27-en'
+    },
+    {
       id: 'falco-plugin-development-days15-22-en',
       title: 'Falco + Nginx Plugin Development: Days 15-22 of Falcoya',
       description: '8 days where the joy of first alerts coexisted with drowning in noise. CI/CD stabilization, detection rule tuning, Docker environment setup - an OSS development story told in narrative form.',
-      date: '2025-08-27',
+      date: '2025-08-16',
       readTime: '12 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Docker', 'Detection Rules'],
       category: 'OSS Development',
@@ -51,7 +71,7 @@ const blogPosts = {
       id: 'falco-plugin-development-7days-en',
       title: 'Falco + Nginx Plugin Development: 7 Days of Falcoya',
       description: 'The development journey of creating a Falco plugin for Nginx log analysis and attack detection. An honest account of 7 days of failures and learnings in OSS development.',
-      date: '2025-08-20',
+      date: '2025-08-16',
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'Go', 'CI/CD', 'GitHub Actions'],
       category: 'OSS Development',
