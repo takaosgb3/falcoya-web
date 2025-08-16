@@ -13,8 +13,7 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'Go言語', 'CI/CD', 'GitHub Actions'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-7days',
-      isStaging: true
+      slug: 'falco-plugin-development-7days'
     },
     {
       id: 'falco-nginx-security-tutorial',
@@ -36,8 +35,7 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'Go', 'CI/CD', 'GitHub Actions'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-7days-en',
-      isStaging: true
+      slug: 'falco-plugin-development-7days-en'
     },
     {
       id: 'falco-nginx-security-tutorial-en',
@@ -213,12 +211,7 @@ export default function BlogIndex() {
               
               <div className="blog-posts">
                 {blogPosts[language].map((post) => (
-                  <article key={post.id} className={`blog-post-card ${post.isStaging ? 'staging-post' : ''}`}>
-                    {post.isStaging && (
-                      <div className="staging-badge">
-                        <span>STAGING</span>
-                      </div>
-                    )}
+                  <article key={post.id} className="blog-post-card">
                     <div className="post-meta">
                       <span className="post-date">{post.date}</span>
                       <span className="post-read-time">{post.readTime}</span>
