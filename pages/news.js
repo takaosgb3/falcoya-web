@@ -29,6 +29,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-16-oss-development-blog-part3",
+          date: "2025-08-16",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の23日目から27日目」を公開",
+          content: "OSSの波に揉まれ、ドキュメントに救われた5日間の記録を公開しました。プロジェクト管理の見直し、セキュリティ修正、コードレビューなど、地道だけど重要な作業の実態を物語形式で綴っています。",
+          highlights: [
+            "プロジェクト管理ドキュメントの整備",
+            "CI/CDの権限設定とセキュリティ強化",
+            "テストケースの網羅性向上",
+            "コードレビューとドキュメント再編",
+            "OSSマラソンの継続戦略"
+          ],
+          link: "https://falcoya.dev/blog/falco-plugin-development-days23-27"
+        },
+        {
           id: "2025-08-16-oss-development-blog-part2",
           date: "2025-08-16",
           category: "feature",
@@ -110,6 +126,22 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-16-oss-development-blog-part3",
+          date: "2025-08-16",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Days 23-27 of Falcoya\" Published",
+          content: "5 days tossed by OSS waves and saved by documentation. A narrative of project management review, security fixes, code reviews, and other steady but important work in OSS development.",
+          highlights: [
+            "Project management documentation organization",
+            "CI/CD permission settings and security hardening",
+            "Test case coverage improvement",
+            "Code review and documentation reorganization",
+            "OSS marathon continuation strategy"
+          ],
+          link: "https://falcoya.dev/blog/falco-plugin-development-days23-27-en"
+        },
         {
           id: "2025-08-16-oss-development-blog-part2",
           date: "2025-08-16",
