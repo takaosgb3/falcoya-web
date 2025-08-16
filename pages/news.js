@@ -29,6 +29,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-20-oss-development-blog",
+          date: "2025-08-20",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の7日間」を公開",
+          content: "FalcoでNginxログを解析し攻撃を検知するプラグインの開発過程を、7日間の失敗と学びを包み隠さずお届けする開発記録を公開しました。OSS開発の実態を物語形式で綴っています。",
+          highlights: [
+            "Docker環境構築とCI/CDの苦労話",
+            "Go言語とFalco SDKの統合課題",
+            "GitHub Actionsの無限ループ事件",
+            "絵文字によるAPI通信エラーの教訓",
+            "OSSプロジェクトの運用ノウハウ"
+          ],
+          link: "https://falcoya.dev/blog/falco-plugin-development-7days"
+        },
+        {
           id: "2025-08-11-blog-post",
           date: "2025-08-11",
           category: "feature",
@@ -78,6 +94,22 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-20-oss-development-blog",
+          date: "2025-08-20",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: 7 Days of Falcoya\" Published",
+          content: "A development diary detailing the process of creating a Falco plugin for Nginx log analysis and attack detection, sharing 7 days of failures and learnings in OSS development through a narrative format.",
+          highlights: [
+            "Docker environment setup and CI/CD challenges",
+            "Go language and Falco SDK integration issues",
+            "GitHub Actions infinite loop incident",
+            "Lessons from emoji-caused API communication errors",
+            "OSS project operation know-how"
+          ],
+          link: "https://falcoya.dev/blog/falco-plugin-development-7days-en"
+        },
         {
           id: "2025-08-11-blog-post",
           date: "2025-08-11",
