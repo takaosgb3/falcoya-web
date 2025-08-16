@@ -29,6 +29,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-27-oss-development-blog-part2",
+          date: "2025-08-27",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の15日目から22日目」を公開",
+          content: "初めてのアラートの喜びと、ノイズに溺れる苦しみが同居した8日間の開発記録を公開しました。CI/CDの安定化、検知ルールの精度調整、Dockerでの再現環境構築など、OSS開発の実態を物語形式で綴っています。",
+          highlights: [
+            "初めてのFalcoアラート発生の瞬間",
+            "ノイズ祭りから精度調整への道のり",
+            "Nginxログの多様性との格闘",
+            "Docker再現環境の構築と罠",
+            "Phase 1完了までの試行錯誤"
+          ],
+          link: "https://falcoya.dev/blog/falco-plugin-development-days15-22"
+        },
+        {
           id: "2025-08-20-oss-development-blog",
           date: "2025-08-20",
           category: "feature",
@@ -94,6 +110,22 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-27-oss-development-blog-part2",
+          date: "2025-08-27",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Days 15-22 of Falcoya\" Published",
+          content: "8 days where the joy of first alerts coexisted with drowning in noise. CI/CD stabilization, detection rule tuning, Docker environment setup, and more - an OSS development story told in narrative form.",
+          highlights: [
+            "The moment of the first Falco alert",
+            "Journey from noise festival to precision tuning",
+            "Wrestling with Nginx log diversity",
+            "Docker reproduction environment setup and traps",
+            "Trial and error until Phase 1 completion"
+          ],
+          link: "https://falcoya.dev/blog/falco-plugin-development-days15-22-en"
+        },
         {
           id: "2025-08-20-oss-development-blog",
           date: "2025-08-20",
