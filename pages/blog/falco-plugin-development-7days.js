@@ -427,6 +427,12 @@ export default function FalcoPluginDevelopment7Days() {
           font-size: 1.1rem;
           line-height: 1.8;
           color: var(--text-primary);
+          text-align: left;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          hyphens: auto;
+          -webkit-hyphens: auto;
+          -ms-hyphens: auto;
         }
 
         .content-section {
@@ -449,6 +455,9 @@ export default function FalcoPluginDevelopment7Days() {
 
         .content-section p {
           margin-bottom: 20px;
+          text-align: left;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
         }
 
         .quote {
@@ -478,6 +487,9 @@ export default function FalcoPluginDevelopment7Days() {
         .learning-box p {
           margin: 0;
           color: var(--text-primary);
+          text-align: left;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
         }
 
         .code-block {
@@ -595,6 +607,8 @@ export default function FalcoPluginDevelopment7Days() {
         @media (max-width: 768px) {
           .article-title {
             font-size: 1.8rem;
+            word-break: keep-all;
+            overflow-wrap: break-word;
           }
 
           .article-subtitle {
@@ -603,15 +617,50 @@ export default function FalcoPluginDevelopment7Days() {
 
           .content-section h2 {
             font-size: 1.5rem;
+            word-break: keep-all;
+            overflow-wrap: break-word;
           }
 
           .article-content {
             font-size: 1rem;
+            text-align: left;
+            word-break: normal;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: none;
+            -webkit-hyphens: none;
+            -ms-hyphens: none;
           }
 
           .article-meta {
             flex-wrap: wrap;
             gap: 10px;
+          }
+
+          .content-section p,
+          .learning-box p,
+          .quote {
+            text-align: left;
+            word-break: normal;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: none;
+            -webkit-hyphens: none;
+            -ms-hyphens: none;
+          }
+
+          .article-container {
+            padding: 0 15px;
+          }
+
+          .learning-box,
+          .quote,
+          .code-block {
+            margin-left: -15px;
+            margin-right: -15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 0;
           }
         }
       `}</style>
