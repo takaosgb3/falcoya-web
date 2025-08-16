@@ -145,6 +145,10 @@ export default function FalcoPluginDevelopmentDays23to27() {
             </div>
           </header>
 
+          <div className="article-image">
+            <img src="/img/blog3.png" alt="Falco + Nginx プラグイン開発 Days 23-27" />
+          </div>
+
           <div className="article-content">
             <section className="content-section">
               <h2>前回（15日目〜22日目）の振り返り</h2>
@@ -431,6 +435,18 @@ export default function FalcoPluginDevelopmentDays23to27() {
           color: var(--gradient-start);
           border-radius: 20px;
           font-size: 0.85rem;
+        }
+
+        .article-image {
+          margin: 40px 0;
+          text-align: center;
+        }
+
+        .article-image img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .article-content {
