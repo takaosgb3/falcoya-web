@@ -1390,11 +1390,34 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--border-color);
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .blog-post-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post-card.staging-post {
+  border: 2px solid rgba(255, 165, 0, 0.3);
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.02) 0%, rgba(255, 140, 0, 0.02) 100%);
+}
+
+.staging-badge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+  padding: 5px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(255, 165, 0, 0.3);
+}
+
+.staging-badge span {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .post-meta {

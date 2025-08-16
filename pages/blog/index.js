@@ -6,6 +6,17 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-7days',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の7日間',
+      description: 'FalcoでNginxログを解析し攻撃を検知するプラグインの開発過程。7日間の失敗と学びを包み隠さずお届けします。OSS開発の実態を物語形式で綴った開発記録。',
+      date: '2025-08-20',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'Go言語', 'CI/CD', 'GitHub Actions'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-7days',
+      isStaging: true
+    },
+    {
       id: 'falco-nginx-security-tutorial',
       title: 'Falco + Nginx プラグインで Web 攻撃をリアルタイム検知！AWS EC2環境で試してみる',
       description: 'FalcoとNginxプラグインを使用してWebアプリケーションの攻撃をリアルタイムで検知する方法を、AWS EC2環境での実践を通じて詳しく解説します。SQLインジェクション、XSS、ディレクトリトラバーサルなどの攻撃パターンの検証からカスタムルールの作成まで包括的にカバーします。',
@@ -17,6 +28,17 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-7days-en',
+      title: 'Falco + Nginx Plugin Development: 7 Days of Falcoya',
+      description: 'The development journey of creating a Falco plugin for Nginx log analysis and attack detection. An honest account of 7 days of failures and learnings in OSS development.',
+      date: '2025-08-20',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'Go', 'CI/CD', 'GitHub Actions'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-7days-en',
+      isStaging: true
+    },
     {
       id: 'falco-nginx-security-tutorial-en',
       title: 'Real-time Web Attack Detection with Falco + Nginx Plugin! Try it on AWS EC2',
@@ -191,7 +213,12 @@ export default function BlogIndex() {
               
               <div className="blog-posts">
                 {blogPosts[language].map((post) => (
-                  <article key={post.id} className="blog-post-card">
+                  <article key={post.id} className={`blog-post-card ${post.isStaging ? 'staging-post' : ''}`}>
+                    {post.isStaging && (
+                      <div className="staging-badge">
+                        <span>STAGING</span>
+                      </div>
+                    )}
                     <div className="post-meta">
                       <span className="post-date">{post.date}</span>
                       <span className="post-read-time">{post.readTime}</span>
