@@ -333,10 +333,6 @@ export default function FalcoPluginDevelopmentDays15to22() {
                 この「15日目から22日目」は、初めてのアラートの喜びと、ノイズに溺れる苦しみが同居した期間でした。
                 僕は失敗するたびに「また一つOSSの流儀を学んだ」と感じました。
               </p>
-              <p>
-                もし興味があれば、GitHubで一緒にこの旅を歩きませんか？
-                僕はまだ未熟だけど、仲間が増えればもっと強くなれる。
-              </p>
               
               <div className="links-section">
                 <h3>リンク</h3>

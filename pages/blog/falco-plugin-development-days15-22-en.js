@@ -333,10 +333,6 @@ export default function FalcoPluginDevelopmentDays15to22En() {
                 These "Days 15-22" were a period where the joy of first alerts coexisted with drowning in noise.
                 Each failure made me feel "I've learned another OSS practice."
               </p>
-              <p>
-                If you're interested, would you like to walk this journey with us on GitHub?
-                I'm still immature, but with more friends, we can become stronger.
-              </p>
               
               <div className="links-section">
                 <h3>Links</h3>
