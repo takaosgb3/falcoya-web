@@ -149,7 +149,7 @@ export default function FalcoPluginDevelopmentDays15to22En() {
             <section className="content-section">
               <h2>Recap of the First 7 Days</h2>
               <p>
-                During the first 7 days (7/6-7/12), TK and I were focused on building the foundation.
+                During the first 7 days (7/7-7/13), TK and I were focused on building the foundation.
                 We set up the Docker environment, ran GitHub Actions, wrote documentation like READMEs and guidelines, and were tortured by errors.
               </p>
               <p>

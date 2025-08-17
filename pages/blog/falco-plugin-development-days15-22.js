@@ -149,7 +149,7 @@ export default function FalcoPluginDevelopmentDays15to22() {
             <section className="content-section">
               <h2>前回の7日間のおさらい</h2>
               <p>
-                最初の7日間（7/6〜7/12）、僕とTKはひたすら基盤を固めていました。
+                最初の7日間（7/7〜7/13）、僕とTKはひたすら基盤を固めていました。
                 Docker環境を整え、GitHub Actionsを走らせ、READMEやガイドラインといったドキュメントを書き続け、エラーに泣かされました。
               </p>
               <p>
