@@ -29,6 +29,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-18-oss-development-blog-part5",
+          date: "2025-08-18",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の33日目から38日目」を公開",
+          content: "CI/CD修羅場とクリティカル修正の一週間を綴った記録を公開しました。不安・失敗・改善の連続、そしてついにCIが安定した瞬間の喜び。OSS開発の現実を物語形式で綴っています。",
+          highlights: [
+            "CI/CDパイプラインの根本的修正",
+            "失敗と不安の記録が資産に変わる瞬間",
+            "環境依存エラーとの格闘",
+            "ドキュメント整理がもたらす改善効果",
+            "テスト全通過という達成感"
+          ],
+          link: "/blog/falco-plugin-development-days33-38"
+        },
+        {
           id: "2025-08-17-oss-development-blog-part4",
           date: "2025-08-17",
           category: "feature",
@@ -142,6 +158,22 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-18-oss-development-blog-part5",
+          date: "2025-08-18",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Days 33-38 of Falcoya\" Published",
+          content: "Published a record of a week of CI/CD struggles and critical fixes. Continuous anxiety, failures, and improvements, and finally the joy of stable CI. The reality of OSS development told in narrative form.",
+          highlights: [
+            "Fundamental fixes to CI/CD pipeline",
+            "When failure and anxiety records become assets",
+            "Wrestling with environment-dependent errors",
+            "Improvement effects from documentation organization",
+            "The satisfaction of all tests passing"
+          ],
+          link: "/blog/falco-plugin-development-days33-38-en"
+        },
         {
           id: "2025-08-17-oss-development-blog-part4",
           date: "2025-08-17",
