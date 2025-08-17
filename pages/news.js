@@ -29,6 +29,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-17-oss-development-blog-part5",
+          date: "2025-08-17",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の33日目から38日目」を公開",
+          content: "公開の感動とOSSの洗礼、そして次なる試練を綴った記録を公開しました。falcoya.dev公開の誕生日、CI/CD修羅場を乗り越え、E2Eテストという新たな山へ。OSS開発の現実を物語形式で綴っています。",
+          highlights: [
+            "falcoya.dev公開とプロトタイプリリース",
+            "公開の感動とOSSの洗礼",
+            "CI/CDパイプラインの根本的修正",
+            "次なる試練：E2Eテストへの挑戦",
+            "失敗を資産に変える記録の重要性"
+          ],
+          link: "/blog/falco-plugin-development-days33-38"
+        },
+        {
           id: "2025-08-17-oss-development-blog-part4",
           date: "2025-08-17",
           category: "feature",
@@ -142,6 +158,22 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-17-oss-development-blog-part5",
+          date: "2025-08-17",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Days 33-38 of Falcoya\" Published",
+          content: "Published a record of the emotion of going public and the baptism of OSS, then the next trial. The birthday of falcoya.dev's launch, overcoming CI/CD struggles, and heading toward the new mountain of E2E testing. The reality of OSS development told in narrative form.",
+          highlights: [
+            "Publishing falcoya.dev and prototype release",
+            "The emotion of going public and OSS baptism",
+            "Fundamental fixes to CI/CD pipeline",
+            "Next trial: Challenging E2E testing",
+            "The importance of turning failures into assets through documentation"
+          ],
+          link: "/blog/falco-plugin-development-days33-38-en"
+        },
         {
           id: "2025-08-17-oss-development-blog-part4",
           date: "2025-08-17",
@@ -364,24 +396,25 @@ export default function News() {
       </nav>
 
       <main className="news-container">
-        <div className="news-header">
-          <h1>{content.title}</h1>
-          <p>{content.description}</p>
-        </div>
+        <div className="container">
+          <div className="news-header">
+            <h1>{content.title}</h1>
+            <p>{content.description}</p>
+          </div>
 
-        <div className="news-filters">
-          {Object.entries(content.categories).map(([key, label]) => (
-            <button
-              key={key}
-              className={`filter-btn ${selectedCategory === key ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(key)}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+          <div className="news-filters">
+            {Object.entries(content.categories).map(([key, label]) => (
+              <button
+                key={key}
+                className={`filter-btn ${selectedCategory === key ? 'active' : ''}`}
+                onClick={() => setSelectedCategory(key)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
 
-        <div className="news-timeline">
+          <div className="news-timeline">
           {filteredNews.length === 0 ? (
             <div className="no-news">
               <p>{language === 'ja' ? '現在、お知らせはありません。' : 'No news available at this time.'}</p>
@@ -438,6 +471,7 @@ export default function News() {
             ))
           )}
         </div>
+        </div>
       </main>
 
       <footer className="footer">
@@ -487,10 +521,13 @@ export default function News() {
           min-height: 100vh;
           padding-top: 120px;
           padding-bottom: 60px;
+          background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+        }
+        
+        .container {
           max-width: 1200px;
           margin: 0 auto;
-          padding-left: 20px;
-          padding-right: 20px;
+          padding: 0 20px;
         }
 
         .news-header {

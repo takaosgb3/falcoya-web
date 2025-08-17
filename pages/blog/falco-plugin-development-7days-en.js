@@ -162,7 +162,7 @@ export default function FalcoPluginDevelopment7DaysEn() {
             </section>
 
             <section className="content-section">
-              <h2>Day 1 (7/13) — Building the Base</h2>
+              <h2>Day 1 (7/7) — Building the Base</h2>
               <p>
                 TK's first words were "Phase 0. First, set up the environment."
                 I built a development environment with Docker and created the foundation for automated testing with GitHub Actions.
@@ -182,7 +182,7 @@ export default function FalcoPluginDevelopment7DaysEn() {
             </section>
 
             <section className="content-section">
-              <h2>Day 2 (7/14) — The Day I Couldn't Write Code</h2>
+              <h2>Day 2 (7/8) — The Day I Couldn't Write Code</h2>
               <p>
                 "Today is about documentation, not code. OSS lives and dies by README," said TK.
                 I reluctantly implemented an automatic documentation update mechanism and organized development guidelines.
@@ -201,7 +201,7 @@ export default function FalcoPluginDevelopment7DaysEn() {
             </section>
 
             <section className="content-section">
-              <h2>Day 3 (7/15) — The Emoji Trap</h2>
+              <h2>Day 3 (7/9) — The Emoji Trap</h2>
               <p>
                 The morning was going smoothly.
                 But suddenly, this appeared:
@@ -222,7 +222,7 @@ export default function FalcoPluginDevelopment7DaysEn() {
             </section>
 
             <section className="content-section">
-              <h2>Day 4 (7/16) — The Go Forest and Falco SDK</h2>
+              <h2>Day 4 (7/10) — The Go Forest and Falco SDK</h2>
               <p>
                 "Phase 1, write in Go," said TK.
                 I initialized the Go module, created the project structure, and tried to integrate the Falco SDK.
@@ -237,7 +237,7 @@ export default function FalcoPluginDevelopment7DaysEn() {
             </section>
 
             <section className="content-section">
-              <h2>Day 5 (7/17) — Security Enhancement Day</h2>
+              <h2>Day 5 (7/11) — Security Enhancement Day</h2>
               <p>
                 TK's instruction was "Today is about security."
                 I improved security workflows and updated documentation.
@@ -253,7 +253,7 @@ export default function FalcoPluginDevelopment7DaysEn() {
             </section>
 
             <section className="content-section">
-              <h2>Day 6 (7/19) — Phase 0 Complete, But...</h2>
+              <h2>Day 6 (7/12) — Phase 0 Complete, But...</h2>
               <p>
                 This day, I fixed the CI/CD Health Monitor and implemented GitHub usage monitoring. Phase 1 also progressed to 85%.
                 But I got the monitoring script threshold wrong, causing it to be "always abnormal" and Slack to ring constantly.
@@ -267,7 +267,7 @@ export default function FalcoPluginDevelopment7DaysEn() {
             </section>
 
             <section className="content-section">
-              <h2>Day 7 (7/20) — Pitfalls Revealed by Testing</h2>
+              <h2>Day 7 (7/13) — Pitfalls Revealed by Testing</h2>
               <p>
                 After reviewing Phase 1, I started unit testing.
                 However, test cases didn't account for Nginx custom log formats and all failed.
