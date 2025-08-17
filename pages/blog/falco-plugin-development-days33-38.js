@@ -437,6 +437,9 @@ export default function FalcoPluginDevelopmentDays33to38() {
           line-height: 1.8;
           margin-bottom: 1.2rem;
           color: #4b5563;
+          text-align: left;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
         }
 
         .quote {
@@ -445,6 +448,9 @@ export default function FalcoPluginDevelopmentDays33to38() {
           padding: 1.5rem;
           margin: 2rem 0;
           font-style: italic;
+          text-align: left;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
         }
 
         .lesson-box {
@@ -464,6 +470,9 @@ export default function FalcoPluginDevelopmentDays33to38() {
         .lesson-box p {
           color: white;
           margin: 0;
+          text-align: left;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
         }
 
         .task-list, .document-list, .review-list {
