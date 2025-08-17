@@ -29,6 +29,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-17-oss-development-blog-part4",
+          date: "2025-08-17",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の28日目から32日目」を公開",
+          content: "OSSはコードだけじゃない、ポリシーと文化も育てる5日間の記録を公開しました。プロジェクト方針の見直し、ドキュメントの重要性、そして信頼の構築について、物語形式で綴っています。",
+          highlights: [
+            "プロジェクト方針とMVPの明確化",
+            "ドキュメントがもたらす時間を超えた価値",
+            "ポリシー策定と文化の形成",
+            "OSSにおける信頼の積み上げ",
+            "コードを超えた価値の創造"
+          ],
+          link: "https://falcoya.dev/blog/falco-plugin-development-days28-32"
+        },
+        {
           id: "2025-08-16-oss-development-blog-part3",
           date: "2025-08-16",
           category: "feature",
@@ -126,6 +142,22 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-17-oss-development-blog-part4",
+          date: "2025-08-17",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Days 28-32 of Falcoya\" Published",
+          content: "OSS isn't just code, it's about cultivating policy and culture. Published a 5-day record exploring project direction review, the importance of documentation, and building trust, all told in narrative form.",
+          highlights: [
+            "Project direction and MVP clarification",
+            "The timeless value documentation brings",
+            "Policy creation and culture formation",
+            "Building trust in OSS",
+            "Creating value beyond code"
+          ],
+          link: "https://falcoya.dev/blog/falco-plugin-development-days28-32-en"
+        },
         {
           id: "2025-08-16-oss-development-blog-part3",
           date: "2025-08-16",

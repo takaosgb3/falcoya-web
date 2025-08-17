@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days28-32',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の28日目から32日目',
+      description: 'OSSはコードだけじゃない、ポリシーと文化も育てる。プロジェクト方針の見直し、ドキュメントの重要性、そして信頼の構築について学んだ5日間。',
+      date: '2025-08-17',
+      readTime: '7分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'プロジェクト管理', 'ポリシー', '文化'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days28-32'
+    },
+    {
       id: 'falco-plugin-development-days23-27',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の23日目から27日目',
       description: 'OSSの波に揉まれ、ドキュメントに救われた日々。プロジェクト管理の見直し、セキュリティ修正、コードレビューなど、地道だけど重要な5日間の記録。',
@@ -47,6 +57,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days28-32-en',
+      title: 'Falco + Nginx Plugin Development: Days 28-32 of Falcoya',
+      description: 'OSS isn\'t just code, it\'s about cultivating policy and culture. Five days of learning about project direction review, the importance of documentation, and building trust.',
+      date: '2025-08-17',
+      readTime: '7 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'Project Management', 'Policy', 'Culture'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days28-32-en'
+    },
     {
       id: 'falco-plugin-development-days23-27-en',
       title: 'Falco + Nginx Plugin Development: Days 23-27 of Falcoya',
