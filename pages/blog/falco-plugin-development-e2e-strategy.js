@@ -262,6 +262,11 @@ export default function FalcoPluginDevelopmentE2EStrategy() {
                   <li>性能：レイテンシ p95 ≤ 20ms、1K〜10K logs/sでドロップゼロ</li>
                 </ul>
               </div>
+              
+              <div className="image-container">
+                <img src="/img/blog_s.png" alt="E2Eテスト設計図 - 総合試験への挑戦" />
+                <p className="image-caption">E2Eテストの全体像 - OSSとしての品質保証への道</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -460,6 +465,25 @@ export default function FalcoPluginDevelopmentE2EStrategy() {
         .note-text {
           color: #92400e;
           margin: 0;
+        }
+
+        .image-container {
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .image-container img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption {
+          margin-top: 1rem;
+          font-size: 0.9rem;
+          color: #6b7280;
+          font-style: italic;
         }
 
         @media (max-width: 768px) {

@@ -262,6 +262,11 @@ export default function FalcoPluginDevelopmentE2EStrategyEn() {
                   <li>Performance: Latency p95 ≤ 20ms, Zero drops at 1K-10K logs/s</li>
                 </ul>
               </div>
+              
+              <div className="image-container">
+                <img src="/img/blog_s.png" alt="E2E Test Design - The Challenge of Comprehensive Testing" />
+                <p className="image-caption">The Complete Picture of E2E Testing - The Path to OSS Quality Assurance</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -460,6 +465,25 @@ export default function FalcoPluginDevelopmentE2EStrategyEn() {
         .note-text {
           color: #92400e;
           margin: 0;
+        }
+
+        .image-container {
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .image-container img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption {
+          margin-top: 1rem;
+          font-size: 0.9rem;
+          color: #6b7280;
+          font-style: italic;
         }
 
         @media (max-width: 768px) {
