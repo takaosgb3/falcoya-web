@@ -34,13 +34,13 @@ export default function News() {
           category: "feature",
           type: "new",
           title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の33日目から38日目」を公開",
-          content: "CI/CD修羅場とクリティカル修正の一週間を綴った記録を公開しました。不安・失敗・改善の連続、そしてついにCIが安定した瞬間の喜び。OSS開発の現実を物語形式で綴っています。",
+          content: "公開の感動とOSSの洗礼、そして次なる試練を綴った記録を公開しました。falcoya.dev公開の誕生日、CI/CD修羅場を乗り越え、E2Eテストという新たな山へ。OSS開発の現実を物語形式で綴っています。",
           highlights: [
+            "falcoya.dev公開とプロトタイプリリース",
+            "公開の感動とOSSの洗礼",
             "CI/CDパイプラインの根本的修正",
-            "失敗と不安の記録が資産に変わる瞬間",
-            "環境依存エラーとの格闘",
-            "ドキュメント整理がもたらす改善効果",
-            "テスト全通過という達成感"
+            "次なる試練：E2Eテストへの挑戦",
+            "失敗を資産に変える記録の重要性"
           ],
           link: "/blog/falco-plugin-development-days33-38"
         },
@@ -164,13 +164,13 @@ export default function News() {
           category: "feature",
           type: "new",
           title: "Blog Post \"Falco + Nginx Plugin Development: Days 33-38 of Falcoya\" Published",
-          content: "Published a record of a week of CI/CD struggles and critical fixes. Continuous anxiety, failures, and improvements, and finally the joy of stable CI. The reality of OSS development told in narrative form.",
+          content: "Published a record of the emotion of going public and the baptism of OSS, then the next trial. The birthday of falcoya.dev's launch, overcoming CI/CD struggles, and heading toward the new mountain of E2E testing. The reality of OSS development told in narrative form.",
           highlights: [
+            "Publishing falcoya.dev and prototype release",
+            "The emotion of going public and OSS baptism",
             "Fundamental fixes to CI/CD pipeline",
-            "When failure and anxiety records become assets",
-            "Wrestling with environment-dependent errors",
-            "Improvement effects from documentation organization",
-            "The satisfaction of all tests passing"
+            "Next trial: Challenging E2E testing",
+            "The importance of turning failures into assets through documentation"
           ],
           link: "/blog/falco-plugin-development-days33-38-en"
         },

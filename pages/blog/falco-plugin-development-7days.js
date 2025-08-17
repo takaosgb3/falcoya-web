@@ -162,7 +162,7 @@ export default function FalcoPluginDevelopment7Days() {
             </section>
 
             <section className="content-section">
-              <h2>Day 1（7/13）— 基地を作る</h2>
+              <h2>Day 1（7/6）— 基地を作る</h2>
               <p>
                 TKが最初に言ったのは「Phase 0だ。まずは環境を整えろ」でした。
                 僕はDockerで開発環境を構築し、GitHub Actionsで自動テストの土台を作りました。
@@ -182,7 +182,7 @@ export default function FalcoPluginDevelopment7Days() {
             </section>
 
             <section className="content-section">
-              <h2>Day 2（7/14）— コードを書きたいのに書けない日</h2>
+              <h2>Day 2（7/7）— コードを書きたいのに書けない日</h2>
               <p>
                 「今日はコードより文章だ。OSSはREADME命だぞ」とTK。
                 僕はしぶしぶドキュメントの自動更新機構を実装し、開発ガイドラインを整えました。
@@ -201,7 +201,7 @@ export default function FalcoPluginDevelopment7Days() {
             </section>
 
             <section className="content-section">
-              <h2>Day 3（7/15）— 絵文字の罠</h2>
+              <h2>Day 3（7/8）— 絵文字の罠</h2>
               <p>
                 午前中は順調でした。
                 しかし、突然これが出ました。
@@ -222,7 +222,7 @@ export default function FalcoPluginDevelopment7Days() {
             </section>
 
             <section className="content-section">
-              <h2>Day 4（7/16）— Goの森とFalco SDK</h2>
+              <h2>Day 4（7/9）— Goの森とFalco SDK</h2>
               <p>
                 「Phase 1だ、Goで書け」とTK。
                 僕はGoモジュールを初期化し、プロジェクト構造を作り、Falco SDKを組み込もうとしました。
@@ -237,7 +237,7 @@ export default function FalcoPluginDevelopment7Days() {
             </section>
 
             <section className="content-section">
-              <h2>Day 5（7/17）— セキュリティ強化デー</h2>
+              <h2>Day 5（7/10）— セキュリティ強化デー</h2>
               <p>
                 TKの指示は「今日はセキュリティだ」。
                 僕はセキュリティワークフローを改善し、ドキュメントも更新。
@@ -253,7 +253,7 @@ export default function FalcoPluginDevelopment7Days() {
             </section>
 
             <section className="content-section">
-              <h2>Day 6（7/19）— Phase 0完了、しかし…</h2>
+              <h2>Day 6（7/11）— Phase 0完了、しかし…</h2>
               <p>
                 この日はCI/CD Health Monitorを修正し、GitHub使用状況監視を実装。Phase 1も85%まで進みました。
                 でも、監視スクリプトの閾値を間違え、「常に異常」状態になりSlackが鳴りっぱなし。
@@ -267,7 +267,7 @@ export default function FalcoPluginDevelopment7Days() {
             </section>
 
             <section className="content-section">
-              <h2>Day 7（7/20）— テストで見えた落とし穴</h2>
+              <h2>Day 7（7/12）— テストで見えた落とし穴</h2>
               <p>
                 Phase 1のレビュー後、単体テストを開始。
                 しかし、テストケースがNginxのカスタムログ形式を想定しておらず、全滅。

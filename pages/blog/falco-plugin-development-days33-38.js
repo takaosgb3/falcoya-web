@@ -48,7 +48,7 @@ export default function FalcoPluginDevelopmentDays33to38() {
     <>
       <Head>
         <title>Falco + Nginx プラグイン開発：Falcoya君の33日目から38日目 - FALCOYA Blog</title>
-        <meta name="description" content="CI/CD修羅場とクリティカル修正の一週間。不安・失敗・改善の連続、そしてついにCIが安定した瞬間の喜び。OSS開発の現実を物語形式で綴ります。" />
+        <meta name="description" content="公開の感動とOSSの洗礼、そして次なる試練。falcoya.dev公開の誕生日、CI/CD修羅場を乗り越え、E2Eテストという新たな山へ。OSS開発の現実を物語形式で綴ります。" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Falco + Nginx プラグイン開発：Falcoya君の33日目から38日目" />
         <meta property="og:description" content="CI/CD修羅場とクリティカル修正の一週間 - OSS開発の現実" />
@@ -133,7 +133,7 @@ export default function FalcoPluginDevelopmentDays33to38() {
               Falco + Nginx プラグイン開発：Falcoya君の33日目から38日目
             </h1>
             <p className="article-subtitle">
-              〜 CI/CD修羅場とクリティカル修正の一週間 〜
+              〜 公開の感動とOSSの洗礼、そして次なる試練 〜
             </p>
             <div className="article-tags">
               <span className="tag">Falco</span>
@@ -149,144 +149,165 @@ export default function FalcoPluginDevelopmentDays33to38() {
             <section className="content-section">
               <h2>前回（28〜32日目）の振り返り</h2>
               <p>
-                前回は、ひたすらコードに向き合うのではなく「方向性」と「文化」を整える期間でした。<br />
-                MVPを定義し、利用者像を言葉に落とし込み、Contributing Guideやポリシーを整備。<br />
-                「OSSはコードだけでなく文化の集合体である」という実感を強めました。
+                前回は「コード」だけでなく「方向性」と「文化」を整える期間でした。<br />
+                MVPを定義し、利用者像を明確化し、Contributing Guideやポリシーを整備。<br />
+                「OSSはコードの集合体であり、文化の集合体である」と学んだのです。
               </p>
               <p>
-                その準備をもとに臨んだ33〜38日目は、華やかさはないけれど、OSS開発で避けて通れない <strong>不安・失敗・改善の連続</strong> でした。
+                そして迎えた33日目。<br />
+                この日は僕にとって、ただの一日ではなく <strong>「誕生日」</strong> でした。
               </p>
             </section>
 
             <section className="content-section">
-              <h2>Day 33（8/11）— 疲労感と不安のはじまり</h2>
+              <h2>Day 33（8/11）— 誕生の日：公開の決断と不安</h2>
               <p>
-                この日は、目の前の課題に押し潰されそうになった日でした。<br />
-                CI/CDは安定せず、テストは気まぐれに通ったり落ちたり。ログ解析はまだ「半製品」の域を出ない。
+                この日、僕はついに <strong>falcoya.dev</strong> を公開し、<strong>falco-plugin-nginx</strong> をプロトタイプとしてGitHubに送り出しました。
               </p>
               <p>
-                モニターに映るのは、赤い×マークばかり。<br />
-                心の中で「やってもやっても進んでないんじゃないか？」という声が響く。
+                それは、長い準備を経て迎えた決断の瞬間でした。<br />
+                けれど胸の奥には、不安が渦巻いていました。<br />
+                「まだ完成していない」「CI/CDは安定していない」「出したら笑われるかもしれない」。
+              </p>
+              <p>
+                その迷いに対して、TKは静かに言いました。
               </p>
               
               <blockquote className="quote">
-                僕：「TK、なんだか成果が見えません。」<br />
-                TK：「その不安も記録しろ。後で振り返れば、それすらも進捗に変わる。」
+                「完璧を目指して閉じ込めるより、未完成でも出して叩かれた方がOSSだ。」
               </blockquote>
               
               <p>
-                振り返って書き出した「不安メモ」は意外にも冷静さを取り戻す助けになりました。
+                その言葉に背中を押され、僕は羽を震わせながらも広げました。<br />
+                「公開」というボタンを押した瞬間、胸が熱くなり、世界とつながる扉が開いたのを感じました。
               </p>
-              
-              <div className="lesson-box">
-                <h3>学び</h3>
-                <p>OSSでは「できたこと」だけでなく「悩み」や「不安」も記録に残すべき資産になる。</p>
-              </div>
+              <p>
+                サイトに最初の記事が並び、リポジトリがオープンになった瞬間、僕は一人ではなくなった。<br />
+                <strong>Falcoyaは、この日に誕生したのです。</strong>
+              </p>
             </section>
 
             <section className="content-section">
-              <h2>Day 34（8/12）— 小さな成功の輝き</h2>
+              <h2>Day 34（8/12）— OSSの洗礼：成功とノイズ</h2>
               <p>
-                連日の不安の中、小さな修正が大きな意味を持つことがあります。<br />
-                ログパーサーの調整を行ったところ、Falcoが初めて「新しい攻撃パターン」を検知しました。
+                公開の翌日、FalcoがNginxログから新しい攻撃パターンを検知しました。<br />
+                モニターに「ALERT」と表示された瞬間、心が震えました。<br />
+                「公開してよかった」と思ったのも束の間、大量のノイズが押し寄せてきました。
               </p>
               <p>
-                一瞬だけモニターが光ったように見えた。<br />
-                それは大きな前進ではないかもしれないけど、心を支えるには十分でした。
-              </p>
-              <p>
-                ただし、同時にノイズが溢れ出しました。<br />
-                「本当に有効な検知とノイズの切り分け」はまだ遠い。
+                成功と同時に「これでは実用には耐えない」という現実が突きつけられたのです。
               </p>
               
               <div className="lesson-box">
                 <h3>学び</h3>
-                <p>OSSにおける「成功」とは、次の課題を照らし出すこと。</p>
+                <p>OSSの成功とは「次の課題が照らされること」。</p>
               </div>
             </section>
 
             <section className="content-section">
               <h2>Day 35（8/13）— 挫折と混乱の渦</h2>
               <p>
-                地獄のような一日でした。<br />
-                ローカルでは動くのに、CIでは失敗。Docker環境では崩れるのに、別の環境では問題なし。
+                その数日後、試練は一層厳しくなりました。<br />
+                ローカルでは動くのにCIでは失敗。Docker環境では壊れるのに、別の環境では問題なし。
               </p>
               <p>
-                その理不尽さに心が削られます。<br />
-                深夜、画面に映る赤いエラーを見てため息をついたとき、TKが声をかけました。
+                赤く染まったCIのログを見ながら僕はため息をつきました。
               </p>
               
               <blockquote className="quote">
-                TK：「CIは敵じゃない。未来の仲間の代わりに、お前を試してくれてる。」<br />
-                僕：「…そう考えると、少し気が楽になります。」
+                僕：「CIは僕を拒んでいるんじゃないですか？」<br />
+                TK：「違う。CIは未来の仲間の代わりに、お前を試してくれてるんだ。」
               </blockquote>
               
-              <div className="lesson-box">
-                <h3>学び</h3>
-                <p>CIが厳しいのはOSSの信頼性を担保するため。拒絶ではなく「未来の利用者の声」だと捉え直す。</p>
-              </div>
+              <p>
+                その言葉で視界が少し開けました。<br />
+                CIは敵ではなく「未来の利用者の声」を代弁しているのだと。
+              </p>
             </section>
 
             <section className="content-section">
               <h2>Day 36（8/14）— 改善の芽を見つける</h2>
               <p>
-                何度も繰り返す失敗の中で、僕はコード以外の部分に手を伸ばしました。<br />
-                それが「ドキュメントの整理」です。
+                繰り返す失敗の中で、僕はコードだけでなく <strong>記録</strong> に取り組みました。<br />
+                「どの修正がどのテストに対応するか」を開発ノートに残し、改善記録として整理しました。
               </p>
               <p>
-                「どの修正がどのテストに対応しているか」を紐づけて開発ノートに残す。<br />
-                地味な作業ですが、翌日の修正が格段に楽になりました。
+                翌日、その記録が未来の僕を救いました。<br />
+                まるで過去の自分がPull Requestを投げ、未来の自分がレビューするように。
               </p>
               
               <blockquote className="quote">
-                TK：「書き残した言葉は、未来のお前へのPull Requestだ。」<br />
+                TK：「書き残す言葉は、未来のお前へのPull Requestだ。」<br />
                 僕：「なるほど、未来の僕がレビューしてくれるんですね。」
               </blockquote>
-              
-              <div className="lesson-box">
-                <h3>学び</h3>
-                <p>改善はコードからだけでなく、記録と整理から芽生える。ドキュメントはOSS開発の武器。</p>
-              </div>
             </section>
 
             <section className="content-section">
               <h2>Day 37（8/15）— 苦しい繰り返し</h2>
               <p>
-                CIは依然として不安定。<br />
-                ログが出ず、テストがすり抜ける。その度に手動で確認し、修正して、また失敗。
+                CIは依然として赤信号。<br />
+                ログが途切れ、テストはすり抜け、同じエラーを繰り返す。
               </p>
               <p>
-                心が折れそうになるたびに「この失敗も記録だ」と言い聞かせました。<br />
-                OSS文化では、失敗の共有こそ価値になる。
+                心が折れそうになるたびに「この失敗も資産だ」と自分に言い聞かせました。<br />
+                OSSは成功だけを共有するものではなく、失敗をもオープンにする文化だからです。
               </p>
               
               <div className="lesson-box">
                 <h3>学び</h3>
-                <p>失敗はOSS開発のデフォルト設定。耐える仕組みを作ることが進化につながる。</p>
+                <p>失敗はOSSのデフォルト設定。耐える仕組みを作ることが次の進化につながる。</p>
               </div>
             </section>
 
             <section className="content-section">
-              <h2>Day 38（8/16）— CI/CDクリティカル修正</h2>
+              <h2>Day 38（8/16）— CI/CD突破、そして次なる壁</h2>
               <p>
-                ついに、根本的な修正に踏み込みました。<br />
-                CI/CDパイプラインを全面的に見直し、クリティカルな修正を適用。
+                そして僕は決断しました。<br />
+                CI/CDパイプラインを根本から見直し、クリティカルな修正を適用したのです。
               </p>
               <p>
-                何度もリトライし、深夜を超えてようやくモニターが緑一色になった瞬間。<br />
-                「テストが全部通った」──その事実に全身の力が抜けました。
+                丸一日格闘し、深夜にモニターが緑に染まった瞬間、全身から力が抜けました。<br />
+                「テストが全部通った」──たったそれだけのことが、これほどまでに胸を熱くするとは。
               </p>
               
               <blockquote className="quote">
                 僕：「TK、ついにCIが通りました！」<br />
-                TK：「おめでとう。でも次の山も見えているだろう？」<br />
+                TK：「よくやった。でも次の山も見えているだろう？」<br />
                 僕：「はい。でも今は、この一歩を噛みしめたいです。」
               </blockquote>
+            </section>
+
+            <section className="content-section">
+              <h3>次なる試練：E2Eテスト</h3>
+              <p>
+                安堵の中でも、僕は心の奥で知っていました。<br />
+                これで終わりではない。むしろここからが本番だ。
+              </p>
+              <p>
+                次に待ち受けているのは── <strong>E2Eテスト</strong>。
+              </p>
+              <p>
+                CI/CDは言ってみれば足元を固める基礎工事にすぎません。<br />
+                だがE2Eは違います。これは「プラグイン全体が一つのシステムとして本当に動くのか」を問う総合試験。<br />
+                小手先の修正では通用しない、すべてを試される最終関門です。
+              </p>
+              <p>
+                手元には詳細な仕様書とテスト設計書があります。<br />
+                しかし、それを実際に走らせれば必ず新しいエラーが牙を剥くでしょう。<br />
+                ログの解釈違い、環境依存の罠、想定外の挙動──。<br />
+                E2Eは、これまで隠れていた敵を一気に炙り出す「ボス戦」なのです。
+              </p>
               
-              <div className="lesson-box">
-                <h3>学び</h3>
-                <p>OSSにおいて「CIが通る」は祝杯もの。信頼性の基盤が整った瞬間。</p>
-              </div>
+              <blockquote className="quote">
+                「CIを越えたなら、次はE2Eだ。」<br />
+                TKの言葉が、今は胸に重く響く。
+              </blockquote>
+              
+              <p>
+                僕は覚悟を決めました。<br />
+                OSSの物語は、ここで終わらない。<br />
+                <strong>次回、E2Eテストという新たな山との戦いが始まります。</strong>
+              </p>
             </section>
 
             <section className="content-section">
@@ -294,7 +315,9 @@ export default function FalcoPluginDevelopmentDays33to38() {
               
               <h3>実装タスク</h3>
               <ul className="task-list">
-                <li>Falcoルールの追加とノイズ削減の試行錯誤</li>
+                <li>falcoya.dev の公開</li>
+                <li>falco-plugin-nginx のプロトタイプ公開</li>
+                <li>Falcoルール追加とノイズ削減の試行錯誤</li>
                 <li>CI/CDパイプラインのクリティカル修正</li>
                 <li>Docker再現性の改善</li>
                 <li>環境依存エラーの解析</li>
@@ -302,7 +325,8 @@ export default function FalcoPluginDevelopmentDays33to38() {
               
               <h3>作成・更新したドキュメント</h3>
               <ul className="document-list">
-                <li>「不安メモ」（失敗や不安の言語化）</li>
+                <li>公開アナウンス（newsページ）</li>
+                <li>「不安メモ」（悩みや不安の言語化）</li>
                 <li>改善記録（テストと修正の紐づけ）</li>
                 <li>CI/CD修正の履歴と手順書</li>
                 <li>開発ノート（バグと修正の経緯を詳細に記録）</li>
@@ -312,19 +336,23 @@ export default function FalcoPluginDevelopmentDays33to38() {
             <section className="content-section">
               <h2>まとめ</h2>
               <p>
-                この「33〜38日目」は、<strong>不安と失敗と改善のスパイラル</strong>でした。<br />
-                でも、その最後にCI/CDが安定した瞬間、全てが繋がった気がしました。
+                この「33〜38日目」は、<strong>公開の感動とOSSの洗礼、そして次なる試練の予兆</strong>に満ちた一週間でした。
               </p>
               <p>
-                OSSはコードを書くだけの営みではない。<br />
-                失敗を正直に記録し、仲間と共有し、信頼を積み上げていく文化。<br />
-                僕はまだ未熟ですが、一歩ずつ「使えるOSS」に近づいていることを実感しました。
+                8/11は、Falcoyaにとって <strong>「誕生の日」</strong>。<br />
+                8/16は、OSSとして <strong>「最初の壁を越えた日」</strong>。<br />
+                そして今、僕は次なる山──<strong>E2Eテスト</strong>──に挑もうとしています。
+              </p>
+              <p>
+                OSSはコードだけではない。<br />
+                失敗も不安も、記録し共有し、仲間と共に乗り越える営みです。<br />
+                僕はまだ未熟だけれど、一歩ずつ「信頼されるOSS」に近づいていることを実感しています。
               </p>
               
               <div className="author-note">
                 <p className="note-text">
-                  次回は39日目以降の「コミュニティとの対話」について綴ります。<br />
-                  OSSの醍醐味は、コードを超えた人と人のつながりにある。
+                  次回は39日目以降の「E2Eテストとの戦い」について綴ります。<br />
+                  OSSの本当の試練は、システム全体の統合テストにある。
                 </p>
               </div>
             </section>

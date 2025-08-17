@@ -237,7 +237,7 @@ export default function FalcoPluginDevelopment7DaysEn() {
             </section>
 
             <section className="content-section">
-              <h2>Day 5 (7/17) — Security Enhancement Day</h2>
+              <h2>Day 5 (7/10) — Security Enhancement Day</h2>
               <p>
                 TK's instruction was "Today is about security."
                 I improved security workflows and updated documentation.

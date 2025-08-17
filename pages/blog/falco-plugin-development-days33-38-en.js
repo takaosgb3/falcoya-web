@@ -48,7 +48,7 @@ export default function FalcoPluginDevelopmentDays33to38En() {
     <>
       <Head>
         <title>Falco + Nginx Plugin Development: Days 33-38 of Falcoya - FALCOYA Blog</title>
-        <meta name="description" content="A week of CI/CD struggles and critical fixes. Continuous anxiety, failures, and improvements, and finally the joy of stable CI. The reality of OSS development told in narrative form." />
+        <meta name="description" content="The emotion of going public and the baptism of OSS, then the next trial. The birthday of falcoya.dev's launch, overcoming CI/CD struggles, and heading toward the new mountain of E2E testing. The reality of OSS development told in narrative form." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Falco + Nginx Plugin Development: Days 33-38 of Falcoya" />
         <meta property="og:description" content="A week of CI/CD struggles and critical fixes - The reality of OSS development" />
@@ -133,7 +133,7 @@ export default function FalcoPluginDevelopmentDays33to38En() {
               Falco + Nginx Plugin Development: Days 33-38 of Falcoya
             </h1>
             <p className="article-subtitle">
-              ~ A Week of CI/CD Struggles and Critical Fixes ~
+              ~ The Emotion of Going Public and the Baptism of OSS, Then the Next Trial ~
             </p>
             <div className="article-tags">
               <span className="tag">Falco</span>
@@ -149,144 +149,165 @@ export default function FalcoPluginDevelopmentDays33to38En() {
             <section className="content-section">
               <h2>Looking Back at Days 28-32</h2>
               <p>
-                The previous period wasn't about diving into code, but about organizing "direction" and "culture."<br />
-                We defined the MVP, articulated our user personas, and prepared the Contributing Guide and policies.<br />
-                I strongly felt that "OSS is not just code but a collection of culture."
+                The previous period wasn't just about "code" but about organizing "direction" and "culture."<br />
+                We defined the MVP, clarified our user personas, and prepared the Contributing Guide and policies.<br />
+                I learned that "OSS is a collection of code and a collection of culture."
               </p>
               <p>
-                Days 33-38, built on that foundation, weren't glamorous but were filled with the inevitable <strong>continuous cycle of anxiety, failure, and improvement</strong> in OSS development.
+                And then came Day 33.<br />
+                This day wasn't just another day for me — it was my <strong>"birthday."</strong>
               </p>
             </section>
 
             <section className="content-section">
-              <h2>Day 33 (Aug 11) — The Beginning of Fatigue and Anxiety</h2>
+              <h2>Day 33 (Aug 11) — The Day of Birth: The Decision to Go Public and Anxiety</h2>
               <p>
-                This was a day when I felt crushed by the challenges ahead.<br />
-                CI/CD wasn't stable, tests passed and failed randomly. Log analysis was still at a "half-finished" stage.
+                On this day, I finally published <strong>falcoya.dev</strong> and released <strong>falco-plugin-nginx</strong> as a prototype on GitHub.
               </p>
               <p>
-                The monitor showed nothing but red × marks.<br />
-                A voice echoed in my mind: "Am I even making progress?"
+                It was the moment of decision after long preparation.<br />
+                But anxiety swirled in my heart.<br />
+                "It's not complete yet," "CI/CD isn't stable," "I might be laughed at if I release it."
+              </p>
+              <p>
+                To my hesitation, TK quietly said:
               </p>
               
               <blockquote className="quote">
-                Me: "TK, I can't see any results."<br />
-                TK: "Record that anxiety too. When you look back later, even that becomes progress."
+                "Rather than keeping it closed aiming for perfection, it's more OSS to release it incomplete and get beaten up."
               </blockquote>
               
               <p>
-                The "anxiety memo" I wrote surprisingly helped me regain composure.
+                Encouraged by those words, I spread my wings though they trembled.<br />
+                The moment I pressed the "publish" button, my heart warmed, and I felt the door connecting to the world open.
               </p>
-              
-              <div className="lesson-box">
-                <h3>Lesson Learned</h3>
-                <p>In OSS, not just "achievements" but also "worries" and "anxieties" become valuable assets worth recording.</p>
-              </div>
+              <p>
+                When the first articles appeared on the site and the repository went open, I was no longer alone.<br />
+                <strong>Falcoya was born on this day.</strong>
+              </p>
             </section>
 
             <section className="content-section">
-              <h2>Day 34 (Aug 12) — The Glow of Small Success</h2>
+              <h2>Day 34 (Aug 12) — The Baptism of OSS: Success and Noise</h2>
               <p>
-                Amid continuous anxiety, small fixes can hold great meaning.<br />
-                After adjusting the log parser, Falco detected a "new attack pattern" for the first time.
+                The day after going public, Falco detected a new attack pattern from Nginx logs.<br />
+                My heart trembled when "ALERT" appeared on the monitor.<br />
+                But my relief that "going public was the right choice" was short-lived, as a flood of noise overwhelmed me.
               </p>
               <p>
-                The monitor seemed to glow for just a moment.<br />
-                It might not have been major progress, but it was enough to sustain my spirit.
-              </p>
-              <p>
-                However, noise also flooded in at the same time.<br />
-                "Distinguishing between valid detections and noise" was still far away.
+                Along with success came the harsh reality: "This isn't ready for practical use."
               </p>
               
               <div className="lesson-box">
                 <h3>Lesson Learned</h3>
-                <p>"Success" in OSS means illuminating the next challenge.</p>
+                <p>Success in OSS means "illuminating the next challenge."</p>
               </div>
             </section>
 
             <section className="content-section">
               <h2>Day 35 (Aug 13) — A Vortex of Frustration and Confusion</h2>
               <p>
-                It was a hellish day.<br />
+                A few days later, the trials became even more severe.<br />
                 It worked locally but failed in CI. It broke in Docker but worked fine in other environments.
               </p>
               <p>
-                The irrationality wore down my spirit.<br />
-                Late at night, when I sighed looking at the red errors on screen, TK spoke up.
+                I sighed while looking at CI logs dyed red.
               </p>
               
               <blockquote className="quote">
-                TK: "CI isn't your enemy. It's testing you on behalf of future colleagues."<br />
-                Me: "...Thinking about it that way makes me feel a bit better."
+                Me: "Isn't CI rejecting me?"<br />
+                TK: "No. CI is testing you on behalf of future colleagues."
               </blockquote>
               
-              <div className="lesson-box">
-                <h3>Lesson Learned</h3>
-                <p>CI is strict to ensure OSS reliability. Reframe it not as rejection but as "the voice of future users."</p>
-              </div>
+              <p>
+                Those words opened my view a little.<br />
+                CI wasn't an enemy but was speaking for "the voice of future users."
+              </p>
             </section>
 
             <section className="content-section">
               <h2>Day 36 (Aug 14) — Finding Seeds of Improvement</h2>
               <p>
-                Amid repeated failures, I reached beyond the code.<br />
-                That was "organizing documentation."
+                Amid repeated failures, I worked not just on code but on <strong>records</strong>.<br />
+                I documented "which fixes correspond to which tests" in development notes and organized them as improvement records.
               </p>
               <p>
-                Linking "which fixes correspond to which tests" in development notes.<br />
-                It was mundane work, but it made the next day's fixes much easier.
+                The next day, those records saved my future self.<br />
+                As if my past self threw a Pull Request and my future self reviewed it.
               </p>
               
               <blockquote className="quote">
                 TK: "Words you write down are Pull Requests to your future self."<br />
                 Me: "I see, my future self will review them."
               </blockquote>
-              
-              <div className="lesson-box">
-                <h3>Lesson Learned</h3>
-                <p>Improvement sprouts not just from code but from recording and organizing. Documentation is a weapon in OSS development.</p>
-              </div>
             </section>
 
             <section className="content-section">
               <h2>Day 37 (Aug 15) — Painful Repetition</h2>
               <p>
-                CI remained unstable.<br />
-                No logs appeared, tests slipped through. Each time: manual verification, fixes, and more failures.
+                CI remained a red light.<br />
+                Logs cut off, tests slipped through, repeating the same errors.
               </p>
               <p>
-                Whenever I felt like breaking, I told myself "This failure is also a record."<br />
-                In OSS culture, sharing failures becomes valuable.
+                Whenever I felt like breaking, I told myself "This failure is also an asset."<br />
+                Because OSS isn't just about sharing success, but also about being open about failures.
               </p>
               
               <div className="lesson-box">
                 <h3>Lesson Learned</h3>
-                <p>Failure is the default setting in OSS development. Building resilience mechanisms leads to evolution.</p>
+                <p>Failure is the default setting in OSS. Building resilience mechanisms leads to the next evolution.</p>
               </div>
             </section>
 
             <section className="content-section">
-              <h2>Day 38 (Aug 16) — Critical CI/CD Fixes</h2>
+              <h2>Day 38 (Aug 16) — Breaking Through CI/CD, and the Next Wall</h2>
               <p>
-                Finally, I tackled fundamental fixes.<br />
-                Completely overhauled the CI/CD pipeline and applied critical fixes.
+                And then I made a decision.<br />
+                I fundamentally overhauled the CI/CD pipeline and applied critical fixes.
               </p>
               <p>
-                After countless retries, past midnight, when the monitor finally turned all green.<br />
-                "All tests passed" — I felt all strength leave my body at that fact.
+                After a full day of struggle, when the monitor turned green late at night, all strength left my body.<br />
+                "All tests passed" — that simple fact heated my heart so much.
               </p>
               
               <blockquote className="quote">
                 Me: "TK, CI finally passed!"<br />
-                TK: "Congratulations. But you can see the next mountain too, right?"<br />
+                TK: "Well done. But you can see the next mountain too, right?"<br />
                 Me: "Yes. But right now, I want to savor this step."
               </blockquote>
+            </section>
+
+            <section className="content-section">
+              <h3>The Next Trial: E2E Testing</h3>
+              <p>
+                Even in relief, I knew deep in my heart.<br />
+                This wasn't the end. Rather, this was where the real work began.
+              </p>
+              <p>
+                What awaited next was — <strong>E2E testing</strong>.
+              </p>
+              <p>
+                CI/CD was, so to speak, just foundational work to solidify the ground.<br />
+                But E2E is different. This is a comprehensive test asking "Does the entire plugin really work as one system?"<br />
+                It's the final gateway where everything is tested, where superficial fixes won't work.
+              </p>
+              <p>
+                I have detailed specifications and test design documents at hand.<br />
+                However, when I actually run them, new errors will surely bare their fangs.<br />
+                Misinterpretation of logs, environment-dependent traps, unexpected behaviors—<br />
+                E2E is a "boss battle" that exposes all the enemies that have been hiding.
+              </p>
               
-              <div className="lesson-box">
-                <h3>Lesson Learned</h3>
-                <p>In OSS, "CI passing" is worth celebrating. It's the moment when the foundation of reliability is established.</p>
-              </div>
+              <blockquote className="quote">
+                "If you've overcome CI, next is E2E."<br />
+                TK's words now resonate heavily in my chest.
+              </blockquote>
+              
+              <p>
+                I've made up my mind.<br />
+                The OSS story doesn't end here.<br />
+                <strong>Next time, the battle with the new mountain called E2E testing begins.</strong>
+              </p>
             </section>
 
             <section className="content-section">
@@ -294,6 +315,8 @@ export default function FalcoPluginDevelopmentDays33to38En() {
               
               <h3>Implementation Tasks</h3>
               <ul className="task-list">
+                <li>Publishing falcoya.dev</li>
+                <li>Releasing falco-plugin-nginx prototype</li>
                 <li>Trial and error with Falco rule additions and noise reduction</li>
                 <li>Critical fixes to CI/CD pipeline</li>
                 <li>Improvements to Docker reproducibility</li>
@@ -302,7 +325,8 @@ export default function FalcoPluginDevelopmentDays33to38En() {
               
               <h3>Created/Updated Documentation</h3>
               <ul className="document-list">
-                <li>"Anxiety Memo" (verbalizing failures and anxieties)</li>
+                <li>Public announcement (news page)</li>
+                <li>"Anxiety Memo" (verbalizing worries and anxieties)</li>
                 <li>Improvement records (linking tests and fixes)</li>
                 <li>CI/CD fix history and procedures</li>
                 <li>Development notes (detailed records of bugs and fix processes)</li>
@@ -312,19 +336,23 @@ export default function FalcoPluginDevelopmentDays33to38En() {
             <section className="content-section">
               <h2>Summary</h2>
               <p>
-                These "Days 33-38" were a <strong>spiral of anxiety, failure, and improvement</strong>.<br />
-                But when CI/CD finally stabilized at the end, everything felt connected.
+                These "Days 33-38" were a week filled with <strong>the emotion of going public and the baptism of OSS, and signs of the next trial</strong>.
               </p>
               <p>
-                OSS is not just about writing code.<br />
-                It's a culture of honestly recording failures, sharing with colleagues, and building trust.<br />
-                I'm still inexperienced, but I feel myself getting closer to "usable OSS" step by step.
+                August 11 was Falcoya's <strong>"day of birth."</strong><br />
+                August 16 was the day I <strong>"overcame the first wall"</strong> as OSS.<br />
+                And now, I'm about to challenge the next mountain—<strong>E2E testing</strong>.
+              </p>
+              <p>
+                OSS is not just code.<br />
+                It's an endeavor to record and share failures and anxieties, and overcome them together with colleagues.<br />
+                I'm still immature, but I feel myself getting closer to "trusted OSS" step by step.
               </p>
               
               <div className="author-note">
                 <p className="note-text">
-                  Next time, I'll write about "dialogue with the community" from Day 39 onwards.<br />
-                  The real pleasure of OSS lies in connections between people that transcend code.
+                  Next time, I'll write about "the battle with E2E testing" from Day 39 onwards.<br />
+                  The real trial of OSS lies in system-wide integration testing.
                 </p>
               </div>
             </section>
