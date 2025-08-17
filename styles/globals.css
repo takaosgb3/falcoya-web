@@ -3074,25 +3074,6 @@ body {
 /* Article Footer */
 .article-footer {
   margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e5e7eb;
-  text-align: center;
-}
-
-.back-to-blog {
-  display: inline-block;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.back-to-blog:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 /* Task Section */
@@ -3135,8 +3116,20 @@ body {
   border-radius: 8px;
 }
 
-.links-section p {
-  margin: 0.5rem 0;
+.links-section h3 {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.links-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links-section li {
+  margin-bottom: 0.5rem;
 }
 
 .links-section a {
@@ -3149,4 +3142,78 @@ body {
 .links-section a:hover {
   color: #6366f1;
   text-decoration: underline;
+}
+
+/* Share Section */
+.share-section {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.share-section h3 {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.share-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+}
+
+.share-button.twitter {
+  background: #1DA1F2;
+  color: white;
+}
+
+.share-button.twitter:hover {
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
+}
+
+.share-button.linkedin {
+  background: #0077B5;
+  color: white;
+}
+
+.share-button.linkedin:hover {
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+}
+
+/* Navigation Links */
+.navigation-links {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.back-to-list,
+.next-article {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.back-to-list:hover,
+.next-article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }

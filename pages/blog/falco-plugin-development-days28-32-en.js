@@ -319,26 +319,47 @@ export default function FalcoPluginDevelopmentDays28to32En() {
               <p>
                 I'm still immature, but by recording failures and learnings, I feel I'm getting closer step by step to "OSS that people can use."
               </p>
+              
               <div className="links-section">
-                <p>
-                  <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">
-                    🔗 GitHub: github.com/takaosgb3/falco-plugin-nginx
-                  </a>
-                </p>
-                <p>
-                  <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">
-                    🔗 TK's LinkedIn: https://www.linkedin.com/in/tk-shimizu/
-                  </a>
-                </p>
+                <h3>Links</h3>
+                <ul>
+                  <li>
+                    <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">
+                      GitHub: falco-plugin-nginx
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">
+                      TK's LinkedIn
+                    </a>
+                  </li>
+                </ul>
               </div>
             </section>
-          </div>
 
-          <footer className="article-footer">
-            <Link href="/blog">
-              <a className="back-to-blog">← Back to Blog</a>
-            </Link>
-          </footer>
+            <div className="article-footer">
+              <div className="share-section">
+                <h3>Share this article</h3>
+                <div className="share-buttons">
+                  <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('Falco + Nginx Plugin Development: Days 28-32 of Falcoya')}&url=${encodeURIComponent('https://falcoya.dev/blog/falco-plugin-development-days28-32-en')}`} target="_blank" rel="noopener noreferrer" className="share-button twitter">
+                    Twitter
+                  </a>
+                  <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://falcoya.dev/blog/falco-plugin-development-days28-32-en')}`} target="_blank" rel="noopener noreferrer" className="share-button linkedin">
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+              
+              <div className="navigation-links">
+                <Link href="/blog" className="back-to-list">
+                  ← Back to Blog
+                </Link>
+                <Link href="/blog/falco-plugin-development-days23-27-en" className="next-article">
+                  Read Previous Article →
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
 
@@ -368,6 +389,43 @@ export default function FalcoPluginDevelopmentDays28to32En() {
           </div>
         </div>
       </footer>
+
+      <style jsx>{`
+        .blog-article {
+          padding-top: 120px;
+          min-height: 100vh;
+          background: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
+        }
+
+        .article-container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        .article-header {
+          margin-bottom: 50px;
+        }
+
+        .article-meta {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 20px;
+          font-size: 0.9rem;
+          color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+          .article-container {
+            padding: 0 15px;
+          }
+
+          .article-meta {
+            flex-wrap: wrap;
+            gap: 10px;
+          }
+        }
+      `}</style>
     </>
   )
 }
