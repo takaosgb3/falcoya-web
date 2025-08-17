@@ -358,46 +358,6 @@ export default function FalcoPluginDevelopmentDays33to38() {
             </section>
           </div>
 
-          <footer className="article-footer">
-            <div className="share-links">
-              <h3>この記事をシェア</h3>
-              <div className="share-buttons">
-                <a 
-                  href={`https://twitter.com/intent/tweet?text=Falco%20%2B%20Nginx%20プラグイン開発：Falcoya君の33日目から38日目&url=${encodeURIComponent('https://falcoya.com/blog/falco-plugin-development-days33-38')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="share-button twitter"
-                >
-                  Twitter
-                </a>
-              </div>
-            </div>
-            
-            <div className="related-links">
-              <h3>関連リンク</h3>
-              <ul>
-                <li>
-                  <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">
-                    falco-plugin-nginx GitHub リポジトリ
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">
-                    TKのLinkedIn
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-            <div className="blog-navigation">
-              <Link href="/blog/falco-plugin-development-days28-32" className="nav-link prev">
-                ← 前の記事：Falcoya君の28日目から32日目
-              </Link>
-              <Link href="/blog" className="nav-link list">
-                ブログ一覧へ
-              </Link>
-            </div>
-          </footer>
         </div>
       </article>
 
@@ -534,72 +494,6 @@ export default function FalcoPluginDevelopmentDays33to38() {
           margin: 0;
         }
 
-        .article-footer {
-          margin-top: 4rem;
-          padding-top: 2rem;
-          border-top: 2px solid #e5e7eb;
-        }
-
-        .share-links h3, .related-links h3 {
-          font-size: 1.2rem;
-          margin-bottom: 1rem;
-          color: #1f2937;
-        }
-
-        .share-buttons {
-          display: flex;
-          gap: 1rem;
-          margin-bottom: 2rem;
-        }
-
-        .share-button {
-          padding: 0.5rem 1rem;
-          background: #1da1f2;
-          color: white;
-          text-decoration: none;
-          border-radius: 5px;
-          transition: opacity 0.3s;
-        }
-
-        .share-button:hover {
-          opacity: 0.8;
-        }
-
-        .related-links ul {
-          list-style: none;
-          padding: 0;
-        }
-
-        .related-links li {
-          margin-bottom: 0.5rem;
-        }
-
-        .related-links a {
-          color: #a855f7;
-          text-decoration: none;
-        }
-
-        .related-links a:hover {
-          text-decoration: underline;
-        }
-
-        .blog-navigation {
-          display: flex;
-          justify-content: space-between;
-          margin-top: 2rem;
-          padding-top: 2rem;
-          border-top: 1px solid #e5e7eb;
-        }
-
-        .nav-link {
-          color: #a855f7;
-          text-decoration: none;
-          transition: opacity 0.3s;
-        }
-
-        .nav-link:hover {
-          opacity: 0.7;
-        }
 
         @media (max-width: 768px) {
           .article-container {
@@ -616,12 +510,6 @@ export default function FalcoPluginDevelopmentDays33to38() {
 
           .content-section h2 {
             font-size: 1.4rem;
-          }
-
-          .blog-navigation {
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
           }
         }
       `}</style>
