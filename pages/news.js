@@ -42,7 +42,7 @@ export default function News() {
             "OSSにおける信頼の積み上げ",
             "コードを超えた価値の創造"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-days28-32"
+          link: "/blog/falco-plugin-development-days28-32"
         },
         {
           id: "2025-08-16-oss-development-blog-part3",
@@ -58,7 +58,7 @@ export default function News() {
             "コードレビューとドキュメント再編",
             "OSSマラソンの継続戦略"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-days23-27"
+          link: "/blog/falco-plugin-development-days23-27"
         },
         {
           id: "2025-08-16-oss-development-blog-part2",
@@ -74,7 +74,7 @@ export default function News() {
             "Docker再現環境の構築と罠",
             "Phase 1完了までの試行錯誤"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-days15-22"
+          link: "/blog/falco-plugin-development-days15-22"
         },
         {
           id: "2025-08-16-oss-development-blog",
@@ -90,7 +90,7 @@ export default function News() {
             "絵文字によるAPI通信エラーの教訓",
             "OSSプロジェクトの運用ノウハウ"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-7days"
+          link: "/blog/falco-plugin-development-7days"
         },
         {
           id: "2025-08-11-blog-post",
@@ -105,7 +105,7 @@ export default function News() {
             "カスタムルールの作成方法",
             "実際の攻撃シミュレーション例"
           ],
-          link: "https://falcoya.dev/blog/falco-nginx-security-tutorial"
+          link: "/blog/falco-nginx-security-tutorial"
         },
         {
           id: "2025-08-11-website-launch",
@@ -120,7 +120,7 @@ export default function News() {
             "セキュリティ検知ルールの詳細",
             "技術ブログの公開"
           ],
-          link: "https://falcoya.dev"
+          link: "/"
         }
       ]
     },
@@ -156,7 +156,7 @@ export default function News() {
             "Building trust in OSS",
             "Creating value beyond code"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-days28-32-en"
+          link: "/blog/falco-plugin-development-days28-32-en"
         },
         {
           id: "2025-08-16-oss-development-blog-part3",
@@ -172,7 +172,7 @@ export default function News() {
             "Code review and documentation reorganization",
             "OSS marathon continuation strategy"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-days23-27-en"
+          link: "/blog/falco-plugin-development-days23-27-en"
         },
         {
           id: "2025-08-16-oss-development-blog-part2",
@@ -188,7 +188,7 @@ export default function News() {
             "Docker reproduction environment setup and traps",
             "Trial and error until Phase 1 completion"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-days15-22-en"
+          link: "/blog/falco-plugin-development-days15-22-en"
         },
         {
           id: "2025-08-16-oss-development-blog",
@@ -204,7 +204,7 @@ export default function News() {
             "Lessons from emoji-caused API communication errors",
             "OSS project operation know-how"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-7days-en"
+          link: "/blog/falco-plugin-development-7days-en"
         },
         {
           id: "2025-08-11-blog-post",
@@ -219,7 +219,7 @@ export default function News() {
             "Custom rule creation methods",
             "Real attack simulation examples"
           ],
-          link: "https://falcoya.dev/blog/falco-nginx-security-tutorial-en"
+          link: "/blog/falco-nginx-security-tutorial-en"
         },
         {
           id: "2025-08-11-website-launch",
@@ -234,7 +234,7 @@ export default function News() {
             "Security detection rules details",
             "Technical blog publication"
           ],
-          link: "https://falcoya.dev"
+          link: "/"
         }
       ]
     }
@@ -416,14 +416,22 @@ export default function News() {
                   )}
                   
                   {item.link && (
-                    <a 
-                      href={item.link} 
-                      className="news-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
-                    </a>
+                    item.link.startsWith('http') ? (
+                      <a 
+                        href={item.link} 
+                        className="news-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
+                      </a>
+                    ) : (
+                      <Link href={item.link}>
+                        <a className="news-link">
+                          {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
+                        </a>
+                      </Link>
+                    )
                   )}
                 </div>
               </article>
