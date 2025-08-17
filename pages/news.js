@@ -29,6 +29,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-17-oss-development-blog-part4",
+          date: "2025-08-17",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の28日目から32日目」を公開",
+          content: "OSSはコードだけじゃない、ポリシーと文化も育てる5日間の記録を公開しました。プロジェクト方針の見直し、ドキュメントの重要性、そして信頼の構築について、物語形式で綴っています。",
+          highlights: [
+            "プロジェクト方針とMVPの明確化",
+            "ドキュメントがもたらす時間を超えた価値",
+            "ポリシー策定と文化の形成",
+            "OSSにおける信頼の積み上げ",
+            "コードを超えた価値の創造"
+          ],
+          link: "/blog/falco-plugin-development-days28-32"
+        },
+        {
           id: "2025-08-16-oss-development-blog-part3",
           date: "2025-08-16",
           category: "feature",
@@ -42,7 +58,7 @@ export default function News() {
             "コードレビューとドキュメント再編",
             "OSSマラソンの継続戦略"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-days23-27"
+          link: "/blog/falco-plugin-development-days23-27"
         },
         {
           id: "2025-08-16-oss-development-blog-part2",
@@ -58,7 +74,7 @@ export default function News() {
             "Docker再現環境の構築と罠",
             "Phase 1完了までの試行錯誤"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-days15-22"
+          link: "/blog/falco-plugin-development-days15-22"
         },
         {
           id: "2025-08-16-oss-development-blog",
@@ -74,7 +90,7 @@ export default function News() {
             "絵文字によるAPI通信エラーの教訓",
             "OSSプロジェクトの運用ノウハウ"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-7days"
+          link: "/blog/falco-plugin-development-7days"
         },
         {
           id: "2025-08-11-blog-post",
@@ -89,7 +105,7 @@ export default function News() {
             "カスタムルールの作成方法",
             "実際の攻撃シミュレーション例"
           ],
-          link: "https://falcoya.dev/blog/falco-nginx-security-tutorial"
+          link: "/blog/falco-nginx-security-tutorial"
         },
         {
           id: "2025-08-11-website-launch",
@@ -104,7 +120,7 @@ export default function News() {
             "セキュリティ検知ルールの詳細",
             "技術ブログの公開"
           ],
-          link: "https://falcoya.dev"
+          link: "/"
         }
       ]
     },
@@ -127,6 +143,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-17-oss-development-blog-part4",
+          date: "2025-08-17",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Days 28-32 of Falcoya\" Published",
+          content: "OSS isn't just code, it's about cultivating policy and culture. Published a 5-day record exploring project direction review, the importance of documentation, and building trust, all told in narrative form.",
+          highlights: [
+            "Project direction and MVP clarification",
+            "The timeless value documentation brings",
+            "Policy creation and culture formation",
+            "Building trust in OSS",
+            "Creating value beyond code"
+          ],
+          link: "/blog/falco-plugin-development-days28-32-en"
+        },
+        {
           id: "2025-08-16-oss-development-blog-part3",
           date: "2025-08-16",
           category: "feature",
@@ -140,7 +172,7 @@ export default function News() {
             "Code review and documentation reorganization",
             "OSS marathon continuation strategy"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-days23-27-en"
+          link: "/blog/falco-plugin-development-days23-27-en"
         },
         {
           id: "2025-08-16-oss-development-blog-part2",
@@ -156,7 +188,7 @@ export default function News() {
             "Docker reproduction environment setup and traps",
             "Trial and error until Phase 1 completion"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-days15-22-en"
+          link: "/blog/falco-plugin-development-days15-22-en"
         },
         {
           id: "2025-08-16-oss-development-blog",
@@ -172,7 +204,7 @@ export default function News() {
             "Lessons from emoji-caused API communication errors",
             "OSS project operation know-how"
           ],
-          link: "https://falcoya.dev/blog/falco-plugin-development-7days-en"
+          link: "/blog/falco-plugin-development-7days-en"
         },
         {
           id: "2025-08-11-blog-post",
@@ -187,7 +219,7 @@ export default function News() {
             "Custom rule creation methods",
             "Real attack simulation examples"
           ],
-          link: "https://falcoya.dev/blog/falco-nginx-security-tutorial-en"
+          link: "/blog/falco-nginx-security-tutorial-en"
         },
         {
           id: "2025-08-11-website-launch",
@@ -202,7 +234,7 @@ export default function News() {
             "Security detection rules details",
             "Technical blog publication"
           ],
-          link: "https://falcoya.dev"
+          link: "/"
         }
       ]
     }
@@ -384,14 +416,22 @@ export default function News() {
                   )}
                   
                   {item.link && (
-                    <a 
-                      href={item.link} 
-                      className="news-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
-                    </a>
+                    item.link.startsWith('http') ? (
+                      <a 
+                        href={item.link} 
+                        className="news-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
+                      </a>
+                    ) : (
+                      <Link href={item.link}>
+                        <a className="news-link">
+                          {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
+                        </a>
+                      </Link>
+                    )
                   )}
                 </div>
               </article>

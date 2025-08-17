@@ -1591,7 +1591,10 @@ body {
 .article-title {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1.2;
   margin-bottom: 2rem;
 }
@@ -2975,4 +2978,242 @@ body {
   .table-of-contents nav {
     max-height: 150px;
   }
+}
+
+/* Blog Article Page Specific Styles - Center Content */
+.blog-article {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: #f8f9fa;
+}
+
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: white;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+  .article-container {
+    padding: 40px 20px;
+    margin: 0 10px;
+  }
+}
+
+/* Article Content Spacing */
+.article-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-bottom: 3rem;
+}
+
+.content-section h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.content-section h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+/* Quote Block Styling */
+.quote {
+  background: #f9fafb;
+  border-left: 4px solid #6366f1;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* Learning Box */
+.learning-box {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.learning-box h3 {
+  color: #92400e;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.learning-box p {
+  color: #78350f;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Review List */
+.review-list {
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.review-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+/* Article Footer */
+.article-footer {
+  margin-top: 4rem;
+}
+
+/* Task Section */
+.task-section {
+  margin: 2rem 0;
+}
+
+.task-section h3 {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.task-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: bold;
+}
+
+/* Links Section */
+.links-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.links-section h3 {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.links-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links-section li {
+  margin-bottom: 0.5rem;
+}
+
+.links-section a {
+  color: #4f46e5;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.links-section a:hover {
+  color: #6366f1;
+  text-decoration: underline;
+}
+
+/* Share Section */
+.share-section {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.share-section h3 {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.share-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+}
+
+.share-button.twitter {
+  background: #1DA1F2;
+  color: white;
+}
+
+.share-button.twitter:hover {
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
+}
+
+.share-button.linkedin {
+  background: #0077B5;
+  color: white;
+}
+
+.share-button.linkedin:hover {
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+}
+
+/* Navigation Links */
+.navigation-links {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.back-to-list,
+.next-article {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.back-to-list:hover,
+.next-article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
