@@ -125,7 +125,7 @@ export default function FalcoPluginDevelopmentDays33to38En() {
         <div className="article-container">
           <header className="article-header">
             <div className="article-meta">
-              <span className="article-date">2025-08-18</span>
+              <span className="article-date">2025-08-17</span>
               <span className="article-category">OSS Development</span>
               <span className="article-read-time">8 min read</span>
             </div>

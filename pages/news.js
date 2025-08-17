@@ -29,8 +29,8 @@ export default function News() {
       },
       items: [
         {
-          id: "2025-08-18-oss-development-blog-part5",
-          date: "2025-08-18",
+          id: "2025-08-17-oss-development-blog-part5",
+          date: "2025-08-17",
           category: "feature",
           type: "new",
           title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の33日目から38日目」を公開",
@@ -159,8 +159,8 @@ export default function News() {
       },
       items: [
         {
-          id: "2025-08-18-oss-development-blog-part5",
-          date: "2025-08-18",
+          id: "2025-08-17-oss-development-blog-part5",
+          date: "2025-08-17",
           category: "feature",
           type: "new",
           title: "Blog Post \"Falco + Nginx Plugin Development: Days 33-38 of Falcoya\" Published",
@@ -396,24 +396,25 @@ export default function News() {
       </nav>
 
       <main className="news-container">
-        <div className="news-header">
-          <h1>{content.title}</h1>
-          <p>{content.description}</p>
-        </div>
+        <div className="container">
+          <div className="news-header">
+            <h1>{content.title}</h1>
+            <p>{content.description}</p>
+          </div>
 
-        <div className="news-filters">
-          {Object.entries(content.categories).map(([key, label]) => (
-            <button
-              key={key}
-              className={`filter-btn ${selectedCategory === key ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(key)}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+          <div className="news-filters">
+            {Object.entries(content.categories).map(([key, label]) => (
+              <button
+                key={key}
+                className={`filter-btn ${selectedCategory === key ? 'active' : ''}`}
+                onClick={() => setSelectedCategory(key)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
 
-        <div className="news-timeline">
+          <div className="news-timeline">
           {filteredNews.length === 0 ? (
             <div className="no-news">
               <p>{language === 'ja' ? '現在、お知らせはありません。' : 'No news available at this time.'}</p>
@@ -470,6 +471,7 @@ export default function News() {
             ))
           )}
         </div>
+        </div>
       </main>
 
       <footer className="footer">
@@ -519,10 +521,13 @@ export default function News() {
           min-height: 100vh;
           padding-top: 120px;
           padding-bottom: 60px;
+          background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+        }
+        
+        .container {
           max-width: 1200px;
           margin: 0 auto;
-          padding-left: 20px;
-          padding-right: 20px;
+          padding: 0 20px;
         }
 
         .news-header {
