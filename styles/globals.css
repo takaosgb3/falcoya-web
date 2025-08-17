@@ -2976,3 +2976,146 @@ body {
     max-height: 150px;
   }
 }
+
+/* Blog Article Page Specific Styles - Center Content */
+.blog-article {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: #f8f9fa;
+}
+
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: white;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+  .article-container {
+    padding: 40px 20px;
+    margin: 0 10px;
+  }
+}
+
+/* Article Content Spacing */
+.article-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-bottom: 3rem;
+}
+
+.content-section h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.content-section h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+/* Conversation Styling */
+.conversation {
+  background: #f9fafb;
+  border-left: 4px solid #6366f1;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.conversation p {
+  margin: 0.5rem 0;
+}
+
+.conversation strong {
+  color: #4f46e5;
+}
+
+/* Learning Box */
+.learning-box {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.learning-box h3 {
+  color: #92400e;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.learning-box p {
+  color: #78350f;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Review List */
+.review-list {
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.review-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+/* Article Footer */
+.article-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.back-to-blog {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.back-to-blog:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Link List */
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.link-list li {
+  margin-bottom: 0.5rem;
+}
+
+.link-list a {
+  color: #4f46e5;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link-list a:hover {
+  color: #6366f1;
+  text-decoration: underline;
+}
