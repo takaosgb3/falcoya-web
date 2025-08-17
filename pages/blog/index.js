@@ -162,7 +162,7 @@ export default function BlogIndex() {
       allPosts: "すべての記事",
       categories: "カテゴリー",
       recentPosts: "最新記事",
-      tagCloud: "タグクラウド",
+      tagCloud: "タグ",
       nav: {
         github: "GitHub",
         installation: "インストール",
@@ -171,11 +171,10 @@ export default function BlogIndex() {
         news: "ニュース"
       },
       categoryList: [
-        { name: "セキュリティ", count: 1 },
-        { name: "チュートリアル", count: 1 },
-        { name: "Falco", count: 1 }
+        { name: "OSS開発", count: 5 },
+        { name: "セキュリティ", count: 1 }
       ],
-      tags: ["Falco", "Nginx", "セキュリティ", "AWS", "EC2", "Web攻撃検知"]
+      tags: ["Falco", "Nginx", "OSS開発", "CI/CD", "Docker", "テスト", "デバッグ", "プロジェクト管理", "ポリシー", "文化", "ドキュメント", "セキュリティ", "検知ルール", "Go言語", "GitHub Actions", "AWS", "EC2", "Web攻撃検知"]
     },
     en: {
       title: "FALCOYA Blog", 
@@ -185,7 +184,7 @@ export default function BlogIndex() {
       allPosts: "All Posts",
       categories: "Categories", 
       recentPosts: "Recent Posts",
-      tagCloud: "Tag Cloud",
+      tagCloud: "Tags",
       nav: {
         github: "GitHub",
         installation: "Installation",
@@ -194,11 +193,10 @@ export default function BlogIndex() {
         news: "News"
       },
       categoryList: [
-        { name: "Security", count: 1 },
-        { name: "Tutorials", count: 1 },
-        { name: "Falco", count: 1 }
+        { name: "OSS Development", count: 5 },
+        { name: "Security", count: 1 }
       ],
-      tags: ["Falco", "Nginx", "Security", "AWS", "EC2", "Web Attack Detection"]
+      tags: ["Falco", "Nginx", "OSS Development", "CI/CD", "Docker", "Testing", "Debugging", "Project Management", "Policy", "Culture", "Documentation", "Security", "Detection Rules", "Go", "GitHub Actions", "AWS", "EC2", "Web Attack Detection"]
     }
   }
 
