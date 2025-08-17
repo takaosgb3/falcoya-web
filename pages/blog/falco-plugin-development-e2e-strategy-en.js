@@ -125,7 +125,7 @@ export default function FalcoPluginDevelopmentE2EStrategyEn() {
         <div className="article-container">
           <header className="article-header">
             <div className="article-meta">
-              <span className="article-date">2025-08-18</span>
+              <span className="article-date">2025-08-17</span>
               <span className="article-category">OSS Development</span>
               <span className="article-read-time">10 min read</span>
             </div>
@@ -252,16 +252,6 @@ export default function FalcoPluginDevelopmentE2EStrategyEn() {
                 <li>Weekly Deep: Load/Chaos/Full matrix (3-6 hours)</li>
                 <li>Release Candidate: Full coverage + manual spot checks (half-day scale)</li>
               </ul>
-              
-              <div className="kpi-box">
-                <h3>KPI Targets</h3>
-                <ul className="kpi-list">
-                  <li>Detection Rate (TPR) ≥ 95%</li>
-                  <li>False Positive Rate (FPR) ≤ 1%</li>
-                  <li>CI Gate ≤ 15 min / Nightly ≤ 120 min</li>
-                  <li>Performance: Latency p95 ≤ 20ms, Zero drops at 1K-10K logs/s</li>
-                </ul>
-              </div>
               
               <div className="image-container">
                 <img src="/img/blog_s.png" alt="E2E Test Design - The Challenge of Comprehensive Testing" />

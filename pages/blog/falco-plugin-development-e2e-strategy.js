@@ -125,7 +125,7 @@ export default function FalcoPluginDevelopmentE2EStrategy() {
         <div className="article-container">
           <header className="article-header">
             <div className="article-meta">
-              <span className="article-date">2025-08-18</span>
+              <span className="article-date">2025-08-17</span>
               <span className="article-category">OSS開発</span>
               <span className="article-read-time">10分</span>
             </div>
@@ -252,16 +252,6 @@ export default function FalcoPluginDevelopmentE2EStrategy() {
                 <li>Weekly Deep：負荷/カオス/全マトリクス（3〜6時間）</li>
                 <li>Release Candidate：全網羅＋手動スポット（半日規模）</li>
               </ul>
-              
-              <div className="kpi-box">
-                <h3>KPI目標</h3>
-                <ul className="kpi-list">
-                  <li>検知率（TPR）≥ 95%</li>
-                  <li>誤検知率（FPR）≤ 1%</li>
-                  <li>CIゲート ≤ 15分 / Nightly ≤ 120分</li>
-                  <li>性能：レイテンシ p95 ≤ 20ms、1K〜10K logs/sでドロップゼロ</li>
-                </ul>
-              </div>
               
               <div className="image-container">
                 <img src="/img/blog_s.png" alt="E2Eテスト設計図 - 総合試験への挑戦" />

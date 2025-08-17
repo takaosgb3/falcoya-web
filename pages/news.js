@@ -29,8 +29,8 @@ export default function News() {
       },
       items: [
         {
-          id: "2025-08-18-oss-development-blog-special",
-          date: "2025-08-18",
+          id: "2025-08-17-oss-development-blog-special",
+          date: "2025-08-17",
           category: "feature",
           type: "new",
           title: "特別編「E2Eテスト前夜 — Falcoya君の作戦会議」を公開",
@@ -173,8 +173,8 @@ export default function News() {
       },
       items: [
         {
-          id: "2025-08-18-oss-development-blog-special",
-          date: "2025-08-18",
+          id: "2025-08-17-oss-development-blog-special",
+          date: "2025-08-17",
           category: "feature",
           type: "new",
           title: "Special Edition \"The Eve of E2E Testing — Falcoya's Strategy Meeting\" Published",
