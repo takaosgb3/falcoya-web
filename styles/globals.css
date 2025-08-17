@@ -3022,21 +3022,15 @@ body {
   color: #374151;
 }
 
-/* Conversation Styling */
-.conversation {
+/* Quote Block Styling */
+.quote {
   background: #f9fafb;
   border-left: 4px solid #6366f1;
   padding: 1.5rem;
   margin: 2rem 0;
   border-radius: 0 8px 8px 0;
-}
-
-.conversation p {
-  margin: 0.5rem 0;
-}
-
-.conversation strong {
-  color: #4f46e5;
+  font-style: italic;
+  color: #4b5563;
 }
 
 /* Learning Box */
@@ -3098,24 +3092,58 @@ body {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-/* Link List */
-.link-list {
-  list-style: none;
-  padding: 0;
+/* Task Section */
+.task-section {
   margin: 2rem 0;
 }
 
-.link-list li {
-  margin-bottom: 0.5rem;
+.task-section h3 {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
 }
 
-.link-list a {
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.task-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: bold;
+}
+
+/* Links Section */
+.links-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.links-section p {
+  margin: 0.5rem 0;
+}
+
+.links-section a {
   color: #4f46e5;
   text-decoration: none;
   transition: color 0.2s;
+  font-weight: 500;
 }
 
-.link-list a:hover {
+.links-section a:hover {
   color: #6366f1;
   text-decoration: underline;
 }

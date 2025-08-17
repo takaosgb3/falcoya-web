@@ -182,10 +182,10 @@ export default function FalcoPluginDevelopmentDays28to32En() {
               </ul>
 
               <h3>Review Process</h3>
-              <div className="conversation">
-                <p><strong>TK</strong>: "Not just the speed of progress, but the direction needs review too."</p>
-                <p><strong>Me</strong>: "I see, a project needs a compass."</p>
-              </div>
+              <blockquote className="quote">
+                TK: "Not just the speed of progress, but the direction needs review too."<br />
+                Me: "I see, a project needs a compass."
+              </blockquote>
               <p>
                 Opening a Markdown memo, I organized the following:
               </p>
@@ -218,10 +218,10 @@ export default function FalcoPluginDevelopmentDays28to32En() {
               <p>
                 Results were mixed. SQLi was detected, but XSS slipped through, and harmless logs were falsely flagged.
               </p>
-              <div className="conversation">
-                <p><strong>Me</strong>: "I thought I improved it, but broke something else."</p>
-                <p><strong>TK</strong>: "OSS development is whack-a-mole. Take it one at a time without rushing."</p>
-              </div>
+              <blockquote className="quote">
+                Me: "I thought I improved it, but broke something else."<br />
+                TK: "OSS development is whack-a-mole. Take it one at a time without rushing."
+              </blockquote>
               <div className="learning-box">
                 <h3>Reflection</h3>
                 <p>
@@ -239,10 +239,10 @@ export default function FalcoPluginDevelopmentDays28to32En() {
               <p>
                 Reading the line "This conditional is to avoid false positives," I could fix it without hesitation.
               </p>
-              <div className="conversation">
-                <p><strong>TK</strong>: "Documentation saves your future self."</p>
-                <p><strong>Me</strong>: "Documentation is like a time capsule."</p>
-              </div>
+              <blockquote className="quote">
+                TK: "Documentation saves your future self."<br />
+                Me: "Documentation is like a time capsule."
+              </blockquote>
               <div className="learning-box">
                 <h3>Reflection</h3>
                 <p>
@@ -257,10 +257,10 @@ export default function FalcoPluginDevelopmentDays28to32En() {
                 Today I spent time on <strong>project rule-making</strong>.<br />
                 Clarifying review procedures and making tests mandatory.
               </p>
-              <div className="conversation">
-                <p><strong>Me</strong>: "I might be spending more time writing rules than code."</p>
-                <p><strong>TK</strong>: "That's OSS. Rules are the mechanism that protects culture."</p>
-              </div>
+              <blockquote className="quote">
+                Me: "I might be spending more time writing rules than code."<br />
+                TK: "That's OSS. Rules are the mechanism that protects culture."
+              </blockquote>
               <div className="learning-box">
                 <h3>Reflection</h3>
                 <p>
@@ -289,21 +289,25 @@ export default function FalcoPluginDevelopmentDays28to32En() {
             <section className="content-section">
               <h2>Tasks and Documentation from Days 28-32</h2>
               
-              <h3>Implementation Tasks</h3>
-              <ul>
+              <div className="task-section">
+                <h3>Implementation Tasks</h3>
+                <ul className="task-list">
                 <li>Log parsing improvements and test additions</li>
                 <li>Detection rule accuracy adjustments (SQLi/XSS re-verification)</li>
                 <li>Repeated bug fixes and improvements</li>
                 <li>Minor CI/CD fixes</li>
-              </ul>
+                </ul>
+              </div>
 
-              <h3>Created/Updated Documentation</h3>
-              <ul>
+              <div className="task-section">
+                <h3>Created/Updated Documentation</h3>
+                <ul className="task-list">
                 <li>Project direction memo (clarified MVP and user persona)</li>
                 <li>Contributing Guide additions (review and test requirements)</li>
                 <li>Policy update records</li>
                 <li>Development notes additions (fix reasons and history)</li>
-              </ul>
+                </ul>
+              </div>
             </section>
 
             <section className="content-section">
@@ -315,10 +319,18 @@ export default function FalcoPluginDevelopmentDays28to32En() {
               <p>
                 I'm still immature, but by recording failures and learnings, I feel I'm getting closer step by step to "OSS that people can use."
               </p>
-              <ul className="link-list">
-                <li>GitHub: <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">github.com/takaosgb3/falco-plugin-nginx</a></li>
-                <li>TK's LinkedIn: <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/tk-shimizu/</a></li>
-              </ul>
+              <div className="links-section">
+                <p>
+                  <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">
+                    🔗 GitHub: github.com/takaosgb3/falco-plugin-nginx
+                  </a>
+                </p>
+                <p>
+                  <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">
+                    🔗 TK's LinkedIn: https://www.linkedin.com/in/tk-shimizu/
+                  </a>
+                </p>
+              </div>
             </section>
           </div>
 

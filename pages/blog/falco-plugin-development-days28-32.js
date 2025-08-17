@@ -182,10 +182,10 @@ export default function FalcoPluginDevelopmentDays28to32() {
               </ul>
 
               <h3>見直しのプロセス</h3>
-              <div className="conversation">
-                <p><strong>TK</strong>：「進むスピードだけじゃなく、進む方向も見直さないとな。」</p>
-                <p><strong>僕</strong>：「なるほど、プロジェクトには方位磁針が必要だ。」</p>
-              </div>
+              <blockquote className="quote">
+                TK：「進むスピードだけじゃなく、進む方向も見直さないとな。」<br />
+                僕：「なるほど、プロジェクトには方位磁針が必要だ。」
+              </blockquote>
               <p>
                 Markdownのメモを開き、次を整理しました。
               </p>
@@ -218,10 +218,10 @@ export default function FalcoPluginDevelopmentDays28to32() {
               <p>
                 結果は半々。SQLiは検知できたけど、XSSはすり抜け、無害なログも誤検知。
               </p>
-              <div className="conversation">
-                <p><strong>僕</strong>：「改善したつもりが、別のところが壊れました。」</p>
-                <p><strong>TK</strong>：「OSS開発はモグラ叩きだ。焦らず一つずつだ。」</p>
-              </div>
+              <blockquote className="quote">
+                僕：「改善したつもりが、別のところが壊れました。」<br />
+                TK：「OSS開発はモグラ叩きだ。焦らず一つずつだ。」
+              </blockquote>
               <div className="learning-box">
                 <h3>感想</h3>
                 <p>
@@ -239,10 +239,10 @@ export default function FalcoPluginDevelopmentDays28to32() {
               <p>
                 「この条件式は誤検知を避けるため」と残していた一文を読んで、迷わず修正できた。
               </p>
-              <div className="conversation">
-                <p><strong>TK</strong>：「未来のお前を助けるのはドキュメントだ。」</p>
-                <p><strong>僕</strong>：「ドキュメントはタイムカプセルですね。」</p>
-              </div>
+              <blockquote className="quote">
+                TK：「未来のお前を助けるのはドキュメントだ。」<br />
+                僕：「ドキュメントはタイムカプセルですね。」
+              </blockquote>
               <div className="learning-box">
                 <h3>感想</h3>
                 <p>
@@ -257,10 +257,10 @@ export default function FalcoPluginDevelopmentDays28to32() {
                 今日は<strong>プロジェクトのルール作り</strong>に時間を費やしました。<br />
                 レビュー手順やテスト必須化を明確にしたのです。
               </p>
-              <div className="conversation">
-                <p><strong>僕</strong>：「コードよりルールを書いてる時間の方が長いかも。」</p>
-                <p><strong>TK</strong>：「それがOSSだ。ルールは文化を守る仕組みなんだ。」</p>
-              </div>
+              <blockquote className="quote">
+                僕：「コードよりルールを書いてる時間の方が長いかも。」<br />
+                TK：「それがOSSだ。ルールは文化を守る仕組みなんだ。」
+              </blockquote>
               <div className="learning-box">
                 <h3>感想</h3>
                 <p>
@@ -289,21 +289,25 @@ export default function FalcoPluginDevelopmentDays28to32() {
             <section className="content-section">
               <h2>28日目から32日目で行ったタスクと作成したドキュメント</h2>
               
-              <h3>実装タスク</h3>
-              <ul>
+              <div className="task-section">
+                <h3>実装タスク</h3>
+                <ul className="task-list">
                 <li>ログ解析処理の改善とテスト追加</li>
                 <li>検知ルールの精度調整（SQLi/XSS再検証）</li>
                 <li>バグ修正と改善の繰り返し</li>
                 <li>CI/CDの小修正</li>
-              </ul>
+                </ul>
+              </div>
 
-              <h3>作成・更新したドキュメント</h3>
-              <ul>
+              <div className="task-section">
+                <h3>作成・更新したドキュメント</h3>
+                <ul className="task-list">
                 <li>プロジェクト方針メモ（MVPと利用者像を明確化）</li>
                 <li>Contributing Guide追記（レビューとテスト必須化）</li>
                 <li>ポリシー更新記録</li>
                 <li>開発ノート追記（修正理由と履歴）</li>
-              </ul>
+                </ul>
+              </div>
             </section>
 
             <section className="content-section">
@@ -315,10 +319,18 @@ export default function FalcoPluginDevelopmentDays28to32() {
               <p>
                 僕はまだ未熟だけど、失敗と学びを記録することで「人に使ってもらえるOSS」に一歩ずつ近づいている気がします。
               </p>
-              <ul className="link-list">
-                <li>GitHub: <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">github.com/takaosgb3/falco-plugin-nginx</a></li>
-                <li>TKのLinkedIn: <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/tk-shimizu/</a></li>
-              </ul>
+              <div className="links-section">
+                <p>
+                  <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">
+                    🔗 GitHub: github.com/takaosgb3/falco-plugin-nginx
+                  </a>
+                </p>
+                <p>
+                  <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">
+                    🔗 TKのLinkedIn: https://www.linkedin.com/in/tk-shimizu/
+                  </a>
+                </p>
+              </div>
             </section>
           </div>
 
