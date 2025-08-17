@@ -185,6 +185,11 @@ export default function FalcoPluginDevelopmentDays33to38En() {
                 When the first articles appeared on the site and the repository went open, I was no longer alone.<br />
                 <strong>Falcoya was born on this day.</strong>
               </p>
+              
+              <div className="image-container">
+                <img src="/img/blog5.png" alt="Falcoya's Birth - The launch of falcoya.dev and first step as OSS" />
+                <p className="image-caption">The moment falcoya.dev went live - The first step as OSS</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -494,6 +499,24 @@ export default function FalcoPluginDevelopmentDays33to38En() {
           margin: 0;
         }
 
+        .image-container {
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .image-container img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption {
+          margin-top: 1rem;
+          font-size: 0.9rem;
+          color: #6b7280;
+          font-style: italic;
+        }
 
         @media (max-width: 768px) {
           .article-container {
