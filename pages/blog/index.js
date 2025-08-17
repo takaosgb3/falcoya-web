@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-e2e-strategy',
+      title: '特別編：E2Eテスト前夜 — Falcoya君の作戦会議',
+      description: 'E2Eテストという総合試験への挑戦。設計と仕様を詰める日々、テストの規模感、そしてOSSとしての決意。真のボス戦に挑む前夜の物語。',
+      date: '2025-08-18',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2Eテスト', 'テスト設計', '品質保証'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-e2e-strategy'
+    },
+    {
       id: 'falco-plugin-development-days33-38',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の33日目から38日目',
       description: 'CI/CD修羅場とクリティカル修正の一週間。不安・失敗・改善の連続、そしてついにCIが安定した瞬間の喜び。OSS開発の現実を物語形式で綴ります。',
@@ -67,6 +77,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-e2e-strategy-en',
+      title: 'Special Edition: The Eve of E2E Testing — Falcoya's Strategy Meeting',
+      description: 'The challenge of comprehensive E2E testing. Days of refining design and specifications, the scale of testing, and commitment as OSS. The story before challenging the true boss battle.',
+      date: '2025-08-18',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Testing', 'Test Design', 'Quality Assurance'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-e2e-strategy-en'
+    },
     {
       id: 'falco-plugin-development-days33-38-en',
       title: 'Falco + Nginx Plugin Development: Days 33-38 of Falcoya',
@@ -171,10 +191,10 @@ export default function BlogIndex() {
         news: "ニュース"
       },
       categoryList: [
-        { name: "OSS開発", count: 5 },
+        { name: "OSS開発", count: 6 },
         { name: "セキュリティ", count: 1 }
       ],
-      tags: ["Falco", "Nginx", "OSS開発", "CI/CD", "Docker", "テスト", "デバッグ", "プロジェクト管理", "ポリシー", "文化", "ドキュメント", "セキュリティ", "検知ルール", "Go言語", "GitHub Actions", "AWS", "EC2", "Web攻撃検知"]
+      tags: ["Falco", "Nginx", "OSS開発", "CI/CD", "Docker", "テスト", "デバッグ", "プロジェクト管理", "ポリシー", "文化", "ドキュメント", "セキュリティ", "検知ルール", "Go言語", "GitHub Actions", "AWS", "EC2", "Web攻撃検知", "E2Eテスト", "テスト設計", "品質保証"]
     },
     en: {
       title: "FALCOYA Blog", 
@@ -193,10 +213,10 @@ export default function BlogIndex() {
         news: "News"
       },
       categoryList: [
-        { name: "OSS Development", count: 5 },
+        { name: "OSS Development", count: 6 },
         { name: "Security", count: 1 }
       ],
-      tags: ["Falco", "Nginx", "OSS Development", "CI/CD", "Docker", "Testing", "Debugging", "Project Management", "Policy", "Culture", "Documentation", "Security", "Detection Rules", "Go", "GitHub Actions", "AWS", "EC2", "Web Attack Detection"]
+      tags: ["Falco", "Nginx", "OSS Development", "CI/CD", "Docker", "Testing", "Debugging", "Project Management", "Policy", "Culture", "Documentation", "Security", "Detection Rules", "Go", "GitHub Actions", "AWS", "EC2", "Web Attack Detection", "E2E Testing", "Test Design", "Quality Assurance"]
     }
   }
 

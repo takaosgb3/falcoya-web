@@ -29,6 +29,20 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-18-oss-development-blog-special",
+          date: "2025-08-18",
+          category: "feature",
+          type: "new",
+          title: "特別編「E2Eテスト前夜 — Falcoya君の作戦会議」を公開",
+          content: "E2Eテストという総合試験への挑戦を前に、設計と仕様を詰める日々、テストの規模感、そしてOSSとしての決意を綴った特別編を公開しました。これから始まる真のボス戦への準備と覚悟の物語です。",
+          highlights: [
+            "E2Eテスト設計の詳細",
+            "200〜1,200件のテストケース規模",
+            "KPI目標と品質保証への決意"
+          ],
+          link: "/blog/falco-plugin-development-e2e-strategy"
+        },
+        {
           id: "2025-08-17-oss-development-blog-part5",
           date: "2025-08-17",
           category: "feature",
@@ -158,6 +172,20 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-18-oss-development-blog-special",
+          date: "2025-08-18",
+          category: "feature",
+          type: "new",
+          title: "Special Edition \"The Eve of E2E Testing — Falcoya's Strategy Meeting\" Published",
+          content: "Published a special edition chronicling the days of refining design and specifications, the scale of testing, and commitment as OSS before challenging the comprehensive E2E testing. A story of preparation and determination for the true boss battle about to begin.",
+          highlights: [
+            "Detailed E2E test design",
+            "200-1,200 test case scale",
+            "KPI targets and commitment to quality assurance"
+          ],
+          link: "/blog/falco-plugin-development-e2e-strategy-en"
+        },
         {
           id: "2025-08-17-oss-development-blog-part5",
           date: "2025-08-17",
