@@ -79,7 +79,7 @@ const blogPosts = {
   en: [
     {
       id: 'falco-plugin-development-e2e-strategy-en',
-      title: 'Special Edition: The Eve of E2E Testing — Falcoya's Strategy Meeting',
+      title: "Special Edition: The Eve of E2E Testing — Falcoya's Strategy Meeting",
       description: 'The challenge of comprehensive E2E testing. Days of refining design and specifications, the scale of testing, and commitment as OSS. The story before challenging the true boss battle.',
       date: '2025-08-18',
       readTime: '10 min',
