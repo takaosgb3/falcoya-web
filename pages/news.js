@@ -29,21 +29,6 @@ export default function News() {
       },
       items: [
         {
-          id: "2025-08-18-oss-development-blog-days39-40",
-          date: "2025-08-18",
-          category: "feature",
-          type: "new",
-          title: "「Day 39-40：予防策、そして失敗だらけのE2Eテスト初動」を公開",
-          content: "E2Eテストに備えた予防策と、赤ログの嵐に見舞われた初動テスト。5W1H分析で失敗を成長へ変えるFalcoya君の2日間を公開しました。失敗は進化のコンパス - 赤いログを地図に変える物語です。",
-          highlights: [
-            "予防策のルール化と盾づくり",
-            "E2Eテスト初動での失敗の嵐",
-            "5W1H分析による失敗の可視化",
-            "改善要素の整理と次への布石"
-          ],
-          link: "/blog/falco-plugin-development-days39-40"
-        },
-        {
           id: "2025-08-17-oss-development-blog-special",
           date: "2025-08-17",
           category: "feature",
@@ -187,21 +172,6 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
-        {
-          id: "2025-08-18-oss-development-blog-days39-40",
-          date: "2025-08-18",
-          category: "feature",
-          type: "new",
-          title: "\"Day 39-40: Preventive Measures and the Failed E2E Test Launch\" Published",
-          content: "Preventive measures for E2E testing and the initial test engulfed in red logs. Published a story of two days turning failures into growth with 5W1H analysis. Failure is a compass for evolution - a story of turning red logs into a map.",
-          highlights: [
-            "Rule-based preventive measures and shield building",
-            "Storm of failures in E2E test launch",
-            "Visualizing failures with 5W1H analysis",
-            "Organizing improvement elements and laying groundwork"
-          ],
-          link: "/blog/falco-plugin-development-days39-40-en"
-        },
         {
           id: "2025-08-17-oss-development-blog-special",
           date: "2025-08-17",
