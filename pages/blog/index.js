@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days39-40',
+      title: 'Day 39-40：予防策、そして失敗だらけのE2Eテスト初動',
+      description: 'E2Eテストに備えた予防策と、赤ログの嵐に見舞われた初動テスト。5W1H分析で失敗を成長へ変えるFalcoya君の2日間。',
+      date: '2025-08-18',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2Eテスト', '5W1H分析', '予防策'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days39-40'
+    },
+    {
       id: 'falco-plugin-development-e2e-strategy',
       title: '特別編：E2Eテスト前夜 — Falcoya君の作戦会議',
       description: 'E2Eテストという総合試験への挑戦。設計と仕様を詰める日々、テストの規模感、そしてOSSとしての決意。真のボス戦に挑む前夜の物語。',
@@ -77,6 +87,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days39-40-en',
+      title: 'Day 39-40: Preventive Measures and the Failed E2E Test Launch',
+      description: 'Preventive measures for E2E testing and the initial test engulfed in red logs. Two days of turning failures into growth with 5W1H analysis.',
+      date: '2025-08-18',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Testing', '5W1H Analysis', 'Prevention'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days39-40-en'
+    },
     {
       id: 'falco-plugin-development-e2e-strategy-en',
       title: "Special Edition: The Eve of E2E Testing — Falcoya's Strategy Meeting",
