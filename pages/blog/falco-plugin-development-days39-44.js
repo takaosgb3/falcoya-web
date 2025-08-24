@@ -335,6 +335,237 @@ export default function FalcoPluginDevelopmentDays39to44() {
           </div>
         </div>
       </article>
+
+      <style jsx>{`
+        .article-container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 2rem;
+        }
+
+        .article-header {
+          margin-bottom: 3rem;
+          padding-bottom: 2rem;
+          border-bottom: 2px solid #e5e7eb;
+        }
+
+        .article-meta {
+          display: flex;
+          gap: 1rem;
+          margin-bottom: 1rem;
+          color: #6b7280;
+          font-size: 0.9rem;
+        }
+
+        .article-title {
+          font-size: 2.5rem;
+          line-height: 1.2;
+          margin-bottom: 1rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .article-subtitle {
+          font-size: 1.2rem;
+          color: #6b7280;
+          margin-bottom: 1.5rem;
+        }
+
+        .article-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .tag {
+          padding: 0.25rem 0.75rem;
+          background: #f3f4f6;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          color: #4b5563;
+        }
+
+        .content-section {
+          margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+          color: #1f2937;
+        }
+
+        .content-section h3 {
+          font-size: 1.3rem;
+          margin: 1.5rem 0 1rem;
+          color: #374151;
+        }
+
+        .content-section p {
+          line-height: 1.8;
+          margin-bottom: 1.2rem;
+          color: #4b5563;
+          text-align: left;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+
+        .quote {
+          background: #f9fafb;
+          border-left: 4px solid #a855f7;
+          padding: 1.5rem;
+          margin: 2rem 0;
+          font-style: italic;
+          text-align: left;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+
+        .lesson-box {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 1.5rem;
+          border-radius: 10px;
+          margin: 2rem 0;
+        }
+
+        .lesson-box h3 {
+          color: white;
+          margin-top: 0;
+          margin-bottom: 0.5rem;
+        }
+
+        .lesson-box p {
+          color: white;
+          margin: 0;
+          text-align: left;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+
+        .task-list, .document-list, .review-list {
+          list-style: none;
+          padding: 0;
+        }
+
+        .task-list li, .document-list li, .review-list li {
+          position: relative;
+          padding-left: 2rem;
+          margin-bottom: 0.8rem;
+          color: #4b5563;
+        }
+
+        .task-list li:before, .document-list li:before, .review-list li:before {
+          content: "•";
+          position: absolute;
+          left: 0.5rem;
+          color: #a855f7;
+          font-weight: bold;
+        }
+
+        .document-item {
+          margin-bottom: 1.5rem;
+        }
+
+        .document-item h3 {
+          margin-bottom: 0.5rem;
+        }
+
+        .article-footer {
+          margin-top: 4rem;
+          padding-top: 2rem;
+          border-top: 2px solid #e5e7eb;
+        }
+
+        .article-links h3 {
+          margin-bottom: 1rem;
+          color: #1f2937;
+        }
+
+        .link-cards {
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+          margin-bottom: 2rem;
+        }
+
+        .link-card {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1rem;
+          background: #f9fafb;
+          border: 1px solid #e5e7eb;
+          border-radius: 10px;
+          text-decoration: none;
+          color: inherit;
+          transition: all 0.3s ease;
+        }
+
+        .link-card:hover {
+          background: #f3f4f6;
+          border-color: #a855f7;
+          transform: translateY(-2px);
+        }
+
+        .link-icon {
+          font-size: 1.5rem;
+        }
+
+        .link-text strong {
+          display: block;
+          color: #1f2937;
+          margin-bottom: 0.25rem;
+        }
+
+        .link-text small {
+          color: #6b7280;
+          font-size: 0.85rem;
+        }
+
+        .navigation-links {
+          margin-top: 2rem;
+        }
+
+        .nav-link {
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          background: #f3f4f6;
+          border-radius: 8px;
+          text-decoration: none;
+          color: #4b5563;
+          transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+          background: #e5e7eb;
+          color: #1f2937;
+        }
+
+        @media (max-width: 768px) {
+          .article-container {
+            padding: 1rem;
+          }
+
+          .article-title {
+            font-size: 1.8rem;
+          }
+
+          .article-subtitle {
+            font-size: 1rem;
+          }
+
+          .content-section h2 {
+            font-size: 1.4rem;
+          }
+
+          .link-cards {
+            flex-direction: column;
+          }
+        }
+      `}</style>
     </>
   )
 }
