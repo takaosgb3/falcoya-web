@@ -300,18 +300,38 @@ export default function FalcoPluginDevelopmentDays39to44() {
                 「失敗は隠すものじゃない。積み上げれば、それはマニュアルであり財産になるんだ」
               </blockquote>
               <p>
-                次はいよいよ、本物のNginx攻撃トラフィックを流す検証。
+                次はいよいよ、本物のNginx攻撃トラフィックを流す検証。<br />
                 この6日間で培った"失敗の財産"を武器に、僕は次なる試練へ進む。
               </p>
+              
+              <div className="author-note">
+                <p className="note-text">
+                  失敗は恥ずかしいものではなく、成長の糧。<br />
+                  OSSの世界では、失敗も含めてすべてをオープンにすることで、同じ道を歩む人の助けになる。<br />
+                  次回は、実際の攻撃トラフィックとの格闘について綴ります。
+                </p>
+              </div>
             </section>
 
-            <section className="content-section">
-              <h2>GitHub & TK Links</h2>
-              <ul className="link-list">
-                <li>GitHub: <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">falco-plugin-nginx</a></li>
-                <li>TKのLinkedIn: <a href="https://www.linkedin.com/in/takao-shimizu/" target="_blank" rel="noopener noreferrer">Takao Shimizu</a></li>
-              </ul>
-            </section>
+            <div className="article-footer">
+              <div className="share-section">
+                <h3>この記事をシェア</h3>
+                <div className="share-buttons">
+                  <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('Falco + Nginx プラグイン開発：Falcoya君の39日目から44日目')}&url=${encodeURIComponent('https://falcoya.dev/blog/falco-plugin-development-days39-44')}`} target="_blank" rel="noopener noreferrer" className="share-button twitter">
+                    Twitter
+                  </a>
+                  <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://falcoya.dev/blog/falco-plugin-development-days39-44')}`} target="_blank" rel="noopener noreferrer" className="share-button linkedin">
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+              
+              <div className="navigation-links">
+                <Link href="/blog" className="back-to-list">
+                  ← ブログ一覧に戻る
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </article>
@@ -425,35 +445,24 @@ export default function FalcoPluginDevelopmentDays39to44() {
           overflow-wrap: break-word;
         }
 
-        .task-list, .document-list, .review-list, .link-list {
+        .task-list, .document-list, .review-list {
           list-style: none;
           padding: 0;
         }
 
-        .task-list li, .document-list li, .review-list li, .link-list li {
+        .task-list li, .document-list li, .review-list li {
           position: relative;
           padding-left: 2rem;
           margin-bottom: 0.8rem;
           color: #4b5563;
         }
 
-        .task-list li:before, .document-list li:before, .review-list li:before, .link-list li:before {
+        .task-list li:before, .document-list li:before, .review-list li:before {
           content: "•";
           position: absolute;
           left: 0.5rem;
           color: #a855f7;
           font-weight: bold;
-        }
-
-        .link-list a {
-          color: #a855f7;
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-
-        .link-list a:hover {
-          color: #667eea;
-          text-decoration: underline;
         }
 
         .document-item {
@@ -464,63 +473,68 @@ export default function FalcoPluginDevelopmentDays39to44() {
           margin-bottom: 0.5rem;
         }
 
+        .author-note {
+          background: #fef3c7;
+          border: 1px solid #fbbf24;
+          border-radius: 10px;
+          padding: 1.5rem;
+          margin-top: 2rem;
+        }
+
+        .note-text {
+          color: #92400e;
+          margin: 0;
+        }
+
         .article-footer {
           margin-top: 4rem;
           padding-top: 2rem;
           border-top: 2px solid #e5e7eb;
         }
 
-        .article-links h3 {
+        .share-section {
+          margin-bottom: 2rem;
+        }
+
+        .share-section h3 {
+          font-size: 1.2rem;
           margin-bottom: 1rem;
           color: #1f2937;
         }
 
-        .link-cards {
+        .share-buttons {
           display: flex;
           gap: 1rem;
-          flex-wrap: wrap;
-          margin-bottom: 2rem;
         }
 
-        .link-card {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          padding: 1rem;
-          background: #f9fafb;
-          border: 1px solid #e5e7eb;
-          border-radius: 10px;
+        .share-button {
+          padding: 0.75rem 1.5rem;
+          border-radius: 8px;
           text-decoration: none;
-          color: inherit;
-          transition: all 0.3s ease;
+          font-weight: 500;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          color: white;
         }
 
-        .link-card:hover {
-          background: #f3f4f6;
-          border-color: #a855f7;
+        .share-button:hover {
           transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .link-icon {
-          font-size: 1.5rem;
+        .share-button.twitter {
+          background: #1DA1F2;
         }
 
-        .link-text strong {
-          display: block;
-          color: #1f2937;
-          margin-bottom: 0.25rem;
-        }
-
-        .link-text small {
-          color: #6b7280;
-          font-size: 0.85rem;
+        .share-button.linkedin {
+          background: #0077B5;
         }
 
         .navigation-links {
-          margin-top: 2rem;
+          display: flex;
+          justify-content: flex-start;
         }
 
-        .nav-link {
+        .back-to-list {
           display: inline-block;
           padding: 0.75rem 1.5rem;
           background: #f3f4f6;
@@ -530,7 +544,7 @@ export default function FalcoPluginDevelopmentDays39to44() {
           transition: all 0.3s ease;
         }
 
-        .nav-link:hover {
+        .back-to-list:hover {
           background: #e5e7eb;
           color: #1f2937;
         }
@@ -552,8 +566,12 @@ export default function FalcoPluginDevelopmentDays39to44() {
             font-size: 1.4rem;
           }
 
-          .link-cards {
+          .share-buttons {
             flex-direction: column;
+          }
+
+          .share-button {
+            text-align: center;
           }
         }
       `}</style>
