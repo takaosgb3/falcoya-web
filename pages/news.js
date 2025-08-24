@@ -29,6 +29,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-22-oss-development-blog-part6",
+          date: "2025-08-22",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の39日目から44日目」を公開",
+          content: "失敗の記録と備忘録、Runnerを壊して学んだ習慣化の力。PROBLEM_PATTERNS.mdに刻まれた6日間の教訓と、失敗を財産に変える文化の構築を物語形式で綴りました。",
+          highlights: [
+            "CI/CDの失敗パターン整理と文書化",
+            "E2Eテストにおける出力消失問題の調査",
+            "証拠収集の仕組み導入",
+            "Self-hosted Runner破壊の教訓",
+            "失敗を財産に変える文化"
+          ],
+          link: "/blog/falco-plugin-development-days39-44"
+        },
+        {
           id: "2025-08-17-oss-development-blog-special",
           date: "2025-08-17",
           category: "feature",
@@ -172,6 +188,22 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-22-oss-development-blog-part6",
+          date: "2025-08-22",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Days 39-44 of Falcoya\" Published",
+          content: "Recording failures and notes, learning the power of habits by breaking Runner. Six days of lessons carved into PROBLEM_PATTERNS.md and building a culture of turning failures into assets, told in narrative form.",
+          highlights: [
+            "Organizing and documenting CI/CD failure patterns",
+            "Investigating output loss issues in E2E testing",
+            "Introducing evidence collection mechanisms",
+            "Lessons from Self-hosted Runner destruction",
+            "Culture of turning failures into assets"
+          ],
+          link: "/blog/falco-plugin-development-days39-44-en"
+        },
         {
           id: "2025-08-17-oss-development-blog-special",
           date: "2025-08-17",
