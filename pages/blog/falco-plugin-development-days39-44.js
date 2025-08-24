@@ -357,7 +357,7 @@ export default function FalcoPluginDevelopmentDays39to44() {
               <h2>GitHub & TK Links</h2>
               <ul className="link-list">
                 <li>GitHub: <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">falco-plugin-nginx</a></li>
-                <li>TK's LinkedIn: <a href="https://www.linkedin.com/in/takao-shimizu/" target="_blank" rel="noopener noreferrer">Takao Shimizu</a></li>
+                <li>TK's LinkedIn: <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">Takao Shimizu</a></li>
               </ul>
             </section>
 
