@@ -418,6 +418,15 @@ export default function FalcoPluginDevelopmentDays39to44() {
           overflow-wrap: break-word;
         }
 
+        code {
+          background: #f3f4f6;
+          color: #1f2937;
+          padding: 0.2rem 0.4rem;
+          border-radius: 4px;
+          font-family: 'Courier New', monospace;
+          font-size: 0.9em;
+        }
+
         .quote {
           background: #f9fafb;
           border-left: 4px solid #a855f7;
