@@ -126,7 +126,7 @@ export default function FalcoPluginDevelopmentDays39to44() {
             <h1>Falco + Nginx プラグイン開発：Falcoya君の39日目から44日目</h1>
             <p className="blog-subtitle">〜 失敗の記録と備忘録、Runnerを壊して学んだ習慣化の力 〜</p>
             <div className="blog-meta">
-              <span className="blog-date">2025年8月22日</span>
+              <span className="blog-date">2025年8月24日</span>
               <span className="blog-author">FALCOYA Team</span>
               <span className="blog-read-time">8分で読む</span>
             </div>
