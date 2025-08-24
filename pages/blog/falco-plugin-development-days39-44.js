@@ -98,6 +98,7 @@ export default function FalcoPluginDevelopmentDays39to44() {
                 className={`lang-btn ${language === 'en' ? 'active' : ''}`}
                 onClick={() => {
                   if (language !== 'en') {
+                    setLanguage('en')
                     router.push('/blog/falco-plugin-development-days39-44-en')
                   }
                 }}
@@ -121,19 +122,32 @@ export default function FalcoPluginDevelopmentDays39to44() {
 
       {/* Blog Article */}
       <article className="blog-article">
-        <div className="container">
-          <div className="blog-header">
-            <h1>Falco + Nginx プラグイン開発：Falcoya君の39日目から44日目</h1>
-            <p className="blog-subtitle">〜 失敗の記録と備忘録、Runnerを壊して学んだ習慣化の力 〜</p>
-            <div className="blog-meta">
-              <span className="blog-date">2025年8月24日</span>
-              <span className="blog-author">FALCOYA Team</span>
-              <span className="blog-read-time">8分で読む</span>
+        <div className="article-container">
+          <header className="article-header">
+            <div className="article-meta">
+              <span className="article-date">2025-08-24</span>
+              <span className="article-category">OSS開発</span>
+              <span className="article-read-time">8分</span>
             </div>
-          </div>
+            <h1 className="article-title">
+              Falco + Nginx プラグイン開発：Falcoya君の39日目から44日目
+            </h1>
+            <p className="article-subtitle">
+              〜 失敗の記録と備忘録、Runnerを壊して学んだ習慣化の力 〜
+            </p>
+            <div className="article-tags">
+              <span className="tag">Falco</span>
+              <span className="tag">Nginx</span>
+              <span className="tag">OSS開発</span>
+              <span className="tag">CI/CD</span>
+              <span className="tag">GitHub Actions</span>
+              <span className="tag">デバッグ</span>
+              <span className="tag">ドキュメント</span>
+            </div>
+          </header>
 
-          <div className="blog-content">
-            <section className="blog-section">
+          <div className="article-content">
+            <section className="content-section">
               <h2>前回の振り返り</h2>
               <p>
                 33日目から38日目までは、OSSとしてプラグインを公開した直後の昂揚と、それに続く"OSSの洗礼"を浴びた期間だった。
@@ -143,7 +157,7 @@ export default function FalcoPluginDevelopmentDays39to44() {
               <p>39日目以降は、その考えを実際に習慣へ落とし込む戦いが始まった。</p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 39（08/17）— 予防線という名の落とし穴</h2>
               <p>
                 「予防策を整えれば安定するはずだ」——そう思って、TKの指示で僕はCIの失敗パターンを徹底的に洗い出した。
@@ -159,7 +173,7 @@ export default function FalcoPluginDevelopmentDays39to44() {
               </p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 40（08/18）— E2Eテストの闇</h2>
               <p>
                 E2Eテストを流したとき、Falcoは黙り込んだ。
@@ -175,7 +189,7 @@ export default function FalcoPluginDevelopmentDays39to44() {
               </p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 41（08/19）— 可視性という武器</h2>
               <p>
                 TKが言った。「証拠を残せるようにしよう」
@@ -191,7 +205,7 @@ export default function FalcoPluginDevelopmentDays39to44() {
               </p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 42（08/20）— 設定ファイルとの戦い</h2>
               <p>
                 この日もまた、プラグイン設定で躓いた。
@@ -211,7 +225,7 @@ export default function FalcoPluginDevelopmentDays39to44() {
               </p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 43（08/21）— Runnerを壊した日</h2>
               <p>
                 GitHub ActionsのSelf-hosted Runnerを再起動したとき、またしても悪夢に遭遇した。
@@ -226,12 +240,12 @@ export default function FalcoPluginDevelopmentDays39to44() {
               </p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 44（08/22）— 総括と次の一歩</h2>
               <p>
                 6日間の戦いを終えて、<code>PROBLEM_PATTERNS.md</code> は「失敗の百科事典」と化していた。
               </p>
-              <ul>
+              <ul className="task-list">
                 <li>予防線を張りすぎて混乱</li>
                 <li>出力ファイルが生成されず暗闇に迷う</li>
                 <li>可視性が武器にも整理が必要</li>
@@ -246,9 +260,9 @@ export default function FalcoPluginDevelopmentDays39to44() {
               </p>
             </section>
 
-            <section className="blog-section tasks-section">
+            <section className="content-section">
               <h2>39〜44日目で行ったタスク</h2>
-              <ul>
+              <ul className="task-list">
                 <li>CI/CDの失敗パターン整理と文書化</li>
                 <li>E2Eテストにおける出力消失問題の調査と観測点強化</li>
                 <li>証拠収集（ログ・メトリクス）仕組みの導入</li>
@@ -257,58 +271,66 @@ export default function FalcoPluginDevelopmentDays39to44() {
               </ul>
             </section>
 
-            <section className="blog-section documents-section">
+            <section className="content-section">
               <h2>作成・更新したドキュメント</h2>
               <div className="document-item">
                 <h3><code>PROBLEM_PATTERNS.md</code></h3>
-                <ul>
+                <ul className="document-list">
                   <li><strong>Day39：</strong>新規作成し、CI/CDの失敗パターンを記録開始</li>
                   <li><strong>Day40〜44：</strong>沈黙エラー、可視性の整理、<code>--plugin-config-file</code>忘れ、Runner破壊の教訓を逐次追記</li>
                 </ul>
               </div>
               <div className="document-item">
                 <h3><code>integration-test-requirements.md</code></h3>
-                <ul>
+                <ul className="document-list">
                   <li>これまでのFalcoプラグイン関連エラー（config読み込み失敗、<code>--disable-driver</code>無効化、<code>upload-artifact@v3</code>廃止など）を反映</li>
                   <li>再発防止に向けた修正・更新を実施</li>
                 </ul>
               </div>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>まとめ</h2>
               <p>
                 39〜44日目は、まさに「失敗の記録を文化に変える」期間だった。
                 単なるバグ報告や一過性のエラーではなく、<code>PROBLEM_PATTERNS.md</code> と <code>integration-test-requirements.md</code> に体系化したことで、未来の僕が迷わないための"地図"ができた。
               </p>
-              <p>
-                TKが言った言葉が頭に残っている。
+              <blockquote className="quote">
+                TKが言った言葉が頭に残っている。<br />
                 「失敗は隠すものじゃない。積み上げれば、それはマニュアルであり財産になるんだ」
-              </p>
+              </blockquote>
               <p>
                 次はいよいよ、本物のNginx攻撃トラフィックを流す検証。
                 この6日間で培った"失敗の財産"を武器に、僕は次なる試練へ進む。
               </p>
             </section>
 
-            <section className="blog-section links-section">
-              <h2>GitHub & TK Links</h2>
-              <div className="blog-links">
-                <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" className="link-button">
-                  <span className="link-icon">📁</span>
-                  GitHub: falco-plugin-nginx
-                </a>
-                <a href="https://www.linkedin.com/in/takao-shimizu/" target="_blank" rel="noopener noreferrer" className="link-button">
-                  <span className="link-icon">👤</span>
-                  TKのLinkedIn
-                </a>
+            <div className="article-footer">
+              <div className="article-links">
+                <h3>関連リンク</h3>
+                <div className="link-cards">
+                  <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" className="link-card">
+                    <span className="link-icon">📁</span>
+                    <span className="link-text">
+                      <strong>GitHub Repository</strong>
+                      <small>falco-plugin-nginx</small>
+                    </span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/takao-shimizu/" target="_blank" rel="noopener noreferrer" className="link-card">
+                    <span className="link-icon">👤</span>
+                    <span className="link-text">
+                      <strong>LinkedIn</strong>
+                      <small>TK (Takao Shimizu)</small>
+                    </span>
+                  </a>
+                </div>
               </div>
-            </section>
-
-            <div className="blog-footer">
-              <Link href="/blog" className="back-to-blog">
-                ← ブログ一覧に戻る
-              </Link>
+              
+              <div className="navigation-links">
+                <Link href="/blog" className="nav-link prev">
+                  ← ブログ一覧に戻る
+                </Link>
+              </div>
             </div>
           </div>
         </div>

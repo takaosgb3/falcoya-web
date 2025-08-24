@@ -88,6 +88,7 @@ export default function FalcoPluginDevelopmentDays39to44En() {
                 className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
                 onClick={() => {
                   if (language !== 'ja') {
+                    setLanguage('ja')
                     router.push('/blog/falco-plugin-development-days39-44')
                   }
                 }}
@@ -121,19 +122,32 @@ export default function FalcoPluginDevelopmentDays39to44En() {
 
       {/* Blog Article */}
       <article className="blog-article">
-        <div className="container">
-          <div className="blog-header">
-            <h1>Falco + Nginx Plugin Development: Days 39-44 of Falcoya</h1>
-            <p className="blog-subtitle">~ Recording Failures and Notes, Learning the Power of Habits by Breaking Runner ~</p>
-            <div className="blog-meta">
-              <span className="blog-date">August 24, 2025</span>
-              <span className="blog-author">FALCOYA Team</span>
-              <span className="blog-read-time">8 min read</span>
+        <div className="article-container">
+          <header className="article-header">
+            <div className="article-meta">
+              <span className="article-date">2025-08-24</span>
+              <span className="article-category">OSS Development</span>
+              <span className="article-read-time">8 min</span>
             </div>
-          </div>
+            <h1 className="article-title">
+              Falco + Nginx Plugin Development: Days 39-44 of Falcoya
+            </h1>
+            <p className="article-subtitle">
+              ~ Recording Failures and Notes, Learning the Power of Habits by Breaking Runner ~
+            </p>
+            <div className="article-tags">
+              <span className="tag">Falco</span>
+              <span className="tag">Nginx</span>
+              <span className="tag">OSS Development</span>
+              <span className="tag">CI/CD</span>
+              <span className="tag">GitHub Actions</span>
+              <span className="tag">Debugging</span>
+              <span className="tag">Documentation</span>
+            </div>
+          </header>
 
-          <div className="blog-content">
-            <section className="blog-section">
+          <div className="article-content">
+            <section className="content-section">
               <h2>Looking Back</h2>
               <p>
                 Days 33 to 38 were a period of elation right after publishing the plugin as OSS, followed by the "baptism of OSS."
@@ -143,7 +157,7 @@ export default function FalcoPluginDevelopmentDays39to44En() {
               <p>From day 39 onward, the battle to actually embed that mindset into habits began.</p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 39 (08/17) — The Pitfall Called Prevention</h2>
               <p>
                 "If we put preventive measures in place, it should stabilize"—thinking that, under TK's instructions, I thoroughly identified CI failure patterns.
@@ -159,7 +173,7 @@ export default function FalcoPluginDevelopmentDays39to44En() {
               </p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 40 (08/18) — The Darkness of E2E Testing</h2>
               <p>
                 When I ran the E2E tests, Falco fell silent.
@@ -175,7 +189,7 @@ export default function FalcoPluginDevelopmentDays39to44En() {
               </p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 41 (08/19) — Visibility as a Weapon</h2>
               <p>
                 TK said, "Let's make it possible to leave evidence."
@@ -191,7 +205,7 @@ export default function FalcoPluginDevelopmentDays39to44En() {
               </p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 42 (08/20) — Battle with Configuration Files</h2>
               <p>
                 Again on this day, I stumbled over plugin configuration.
@@ -211,7 +225,7 @@ export default function FalcoPluginDevelopmentDays39to44En() {
               </p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 43 (08/21) — The Day I Broke the Runner</h2>
               <p>
                 When I restarted the GitHub Actions Self-hosted Runner, I encountered another nightmare.
@@ -226,12 +240,12 @@ export default function FalcoPluginDevelopmentDays39to44En() {
               </p>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Day 44 (08/22) — Summary and Next Steps</h2>
               <p>
                 After six days of battle, <code>PROBLEM_PATTERNS.md</code> had become an "encyclopedia of failures."
               </p>
-              <ul>
+              <ul className="task-list">
                 <li>Too many preventive measures causing confusion</li>
                 <li>Lost in darkness with no output files generated</li>
                 <li>Visibility as a weapon but needing organization</li>
@@ -246,9 +260,9 @@ export default function FalcoPluginDevelopmentDays39to44En() {
               </p>
             </section>
 
-            <section className="blog-section tasks-section">
+            <section className="content-section">
               <h2>Tasks Performed on Days 39-44</h2>
-              <ul>
+              <ul className="task-list">
                 <li>Organizing and documenting CI/CD failure patterns</li>
                 <li>Investigating output loss issues in E2E testing and strengthening observation points</li>
                 <li>Introducing evidence collection (logs/metrics) mechanisms</li>
@@ -257,58 +271,66 @@ export default function FalcoPluginDevelopmentDays39to44En() {
               </ul>
             </section>
 
-            <section className="blog-section documents-section">
+            <section className="content-section">
               <h2>Documents Created/Updated</h2>
               <div className="document-item">
                 <h3><code>PROBLEM_PATTERNS.md</code></h3>
-                <ul>
+                <ul className="document-list">
                   <li><strong>Day 39:</strong> Newly created and started recording CI/CD failure patterns</li>
                   <li><strong>Days 40-44:</strong> Sequentially added lessons on silent errors, organizing visibility, forgetting <code>--plugin-config-file</code>, and Runner destruction</li>
                 </ul>
               </div>
               <div className="document-item">
                 <h3><code>integration-test-requirements.md</code></h3>
-                <ul>
+                <ul className="document-list">
                   <li>Reflected previous Falco plugin-related errors (config loading failures, <code>--disable-driver</code> invalidation, <code>upload-artifact@v3</code> deprecation, etc.)</li>
                   <li>Implemented fixes and updates for recurrence prevention</li>
                 </ul>
               </div>
             </section>
 
-            <section className="blog-section">
+            <section className="content-section">
               <h2>Summary</h2>
               <p>
                 Days 39-44 were truly a period of "turning failure records into culture."
                 Rather than just bug reports or one-time errors, by systematizing them into <code>PROBLEM_PATTERNS.md</code> and <code>integration-test-requirements.md</code>, we created a "map" for my future self to follow without getting lost.
               </p>
-              <p>
-                TK's words remain in my mind:
+              <blockquote className="quote">
+                TK's words remain in my mind:<br />
                 "Failures aren't something to hide. When accumulated, they become manuals and assets."
-              </p>
+              </blockquote>
               <p>
                 Next, finally, we'll test with real Nginx attack traffic.
                 Armed with the "assets of failure" cultivated over these six days, I advance to the next trial.
               </p>
             </section>
 
-            <section className="blog-section links-section">
-              <h2>GitHub & TK Links</h2>
-              <div className="blog-links">
-                <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" className="link-button">
-                  <span className="link-icon">📁</span>
-                  GitHub: falco-plugin-nginx
-                </a>
-                <a href="https://www.linkedin.com/in/takao-shimizu/" target="_blank" rel="noopener noreferrer" className="link-button">
-                  <span className="link-icon">👤</span>
-                  TK's LinkedIn
-                </a>
+            <div className="article-footer">
+              <div className="article-links">
+                <h3>Related Links</h3>
+                <div className="link-cards">
+                  <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" className="link-card">
+                    <span className="link-icon">📁</span>
+                    <span className="link-text">
+                      <strong>GitHub Repository</strong>
+                      <small>falco-plugin-nginx</small>
+                    </span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/takao-shimizu/" target="_blank" rel="noopener noreferrer" className="link-card">
+                    <span className="link-icon">👤</span>
+                    <span className="link-text">
+                      <strong>LinkedIn</strong>
+                      <small>TK (Takao Shimizu)</small>
+                    </span>
+                  </a>
+                </div>
               </div>
-            </section>
-
-            <div className="blog-footer">
-              <Link href="/blog" className="back-to-blog">
-                ← Back to Blog
-              </Link>
+              
+              <div className="navigation-links">
+                <Link href="/blog" className="nav-link prev">
+                  ← Back to Blog
+                </Link>
+              </div>
             </div>
           </div>
         </div>
