@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days39-44',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の39日目から44日目',
+      description: '失敗の記録と備忘録、Runnerを壊して学んだ習慣化の力。PROBLEM_PATTERNS.mdに刻まれた6日間の教訓と、失敗を財産に変える文化の構築。',
+      date: '2025-08-24',
+      readTime: '8分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'GitHub Actions', 'デバッグ', 'ドキュメント'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days39-44'
+    },
+    {
       id: 'falco-plugin-development-e2e-strategy',
       title: '特別編：E2Eテスト前夜 — Falcoya君の作戦会議',
       description: 'E2Eテストという総合試験への挑戦。設計と仕様を詰める日々、テストの規模感、そしてOSSとしての決意。真のボス戦に挑む前夜の物語。',
@@ -77,6 +87,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days39-44-en',
+      title: 'Falco + Nginx Plugin Development: Days 39-44 of Falcoya',
+      description: 'Recording failures and notes, learning the power of habits by breaking Runner. Six days of lessons carved into PROBLEM_PATTERNS.md and building a culture of turning failures into assets.',
+      date: '2025-08-24',
+      readTime: '8 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'GitHub Actions', 'Debugging', 'Documentation'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days39-44-en'
+    },
     {
       id: 'falco-plugin-development-e2e-strategy-en',
       title: "Special Edition: The Eve of E2E Testing — Falcoya's Strategy Meeting",
@@ -191,7 +211,7 @@ export default function BlogIndex() {
         news: "ニュース"
       },
       categoryList: [
-        { name: "OSS開発", count: 6 },
+        { name: "OSS開発", count: 7 },
         { name: "セキュリティ", count: 1 }
       ],
       tags: ["Falco", "Nginx", "OSS開発", "CI/CD", "Docker", "テスト", "デバッグ", "プロジェクト管理", "ポリシー", "文化", "ドキュメント", "セキュリティ", "検知ルール", "Go言語", "GitHub Actions", "AWS", "EC2", "Web攻撃検知", "E2Eテスト", "テスト設計", "品質保証"]
@@ -213,7 +233,7 @@ export default function BlogIndex() {
         news: "News"
       },
       categoryList: [
-        { name: "OSS Development", count: 6 },
+        { name: "OSS Development", count: 7 },
         { name: "Security", count: 1 }
       ],
       tags: ["Falco", "Nginx", "OSS Development", "CI/CD", "Docker", "Testing", "Debugging", "Project Management", "Policy", "Culture", "Documentation", "Security", "Detection Rules", "Go", "GitHub Actions", "AWS", "EC2", "Web Attack Detection", "E2E Testing", "Test Design", "Quality Assurance"]
