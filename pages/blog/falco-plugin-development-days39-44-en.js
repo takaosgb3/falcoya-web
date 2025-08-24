@@ -171,6 +171,11 @@ export default function FalcoPluginDevelopmentDays39to44En() {
                 That's when I decided: records are about quality, not quantity.
                 What matters is creating a "signpost" that my future self can follow without getting lost.
               </p>
+              
+              <div className="lesson-box">
+                <h3>Lesson</h3>
+                <p>Documentation is about quality, not quantity. Create signposts your future self won't get lost with.</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -187,6 +192,11 @@ export default function FalcoPluginDevelopmentDays39to44En() {
                 I added debug output to <code>test_runner.sh</code> and finally began to see the light.
                 Then I wrote this in <code>PROBLEM_PATTERNS.md</code>: <strong>Silence is the greatest enemy. Always verify observation points.</strong>
               </p>
+              
+              <div className="lesson-box">
+                <h3>Lesson</h3>
+                <p>Silence without error messages is the greatest enemy. Plant observation points to bring light to the darkness.</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -203,6 +213,11 @@ export default function FalcoPluginDevelopmentDays39to44En() {
                 That's when I learned: evidence is meaningful only when it's not just collected but organized.
                 I added this learning to <code>PROBLEM_PATTERNS.md</code>, leaving a letter for my future self.
               </p>
+              
+              <div className="lesson-box">
+                <h3>Lesson</h3>
+                <p>Evidence is meaningful only when organized, not just collected. Don't drown in the sea of information.</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -223,6 +238,11 @@ export default function FalcoPluginDevelopmentDays39to44En() {
                 What I learned was that recording is the start, not the goal.
                 Only when made visible do failures become reusable assets.
               </p>
+              
+              <div className="lesson-box">
+                <h3>Lesson</h3>
+                <p>Recording is the start, not the goal. Failures become assets only when made visible.</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -238,6 +258,11 @@ export default function FalcoPluginDevelopmentDays39to44En() {
                 Don't cherish individual ones, handle them as a herd, and isolate the sick ones.
                 Without embedding this into habits, we'll repeat the same troubles over and over.
               </p>
+              
+              <div className="lesson-box">
+                <h3>Lesson</h3>
+                <p>Runners are cattle, not pets. Cull the broken ones and deploy new individuals.</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -258,6 +283,18 @@ export default function FalcoPluginDevelopmentDays39to44En() {
                 I nodded at TK's words. Next would be scenarios closer to reality.
                 At that moment, I was no longer afraid of "failure." Because I knew that all failures would be carved as assets in <code>PROBLEM_PATTERNS.md</code>.
               </p>
+              
+              <blockquote className="quote">
+                Me: "TK, I've collected many failure patterns."<br />
+                TK: "That's your weapon. To avoid falling into the same traps."<br />
+                Me: "Yes, but I'll probably make new failures too."<br />
+                TK: "That's fine. Don't fear failure, keep recording."
+              </blockquote>
+              
+              <div className="lesson-box">
+                <h3>Lesson</h3>
+                <p>Failure is OSS's default setting. Building resilience leads to the next evolution.</p>
+              </div>
             </section>
 
             <section className="content-section">
