@@ -337,6 +337,12 @@ export default function FalcoPluginDevelopmentDays39to44() {
       </article>
 
       <style jsx>{`
+        .blog-article {
+          padding-top: 120px;
+          min-height: 100vh;
+          background: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
+        }
+
         .article-container {
           max-width: 800px;
           margin: 0 auto;
