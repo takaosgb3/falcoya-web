@@ -350,6 +350,34 @@ export default function FalcoPluginDevelopmentDays39to44En() {
               </ul>
             </section>
           </div>
+
+          <div className="article-footer">
+            <div className="share-section">
+              <h3>Share This Article</h3>
+              <div className="share-buttons">
+                <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('Falco + Nginx Plugin Development: Days 39-44 of Falcoya')}&url=${encodeURIComponent('https://falcoya.dev/blog/falco-plugin-development-days39-44-en')}`} target="_blank" rel="noopener noreferrer" className="share-button twitter">
+                  Twitter
+                </a>
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://falcoya.dev/blog/falco-plugin-development-days39-44-en')}`} target="_blank" rel="noopener noreferrer" className="share-button linkedin">
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+            
+            <div className="author-note">
+              <p className="note-text">
+                Failures are not something to be ashamed of, but nourishment for growth.
+                In the world of OSS, by making everything open including failures, we help those who walk the same path.
+                Next time, I'll write about the struggle with actual attack traffic.
+              </p>
+            </div>
+            
+            <div className="navigation-links">
+              <Link href="/blog" className="back-to-list">
+                ← Back to Blog List
+              </Link>
+            </div>
+          </div>
         </div>
       </article>
 
@@ -585,6 +613,98 @@ export default function FalcoPluginDevelopmentDays39to44En() {
         .nav-link:hover {
           background: #e5e7eb;
           color: #1f2937;
+        }
+
+        .share-section {
+          margin-bottom: 2rem;
+        }
+
+        .share-section h3 {
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+          color: #1f2937;
+        }
+
+        .share-buttons {
+          display: flex;
+          gap: 1rem;
+        }
+
+        .share-button {
+          padding: 0.75rem 1.5rem;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          transition: opacity 0.3s;
+        }
+
+        .share-button:hover {
+          opacity: 0.9;
+        }
+
+        .share-button.twitter {
+          background: #1DA1F2;
+        }
+
+        .share-button.linkedin {
+          background: #0077B5;
+        }
+
+        .author-note {
+          background: #fef3c7;
+          border: 1px solid #fbbf24;
+          border-radius: 10px;
+          padding: 1.5rem;
+          margin-top: 2rem;
+        }
+
+        .note-text {
+          color: #92400e;
+          margin: 0;
+        }
+
+        .article-footer {
+          margin-top: 4rem;
+          padding-top: 2rem;
+          border-top: 2px solid #e5e7eb;
+        }
+
+        .link-list {
+          list-style: none;
+          padding: 0;
+        }
+
+        .link-list li {
+          margin-bottom: 1rem;
+        }
+
+        .link-list a {
+          color: #667eea;
+          text-decoration: none;
+        }
+
+        .link-list a:hover {
+          text-decoration: underline;
+        }
+
+        .navigation-links {
+          display: flex;
+          justify-content: flex-start;
+          margin-top: 2rem;
+        }
+
+        .back-to-list {
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          background: #f3f4f6;
+          color: #4b5563;
+          text-decoration: none;
+          border-radius: 8px;
+          transition: background 0.3s;
+        }
+
+        .back-to-list:hover {
+          background: #e5e7eb;
         }
 
         @media (max-width: 768px) {

@@ -350,6 +350,14 @@ export default function FalcoPluginDevelopmentDays39to44() {
               </div>
             </section>
 
+            <section className="content-section">
+              <h2>GitHub & TK Links</h2>
+              <ul className="link-list">
+                <li>GitHub: <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">falco-plugin-nginx</a></li>
+                <li>TK's LinkedIn: <a href="https://www.linkedin.com/in/takao-shimizu/" target="_blank" rel="noopener noreferrer">Takao Shimizu</a></li>
+              </ul>
+            </section>
+
             <div className="article-footer">
               <div className="share-section">
                 <h3>この記事をシェア</h3>
@@ -579,6 +587,24 @@ export default function FalcoPluginDevelopmentDays39to44() {
 
         .share-button.linkedin {
           background: #0077B5;
+        }
+
+        .link-list {
+          list-style: none;
+          padding: 0;
+        }
+
+        .link-list li {
+          margin-bottom: 1rem;
+        }
+
+        .link-list a {
+          color: #667eea;
+          text-decoration: none;
+        }
+
+        .link-list a:hover {
+          text-decoration: underline;
         }
 
         .navigation-links {
