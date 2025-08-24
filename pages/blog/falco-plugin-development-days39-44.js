@@ -305,33 +305,13 @@ export default function FalcoPluginDevelopmentDays39to44() {
               </p>
             </section>
 
-            <div className="article-footer">
-              <div className="article-links">
-                <h3>関連リンク</h3>
-                <div className="link-cards">
-                  <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" className="link-card">
-                    <span className="link-icon">📁</span>
-                    <span className="link-text">
-                      <strong>GitHub Repository</strong>
-                      <small>falco-plugin-nginx</small>
-                    </span>
-                  </a>
-                  <a href="https://www.linkedin.com/in/takao-shimizu/" target="_blank" rel="noopener noreferrer" className="link-card">
-                    <span className="link-icon">👤</span>
-                    <span className="link-text">
-                      <strong>LinkedIn</strong>
-                      <small>TK (Takao Shimizu)</small>
-                    </span>
-                  </a>
-                </div>
-              </div>
-              
-              <div className="navigation-links">
-                <Link href="/blog" className="nav-link prev">
-                  ← ブログ一覧に戻る
-                </Link>
-              </div>
-            </div>
+            <section className="content-section">
+              <h2>GitHub & TK Links</h2>
+              <ul className="link-list">
+                <li>GitHub: <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">falco-plugin-nginx</a></li>
+                <li>TKのLinkedIn: <a href="https://www.linkedin.com/in/takao-shimizu/" target="_blank" rel="noopener noreferrer">Takao Shimizu</a></li>
+              </ul>
+            </section>
           </div>
         </div>
       </article>
@@ -445,24 +425,35 @@ export default function FalcoPluginDevelopmentDays39to44() {
           overflow-wrap: break-word;
         }
 
-        .task-list, .document-list, .review-list {
+        .task-list, .document-list, .review-list, .link-list {
           list-style: none;
           padding: 0;
         }
 
-        .task-list li, .document-list li, .review-list li {
+        .task-list li, .document-list li, .review-list li, .link-list li {
           position: relative;
           padding-left: 2rem;
           margin-bottom: 0.8rem;
           color: #4b5563;
         }
 
-        .task-list li:before, .document-list li:before, .review-list li:before {
+        .task-list li:before, .document-list li:before, .review-list li:before, .link-list li:before {
           content: "•";
           position: absolute;
           left: 0.5rem;
           color: #a855f7;
           font-weight: bold;
+        }
+
+        .link-list a {
+          color: #a855f7;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .link-list a:hover {
+          color: #667eea;
+          text-decoration: underline;
         }
 
         .document-item {
