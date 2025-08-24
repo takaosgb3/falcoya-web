@@ -171,6 +171,11 @@ export default function FalcoPluginDevelopmentDays39to44() {
                 僕はそこで決めた。記録は量ではなく質。
                 未来の僕が迷わず進める"道しるべ"にすることが大切なのだ。
               </p>
+              
+              <div className="lesson-box">
+                <h3>学び</h3>
+                <p>ドキュメントは量より質。未来の自分が迷わない道しるべを作れ。</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -187,6 +192,11 @@ export default function FalcoPluginDevelopmentDays39to44() {
                 僕は<code>test_runner.sh</code>にデバッグ出力を仕込み、ようやく光を見つけ始めた。
                 そして <code>PROBLEM_PATTERNS.md</code> にこう残した。<strong>沈黙は最大の敵。観測点を必ず確認せよ。</strong>
               </p>
+              
+              <div className="lesson-box">
+                <h3>学び</h3>
+                <p>エラーメッセージすら出ない沈黙が最大の敵。観測点を仕込んで暗闇に光を灯せ。</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -203,6 +213,11 @@ export default function FalcoPluginDevelopmentDays39to44() {
                 僕はそこで学んだ。証拠は残すだけでなく、整理してこそ意味がある。
                 その学びも <code>PROBLEM_PATTERNS.md</code> に追記し、未来の僕に手紙を残した。
               </p>
+              
+              <div className="lesson-box">
+                <h3>学び</h3>
+                <p>証拠は残すだけでなく整理してこそ意味がある。情報の海で溺れるな。</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -223,6 +238,11 @@ export default function FalcoPluginDevelopmentDays39to44() {
                 学んだのは、記録はスタートであってゴールではないということ。
                 目に入る形にして初めて、失敗は再利用可能な財産になるのだ。
               </p>
+              
+              <div className="lesson-box">
+                <h3>学び</h3>
+                <p>記録はスタートであってゴールではない。目に入る形にして初めて失敗は財産になる。</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -238,6 +258,11 @@ export default function FalcoPluginDevelopmentDays39to44() {
                 一体を愛でるのではなく、群れで扱い、調子の悪い個体は切り離す。
                 習慣に落とし込まなければ、同じトラブルを何度でも繰り返すのだ。
               </p>
+              
+              <div className="lesson-box">
+                <h3>学び</h3>
+                <p>Runnerはペットではなく家畜。壊れたら切り離し、新しい個体を投入せよ。</p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -258,6 +283,18 @@ export default function FalcoPluginDevelopmentDays39to44() {
                 TKの言葉に僕はうなずいた。次は現実に近いシナリオだ。
                 その瞬間、僕はもう"失敗"を恐れていなかった。なぜなら、すべての失敗は<code>PROBLEM_PATTERNS.md</code>に資産として刻まれていくと知ったからだ。
               </p>
+              
+              <blockquote className="quote">
+                僕：「TK、失敗のパターンがたくさん集まりました」<br />
+                TK：「それは君の武器だ。次に同じ罠に落ちないための」<br />
+                僕：「はい。でも、きっとまた新しい失敗もするでしょうね」<br />
+                TK：「それでいい。失敗を恐れるな、記録し続けろ」
+              </blockquote>
+              
+              <div className="lesson-box">
+                <h3>学び</h3>
+                <p>失敗はOSSのデフォルト設定。耐える仕組みを作ることが次の進化につながる。</p>
+              </div>
             </section>
 
             <section className="content-section">
