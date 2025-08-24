@@ -135,6 +135,9 @@ export default function FalcoPluginDevelopmentDays39to44() {
             <p className="article-subtitle">
               〜 失敗の記録と備忘録、Runnerを壊して学んだ習慣化の力 〜
             </p>
+            <div className="article-image">
+              <img src="/img/blog7.png" alt="Falco + Nginx Plugin Development Days 39-44" />
+            </div>
             <div className="article-tags">
               <span className="tag">Falco</span>
               <span className="tag">Nginx</span>
@@ -422,6 +425,19 @@ export default function FalcoPluginDevelopmentDays39to44() {
           font-size: 1.2rem;
           color: #6b7280;
           margin-bottom: 1.5rem;
+        }
+
+        .article-image {
+          width: 100%;
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .article-image img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .article-tags {

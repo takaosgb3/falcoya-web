@@ -135,6 +135,9 @@ export default function FalcoPluginDevelopmentDays39to44En() {
             <p className="article-subtitle">
               ~ Recording Failures and Notes, Learning the Power of Habits by Breaking Runner ~
             </p>
+            <div className="article-image">
+              <img src="/img/blog7.png" alt="Falco + Nginx Plugin Development Days 39-44" />
+            </div>
             <div className="article-tags">
               <span className="tag">Falco</span>
               <span className="tag">Nginx</span>
@@ -337,9 +340,17 @@ export default function FalcoPluginDevelopmentDays39to44En() {
                 "Failures aren't something to hide. When accumulated, they become manuals and assets."
               </blockquote>
               <p>
-                Next, finally, we'll test with real Nginx attack traffic.
+                Next, finally, we'll test with real Nginx attack traffic.<br />
                 Armed with the "assets of failure" cultivated over these six days, I advance to the next trial.
               </p>
+              
+              <div className="author-note">
+                <p className="note-text">
+                  Failures are not something to be ashamed of, but nourishment for growth.<br />
+                  In the world of OSS, by making everything open including failures, we help those who walk the same path.<br />
+                  Next time, I'll write about the struggle with actual attack traffic.
+                </p>
+              </div>
             </section>
 
             <section className="content-section">
@@ -349,33 +360,25 @@ export default function FalcoPluginDevelopmentDays39to44En() {
                 <li>TK's LinkedIn: <a href="https://www.linkedin.com/in/takao-shimizu/" target="_blank" rel="noopener noreferrer">Takao Shimizu</a></li>
               </ul>
             </section>
-          </div>
 
-          <div className="article-footer">
-            <div className="share-section">
-              <h3>Share This Article</h3>
-              <div className="share-buttons">
-                <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('Falco + Nginx Plugin Development: Days 39-44 of Falcoya')}&url=${encodeURIComponent('https://falcoya.dev/blog/falco-plugin-development-days39-44-en')}`} target="_blank" rel="noopener noreferrer" className="share-button twitter">
-                  Twitter
-                </a>
-                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://falcoya.dev/blog/falco-plugin-development-days39-44-en')}`} target="_blank" rel="noopener noreferrer" className="share-button linkedin">
-                  LinkedIn
-                </a>
+            <div className="article-footer">
+              <div className="share-section">
+                <h3>Share This Article</h3>
+                <div className="share-buttons">
+                  <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('Falco + Nginx Plugin Development: Days 39-44 of Falcoya')}&url=${encodeURIComponent('https://falcoya.dev/blog/falco-plugin-development-days39-44-en')}`} target="_blank" rel="noopener noreferrer" className="share-button twitter">
+                    Twitter
+                  </a>
+                  <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://falcoya.dev/blog/falco-plugin-development-days39-44-en')}`} target="_blank" rel="noopener noreferrer" className="share-button linkedin">
+                    LinkedIn
+                  </a>
+                </div>
               </div>
-            </div>
-            
-            <div className="author-note">
-              <p className="note-text">
-                Failures are not something to be ashamed of, but nourishment for growth.
-                In the world of OSS, by making everything open including failures, we help those who walk the same path.
-                Next time, I'll write about the struggle with actual attack traffic.
-              </p>
-            </div>
-            
-            <div className="navigation-links">
-              <Link href="/blog" className="back-to-list">
-                ← Back to Blog List
-              </Link>
+              
+              <div className="navigation-links">
+                <Link href="/blog" className="back-to-list">
+                  ← Back to Blog List
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -422,6 +425,19 @@ export default function FalcoPluginDevelopmentDays39to44En() {
           font-size: 1.2rem;
           color: #6b7280;
           margin-bottom: 1.5rem;
+        }
+
+        .article-image {
+          width: 100%;
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .article-image img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .article-tags {
