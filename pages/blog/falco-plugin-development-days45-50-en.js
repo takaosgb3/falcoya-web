@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useLanguage } from '../../utils/languageUtils'
 
-export default function FalcoPluginDevelopmentDays45to52() {
+export default function FalcoPluginDevelopmentDays45to50En() {
   const [language, setLanguage] = useLanguage()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
@@ -47,14 +47,14 @@ export default function FalcoPluginDevelopmentDays45to52() {
   return (
     <>
       <Head>
-        <title>Falco + Nginx プラグイン開発：Falcoya君の45日目から50日目 - FALCOYA Blog</title>
-        <meta name="description" content="テスト改善とHTMLレポート修正、そして攻撃トラフィックへの挑戦。E2Eテストの観測点強化とXSS検出サンプルの表示問題への対処を記録。" />
-        <meta property="og:title" content="Falco + Nginx プラグイン開発：Falcoya君の45日目から50日目" />
-        <meta property="og:description" content="テスト改善とHTMLレポート修正、そして攻撃トラフィックへの挑戦。E2Eテストの観測点強化とXSS検出サンプルの表示問題への対処を記録。" />
+        <title>Falco + Nginx Plugin Development: Falcoya's Days 45-50 - FALCOYA Blog</title>
+        <meta name="description" content="Test improvements, HTML report fixes, and the challenge of attack traffic. Documenting E2E test observation enhancements and XSS detection sample display issues." />
+        <meta property="og:title" content="Falco + Nginx Plugin Development: Falcoya's Days 45-50" />
+        <meta property="og:description" content="Test improvements, HTML report fixes, and the challenge of attack traffic. Documenting E2E test observation enhancements and XSS detection sample display issues." />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="FALCOYA" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://falcoya.com/blog/falco-plugin-development-days45-52" />
+        <link rel="canonical" href="https://falcoya.com/blog/falco-plugin-development-days45-50-en" />
       </Head>
 
       {/* Navigation */}
@@ -91,6 +91,7 @@ export default function FalcoPluginDevelopmentDays45to52() {
                 onClick={() => {
                   if (language !== 'ja') {
                     setLanguage('ja')
+                    router.push('/blog/falco-plugin-development-days45-52')
                   }
                 }}
               >
@@ -101,7 +102,6 @@ export default function FalcoPluginDevelopmentDays45to52() {
                 onClick={() => {
                   if (language !== 'en') {
                     setLanguage('en')
-                    router.push('/blog/falco-plugin-development-days45-52-en')
                   }
                 }}
               >
@@ -127,199 +127,199 @@ export default function FalcoPluginDevelopmentDays45to52() {
         <div className="article-container">
           <header className="article-header">
             <div className="article-meta">
-              <time dateTime="2025-08-30">2025年8月30日</time>
+              <time dateTime="2025-08-30">August 30, 2025</time>
               <span>•</span>
-              <span>10分で読む</span>
+              <span>10 min read</span>
             </div>
             <h1 className="article-title">
-              Falco + Nginx プラグイン開発：Falcoya君の45日目から50日目
+              Falco + Nginx Plugin Development: Falcoya's Days 45-50
             </h1>
             <p className="article-subtitle">
-              〜 テスト改善とHTMLレポート修正、そして攻撃トラフィックへの挑戦 〜
+              ~ Test Improvements, HTML Report Fixes, and the Challenge of Attack Traffic ~
             </p>
             <div className="article-tags">
               <span className="tag">Falco</span>
               <span className="tag">Nginx</span>
-              <span className="tag">OSS開発</span>
-              <span className="tag">E2Eテスト</span>
-              <span className="tag">HTMLレポート</span>
+              <span className="tag">OSS Development</span>
+              <span className="tag">E2E Testing</span>
+              <span className="tag">HTML Reports</span>
               <span className="tag">XSS</span>
-              <span className="tag">テスト改善</span>
+              <span className="tag">Test Improvements</span>
             </div>
           </header>
 
           <div className="article-image">
             <img 
-              src="/img/blog/falco-days45-52.jpg" 
-              alt="E2Eテスト改善とHTMLレポート修正の様子"
+              src="/img/blog/falco-days45-50.jpg" 
+              alt="E2E test improvements and HTML report fixes"
             />
           </div>
 
           <section className="content-section">
-            <h2>前回の振り返り</h2>
+            <h2>Looking Back</h2>
             <p>
-              39〜44日目は、失敗の記録を文化に変える期間だった。
-              <code>PROBLEM_PATTERNS.md</code> を作り、繰り返すエラーを資産化。
-              E2Eテストの沈黙、<code>--plugin-config-file</code>忘れ、Runner破壊といった痛みを経験しつつ、失敗を「再発防止の仕組み」に昇華していった。
+              Days 39-44 were about transforming failure records into culture.
+              We created <code>PROBLEM_PATTERNS.md</code> to turn recurring errors into assets.
+              Through the pain of silent E2E tests, forgotten <code>--plugin-config-file</code> flags, and Runner destruction, we sublimated failures into "mechanisms for preventing recurrence."
             </p>
             <p>
-              そして迎えた45日目以降。僕とTKは、記録した失敗を土台に、テストとレポートの改善へと挑むことになった。
+              And then came Day 45 and beyond. TK and I would challenge ourselves to improve tests and reports, building on the foundation of our documented failures.
             </p>
           </section>
 
           <section className="content-section">
-            <h2>Day 45（08/24）— E2Eテスト改善の第一歩</h2>
+            <h2>Day 45 (08/24) — First Step in E2E Test Improvement</h2>
             <p>
-              E2Eテストは動くには動くが、判定が甘い。
-              「これじゃあ本当に攻撃を検知できてるのか？」とTKが疑問を投げてきた。
-              確かに、出力の有無しか見ていない。内容の妥当性やルール適用状況はチェックできていなかった。
+              The E2E tests work, but the validation is too lenient.
+              "Can we really be sure we're detecting attacks with this?" TK questioned.
+              Indeed, we were only checking for output presence. We couldn't verify content validity or rule application status.
             </p>
             <p>
-              僕は<code>e2e-test-improvements.md</code>に改善案をまとめ、観測点を増やす作業に取り掛かった。
-              だがすぐに壁に当たる。テストの粒度を上げると、途端に失敗が増え、緑だったCIが真っ赤に染まる。
-              僕は思わず叫んだ。「改善のはずが、破壊じゃないか！」
+              I compiled improvement proposals in <code>e2e-test-improvements.md</code> and started working on adding observation points.
+              But I immediately hit a wall. When I increased test granularity, failures multiplied instantly, turning our green CI blood red.
+              I couldn't help but shout, "This was supposed to be an improvement, not destruction!"
             </p>
             <p>
-              学びは明快だ。テスト強化は"痛み"とセット。
-              痛みを恐れず受け入れることこそ、本物の安定性への第一歩だ。
+              The learning is clear: Test strengthening comes with "pain."
+              Accepting pain without fear is the first step toward real stability.
             </p>
             
             <div className="lesson-box">
-              <h3>学び</h3>
-              <p>テスト強化は"痛み"とセット。痛みを恐れず受け入れることこそ、本物の安定性への第一歩だ。</p>
+              <h3>Learning</h3>
+              <p>Test strengthening comes with "pain." Accepting pain without fear is the first step toward real stability.</p>
             </div>
           </section>
 
           <section className="content-section">
-            <h2>Day 46（08/25）— HTMLレポートの罠</h2>
+            <h2>Day 46 (08/25) — The HTML Report Trap</h2>
             <p>
-              次に直面したのはE2EテストのHTMLレポートだった。
-              生成されるはずのレポートが、なぜか空白。CSSやJSのエラーかと思いきや、根本原因は単純なロジックミス。
+              Next, I faced issues with the E2E test HTML report.
+              The report that should have been generated was blank. I thought it was a CSS or JS error, but the root cause was a simple logic mistake.
             </p>
             <div className="quote">
               Uncaught TypeError: Cannot read properties of undefined (reading 'add')
             </div>
             <p>
-              ログには無情にも上記のエラーが並んでいた。
+              The logs mercilessly displayed the error above.
             </p>
             <p>
-              TKが「このままじゃユーザーが何も見られない」と呟く。
-              僕はHTMLの断片を何度も読み返し、変数の初期化忘れを発見した。
-              直した後に表示されたグラフは、まるで霧の向こうから現れた真実のように鮮明だった。
+              TK muttered, "Users won't be able to see anything like this."
+              I read through the HTML fragments repeatedly and discovered a forgotten variable initialization.
+              The graph that appeared after fixing it was as clear as truth emerging from behind the fog.
             </p>
             <p>
-              小さな不具合が大きな信頼を失わせる。
-              この日、僕はユーザー目線の重要さを叩き込まれた。
+              Small bugs can destroy great trust.
+              This day hammered home the importance of the user perspective.
             </p>
             
             <div className="lesson-box">
-              <h3>学び</h3>
-              <p>小さな不具合が大きな信頼を失わせる。ユーザー目線の重要さを叩き込まれた。</p>
+              <h3>Learning</h3>
+              <p>Small bugs can destroy great trust. The importance of the user perspective was hammered home.</p>
             </div>
           </section>
 
           <section className="content-section">
-            <h2>Day 47（08/26）— 攻撃トラフィックの予感</h2>
+            <h2>Day 47 (08/26) — Premonition of Attack Traffic</h2>
             <p>
-              ここまで来たら、実際のNginx攻撃ログを流すしかない。
-              SQLiやXSSを模したリクエストをどう再現するか、TKと議論を重ねた。
+              At this point, we had no choice but to flow actual Nginx attack logs.
+              TK and I discussed extensively how to reproduce requests simulating SQLi and XSS.
             </p>
             <p>
-              だが、まだ環境の準備不足が露呈。攻撃ログを正しく流せず、Falcoの検知も空振りに終わった。
-              「これは甘くないね」とTKが苦笑いする。僕も同じ気持ちだった。
+              But our environmental preparation proved insufficient. We couldn't properly flow attack logs, and Falco's detection came up empty.
+              "This isn't going to be easy," TK smiled wryly. I felt the same.
             </p>
             <p>
-              でも失敗の記録は進んでいる。<code>PROBLEM_PATTERNS.md</code>に「攻撃シナリオ再現失敗」という新しい章が刻まれた。
-              挑戦の第一歩は、失敗の積み重ねだと改めて実感する。
+              But our failure documentation progressed. A new chapter called "Attack Scenario Reproduction Failure" was etched into <code>PROBLEM_PATTERNS.md</code>.
+              I realized once again that the first step of any challenge is an accumulation of failures.
             </p>
             
             <div className="lesson-box">
-              <h3>学び</h3>
-              <p>挑戦の第一歩は、失敗の積み重ね。記録することで失敗も財産になる。</p>
+              <h3>Learning</h3>
+              <p>The first step of any challenge is an accumulation of failures. Recording them turns failures into assets.</p>
             </div>
           </section>
 
           <section className="content-section">
-            <h2>Day 48〜49（08/27〜08/28）— 準備の泥臭さ</h2>
+            <h2>Days 48-49 (08/27-08/28) — The Grind of Preparation</h2>
             <p>
-              この二日間は攻撃トラフィック検証のための準備に追われた。
-              とりわけ <strong>Nginxログの整形</strong> と <strong>Falcoルールの微調整</strong> に時間を割いた。
+              These two days were consumed with preparation for attack traffic verification.
+              We particularly devoted time to <strong>Nginx log formatting</strong> and <strong>Falco rule fine-tuning</strong>.
             </p>
             <p>
-              記録に残るような派手な失敗はなかったが、ここを詰めない限り次の段階には進めない。
-              「こういう地味な日々こそが、OSS開発のリアルだよね」とTKが言う。
-              僕はうなずきながら <code>PROBLEM_PATTERNS.md</code> に進捗を追記した。
+              There were no spectacular failures worth recording, but without nailing these details, we couldn't proceed to the next stage.
+              "These mundane days are the reality of OSS development, aren't they?" TK said.
+              I nodded while adding progress notes to <code>PROBLEM_PATTERNS.md</code>.
             </p>
             
             <div className="lesson-box">
-              <h3>学び</h3>
-              <p>地味な準備作業こそがOSS開発のリアル。派手さはないが、土台作りが全てを支える。</p>
+              <h3>Learning</h3>
+              <p>Mundane preparation work is the reality of OSS development. It's not flashy, but the foundation supports everything.</p>
             </div>
           </section>
 
           <section className="content-section">
-            <h2>Day 50（08/29）— 表示の壁</h2>
+            <h2>Day 50 (08/29) — The Display Wall</h2>
             <p>
-              攻撃トラフィックを用いた検証を進める中で、またもやUIに問題が発生した。
-              XSS検出のサンプルが7件あるのに、画面に表示されないのだ。
+              While progressing with attack traffic verification, UI problems emerged once again.
+              There were 7 XSS detection samples, but they wouldn't display on screen.
             </p>
             <p>
-              レポートを開くと、ブラウザがサンプルデータを"危険なスクリプト"と判断し、レンダリングを止めてしまっていた。
-              つまり、XSSを検出した証拠が、XSSそのもので表示できないという皮肉。
+              When I opened the report, the browser had judged the sample data as "dangerous scripts" and stopped rendering.
+              In other words, the irony was that evidence of XSS detection couldn't be displayed because of XSS itself.
             </p>
             <p>
-              僕は日記にこう記した。
+              I wrote in my diary:
             </p>
             <div className="quote">
-              「検知は正しい。でも、伝える方法が間違っている」
+              "The detection is correct. But the way we communicate it is wrong."
             </div>
             <p>
-              学んだのは、セキュリティは検知だけでなく、安全に伝える仕組みまで含まれるということだった。
+              What I learned was that security isn't just about detection—it includes mechanisms for safe communication.
             </p>
             
             <div className="lesson-box">
-              <h3>学び</h3>
-              <p>セキュリティは検知だけでなく、安全に伝える仕組みまで含まれる。</p>
+              <h3>Learning</h3>
+              <p>Security isn't just about detection—it includes mechanisms for safe communication.</p>
             </div>
           </section>
 
           <section className="content-section">
-            <h2>45〜50日目で行ったタスク</h2>
+            <h2>Tasks Completed in Days 45-50</h2>
             <ul className="task-list">
-              <li>E2Eテストの観測点強化</li>
-              <li>E2EテストHTMLレポートの修正</li>
-              <li>攻撃トラフィック検証の準備</li>
-              <li>Nginxログの整形</li>
-              <li>Falcoルールの微調整</li>
-              <li>表示時のXSS回避方法の検討</li>
+              <li>E2E test observation point enhancement</li>
+              <li>E2E test HTML report fixes</li>
+              <li>Attack traffic verification preparation</li>
+              <li>Nginx log formatting</li>
+              <li>Falco rule fine-tuning</li>
+              <li>Investigation of XSS avoidance methods for display</li>
             </ul>
           </section>
 
           <section className="content-section">
-            <h2>作成・更新したドキュメント</h2>
+            <h2>Documents Created/Updated</h2>
             <div className="document-item">
               <h3><code>e2e-test-improvements.md</code></h3>
-              <p>→ E2Eテストの観測強化に向けた改善案を記録</p>
+              <p>→ Recorded improvement proposals for E2E test observation enhancement</p>
             </div>
             <div className="document-item">
               <h3><code>integration-test-requirements.md</code></h3>
-              <p>→ HTMLレポートの不具合事例を追加・修正</p>
+              <p>→ Added and fixed HTML report bug examples</p>
             </div>
             <div className="document-item">
               <h3><code>PROBLEM_PATTERNS.md</code></h3>
-              <p>→ 「攻撃シナリオ再現失敗」「XSSサンプル表示問題」などを追記</p>
+              <p>→ Added "Attack Scenario Reproduction Failure" and "XSS Sample Display Issues"</p>
             </div>
           </section>
 
           <section className="content-section">
-            <h2>まとめ</h2>
+            <h2>Summary</h2>
             <p>
-              45〜50日目は「テストの深掘りとUIの罠」に悩まされた期間だった。
-              失敗をただ嘆くのではなく、ドキュメントに残し資産化することで、同じ壁を二度と素手で殴らなくて済む。
+              Days 45-50 were plagued by "deep test dives and UI traps."
+              Rather than just lamenting failures, by documenting them and turning them into assets, we never have to punch the same wall barehanded twice.
             </p>
             <p>
-              次はいよいよ、本格的に <strong>Nginx攻撃トラフィックの流し込みとFalcoルールの実戦検証</strong>。
-              失敗の百科事典は、ますます厚みを増していく。
+              Next comes the real deal: <strong>flowing Nginx attack traffic and practical verification of Falco rules</strong>.
+              The encyclopedia of failures continues to grow thicker.
             </p>
           </section>
 
@@ -328,17 +328,17 @@ export default function FalcoPluginDevelopmentDays45to52() {
               <h3>GitHub & TK Links</h3>
               <ul className="link-list">
                 <li>
-                  プロジェクト: <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">falco-nginx-plugin on GitHub</a>
+                  Project: <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">falco-nginx-plugin on GitHub</a>
                 </li>
                 <li>
-                  開発リーダーTK: <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">LinkedIn - Takao Shimizu</a>
+                  Development Lead TK: <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">LinkedIn - Takao Shimizu</a>
                 </li>
               </ul>
             </div>
 
             <div className="navigation-links">
               <Link href="/blog" className="back-to-list">
-                ← ブログ一覧に戻る
+                ← Back to Blog List
               </Link>
             </div>
           </footer>

@@ -42,7 +42,7 @@ export default function News() {
             "XSSサンプル表示問題への対処",
             "失敗の記録と資産化の継続"
           ],
-          link: "/blog/falco-plugin-development-days45-52"
+          link: "/blog/falco-plugin-development-days45-50"
         },
         {
           id: "2025-08-24-oss-development-blog-part6",
@@ -218,7 +218,7 @@ export default function News() {
             "Addressing XSS sample display issues",
             "Continuing failure documentation and asset creation"
           ],
-          link: "/blog/falco-plugin-development-days45-52-en"
+          link: "/blog/falco-plugin-development-days45-50-en"
         },
         {
           id: "2025-08-24-oss-development-blog-part6",
