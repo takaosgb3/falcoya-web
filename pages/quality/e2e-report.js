@@ -31,7 +31,7 @@ export default function E2EReport() {
         detection: "検知機能",
         blog: "ブログ",
         news: "ニュース",
-        quality: "品質"
+        quality: "テストレポート"
       }
     },
     en: {
@@ -43,7 +43,7 @@ export default function E2EReport() {
         detection: "Detection",
         blog: "Blog", 
         news: "News",
-        quality: "Quality"
+        quality: "Test Report"
       }
     }
   }

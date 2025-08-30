@@ -18,11 +18,11 @@ export default function Quality() {
         detection: "検知機能",
         blog: "ブログ",
         news: "ニュース",
-        quality: "テスト"
+        quality: "テストレポート"
       },
       hero: {
-        title: "継続的品質保証",
-        subtitle: "信頼性の高いセキュリティ監視を実現",
+        title: "E2Eテスト レポート",
+        subtitle: "信頼性の高いセキュリティ監視を目指します",
         description: "falco-plugin-nginx の品質は、包括的なE2Eテスト、自動化されたCI/CD、そして実証済みの検知精度によって支えられています。"
       },
       testResults: {
@@ -33,7 +33,9 @@ export default function Quality() {
           totalTests: "総テスト数",
           passRate: "成功率",
           coverage: "カバレッジ",
-          lastRun: "最終実行"
+          lastRun: "最終実行",
+          detectedAttacks: "検知した攻撃",
+          undetectedAttacks: "未検知の攻撃"
         },
         categories: {
           basic: "基本機能テスト",
@@ -56,11 +58,11 @@ export default function Quality() {
         detection: "Detection", 
         blog: "Blog",
         news: "News",
-        quality: "Testing"
+        quality: "Test Report"
       },
       hero: {
-        title: "Continuous Quality Assurance",
-        subtitle: "Ensuring reliable security monitoring",
+        title: "E2E Test Report",
+        subtitle: "Aiming for reliable security monitoring",
         description: "The quality of falco-plugin-nginx is supported by comprehensive E2E testing, automated CI/CD, and proven detection accuracy."
       },
       testResults: {
@@ -71,7 +73,9 @@ export default function Quality() {
           totalTests: "Total Tests",
           passRate: "Pass Rate", 
           coverage: "Coverage",
-          lastRun: "Last Run"
+          lastRun: "Last Run",
+          detectedAttacks: "Detected Attacks",
+          undetectedAttacks: "Undetected Attacks"
         },
         categories: {
           basic: "Basic Function Tests",
@@ -98,7 +102,9 @@ export default function Quality() {
     lastRun: "2025-08-30T05:45:03Z",
     environment: "github-runner",
     falcoVersion: "0.41.3",
-    pluginVersion: "v1.3.0"
+    pluginVersion: "v1.3.0",
+    detectedAttacks: 12,  // SQLi: 5, XSS: 7
+    undetectedAttacks: 0
   }
 
   const formatDate = (dateStr) => {
@@ -241,6 +247,14 @@ export default function Quality() {
                       <span className="stat-label">{currentContent.testResults.summary.passRate}</span>
                       <span className="stat-value success">{testSummary.passRate}%</span>
                     </div>
+                    <div className="stat">
+                      <span className="stat-label">{currentContent.testResults.summary.detectedAttacks}</span>
+                      <span className="stat-value detected">{testSummary.detectedAttacks}</span>
+                    </div>
+                    <div className="stat">
+                      <span className="stat-label">{currentContent.testResults.summary.undetectedAttacks}</span>
+                      <span className="stat-value undetected">{testSummary.undetectedAttacks}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -312,14 +326,9 @@ export default function Quality() {
             </div>
 
             <div className="report-links">
-              <Link href="/quality/e2e-table-report">
-                <a className="report-button primary">
-                  📋 テストレポート（テーブル形式）
-                </a>
-              </Link>
               <Link href="/quality/e2e-report">
-                <a className="report-button secondary">
-                  📊 テストレポート（詳細版）
+                <a className="report-button primary">
+                  📊 テストレポート（簡易版）
                 </a>
               </Link>
               <a 
@@ -328,7 +337,7 @@ export default function Quality() {
                 rel="noopener noreferrer"
                 className="report-button tertiary"
               >
-                🔍 HTMLレポートを表示
+                🔍 テストレポート(詳細版)
               </a>
             </div>
           </div>
@@ -444,7 +453,7 @@ export default function Quality() {
         }
 
         .phase-info {
-          text-align: center;
+          text-align: left;
           margin-bottom: 50px;
           padding: 20px;
           background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
@@ -467,8 +476,6 @@ export default function Quality() {
           font-size: 1rem;
           color: #495057;
           line-height: 1.6;
-          max-width: 800px;
-          margin: 0 auto;
         }
 
         .summary-grid {
@@ -523,6 +530,14 @@ export default function Quality() {
 
         .stat-value.success {
           color: #27ae60;
+        }
+
+        .stat-value.detected {
+          color: #3498db;
+        }
+
+        .stat-value.undetected {
+          color: #95a5a6;
         }
 
         .env-details {
