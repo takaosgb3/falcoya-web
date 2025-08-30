@@ -53,7 +53,7 @@ export default function ReportViewer() {
         <h1>エラー</h1>
         <p>{error}</p>
         <Link href="/quality">
-          <a className="back-link">品質ページに戻る</a>
+          <a className="back-link">テストページに戻る</a>
         </Link>
       </div>
     )
@@ -69,7 +69,7 @@ export default function ReportViewer() {
       <div className="report-viewer">
         <div className="report-header">
           <Link href="/quality">
-            <a className="back-link">← 品質ページに戻る</a>
+            <a className="back-link">← テストページに戻る</a>
           </Link>
           <h1>📋 E2E Test Report</h1>
           <p className="report-id">Report ID: {reportId}</p>

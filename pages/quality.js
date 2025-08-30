@@ -10,7 +10,7 @@ export default function Quality() {
   // Quality/Testing content data
   const content = {
     ja: {
-      title: "品質保証 & テスト",
+      title: "E2Eテスト & 検証",
       description: "falco-plugin-nginx の品質を支える包括的なテストとE2E検証結果",
       nav: {
         github: "GitHub",
@@ -18,7 +18,7 @@ export default function Quality() {
         detection: "検知機能",
         blog: "ブログ",
         news: "ニュース",
-        quality: "品質"
+        quality: "テスト"
       },
       hero: {
         title: "継続的品質保証",
@@ -48,7 +48,7 @@ export default function Quality() {
       }
     },
     en: {
-      title: "Quality Assurance & Testing",
+      title: "E2E Testing & Validation",
       description: "Comprehensive testing and E2E verification results supporting falco-plugin-nginx quality",
       nav: {
         github: "GitHub",
@@ -56,7 +56,7 @@ export default function Quality() {
         detection: "Detection", 
         blog: "Blog",
         news: "News",
-        quality: "Quality"
+        quality: "Testing"
       },
       hero: {
         title: "Continuous Quality Assurance",

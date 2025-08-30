@@ -21,7 +21,7 @@ export default function Home() {
         detection: "検知機能",
         blog: "ブログ",
         news: "ニュース",
-        quality: "品質"
+        quality: "テスト"
       },
       hero: {
         badge: "Falco Plugin for Nginx",
@@ -239,7 +239,7 @@ export default function Home() {
         detection: "Detection",
         blog: "Blog",
         news: "News",
-        quality: "Quality"
+        quality: "Testing"
       },
       hero: {
         badge: "Falco Plugin for Nginx",

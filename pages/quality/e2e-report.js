@@ -334,7 +334,7 @@ export default function E2EReport() {
           {/* Header */}
           <div className="report-header">
             <div className="breadcrumb">
-              <Link href="/quality">← 品質保証に戻る</Link>
+              <Link href="/quality">← テストページに戻る</Link>
             </div>
             <h1>📋 {currentContent.title}</h1>
             <p>{currentContent.description}</p>
