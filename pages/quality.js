@@ -367,30 +367,51 @@ export default function Quality() {
         }
 
         .quality-hero {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
           color: white;
           padding: 80px 0;
           text-align: center;
+          position: relative;
+        }
+        
+        .quality-hero::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.1);
+          pointer-events: none;
         }
 
         .quality-hero h1 {
           font-size: 3rem;
           font-weight: 700;
           margin-bottom: 20px;
+          position: relative;
+          z-index: 1;
         }
 
         .hero-subtitle {
           font-size: 1.5rem;
           margin-bottom: 20px;
-          opacity: 0.9;
+          opacity: 1;
+          font-weight: 500;
+          position: relative;
+          z-index: 1;
         }
 
         .hero-description {
           font-size: 1.1rem;
           max-width: 800px;
           margin: 0 auto;
-          opacity: 0.8;
+          opacity: 1;
           line-height: 1.7;
+          font-weight: 400;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          position: relative;
+          z-index: 1;
         }
 
         .test-summary {
