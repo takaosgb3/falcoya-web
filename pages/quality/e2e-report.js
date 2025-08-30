@@ -82,8 +82,8 @@ export default function E2EReport() {
               when: "falcoコマンドを実行",
               then: "コマンドが存在し実行可能"
             },
-            criteria: "exit code = 0",
-            actual: "exit:0"
+            criteria: "コマンド falco が実行可能 (exit=0)",
+            actual: "成功: /usr/local/bin/falco"
           },
           {
             id: "BASIC_002", 
@@ -95,8 +95,8 @@ export default function E2EReport() {
               when: "falco --versionを実行",
               then: "バージョン情報が表示される"
             },
-            criteria: "exit code = 0 かつ バージョン文字列を含む",
-            actual: "exit:0"
+            criteria: "バージョン文字列が表示される (exit=0)",
+            actual: "成功: Falco version: 0.41.3"
           },
           {
             id: "BASIC_003",
@@ -108,8 +108,8 @@ export default function E2EReport() {
               when: "/usr/share/falco/plugins/libfa... ファイル確認",
               then: "ファイルが存在する"
             },
-            criteria: "test -f が成功",
-            actual: "exit:0"
+            criteria: "test -f が成功 (exit=0)",
+            actual: "成功: ファイルが存在"
           },
           {
             id: "BASIC_004",
@@ -121,8 +121,8 @@ export default function E2EReport() {
               when: "/etc/falco/rules.d/nginx_rules... ファイル確認",
               then: "ファイルが存在する"
             },
-            criteria: "test -f が成功",
-            actual: "exit:0"
+            criteria: "test -f が成功 (exit=0)",
+            actual: "成功: ファイルが存在"
           },
           {
             id: "BASIC_005",
@@ -134,8 +134,8 @@ export default function E2EReport() {
               when: "falco --list-pluginsを実行してnginx検索",
               then: "nginxプラグインがリストに含まれる"
             },
-            criteria: "grep nginx が成功",
-            actual: "exit:0"
+            criteria: "grep nginx が成功 (exit=0)",
+            actual: "成功: nginx プラグインがリストに表示"
           },
           {
             id: "BASIC_NEG_001",
@@ -147,8 +147,8 @@ export default function E2EReport() {
               when: "falco --list-pluginsで架空のプラグインを検索",
               then: "見つからない（失敗する）"
             },
-            criteria: "exit code = 1（期待通りの失敗）",
-            actual: "Failed as expected"
+            criteria: "grep が失敗 (exit=1)",
+            actual: "期待通り失敗: 架空のプラグインは見つからない"
           }
         ]
       },
@@ -168,8 +168,8 @@ export default function E2EReport() {
               when: "falco --validateでルールを検証",
               then: "構文エラーがない"
             },
-            criteria: "exit code = 0",
-            actual: "exit:0"
+            criteria: "構文エラーがない (exit=0)",
+            actual: "成功: /etc/falco/rules.d/nginx_rules.yaml: Ok"
           },
           {
             id: "RULES_002",
@@ -181,8 +181,8 @@ export default function E2EReport() {
               when: "ルール定義の数をカウント",
               then: "1つ以上のルールが定義されている"
             },
-            criteria: "grep '^- rule:' | 数値が返る",
-            actual: "exit:0"
+            criteria: "1つ以上のルールが存在 (exit=0)",
+            actual: "成功: 10ルール検出"
           },
           {
             id: "RULES_NEG_001",
@@ -194,8 +194,8 @@ export default function E2EReport() {
               when: "falco --validateで検証",
               then: "検証エラーになる"
             },
-            criteria: "exit code = 1（期待通りの失敗）",
-            actual: "Failed as expected"
+            criteria: "検証エラー (exit=1)",
+            actual: "期待通り失敗: /tmp/e2e-test-reports/invalid_rules.yaml: Invalid"
           }
         ]
       },
@@ -215,8 +215,8 @@ export default function E2EReport() {
               when: "falco --list-pluginsでプラグインリストを確認",
               then: "nginxプラグインが正常にロードされる"
             },
-            criteria: "nginxプラグインがリストに含まれる",
-            actual: "exit:0"
+            criteria: "nginxプラグインがリストに表示 (exit=0)",
+            actual: "成功: Name: nginx"
           },
           {
             id: "PLUGIN_LOAD_002",
@@ -228,8 +228,8 @@ export default function E2EReport() {
               when: "lddで依存関係をチェック",
               then: "必要なライブラリがリンクされている"
             },
-            criteria: "exit code = 0",
-            actual: "exit:0"
+            criteria: "必要なライブラリがリンク済み (exit=0)",
+            actual: "成功: linux-vdso.so.1, libresolv.so.2, libpthread.so.0"
           },
           {
             id: "PLUGIN_LOAD_NEG_001",
@@ -241,8 +241,8 @@ export default function E2EReport() {
               when: "falco --dry-runで検証",
               then: "設定エラーで失敗する"
             },
-            criteria: "exit code = 1（期待通りの失敗）",
-            actual: "Failed as expected"
+            criteria: "設定エラー (exit=1)",
+            actual: "期待通り失敗: Runtime error: error in plugin nginx"
           }
         ]
       },
@@ -262,8 +262,8 @@ export default function E2EReport() {
               when: "SQLiパターン（' OR '1'='1）を含むnginxログを送信",
               then: "[NGINX SQLi]アラートが発火する"
             },
-            criteria: "falco.logに'NGINX SQLi'を含むアラートが1件以上",
-            actual: "Detected: 5 alerts",
+            criteria: "'NGINX SQLi'アラートが発火 (1件以上)",
+            actual: "成功: 5件のアラートを検知",
             detectionSample: {
               payload: "/users?id=1' OR '1'='1",
               decoded: "/users?id=1' OR '1'='1",
@@ -285,8 +285,8 @@ export default function E2EReport() {
               when: "XSSパターン（<script>タグ）を含むnginxログを送信",
               then: "[NGINX XSS]アラートが発火する"
             },
-            criteria: "falco.logに'NGINX XSS'を含むアラートが1件以上",
-            actual: "Detected: 7 alerts",
+            criteria: "'NGINX XSS'アラートが発火 (1件以上)",
+            actual: "成功: 7件のアラートを検知",
             detectionSample: {
               payload: "/search?q=%3Cscript%3Ealert(1)%3C/script%3E",
               decoded: "/search?q=<script>alert(1)</script>",

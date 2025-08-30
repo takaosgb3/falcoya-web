@@ -21,8 +21,8 @@ export default function Quality() {
         quality: "テストレポート"
       },
       hero: {
-        title: "E2Eテスト レポート",
-        subtitle: "信頼性の高いセキュリティ監視を目指します",
+        title: "End-to-End テストレポート",
+        subtitle: "信頼性の高いセキュリティ監視を実現",
         description: "falco-plugin-nginx の品質は、包括的なE2Eテスト、自動化されたCI/CD、そして実証済みの検知精度によって支えられています。"
       },
       testResults: {
@@ -61,8 +61,8 @@ export default function Quality() {
         quality: "Test Report"
       },
       hero: {
-        title: "E2E Test Report",
-        subtitle: "Aiming for reliable security monitoring",
+        title: "End-to-End Test Report",
+        subtitle: "Achieving reliable security monitoring",
         description: "The quality of falco-plugin-nginx is supported by comprehensive E2E testing, automated CI/CD, and proven detection accuracy."
       },
       testResults: {
@@ -104,7 +104,7 @@ export default function Quality() {
     falcoVersion: "0.41.3",
     pluginVersion: "v1.3.0",
     detectedAttacks: 12,  // SQLi: 5, XSS: 7
-    undetectedAttacks: 0
+    undetectedAttacks: 2
   }
 
   const formatDate = (dateStr) => {
