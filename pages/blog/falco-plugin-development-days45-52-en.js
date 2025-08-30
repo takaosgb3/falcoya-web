@@ -223,7 +223,7 @@ export default function FalcoPluginDevelopmentDays45to52En() {
                   Project: <a href="https://github.com/takaoS/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">falco-nginx-plugin on GitHub</a>
                 </li>
                 <li>
-                  Director TK: <a href="https://www.linkedin.com/in/takao-shimizu-37423a188/" target="_blank" rel="noopener noreferrer">LinkedIn - Takao Shimizu</a>
+                  Development Lead TK: <a href="https://www.linkedin.com/in/takao-shimizu-37423a188/" target="_blank" rel="noopener noreferrer">LinkedIn - Takao Shimizu</a>
                 </li>
               </ul>
             </div>
