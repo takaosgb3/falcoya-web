@@ -1,0 +1,1 @@
+ldd /usr/share/falco/plugins/libfalco-nginx-plugin.so

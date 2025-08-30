@@ -1,0 +1,6 @@
+# System State at Test Start
+Date: 2025-08-30T05:44:44Z
+Kernel: 5.15.0-151-generic
+CPU: 8 cores
+Memory: 31Gi
+Disk: 65G available

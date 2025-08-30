@@ -1,0 +1,1 @@
+Runtime error: error in plugin nginx: init config is not a valid json. Exiting.

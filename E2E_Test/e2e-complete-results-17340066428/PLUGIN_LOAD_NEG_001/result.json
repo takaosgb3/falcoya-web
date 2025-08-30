@@ -1,0 +1,1 @@
+{"test_id":"PLUGIN_LOAD_NEG_001","command":"falco -c /tmp/e2e-test-reports/bad_falco_config.yaml --dry-run","start_ms":1756532685580,"end_ms":1756532685599,"duration_ms":19,"exit_code":1,"timestamp":"2025-08-30T05:44:45Z","negative_test":true,"test_passed":true,"evidence_file":"stderr.txt"}

@@ -1,0 +1,1 @@
+falco --list-plugins | tee /tmp/plugin_list.txt | grep -i nginx || (echo 'ERROR: nginx plugin not found in list' >&2; cat /tmp/plugin_list.txt >&2; exit 1)

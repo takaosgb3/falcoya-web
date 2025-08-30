@@ -1,0 +1,12 @@
+{
+  "runner": "github-runner-deployment-fixed-mgv7s-q4jvs",
+  "kernel": "5.15.0-151-generic",
+  "go_version": "go version go1.22.12 linux/amd64",
+  "falco_version": "Falco version: 0.41.3",
+  "commit": "4ac042e07800e5335dba6be61356912e7bb477e5",
+  "pr": "refs/pull/289/merge",
+  "timestamp": "2025-08-30T05:44:44Z",
+  "test_report_dir": "/tmp/e2e-test-reports",
+  "github_repository": "takaosgb3/falco-nginx-plugin-claude",
+  "github_actor": "takaosgb3"
+}

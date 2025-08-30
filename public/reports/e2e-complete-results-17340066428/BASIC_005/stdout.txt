@@ -1,0 +1,16 @@
+1 Plugins Loaded:
+
+Name: nginx
+Description: Real-time nginx access log monitoring for security threats
+Contact: github.com/takaosgb3/falco-nginx-plugin
+Version: 0.3.0
+Capabilities: 
+  - Event Sourcing (ID=999, source='nginx')
+  - Field Extraction
+
+
+---
+Name: nginx
+Description: Real-time nginx access log monitoring for security threats
+Contact: github.com/takaosgb3/falco-nginx-plugin
+  - Event Sourcing (ID=999, source='nginx')

@@ -1,0 +1,1 @@
+{"test_id":"PLUGIN_LOAD_002","command":"ldd /usr/share/falco/plugins/libfalco-nginx-plugin.so","start_ms":1756532685494,"end_ms":1756532685506,"duration_ms":12,"exit_code":0,"timestamp":"2025-08-30T05:44:45Z","evidence_file":"stdout.txt"}

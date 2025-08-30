@@ -1,0 +1,9 @@
+Total rules:
+10
+---
+First 5 rules:
+- rule: NGINX SQLi Attempt
+- rule: NGINX Command Injection Attempt
+- rule: NGINX XSS Attempt
+- rule: NGINX Path Traversal Attempt
+- rule: NGINX Auth Failure on Login/Admin Path

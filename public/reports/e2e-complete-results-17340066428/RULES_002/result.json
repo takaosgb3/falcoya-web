@@ -1,0 +1,1 @@
+{"test_id":"RULES_002","command":"echo 'Total rules:' && grep -c '^- rule:' /etc/falco/rules.d/nginx_rules.yaml && echo '---' && echo 'First 5 rules:' && grep '^- rule:' /etc/falco/rules.d/nginx_rules.yaml | head -5","start_ms":1756532685247,"end_ms":1756532685255,"duration_ms":8,"exit_code":0,"timestamp":"2025-08-30T05:44:45Z","evidence_file":"stdout.txt"}
