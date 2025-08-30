@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useLanguage } from '../../utils/languageUtils'
 
-export default function FalcoPluginDevelopmentDays45to52() {
+export default function FalcoPluginDevelopmentDays45to50() {
   const [language, setLanguage] = useLanguage()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
@@ -54,7 +54,7 @@ export default function FalcoPluginDevelopmentDays45to52() {
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="FALCOYA" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://falcoya.com/blog/falco-plugin-development-days45-52" />
+        <link rel="canonical" href="https://falcoya.com/blog/falco-plugin-development-days45-50" />
       </Head>
 
       {/* Navigation */}
@@ -101,7 +101,7 @@ export default function FalcoPluginDevelopmentDays45to52() {
                 onClick={() => {
                   if (language !== 'en') {
                     setLanguage('en')
-                    router.push('/blog/falco-plugin-development-days45-52-en')
+                    router.push('/blog/falco-plugin-development-days45-50-en')
                   }
                 }}
               >

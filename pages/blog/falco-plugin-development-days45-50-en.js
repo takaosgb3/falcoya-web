@@ -91,7 +91,7 @@ export default function FalcoPluginDevelopmentDays45to50En() {
                 onClick={() => {
                   if (language !== 'ja') {
                     setLanguage('ja')
-                    router.push('/blog/falco-plugin-development-days45-52')
+                    router.push('/blog/falco-plugin-development-days45-50')
                   }
                 }}
               >
