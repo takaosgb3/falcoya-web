@@ -23,8 +23,8 @@ export default function E2EReport() {
   // E2E Test Report Content
   const content = {
     ja: {
-      title: "E2E テストレポート",
-      description: "falco-plugin-nginx の包括的なEnd-to-Endテスト結果",
+      title: "E2E テストレポート (Phase 1)",
+      description: "falco-plugin-nginx の包括的なEnd-to-Endテスト結果 - 基礎検証フェーズ",
       nav: {
         github: "GitHub",
         installation: "インストール", 
@@ -35,8 +35,8 @@ export default function E2EReport() {
       }
     },
     en: {
-      title: "E2E Test Report", 
-      description: "Comprehensive End-to-End test results for falco-plugin-nginx",
+      title: "E2E Test Report (Phase 1)", 
+      description: "Comprehensive End-to-End test results for falco-plugin-nginx - Foundation Phase",
       nav: {
         github: "GitHub",
         installation: "Installation",

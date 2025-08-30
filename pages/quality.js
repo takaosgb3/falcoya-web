@@ -26,8 +26,8 @@ export default function Quality() {
         description: "falco-plugin-nginx の品質は、包括的なE2Eテスト、自動化されたCI/CD、そして実証済みの検知精度によって支えられています。"
       },
       testResults: {
-        title: "最新テスト結果",
-        subtitle: "End-to-End テスト完全レポート",
+        title: "最新テスト結果 (Phase 1)",
+        subtitle: "End-to-End テスト完全レポート - 基礎検証フェーズ",
         summary: {
           title: "テストサマリー",
           totalTests: "総テスト数",
@@ -64,8 +64,8 @@ export default function Quality() {
         description: "The quality of falco-plugin-nginx is supported by comprehensive E2E testing, automated CI/CD, and proven detection accuracy."
       },
       testResults: {
-        title: "Latest Test Results",
-        subtitle: "Complete End-to-End Test Report",
+        title: "Latest Test Results (Phase 1)",
+        subtitle: "Complete End-to-End Test Report - Foundation Phase",
         summary: {
           title: "Test Summary",
           totalTests: "Total Tests",
@@ -216,6 +216,16 @@ export default function Quality() {
           <div className="container">
             <h2>{currentContent.testResults.title}</h2>
             <p className="section-subtitle">{currentContent.testResults.subtitle}</p>
+            
+            <div className="phase-info">
+              <div className="phase-badge">Phase 1</div>
+              <p className="phase-description">
+                {language === 'ja' 
+                  ? '現在のテスト結果はPhase 1（基礎検証フェーズ）の内容です。今後、Phase 2（高度な攻撃検知）、Phase 3（パフォーマンス・負荷テスト）を実施予定です。'
+                  : 'Current test results are from Phase 1 (Foundation Verification). Phase 2 (Advanced Attack Detection) and Phase 3 (Performance & Load Testing) are planned for future implementation.'
+                }
+              </p>
+            </div>
             
             <div className="summary-grid">
               <div className="summary-card">
@@ -430,7 +440,35 @@ export default function Quality() {
           text-align: center;
           font-size: 1.2rem;
           color: #7f8c8d;
-          margin-bottom: 60px;
+          margin-bottom: 30px;
+        }
+
+        .phase-info {
+          text-align: center;
+          margin-bottom: 50px;
+          padding: 20px;
+          background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+          border-radius: 12px;
+          border: 1px solid #dee2e6;
+        }
+
+        .phase-badge {
+          display: inline-block;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 8px 20px;
+          border-radius: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          margin-bottom: 15px;
+        }
+
+        .phase-description {
+          font-size: 1rem;
+          color: #495057;
+          line-height: 1.6;
+          max-width: 800px;
+          margin: 0 auto;
         }
 
         .summary-grid {
@@ -546,11 +584,12 @@ export default function Quality() {
 
         .example-header {
           display: flex;
-          justify-content: between;
+          justify-content: space-between;
           align-items: center;
           padding: 20px 25px;
           background: #f8f9fa;
           border-bottom: 1px solid #ecf0f1;
+          gap: 15px;
         }
 
         .attack-type {
