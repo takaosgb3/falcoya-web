@@ -304,14 +304,17 @@ export default function Quality() {
             <div className="report-links">
               <Link href="/quality/e2e-report">
                 <a className="report-button primary">
-                  📋 詳細テストレポート
+                  📋 テストレポート
                 </a>
               </Link>
-              <Link href="/quality/report/e2e-complete-results-17340066428">
-                <a className="report-button secondary">
-                  🔍 HTMLレポートを表示
-                </a>
-              </Link>
+              <a 
+                href="/reports/e2e-complete-results-17340066428/index.html" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="report-button secondary"
+              >
+                🔍 HTMLレポートを表示
+              </a>
             </div>
           </div>
         </section>

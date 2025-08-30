@@ -338,6 +338,25 @@ export default function E2EReport() {
             </div>
             <h1>📋 {currentContent.title}</h1>
             <p>{currentContent.description}</p>
+            <div style={{ marginTop: '15px' }}>
+              <a 
+                href="/reports/e2e-complete-results-17340066428/index.html" 
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  padding: '8px 16px',
+                  background: '#27ae60',
+                  color: 'white',
+                  borderRadius: '20px',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                  fontWeight: '500'
+                }}
+              >
+                🔍 HTMLレポートを新しいタブで開く
+              </a>
+            </div>
             
             {/* Metadata */}
             <div className="metadata-grid">
