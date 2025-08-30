@@ -77,7 +77,7 @@ export default function FalcoPluginDevelopmentDays45to52() {
           </button>
           
           <ul className="nav-menu desktop-menu">
-            <li><Link href="https://github.com/takaoS/falco-plugin-nginx" target="_blank">{navText[language].github}</Link></li>
+            <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">{navText[language].github}</Link></li>
             <li><Link href="/#installation">{navText[language].installation}</Link></li>
             <li><Link href="/#detection">{navText[language].detection}</Link></li>
             <li><Link href="/blog">{navText[language].blog}</Link></li>
@@ -113,7 +113,7 @@ export default function FalcoPluginDevelopmentDays45to52() {
         
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
-            <li><a href="https://github.com/takaoS/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
+            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
             <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
             <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
             <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
@@ -328,7 +328,7 @@ export default function FalcoPluginDevelopmentDays45to52() {
               <h3>GitHub & TK Links</h3>
               <ul className="link-list">
                 <li>
-                  プロジェクト: <a href="https://github.com/takaoS/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">falco-nginx-plugin on GitHub</a>
+                  プロジェクト: <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">falco-nginx-plugin on GitHub</a>
                 </li>
                 <li>
                   開発リーダーTK: <a href="https://www.linkedin.com/in/tk-shimizu/" target="_blank" rel="noopener noreferrer">LinkedIn - Takao Shimizu</a>
