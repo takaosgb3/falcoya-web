@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days45-52',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の45日目から50日目',
+      description: 'テスト改善とHTMLレポート修正、そして攻撃トラフィックへの挑戦。E2Eテストの観測点強化とXSS検出サンプルの表示問題への対処を記録。',
+      date: '2025-08-30',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2Eテスト', 'HTMLレポート', 'XSS', 'テスト改善'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days45-52'
+    },
+    {
       id: 'falco-plugin-development-days39-44',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の39日目から44日目',
       description: '失敗の記録と備忘録、Runnerを壊して学んだ習慣化の力。PROBLEM_PATTERNS.mdに刻まれた6日間の教訓と、失敗を財産に変える文化の構築。',
@@ -87,6 +97,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days45-52-en',
+      title: 'Falco + Nginx Plugin Development: Days 45-50 of Falcoya',
+      description: 'Test improvements, HTML report fixes, and the challenge of attack traffic. Documenting E2E test observation enhancements and XSS detection sample display issues.',
+      date: '2025-08-30',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Testing', 'HTML Reports', 'XSS', 'Test Improvements'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days45-52-en'
+    },
     {
       id: 'falco-plugin-development-days39-44-en',
       title: 'Falco + Nginx Plugin Development: Days 39-44 of Falcoya',
