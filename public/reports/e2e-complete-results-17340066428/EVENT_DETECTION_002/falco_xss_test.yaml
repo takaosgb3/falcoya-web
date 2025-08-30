@@ -1,0 +1,20 @@
+plugins:
+  - name: nginx
+    library_path: /usr/share/falco/plugins/libfalco-nginx-plugin.so
+    init_config: '{"log_paths":["/tmp/nginx_xss_test_1756532686.log"]}'
+    open_params: ''
+
+load_plugins: [nginx]
+
+rules_file:
+  - /etc/falco/rules.d/nginx_rules.yaml
+
+json_output: true
+json_include_output_property: true
+
+stdout_output:
+  enabled: true
+
+outputs:
+  rate: 0
+  max_burst: 0

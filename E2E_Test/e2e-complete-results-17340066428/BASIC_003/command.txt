@@ -1,0 +1,1 @@
+ls -la /usr/share/falco/plugins/libfalco-nginx-plugin.so && file /usr/share/falco/plugins/libfalco-nginx-plugin.so

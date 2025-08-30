@@ -1,0 +1,9 @@
+# Artifact Hashes - BASIC_003
+# Generated: 2025-08-30T05:44:44Z
+
+Plugin Binary:
+90349251054cb338294c71b7a4367756696ce96e49e504aa79b31a964a6e4f47  /usr/share/falco/plugins/libfalco-nginx-plugin.so
+Rules File:
+467e043de52ec127ba86b18c208dc95a3799d3292363eff5350308e0ea6ea65c  /etc/falco/rules.d/nginx_rules.yaml
+Test Output:
+5979ee2b130038e3a210d39ebedbcf27331ae775553b35575e4c5a2a67a03a23  /tmp/e2e-test-reports/BASIC_003/stdout.txt

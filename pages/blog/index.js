@@ -228,7 +228,8 @@ export default function BlogIndex() {
         installation: "インストール",
         detection: "検知機能",
         blog: "ブログ",
-        news: "ニュース"
+        news: "ニュース",
+        quality: "テストレポート"
       },
       categoryList: [
         { name: "OSS開発", count: 7 },
@@ -250,7 +251,8 @@ export default function BlogIndex() {
         installation: "Installation",
         detection: "Detection",
         blog: "Blog",
-        news: "News"
+        news: "News",
+        quality: "Test Report"
       },
       categoryList: [
         { name: "OSS Development", count: 7 },
@@ -295,6 +297,7 @@ export default function BlogIndex() {
             <li><Link href="/#detection">{content[language].nav.detection}</Link></li>
             <li><Link href="/blog" className="active">{content[language].nav.blog}</Link></li>
             <li><Link href="/news">{content[language].nav.news}</Link></li>
+            <li><Link href="/quality">{content[language].nav.quality}</Link></li>
           </ul>
           
           <div className="nav-controls">
@@ -323,6 +326,7 @@ export default function BlogIndex() {
             <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.detection}</a></li>
             <li><a href="/blog" className="active" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</a></li>
             <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.news}</a></li>
+            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.quality}</a></li>
           </ul>
         </div>
       </nav>

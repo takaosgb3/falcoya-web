@@ -20,7 +20,8 @@ export default function Home() {
         installation: "インストール",
         detection: "検知機能",
         blog: "ブログ",
-        news: "ニュース"
+        news: "ニュース",
+        quality: "テストレポート"
       },
       hero: {
         badge: "Falco Plugin for Nginx",
@@ -237,7 +238,8 @@ export default function Home() {
         installation: "Installation", 
         detection: "Detection",
         blog: "Blog",
-        news: "News"
+        news: "News",
+        quality: "Test Report"
       },
       hero: {
         badge: "Falco Plugin for Nginx",
@@ -697,6 +699,7 @@ export default function Home() {
             <li><a href="#detection">{content[language].nav.detection}</a></li>
             <li><a href="/blog">{content[language].nav.blog}</a></li>
             <li><a href="/news">{content[language].nav.news}</a></li>
+            <li><a href="/quality">{content[language].nav.quality}</a></li>
           </ul>
           
           <div className="nav-controls">
@@ -725,6 +728,7 @@ export default function Home() {
             <li><a href="#detection" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.detection}</a></li>
             <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</a></li>
             <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.news}</a></li>
+            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.quality}</a></li>
           </ul>
         </div>
       </nav>

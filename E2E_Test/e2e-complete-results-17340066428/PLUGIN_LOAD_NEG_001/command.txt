@@ -1,0 +1,1 @@
+falco -c /tmp/e2e-test-reports/bad_falco_config.yaml --dry-run

@@ -1,0 +1,1 @@
+falco --validate /etc/falco/rules.d/nginx_rules.yaml

@@ -1,0 +1,2 @@
+-rw-r--r-- 1 root root 4476144 Aug 30 05:44 /usr/share/falco/plugins/libfalco-nginx-plugin.so
+/usr/share/falco/plugins/libfalco-nginx-plugin.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=88d7d75240214659e77058d326011bde70d6f471, with debug_info, not stripped

@@ -1,0 +1,1 @@
+bash '/tmp/e2e-test-reports/EVENT_DETECTION_002/run_xss_test.sh' '/tmp/e2e-test-reports/EVENT_DETECTION_002/falco_xss_test.yaml' '/tmp/e2e-test-reports/EVENT_DETECTION_002' '/tmp/nginx_xss_test_1756532686.log'

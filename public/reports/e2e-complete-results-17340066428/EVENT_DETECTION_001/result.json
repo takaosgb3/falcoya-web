@@ -1,0 +1,1 @@
+{"test_id":"EVENT_DETECTION_001","command":"bash '/tmp/e2e-test-reports/EVENT_DETECTION_001/run_detection_test.sh' '/tmp/e2e-test-reports/EVENT_DETECTION_001' '/tmp/nginx_test_1756532685.log'","start_ms":1756532685675,"end_ms":1756532686709,"duration_ms":1034,"exit_code":0,"timestamp":"2025-08-30T05:44:46Z","evidence_file":"falco.log"}

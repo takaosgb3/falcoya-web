@@ -1,0 +1,1 @@
+falco --validate /tmp/e2e-test-reports/invalid_rules.yaml

@@ -1,0 +1,1 @@
+falco --list-plugins && echo '---' && falco --list-plugins | grep -i nginx

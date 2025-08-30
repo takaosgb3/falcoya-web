@@ -1,0 +1,8 @@
+Falco version: 0.41.3
+Libs version:  0.21.0
+Plugin API:    3.11.0
+Engine:        0.50.0
+Driver:
+  API version:    8.0.0
+  Schema version: 3.6.0
+  Default driver: 8.1.0+driver

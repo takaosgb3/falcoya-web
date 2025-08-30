@@ -1,0 +1,14 @@
+Error: /tmp/e2e-test-reports/invalid_rules.yaml: Invalid
+1 Schema warnings:
+------
+failed for <root>: Value type not permitted by 'type' constraint.
+------
+
+1 Errors:
+In rules content: (/tmp/e2e-test-reports/invalid_rules.yaml:0:0)
+------
+invalid yaml content {
+^
+------
+LOAD_ERR_YAML_VALIDATE (Error validating internal structure of YAML file): Rules content is not yaml
+

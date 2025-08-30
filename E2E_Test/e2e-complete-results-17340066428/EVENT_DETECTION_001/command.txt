@@ -1,0 +1,1 @@
+bash '/tmp/e2e-test-reports/EVENT_DETECTION_001/run_detection_test.sh' '/tmp/e2e-test-reports/EVENT_DETECTION_001' '/tmp/nginx_test_1756532685.log'

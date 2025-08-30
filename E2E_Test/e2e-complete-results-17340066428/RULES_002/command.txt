@@ -1,0 +1,1 @@
+echo 'Total rules:' && grep -c '^- rule:' /etc/falco/rules.d/nginx_rules.yaml && echo '---' && echo 'First 5 rules:' && grep '^- rule:' /etc/falco/rules.d/nginx_rules.yaml | head -5

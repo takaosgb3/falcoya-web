@@ -1,0 +1,1 @@
+ls -la /etc/falco/rules.d/nginx_rules.yaml && head -5 /etc/falco/rules.d/nginx_rules.yaml

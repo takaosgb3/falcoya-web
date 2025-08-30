@@ -1,0 +1,5 @@
+plugins:
+  - name: nginx
+    library_path: /usr/share/falco/plugins/libfalco-nginx-plugin.so
+    init_config: '{"invalid_json": }'
+load_plugins: [nginx]

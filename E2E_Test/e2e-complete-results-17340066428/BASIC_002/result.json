@@ -1,0 +1,1 @@
+{"test_id":"BASIC_002","command":"falco --version","start_ms":1756532684707,"end_ms":1756532684720,"duration_ms":13,"exit_code":0,"timestamp":"2025-08-30T05:44:44Z","evidence_file":"stdout.txt"}

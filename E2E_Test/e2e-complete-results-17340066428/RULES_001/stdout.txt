@@ -1,0 +1,1 @@
+/etc/falco/rules.d/nginx_rules.yaml: Ok, with warnings

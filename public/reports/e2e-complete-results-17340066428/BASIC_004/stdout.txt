@@ -1,0 +1,6 @@
+-rw-r--r-- 1 root root 12790 Aug 30 05:44 /etc/falco/rules.d/nginx_rules.yaml
+# Nginx Security Rules for Falco
+# Version: 0.4.0
+# Compatible with: Falco Plugin SDK for Go
+#
+# This ruleset uses lists and macros for better maintainability and reduced false positives

@@ -1,0 +1,9 @@
+# Artifact Hashes - PLUGIN_LOAD_001
+# Generated: 2025-08-30T05:44:45Z
+
+Plugin Binary:
+90349251054cb338294c71b7a4367756696ce96e49e504aa79b31a964a6e4f47  /usr/share/falco/plugins/libfalco-nginx-plugin.so
+Rules File:
+467e043de52ec127ba86b18c208dc95a3799d3292363eff5350308e0ea6ea65c  /etc/falco/rules.d/nginx_rules.yaml
+Test Output:
+30d35333eba7dd42d5099e1dbb56f437155cb316c0178e0e71056dc5b528178c  /tmp/e2e-test-reports/PLUGIN_LOAD_001/stdout.txt
