@@ -29,6 +29,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-30-oss-development-blog-part7",
+          date: "2025-08-30",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の45日目から50日目」を公開",
+          content: "テスト改善とHTMLレポート修正、そして攻撃トラフィックへの挑戦。E2Eテストの観測点強化とXSS検出サンプルの表示問題への対処を記録しました。",
+          highlights: [
+            "E2Eテストの観測点強化",
+            "HTMLレポートの不具合修正",
+            "攻撃トラフィック検証の準備",
+            "XSSサンプル表示問題への対処",
+            "失敗の記録と資産化の継続"
+          ],
+          link: "/blog/falco-plugin-development-days45-52"
+        },
+        {
           id: "2025-08-24-oss-development-blog-part6",
           date: "2025-08-24",
           category: "feature",
@@ -188,6 +204,22 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-30-oss-development-blog-part7",
+          date: "2025-08-30",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Days 45-50 of Falcoya\" Published",
+          content: "Test improvements, HTML report fixes, and the challenge of attack traffic. Documenting E2E test observation enhancements and XSS detection sample display issues.",
+          highlights: [
+            "E2E test observation point enhancement",
+            "HTML report bug fixes",
+            "Attack traffic verification preparation",
+            "Addressing XSS sample display issues",
+            "Continuing failure documentation and asset creation"
+          ],
+          link: "/blog/falco-plugin-development-days45-52-en"
+        },
         {
           id: "2025-08-24-oss-development-blog-part6",
           date: "2025-08-24",
