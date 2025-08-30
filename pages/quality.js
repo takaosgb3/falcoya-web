@@ -37,6 +37,10 @@ export default function Quality() {
           detectedAttacks: "検知した攻撃",
           undetectedAttacks: "未検知の攻撃"
         },
+        environment: {
+          title: "環境",
+          plugin: "プラグイン"
+        },
         categories: {
           basic: "基本機能テスト",
           rules: "ルール検証テスト", 
@@ -46,7 +50,21 @@ export default function Quality() {
       },
       detectionExamples: {
         title: "実際の検知例",
-        subtitle: "E2Eテストで確認された攻撃検知サンプル"
+        subtitle: "E2Eテストで確認された攻撃検知サンプル",
+        sqlInjection: {
+          title: "SQLインジェクション攻撃検知",
+          result: "検知結果:",
+          success: "✅ 検知成功 (5件のアラート)"
+        },
+        xss: {
+          title: "XSS攻撃検知",
+          result: "検知結果:",
+          success: "✅ 検知成功 (7件のアラート)"
+        }
+      },
+      reportButtons: {
+        simple: "📊 テストレポート（簡易版）",
+        detailed: "🔍 テストレポート(詳細版)"
       }
     },
     en: {
@@ -77,6 +95,10 @@ export default function Quality() {
           detectedAttacks: "Detected Attacks",
           undetectedAttacks: "Undetected Attacks"
         },
+        environment: {
+          title: "Environment",
+          plugin: "Plugin"
+        },
         categories: {
           basic: "Basic Function Tests",
           rules: "Rule Validation Tests",
@@ -86,7 +108,21 @@ export default function Quality() {
       },
       detectionExamples: {
         title: "Real Detection Examples",
-        subtitle: "Attack detection samples verified in E2E testing"
+        subtitle: "Attack detection samples verified in E2E testing",
+        sqlInjection: {
+          title: "SQL Injection Attack Detection",
+          result: "Detection Result:",
+          success: "✅ Successfully Detected (5 alerts)"
+        },
+        xss: {
+          title: "XSS Attack Detection",
+          result: "Detection Result:",
+          success: "✅ Successfully Detected (7 alerts)"
+        }
+      },
+      reportButtons: {
+        simple: "📊 Test Report (Simple Version)",
+        detailed: "🔍 Test Report (Detailed Version)"
       }
     }
   }
@@ -262,13 +298,13 @@ export default function Quality() {
               <div className="summary-card">
                 <div className="summary-icon">🛡️</div>
                 <div className="summary-content">
-                  <h3>Environment</h3>
+                  <h3>{currentContent.testResults.environment.title}</h3>
                   <div className="env-details">
                     <div className="env-item">
                       <span>Falco:</span> <code>{testSummary.falcoVersion}</code>
                     </div>
                     <div className="env-item">
-                      <span>プラグイン:</span> <code>v1.3.0</code>
+                      <span>{currentContent.testResults.environment.plugin}:</span> <code>v1.3.0</code>
                     </div>
                     <div className="env-item">
                       <span>{currentContent.testResults.summary.lastRun}:</span>
@@ -294,14 +330,14 @@ export default function Quality() {
                   <span className="severity critical">Critical</span>
                 </div>
                 <div className="example-content">
-                  <h3>SQLインジェクション攻撃検知</h3>
+                  <h3>{currentContent.detectionExamples.sqlInjection.title}</h3>
                   <div className="payload">
                     <strong>Payload:</strong>
                     <code>/users?id=1' OR '1'='1</code>
                   </div>
                   <div className="detection-result">
-                    <strong>検知結果:</strong>
-                    <span className="result-badge success">✅ 検知成功 (5件のアラート)</span>
+                    <strong>{currentContent.detectionExamples.sqlInjection.result}</strong>
+                    <span className="result-badge success">{currentContent.detectionExamples.sqlInjection.success}</span>
                   </div>
                 </div>
               </div>
@@ -312,14 +348,14 @@ export default function Quality() {
                   <span className="severity warning">Warning</span>
                 </div>
                 <div className="example-content">
-                  <h3>XSS攻撃検知</h3>
+                  <h3>{currentContent.detectionExamples.xss.title}</h3>
                   <div className="payload">
                     <strong>Payload:</strong>
                     <code>/search?q=&lt;script&gt;alert(1)&lt;/script&gt;</code>
                   </div>
                   <div className="detection-result">
-                    <strong>検知結果:</strong>
-                    <span className="result-badge success">✅ 検知成功 (7件のアラート)</span>
+                    <strong>{currentContent.detectionExamples.xss.result}</strong>
+                    <span className="result-badge success">{currentContent.detectionExamples.xss.success}</span>
                   </div>
                 </div>
               </div>
@@ -328,7 +364,7 @@ export default function Quality() {
             <div className="report-links">
               <Link href="/quality/e2e-report">
                 <a className="report-button primary">
-                  📊 テストレポート（簡易版）
+                  {currentContent.reportButtons.simple}
                 </a>
               </Link>
               <a 
@@ -337,7 +373,7 @@ export default function Quality() {
                 rel="noopener noreferrer"
                 className="report-button tertiary"
               >
-                🔍 テストレポート(詳細版)
+                {currentContent.reportButtons.detailed}
               </a>
             </div>
           </div>

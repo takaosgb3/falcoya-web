@@ -42,6 +42,15 @@ export default function E2EReport() {
       filters: {
         all: "すべて"
       },
+      testDetails: {
+        scenario: "🎯 テストシナリオ (Given/When/Then)",
+        criteria: "✅ 成功条件",
+        actual: "📊 実際の結果",
+        detectionSample: "🔍 検知サンプル",
+        payload: "Payload:",
+        decoded: "Decoded:",
+        falcoAlert: "Falco Alert:"
+      },
       nav: {
         github: "GitHub",
         installation: "インストール", 
@@ -70,6 +79,15 @@ export default function E2EReport() {
       },
       filters: {
         all: "All"
+      },
+      testDetails: {
+        scenario: "🎯 Test Scenario (Given/When/Then)",
+        criteria: "✅ Success Criteria",
+        actual: "📊 Actual Result",
+        detectionSample: "🔍 Detection Sample",
+        payload: "Payload:",
+        decoded: "Decoded:",
+        falcoAlert: "Falco Alert:"
       },
       nav: {
         github: "GitHub",
@@ -576,7 +594,7 @@ export default function E2EReport() {
                       {expandedSections.has(test.id) && (
                         <div className="test-details">
                           <div className="scenario">
-                            <h4>🎯 テストシナリオ (Given/When/Then)</h4>
+                            <h4>{currentContent.testDetails.scenario}</h4>
                             <div className="scenario-item">
                               <strong>Given:</strong> {test.scenario.given}
                             </div>
@@ -589,28 +607,28 @@ export default function E2EReport() {
                           </div>
                           
                           <div className="criteria">
-                            <h4>✅ 成功条件</h4>
+                            <h4>{currentContent.testDetails.criteria}</h4>
                             <div className="criteria-item">{test.criteria}</div>
                           </div>
                           
                           <div className="actual">
-                            <h4>📊 実際の結果</h4>
+                            <h4>{currentContent.testDetails.actual}</h4>
                             <div className="actual-item">{test.actual}</div>
                           </div>
 
                           {test.detectionSample && (
                             <div className="detection-sample">
-                              <h4>🔍 検知サンプル</h4>
+                              <h4>{currentContent.testDetails.detectionSample}</h4>
                               <div className="sample-payload">
-                                <strong>Payload:</strong>
+                                <strong>{currentContent.testDetails.payload}</strong>
                                 <code>{test.detectionSample.payload}</code>
                               </div>
                               <div className="sample-decoded">
-                                <strong>Decoded:</strong>
+                                <strong>{currentContent.testDetails.decoded}</strong>
                                 <code>{test.detectionSample.decoded}</code>
                               </div>
                               <div className="sample-alert">
-                                <strong>Falco Alert:</strong>
+                                <strong>{currentContent.testDetails.falcoAlert}</strong>
                                 <div className="alert-details">
                                   <div className="alert-line">
                                     <span className="alert-timestamp">{test.detectionSample.falcoAlert.timestamp}</span>
