@@ -302,16 +302,21 @@ export default function Quality() {
             </div>
 
             <div className="report-links">
-              <Link href="/quality/e2e-report">
+              <Link href="/quality/e2e-table-report">
                 <a className="report-button primary">
-                  📋 テストレポート
+                  📋 テストレポート（テーブル形式）
+                </a>
+              </Link>
+              <Link href="/quality/e2e-report">
+                <a className="report-button secondary">
+                  📊 テストレポート（詳細版）
                 </a>
               </Link>
               <a 
                 href="/reports/e2e-complete-results-17340066428/index.html" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="report-button secondary"
+                className="report-button tertiary"
               >
                 🔍 HTMLレポートを表示
               </a>
@@ -625,6 +630,10 @@ export default function Quality() {
           background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
         }
 
+        .report-button.tertiary {
+          background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+
         .report-button:hover {
           transform: translateY(-2px);
         }
@@ -635,6 +644,10 @@ export default function Quality() {
 
         .report-button.secondary:hover {
           box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+        }
+
+        .report-button.tertiary:hover {
+          box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
         }
 
         .nav-menu a.active,
