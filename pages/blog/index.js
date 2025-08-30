@@ -290,7 +290,7 @@ export default function BlogIndex() {
           
           {/* デスクトップメニュー */}
           <ul className="nav-menu desktop-menu">
-            <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">{content[language].nav.github}</Link></li>
+            <li><Link href="https://github.com/takaoS/falco-plugin-nginx" target="_blank">{content[language].nav.github}</Link></li>
             <li><Link href="/#installation">{content[language].nav.installation}</Link></li>
             <li><Link href="/#detection">{content[language].nav.detection}</Link></li>
             <li><Link href="/blog" className="active">{content[language].nav.blog}</Link></li>
@@ -318,7 +318,7 @@ export default function BlogIndex() {
         {/* モバイルメニュー */}
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.github}</a></li>
+            <li><a href="https://github.com/takaoS/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.github}</a></li>
             <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.installation}</a></li>
             <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.detection}</a></li>
             <li><a href="/blog" className="active" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</a></li>
@@ -418,7 +418,7 @@ export default function BlogIndex() {
             <div className="footer-section">
               <h4>{language === 'ja' ? 'リンク' : 'Links'}</h4>
               <ul>
-                <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx">
+                <li><Link href="https://github.com/takaoS/falco-plugin-nginx">
                   {language === 'ja' ? 'GitHubリポジトリ' : 'GitHub Repository'}
                 </Link></li>
                 <li><Link href="/blog">{language === 'ja' ? 'ブログ' : 'Blog'}</Link></li>

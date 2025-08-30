@@ -75,7 +75,7 @@ export default function FalcoPluginDevelopment7Days() {
           </button>
           
           <ul className="nav-menu desktop-menu">
-            <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">{navText[language].github}</Link></li>
+            <li><Link href="https://github.com/takaoS/falco-plugin-nginx" target="_blank">{navText[language].github}</Link></li>
             <li><Link href="/#installation">{navText[language].installation}</Link></li>
             <li><Link href="/#detection">{navText[language].detection}</Link></li>
             <li><Link href="/blog">{navText[language].blog}</Link></li>
@@ -111,7 +111,7 @@ export default function FalcoPluginDevelopment7Days() {
         
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
+            <li><a href="https://github.com/takaoS/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
             <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
             <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
             <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
@@ -293,7 +293,7 @@ export default function FalcoPluginDevelopment7Days() {
                 <h3>リンク</h3>
                 <ul>
                   <li>
-                    <a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/takaoS/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">
                       GitHub: falco-plugin-nginx
                     </a>
                   </li>
@@ -342,7 +342,7 @@ export default function FalcoPluginDevelopment7Days() {
             <div className="footer-section">
               <h4>リンク</h4>
               <ul>
-                <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx">GitHubリポジトリ</Link></li>
+                <li><Link href="https://github.com/takaoS/falco-plugin-nginx">GitHubリポジトリ</Link></li>
                 <li><Link href="/blog">ブログ</Link></li>
               </ul>
             </div>
