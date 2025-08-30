@@ -23,7 +23,7 @@ export default function Quality() {
       hero: {
         title: "End-to-End テストレポート",
         subtitle: "信頼性の高いセキュリティ監視を実現",
-        description: "falco-plugin-nginx の品質は、包括的なE2Eテスト、自動化されたCI/CD、そして実証済みの検知精度によって支えられています。"
+        description: "falco-plugin-nginx の品質は、包括的なE2Eテスト、自動化されたCI/CD、実証済みの検知精度、そして Falcoya君の頑張りによって支えられています。"
       },
       testResults: {
         title: "最新テスト結果 (Phase 1)",
@@ -63,7 +63,7 @@ export default function Quality() {
       hero: {
         title: "End-to-End Test Report",
         subtitle: "Achieving reliable security monitoring",
-        description: "The quality of falco-plugin-nginx is supported by comprehensive E2E testing, automated CI/CD, and proven detection accuracy."
+        description: "The quality of falco-plugin-nginx is supported by comprehensive E2E testing, automated CI/CD, proven detection accuracy, and Falcoya-kun's dedication."
       },
       testResults: {
         title: "Latest Test Results (Phase 1)",
@@ -423,14 +423,16 @@ export default function Quality() {
 
         .hero-description {
           font-size: 1.1rem;
-          max-width: 800px;
+          max-width: 900px;
           margin: 0 auto;
           opacity: 1;
-          line-height: 1.7;
+          line-height: 1.8;
           font-weight: 400;
+          color: white;
           text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
           position: relative;
           z-index: 1;
+          word-break: keep-all;
         }
 
         .test-summary {
@@ -455,10 +457,13 @@ export default function Quality() {
         .phase-info {
           text-align: left;
           margin-bottom: 50px;
-          padding: 20px;
+          padding: 25px;
           background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
           border-radius: 12px;
           border: 1px solid #dee2e6;
+          max-width: 900px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .phase-badge {
@@ -475,7 +480,7 @@ export default function Quality() {
         .phase-description {
           font-size: 1rem;
           color: #495057;
-          line-height: 1.6;
+          line-height: 1.8;
         }
 
         .summary-grid {

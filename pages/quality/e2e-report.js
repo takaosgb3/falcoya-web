@@ -25,6 +25,23 @@ export default function E2EReport() {
     ja: {
       title: "E2E テストレポート (Phase 1)",
       description: "falco-plugin-nginx の包括的なEnd-to-Endテスト結果 - 基礎検証フェーズ",
+      breadcrumb: "← テストページに戻る",
+      htmlReportLink: "🔍 HTMLレポートを新しいタブで開く",
+      metadata: {
+        executionTime: "実行日時",
+        environment: "環境",
+        falcoVersion: "Falco版",
+        pluginVersion: "プラグインバージョン"
+      },
+      summary: {
+        totalTests: "総テスト数",
+        passed: "成功",
+        failed: "失敗",
+        passRate: "成功率"
+      },
+      filters: {
+        all: "すべて"
+      },
       nav: {
         github: "GitHub",
         installation: "インストール", 
@@ -37,6 +54,23 @@ export default function E2EReport() {
     en: {
       title: "E2E Test Report (Phase 1)", 
       description: "Comprehensive End-to-End test results for falco-plugin-nginx - Foundation Phase",
+      breadcrumb: "← Back to Test Page",
+      htmlReportLink: "🔍 Open HTML Report in New Tab",
+      metadata: {
+        executionTime: "Execution Time",
+        environment: "Environment",
+        falcoVersion: "Falco Version",
+        pluginVersion: "Plugin Version"
+      },
+      summary: {
+        totalTests: "Total Tests",
+        passed: "Passed",
+        failed: "Failed",
+        passRate: "Pass Rate"
+      },
+      filters: {
+        all: "All"
+      },
       nav: {
         github: "GitHub",
         installation: "Installation",
@@ -428,7 +462,7 @@ export default function E2EReport() {
           {/* Header */}
           <div className="report-header">
             <div className="breadcrumb">
-              <Link href="/quality">← テストページに戻る</Link>
+              <Link href="/quality">{currentContent.breadcrumb}</Link>
             </div>
             <h1>📋 {currentContent.title}</h1>
             <p>{currentContent.description}</p>
@@ -448,26 +482,26 @@ export default function E2EReport() {
                   fontWeight: '500'
                 }}
               >
-                🔍 HTMLレポートを新しいタブで開く
+                {currentContent.htmlReportLink}
               </a>
             </div>
             
             {/* Metadata */}
             <div className="metadata-grid">
               <div className="metadata-item">
-                <span className="label">実行日時:</span>
+                <span className="label">{currentContent.metadata.executionTime}:</span>
                 <span className="value">{formatDate(reportData.metadata.timestamp)}</span>
               </div>
               <div className="metadata-item">
-                <span className="label">環境:</span>
+                <span className="label">{currentContent.metadata.environment}:</span>
                 <span className="value">{reportData.metadata.environment.split('-').slice(0, 3).join('-')}</span>
               </div>
               <div className="metadata-item">
-                <span className="label">Falco版:</span>
+                <span className="label">{currentContent.metadata.falcoVersion}:</span>
                 <span className="value">{reportData.metadata.falcoVersion}</span>
               </div>
               <div className="metadata-item">
-                <span className="label">プラグインバージョン:</span>
+                <span className="label">{currentContent.metadata.pluginVersion}:</span>
                 <span className="value">v1.3.0</span>
               </div>
             </div>
@@ -477,19 +511,19 @@ export default function E2EReport() {
           <div className="summary-dashboard">
             <div className="summary-card total">
               <div className="summary-number">{reportData.summary.totalTests}</div>
-              <div className="summary-label">総テスト数</div>
+              <div className="summary-label">{currentContent.summary.totalTests}</div>
             </div>
             <div className="summary-card success">
               <div className="summary-number">{reportData.summary.passedTests}</div>
-              <div className="summary-label">成功</div>
+              <div className="summary-label">{currentContent.summary.passed}</div>
             </div>
             <div className="summary-card fail">
               <div className="summary-number">{reportData.summary.failedTests}</div>
-              <div className="summary-label">失敗</div>
+              <div className="summary-label">{currentContent.summary.failed}</div>
             </div>
             <div className="summary-card rate">
               <div className="summary-number">{reportData.summary.passRate}%</div>
-              <div className="summary-label">成功率</div>
+              <div className="summary-label">{currentContent.summary.passRate}</div>
             </div>
           </div>
 
@@ -499,7 +533,7 @@ export default function E2EReport() {
               className={`filter-btn ${selectedCategory === 'all' ? 'active' : ''}`}
               onClick={() => setSelectedCategory('all')}
             >
-              すべて
+              {currentContent.filters.all}
             </button>
             {reportData.categories.map(category => (
               <button

@@ -18,7 +18,8 @@ export default function News() {
         installation: "インストール",
         detection: "検知機能",
         blog: "ブログ",
-        news: "ニュース"
+        news: "ニュース",
+        quality: "テストレポート"
       },
       categories: {
         all: "すべて",
@@ -209,7 +210,8 @@ export default function News() {
         installation: "Installation",
         detection: "Detection",
         blog: "Blog",
-        news: "News"
+        news: "News",
+        quality: "Test Report"
       },
       categories: {
         all: "All",
@@ -486,6 +488,7 @@ export default function News() {
             <li><Link href="/#detection">{content.nav.detection}</Link></li>
             <li><Link href="/blog">{content.nav.blog}</Link></li>
             <li><Link href="/news" className="active">{content.nav.news}</Link></li>
+            <li><Link href="/quality">{content.nav.quality}</Link></li>
           </ul>
           
           <div className="nav-controls">
@@ -513,6 +516,7 @@ export default function News() {
             <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{content.nav.detection}</a></Link></li>
             <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{content.nav.blog}</a></Link></li>
             <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)} className="active">{content.nav.news}</a></Link></li>
+            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{content.nav.quality}</a></Link></li>
           </ul>
         </div>
       </nav>
