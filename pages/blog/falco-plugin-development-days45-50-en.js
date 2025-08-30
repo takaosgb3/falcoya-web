@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useLanguage } from '../../utils/languageUtils'
 
-export default function FalcoPluginDevelopmentDays45to52En() {
+export default function FalcoPluginDevelopmentDays45to50En() {
   const [language, setLanguage] = useLanguage()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
@@ -54,7 +54,7 @@ export default function FalcoPluginDevelopmentDays45to52En() {
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="FALCOYA" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://falcoya.com/blog/falco-plugin-development-days45-52-en" />
+        <link rel="canonical" href="https://falcoya.com/blog/falco-plugin-development-days45-50-en" />
       </Head>
 
       {/* Navigation */}
@@ -91,7 +91,7 @@ export default function FalcoPluginDevelopmentDays45to52En() {
                 onClick={() => {
                   if (language !== 'ja') {
                     setLanguage('ja')
-                    router.push('/blog/falco-plugin-development-days45-52')
+                    router.push('/blog/falco-plugin-development-days45-50')
                   }
                 }}
               >
@@ -150,7 +150,7 @@ export default function FalcoPluginDevelopmentDays45to52En() {
 
           <div className="article-image">
             <img 
-              src="/img/blog/falco-days45-52.jpg" 
+              src="/img/blog/falco-days45-50.jpg" 
               alt="E2E test improvements and HTML report fixes"
             />
           </div>
