@@ -30,6 +30,22 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-30-e2e-test-report",
+          date: "2025-08-30",
+          category: "feature",
+          type: "important",
+          title: "End-to-End テストレポート (Phase 1) を公開",
+          content: "falco-plugin-nginxのEnd-to-Endテストレポートを公開しました。14項目のテストで品質を可視化し、12件の攻撃検知成功と2件の未検知パターンを含む詳細な結果を提供しています。",
+          highlights: [
+            "14項目の包括的なE2Eテスト実施",
+            "SQLインジェクション攻撃検知: 5件成功",
+            "XSS攻撃検知: 7件成功",
+            "未検知パターンの改善提案を含む",
+            "日英両言語対応のインタラクティブレポート"
+          ],
+          link: "/quality"
+        },
+        {
           id: "2025-08-30-release-v1.3.0",
           date: "2025-08-30",
           category: "release",
@@ -221,6 +237,22 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-30-e2e-test-report",
+          date: "2025-08-30",
+          category: "feature",
+          type: "important",
+          title: "End-to-End Test Report (Phase 1) Released",
+          content: "Released the End-to-End test report for falco-plugin-nginx. Quality is visualized through 14 test items, providing detailed results including 12 successful attack detections and 2 undetected patterns.",
+          highlights: [
+            "14 comprehensive E2E test items",
+            "SQL injection attack detection: 5 successful",
+            "XSS attack detection: 7 successful",
+            "Includes improvement suggestions for undetected patterns",
+            "Interactive report in both Japanese and English"
+          ],
+          link: "/quality"
+        },
         {
           id: "2025-08-30-release-v1.3.0",
           date: "2025-08-30",
