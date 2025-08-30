@@ -29,6 +29,21 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-08-30-release-v1.3.0",
+          date: "2025-08-30",
+          category: "release",
+          type: "important",
+          title: "falco-plugin-nginx v1.3.0 リリース",
+          content: "falco-plugin-nginx v1.3.0をリリースしました。安定性向上と新機能の追加により、Nginxのセキュリティ監視がさらに強化されました。",
+          highlights: [
+            "パフォーマンスの最適化",
+            "検知ルールの改善",
+            "インストールプロセスの簡素化",
+            "Linux x86_64対応バイナリ提供"
+          ],
+          link: "https://github.com/takaosgb3/falco-plugin-nginx/releases/tag/v1.3.0"
+        },
+        {
           id: "2025-08-30-oss-development-blog-part7",
           date: "2025-08-30",
           category: "feature",
@@ -204,6 +219,21 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-08-30-release-v1.3.0",
+          date: "2025-08-30",
+          category: "release",
+          type: "important",
+          title: "falco-plugin-nginx v1.3.0 Released",
+          content: "falco-plugin-nginx v1.3.0 has been released. Enhanced stability and new features strengthen Nginx security monitoring capabilities.",
+          highlights: [
+            "Performance optimizations",
+            "Improved detection rules",
+            "Simplified installation process",
+            "Linux x86_64 binary support"
+          ],
+          link: "https://github.com/takaosgb3/falco-plugin-nginx/releases/tag/v1.3.0"
+        },
         {
           id: "2025-08-30-oss-development-blog-part7",
           date: "2025-08-30",
