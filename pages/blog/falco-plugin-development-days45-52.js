@@ -1,7 +1,49 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import { useLanguage } from '../../utils/languageUtils'
 
 export default function FalcoPluginDevelopmentDays45to52() {
+  const [language, setLanguage] = useLanguage()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const router = useRouter()
+  
+  // ナビゲーションテキスト
+  const navText = {
+    ja: {
+      github: "GitHub",
+      installation: "インストール",
+      detection: "検知機能",
+      blog: "ブログ",
+      news: "ニュース"
+    },
+    en: {
+      github: "GitHub",
+      installation: "Installation",
+      detection: "Detection",
+      blog: "Blog",
+      news: "News"
+    }
+  }
+  
+  // 画面サイズ変更時にモバイルメニューを閉じる
+  useEffect(() => {
+    const handleResize = () => {
+      setMobileMenuOpen(false)
+    }
+
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('orientationchange', handleResize)
+    
+    handleResize()
+    
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('orientationchange', handleResize)
+    }
+  }, [])
+  
   return (
     <>
       <Head>
@@ -15,8 +57,74 @@ export default function FalcoPluginDevelopmentDays45to52() {
         <link rel="canonical" href="https://falcoya.com/blog/falco-plugin-development-days45-52" />
       </Head>
 
-      <div className="article-container">
-        <article>
+      {/* Navigation */}
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="nav-logo">
+            <Link href="/">
+              <img src="/img/falcoya-logo-c.png" alt="FALCOYA" />
+            </Link>
+          </div>
+          
+          <button 
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menu"
+          >
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+          </button>
+          
+          <ul className="nav-menu desktop-menu">
+            <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">{navText[language].github}</Link></li>
+            <li><Link href="/#installation">{navText[language].installation}</Link></li>
+            <li><Link href="/#detection">{navText[language].detection}</Link></li>
+            <li><Link href="/blog">{navText[language].blog}</Link></li>
+            <li><Link href="/news">{navText[language].news}</Link></li>
+          </ul>
+          
+          <div className="nav-controls">
+            <div className="language-switcher">
+              <button 
+                className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
+                onClick={() => {
+                  if (language !== 'ja') {
+                    setLanguage('ja')
+                  }
+                }}
+              >
+                日本語
+              </button>
+              <button 
+                className={`lang-btn ${language === 'en' ? 'active' : ''}`}
+                onClick={() => {
+                  if (language !== 'en') {
+                    setLanguage('en')
+                    router.push('/blog/falco-plugin-development-days45-52-en')
+                  }
+                }}
+              >
+                English
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+          <ul className="mobile-nav-menu">
+            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
+            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
+            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
+            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
+            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* Blog Article */}
+      <article className="blog-article">
+        <div className="article-container">
           <header className="article-header">
             <div className="article-meta">
               <time dateTime="2025-08-30">2025年8月30日</time>
@@ -234,8 +342,8 @@ export default function FalcoPluginDevelopmentDays45to52() {
               </Link>
             </div>
           </footer>
-        </article>
-      </div>
+        </div>
+      </article>
 
       <style jsx>{`
         .article-container {
@@ -518,6 +626,209 @@ export default function FalcoPluginDevelopmentDays45to52() {
 
           .share-button {
             text-align: center;
+          }
+        }
+        
+        /* Navigation styles */
+        .navbar {
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(20px);
+          position: fixed;
+          top: 50px;
+          width: 100%;
+          z-index: 1000;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+        }
+
+        .nav-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 2rem;
+        }
+
+        .nav-logo {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 700;
+          font-size: 1.25rem;
+          color: #1f2937;
+        }
+
+        .nav-logo img {
+          height: 50px;
+          width: auto;
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+          display: block;
+        }
+
+        .nav-menu {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .desktop-menu {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-menu a {
+          color: #6b7280;
+          text-decoration: none;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          position: relative;
+        }
+
+        .nav-menu a:hover {
+          color: #00d2ff;
+          text-shadow: 0 0 8px #00d2ff;
+        }
+
+        .nav-controls {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .language-switcher {
+          display: flex;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          padding: 2px;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-btn {
+          background: none;
+          border: none;
+          padding: 0.5rem 0.75rem;
+          border-radius: 6px;
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: #6b7280;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+        }
+
+        .lang-btn:hover {
+          color: #1f2937;
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-btn.active {
+          background: #0ea5e9;
+          color: white;
+          box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
+        }
+
+        .mobile-menu-toggle {
+          display: none;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 10px;
+          z-index: 1002;
+        }
+
+        .hamburger-line {
+          display: block;
+          width: 25px;
+          height: 3px;
+          background-color: #1f2937;
+          margin: 5px 0;
+          transition: all 0.3s ease;
+          border-radius: 2px;
+        }
+
+        .hamburger-line.open:nth-child(1) {
+          transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .hamburger-line.open:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger-line.open:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .mobile-menu {
+          display: none;
+          position: fixed;
+          top: 100px;
+          left: 0;
+          right: 0;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(20px);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          transform: translateY(-100%);
+          opacity: 0;
+          visibility: hidden;
+          transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+          z-index: 999;
+        }
+
+        .mobile-menu.open {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .mobile-nav-menu {
+          list-style: none;
+          padding: 1rem 0;
+          margin: 0;
+        }
+
+        .mobile-nav-menu li {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-nav-menu li:last-child {
+          border-bottom: none;
+        }
+
+        .mobile-nav-menu a {
+          display: block;
+          padding: 1rem 2rem;
+          color: #1f2937;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 500;
+          transition: all 0.3s ease;
+        }
+
+        .mobile-nav-menu a:active {
+          background: #f9fafb;
+        }
+
+        @media (max-width: 767px) {
+          .desktop-menu {
+            display: none !important;
+          }
+          
+          .mobile-menu-toggle {
+            display: block;
+          }
+          
+          .mobile-menu {
+            display: block;
+          }
+          
+          .nav-container {
+            padding: 0.75rem 1rem;
+          }
+          
+          .nav-logo img {
+            height: 40px;
           }
         }
       `}</style>
