@@ -1831,43 +1831,43 @@
                             pattern: "Time-based SQLi (SLEEP)",
                             request: "GET /api/check?id=1' AND SLEEP(5)--",
                             check: /SLEEP\(\d+\)/i,
-                            reason: "現在のルールはSLEEP()関数を含むSQLインジェクションパターンを検出条件に含んでいません。nginx_has_sqli_wordsマクロにSLEEP()パターンが定義されていますが、大文字小文字の違いやエンコーディングの影響で検出されない可能性があります。",
-                            suggestion: "ルールのnginx_has_sqli_wordsマクロに'SLEEP('パターンを追加し、大文字小文字を区別しない検索（icontains）を使用することで検出可能になります。また、%53%4C%45%45%50のようなURLエンコードされたパターンも追加することを推奨します。"
+                            reason: currentLang === 'ja' ? "現在のルールはSLEEP()関数を含むSQLインジェクションパターンを検出条件に含んでいません。nginx_has_sqli_wordsマクロにSLEEP()パターンが定義されていますが、大文字小文字の違いやエンコーディングの影響で検出されない可能性があります。" : "Current rules do not include SLEEP() function SQL injection patterns in detection conditions. While SLEEP() pattern is defined in nginx_has_sqli_words macro, it may not be detected due to case sensitivity or encoding differences.",
+                            suggestion: currentLang === 'ja' ? "ルールのnginx_has_sqli_wordsマクロに'SLEEP('パターンを追加し、大文字小文字を区別しない検索（icontains）を使用することで検出可能になります。また、%53%4C%45%45%50のようなURLエンコードされたパターンも追加することを推奨します。" : "Add 'SLEEP(' pattern to nginx_has_sqli_words macro and use case-insensitive search (icontains) for detection. Also recommend adding URL-encoded patterns like %53%4C%45%45%50."
                         },
                         {
                             pattern: "Obfuscated XSS (String.fromCharCode)",
                             request: "GET /api?callback=&lt;script&gt;eval(String.fromCharCode(97,108,101,114,116))&lt;/script&gt;",
                             check: /String\.fromCharCode|eval\(/i,
-                            reason: "難読化されたJavaScriptコードは、単純な文字列パターンマッチングでは検出が困難です。String.fromCharCodeやeval()を使用した動的コード実行は、現在のXSSルールでカバーされていません。",
-                            suggestion: "nginx_has_xssマクロに'eval('、'String.fromCharCode'、'Function('などの動的コード実行パターンを追加します。また、Base64エンコードされたJavaScriptコード（atob()関数の使用）も検出対象に含めることを推奨します。"
+                            reason: currentLang === 'ja' ? "難読化されたJavaScriptコードは、単純な文字列パターンマッチングでは検出が困難です。String.fromCharCodeやeval()を使用した動的コード実行は、現在のXSSルールでカバーされていません。" : "Obfuscated JavaScript code is difficult to detect with simple string pattern matching. Dynamic code execution using String.fromCharCode or eval() is not covered by current XSS rules.",
+                            suggestion: currentLang === 'ja' ? "nginx_has_xssマクロに'eval('、'String.fromCharCode'、'Function('などの動的コード実行パターンを追加します。また、Base64エンコードされたJavaScriptコード（atob()関数の使用）も検出対象に含めることを推奨します。" : "Add dynamic code execution patterns like 'eval(', 'String.fromCharCode', 'Function(' to nginx_has_xss macro. Also recommend including Base64-encoded JavaScript code (atob() function usage) in detection targets."
                         },
                         {
                             pattern: "Data URI XSS",
                             request: "GET /image?src=data:text/html,&lt;script&gt;alert('XSS')&lt;/script&gt;",
                             check: /data:text\/html|data:application\/javascript/i,
-                            reason: "Data URIスキームを使用したXSS攻撃は、現在のルールでは検出対象外です。data:text/htmlやdata:application/javascriptは実行可能なコンテンツを埋め込む手法として使われます。",
-                            suggestion: "nginx_has_xssマクロに'data:text/html'、'data:application/javascript'パターンを追加します。また、Base64エンコードされたdata URIも検出するため、'data:text/html;base64'パターンも追加することを推奨します。"
+                            reason: currentLang === 'ja' ? "Data URIスキームを使用したXSS攻撃は、現在のルールでは検出対象外です。data:text/htmlやdata:application/javascriptは実行可能なコンテンツを埋め込む手法として使われます。" : "XSS attacks using Data URI scheme are not detected by current rules. data:text/html and data:application/javascript are used to embed executable content.",
+                            suggestion: currentLang === 'ja' ? "nginx_has_xssマクロに'data:text/html'、'data:application/javascript'パターンを追加します。また、Base64エンコードされたdata URIも検出するため、'data:text/html;base64'パターンも追加することを推奨します。" : "Add 'data:text/html', 'data:application/javascript' patterns to nginx_has_xss macro. Also recommend adding 'data:text/html;base64' pattern to detect Base64 encoded data URIs."
                         },
                         {
                             pattern: "DOM-based XSS (document.write)",
                             request: "GET /page#&lt;script&gt;document.write('&lt;img src=x onerror=alert(8)&gt;')&lt;/script&gt;",
                             check: /document\.write|document\.writeln|innerHTML\s*=/i,
-                            reason: "DOM-based XSSは、クライアントサイドのJavaScriptで実行されるため、サーバーサイドのログには記録されにくいです。document.writeやinnerHTMLへの直接代入は、現在のルールでは検出されません。",
-                            suggestion: "nginx_has_xssマクロに'document.write'、'document.writeln'、'innerHTML='パターンを追加します。また、URLフラグメント（#以降）も検査対象に含めることを推奨します。"
+                            reason: currentLang === 'ja' ? "DOM-based XSSは、クライアントサイドのJavaScriptで実行されるため、サーバーサイドのログには記録されにくいです。document.writeやinnerHTMLへの直接代入は、現在のルールでは検出されません。" : "DOM-based XSS is executed in client-side JavaScript, making it difficult to record in server-side logs. Direct assignment to document.write or innerHTML is not detected by current rules.",
+                            suggestion: currentLang === 'ja' ? "nginx_has_xssマクロに'document.write'、'document.writeln'、'innerHTML='パターンを追加します。また、URLフラグメント（#以降）も検査対象に含めることを推奨します。" : "Add 'document.write', 'document.writeln', 'innerHTML=' patterns to nginx_has_xss macro. Also recommend including URL fragments (after #) in inspection targets."
                         },
                         {
                             pattern: "NoSQL Injection",
                             request: "GET /api/users?filter={'$ne': null}",
                             check: /\$ne|\$gt|\$lt|\$gte|\$lte|\$in|\$nin/i,
-                            reason: "MongoDBなどのNoSQLデータベースに対するインジェクション攻撃は、SQLインジェクションとは異なるパターンを持ちます。$ne、$gt等のNoSQL演算子は現在のルールでは検出されません。",
-                            suggestion: "新しいルール'NGINX NoSQL Injection Attempt'を作成し、NoSQL特有の演算子（$ne、$gt、$lt、$or、$and等）を検出条件に含めます。JSONペイロードの検査も必要になる可能性があります。"
+                            reason: currentLang === 'ja' ? "MongoDBなどのNoSQLデータベースに対するインジェクション攻撃は、SQLインジェクションとは異なるパターンを持ちます。$ne、$gt等のNoSQL演算子は現在のルールでは検出されません。" : "NoSQL database injection attacks (MongoDB, etc.) have different patterns than SQL injection. NoSQL operators like $ne, $gt are not detected by current rules.",
+                            suggestion: currentLang === 'ja' ? "新しいルール'NGINX NoSQL Injection Attempt'を作成し、NoSQL特有の演算子（$ne、$gt、$lt、$or、$and等）を検出条件に含めます。JSONペイロードの検査も必要になる可能性があります。" : "Create new rule 'NGINX NoSQL Injection Attempt' and include NoSQL-specific operators ($ne, $gt, $lt, $or, $and, etc.) in detection conditions. JSON payload inspection may also be necessary."
                         },
                         {
                             pattern: "LDAP Injection",
                             request: "GET /login?username=admin*)(uid=*))(|(uid=*",
                             check: /\*\)\(|\|\(|\&\(/i,
-                            reason: "LDAP インジェクション攻撃は、LDAP特有のフィルター構文を悪用します。現在のルールセットにはLDAPインジェクション検出が含まれていません。",
-                            suggestion: "新しいルール'NGINX LDAP Injection Attempt'を作成し、LDAP フィルター構文の異常なパターン（'*)('、'|(', '&('等）を検出条件に含めます。"
+                            reason: currentLang === 'ja' ? "LDAP インジェクション攻撃は、LDAP特有のフィルター構文を悪用します。現在のルールセットにはLDAPインジェクション検出が含まれていません。" : "LDAP injection attacks exploit LDAP-specific filter syntax. Current ruleset does not include LDAP injection detection.",
+                            suggestion: currentLang === 'ja' ? "新しいルール'NGINX LDAP Injection Attempt'を作成し、LDAP フィルター構文の異常なパターン（'*)('、'|(', '&('等）を検出条件に含めます。" : "Create new rule 'NGINX LDAP Injection Attempt' and include abnormal LDAP filter syntax patterns ('*)(', '|(', '&(', etc.) in detection conditions."
                         }
                     ];
 

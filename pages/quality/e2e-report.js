@@ -102,6 +102,338 @@ export default function E2EReport() {
 
   const currentContent = content[language]
 
+  // Category translations
+  const categoryTranslations = {
+    basic: {
+      ja: { title: "基本機能テスト", description: "Falco とプラグインの基本動作確認" },
+      en: { title: "Basic Function Tests", description: "Basic operation verification of Falco and plugins" }
+    },
+    rules: {
+      ja: { title: "ルール検証テスト", description: "Nginxルールの構文と設定の検証" },
+      en: { title: "Rule Validation Tests", description: "Nginx rule syntax and configuration verification" }
+    },
+    plugin_load: {
+      ja: { title: "プラグインロードテスト", description: "プラグインの正常なロードと依存関係の確認" },
+      en: { title: "Plugin Load Tests", description: "Plugin loading and dependency verification" }
+    },
+    event_detection: {
+      ja: { title: "攻撃検知テスト", description: "実際の攻撃パターンの検知能力確認" },
+      en: { title: "Attack Detection Tests", description: "Attack pattern detection capability verification" }
+    }
+  }
+
+  // Test translations
+  const testTranslations = {
+    "BASIC_001": {
+      ja: {
+        title: "Falcoがインストールされていることを確認",
+        scenario: {
+          given: "セルフホストランナー環境",
+          when: "falcoコマンドを実行",
+          then: "コマンドが存在し実行可能"
+        },
+        criteria: "コマンド falco が実行可能 (exit=0)",
+        actual: "成功: /usr/local/bin/falco"
+      },
+      en: {
+        title: "Verify Falco is installed",
+        scenario: {
+          given: "Self-hosted runner environment",
+          when: "Execute falco command",
+          then: "Command exists and is executable"
+        },
+        criteria: "Command falco is executable (exit=0)",
+        actual: "Success: /usr/local/bin/falco"
+      }
+    },
+    "BASIC_002": {
+      ja: {
+        title: "Falcoバージョンの確認",
+        scenario: {
+          given: "Falcoがインストール済み",
+          when: "falco --versionを実行",
+          then: "バージョン情報が表示される"
+        },
+        criteria: "バージョン文字列が表示される (exit=0)",
+        actual: "成功: Falco version: 0.41.3"
+      },
+      en: {
+        title: "Verify Falco version",
+        scenario: {
+          given: "Falco installed",
+          when: "Execute falco --version",
+          then: "Version information is displayed"
+        },
+        criteria: "Version string is displayed (exit=0)",
+        actual: "Success: Falco version: 0.41.3"
+      }
+    },
+    "BASIC_003": {
+      ja: {
+        title: "nginxプラグインバイナリの存在確認",
+        scenario: {
+          given: "プラグインがデプロイ済み",
+          when: "/usr/share/falco/plugins/libfa... ファイル確認",
+          then: "ファイルが存在する"
+        },
+        criteria: "test -f が成功 (exit=0)",
+        actual: "成功: ファイルが存在"
+      },
+      en: {
+        title: "Verify nginx plugin binary exists",
+        scenario: {
+          given: "Plugin deployed",
+          when: "Check /usr/share/falco/plugins/libfa... file",
+          then: "File exists"
+        },
+        criteria: "test -f succeeds (exit=0)",
+        actual: "Success: File exists"
+      }
+    },
+    "BASIC_004": {
+      ja: {
+        title: "nginxルールファイルの存在確認",
+        scenario: {
+          given: "ルールがデプロイ済み",
+          when: "/etc/falco/rules.d/nginx_rules... ファイル確認",
+          then: "ファイルが存在する"
+        },
+        criteria: "test -f が成功 (exit=0)",
+        actual: "成功: ファイルが存在"
+      },
+      en: {
+        title: "Verify nginx rules file exists",
+        scenario: {
+          given: "Rules deployed",
+          when: "Check /etc/falco/rules.d/nginx_rules... file",
+          then: "File exists"
+        },
+        criteria: "test -f succeeds (exit=0)",
+        actual: "Success: File exists"
+      }
+    },
+    "BASIC_005": {
+      ja: {
+        title: "nginxプラグインがFalcoに登録されていることを確認",
+        scenario: {
+          given: "Falcoとプラグインが設定済み",
+          when: "falco --list-pluginsを実行してnginx検索",
+          then: "nginxプラグインがリストに含まれる"
+        },
+        criteria: "grep nginx が成功 (exit=0)",
+        actual: "成功: nginx プラグインがリストに表示"
+      },
+      en: {
+        title: "Verify nginx plugin is registered in Falco",
+        scenario: {
+          given: "Falco and plugin configured",
+          when: "Execute falco --list-plugins and search for nginx",
+          then: "nginx plugin is included in list"
+        },
+        criteria: "grep nginx succeeds (exit=0)",
+        actual: "Success: nginx plugin displayed in list"
+      }
+    },
+    "BASIC_NEG_001": {
+      ja: {
+        title: "[負のテスト] 存在しないプラグインが登録されていないことを確認",
+        scenario: {
+          given: "Falcoが起動可能",
+          when: "falco --list-pluginsで架空のプラグインを検索",
+          then: "見つからない（失敗する）"
+        },
+        criteria: "grep が失敗 (exit=1)",
+        actual: "期待通り失敗: 架空のプラグインは見つからない"
+      },
+      en: {
+        title: "[Negative Test] Verify non-existent plugin is not registered",
+        scenario: {
+          given: "Falco is startable",
+          when: "Search for fictional plugin with falco --list-plugins",
+          then: "Not found (fails)"
+        },
+        criteria: "grep fails (exit=1)",
+        actual: "Failed as expected: Fictional plugin not found"
+      }
+    },
+    "RULES_001": {
+      ja: {
+        title: "nginxルールのYAML構文検証",
+        scenario: {
+          given: "nginx_rules.yamlが存在",
+          when: "falco --validateでルールを検証",
+          then: "構文エラーがない"
+        },
+        criteria: "構文エラーがない (exit=0)",
+        actual: "成功: /etc/falco/rules.d/nginx_rules.yaml: Ok"
+      },
+      en: {
+        title: "Validate nginx rules YAML syntax",
+        scenario: {
+          given: "nginx_rules.yaml exists",
+          when: "Validate rules with falco --validate",
+          then: "No syntax errors"
+        },
+        criteria: "No syntax errors (exit=0)",
+        actual: "Success: /etc/falco/rules.d/nginx_rules.yaml: Ok"
+      }
+    },
+    "RULES_002": {
+      ja: {
+        title: "nginxルールの数を確認",
+        scenario: {
+          given: "nginx_rules.yamlが存在",
+          when: "ルール定義の数をカウント",
+          then: "1つ以上のルールが定義されている"
+        },
+        criteria: "1つ以上のルールが存在 (exit=0)",
+        actual: "成功: 10ルール検出"
+      },
+      en: {
+        title: "Verify nginx rule count",
+        scenario: {
+          given: "nginx_rules.yaml exists",
+          when: "Count rule definitions",
+          then: "One or more rules are defined"
+        },
+        criteria: "One or more rules exist (exit=0)",
+        actual: "Success: 10 rules detected"
+      }
+    },
+    "RULES_NEG_001": {
+      ja: {
+        title: "[負のテスト] 不正なYAMLルールが検証エラーになることを確認",
+        scenario: {
+          given: "不正なYAMLファイルを作成",
+          when: "falco --validateで検証",
+          then: "検証エラーになる"
+        },
+        criteria: "検証エラー (exit=1)",
+        actual: "期待通り失敗: /tmp/e2e-test-reports/invalid_rules.yaml: Invalid"
+      },
+      en: {
+        title: "[Negative Test] Verify invalid YAML rules cause validation error",
+        scenario: {
+          given: "Create invalid YAML file",
+          when: "Validate with falco --validate",
+          then: "Validation error occurs"
+        },
+        criteria: "Validation error (exit=1)",
+        actual: "Failed as expected: /tmp/e2e-test-reports/invalid_rules.yaml: Invalid"
+      }
+    },
+    "PLUGIN_LOAD_001": {
+      ja: {
+        title: "nginxプラグインが正常にロードされることを確認",
+        scenario: {
+          given: "プラグインバイナリが配置済み",
+          when: "falco --list-pluginsでプラグインリストを確認",
+          then: "nginxプラグインが正常にロードされる"
+        },
+        criteria: "nginxプラグインがリストに表示 (exit=0)",
+        actual: "成功: Name: nginx"
+      },
+      en: {
+        title: "Verify nginx plugin loads successfully",
+        scenario: {
+          given: "Plugin binary deployed",
+          when: "Check plugin list with falco --list-plugins",
+          then: "nginx plugin loads successfully"
+        },
+        criteria: "nginx plugin displayed in list (exit=0)",
+        actual: "Success: Name: nginx"
+      }
+    },
+    "PLUGIN_LOAD_002": {
+      ja: {
+        title: "プラグインの共有ライブラリ依存関係を確認",
+        scenario: {
+          given: "プラグインバイナリが存在",
+          when: "lddで依存関係をチェック",
+          then: "必要なライブラリがリンクされている"
+        },
+        criteria: "必要なライブラリがリンク済み (exit=0)",
+        actual: "成功: linux-vdso.so.1, libresolv.so.2, libpthread.so.0"
+      },
+      en: {
+        title: "Verify plugin shared library dependencies",
+        scenario: {
+          given: "Plugin binary exists",
+          when: "Check dependencies with ldd",
+          then: "Required libraries are linked"
+        },
+        criteria: "Required libraries linked (exit=0)",
+        actual: "Success: linux-vdso.so.1, libresolv.so.2, libpthread.so.0"
+      }
+    },
+    "PLUGIN_LOAD_NEG_001": {
+      ja: {
+        title: "[負のテスト] 不正なプラグイン設定が失敗することを確認",
+        scenario: {
+          given: "不正なJSON設定を含むfalco.yaml",
+          when: "falco --dry-runで検証",
+          then: "設定エラーで失敗する"
+        },
+        criteria: "設定エラー (exit=1)",
+        actual: "期待通り失敗: Runtime error: error in plugin nginx"
+      },
+      en: {
+        title: "[Negative Test] Verify invalid plugin configuration fails",
+        scenario: {
+          given: "falco.yaml with invalid JSON configuration",
+          when: "Validate with falco --dry-run",
+          then: "Fails with configuration error"
+        },
+        criteria: "Configuration error (exit=1)",
+        actual: "Failed as expected: Runtime error: error in plugin nginx"
+      }
+    },
+    "EVENT_DETECTION_001": {
+      ja: {
+        title: "SQLインジェクション攻撃を検知できること",
+        scenario: {
+          given: "Falco+nginxプラグイン+検知ルールが有効",
+          when: "SQLiパターン（' OR '1'='1）を含むnginxログを送信",
+          then: "[NGINX SQLi]アラートが発火する"
+        },
+        criteria: "'NGINX SQLi'アラートが発火 (1件以上)",
+        actual: "成功: 5件のアラートを検知"
+      },
+      en: {
+        title: "Detect SQL injection attack",
+        scenario: {
+          given: "Falco+nginx plugin+detection rules enabled",
+          when: "Send nginx log with SQLi pattern (' OR '1'='1)",
+          then: "[NGINX SQLi] alert fires"
+        },
+        criteria: "'NGINX SQLi' alert fires (1 or more)",
+        actual: "Success: 5 alerts detected"
+      }
+    },
+    "EVENT_DETECTION_002": {
+      ja: {
+        title: "XSS（クロスサイトスクリプティング）攻撃を検知できること",
+        scenario: {
+          given: "Falco+nginxプラグイン+検知ルールが有効",
+          when: "XSSパターン（<script>タグ）を含むnginxログを送信",
+          then: "[NGINX XSS]アラートが発火する"
+        },
+        criteria: "'NGINX XSS'アラートが発火 (1件以上)",
+        actual: "成功: 7件のアラートを検知"
+      },
+      en: {
+        title: "Detect XSS (Cross-Site Scripting) attack",
+        scenario: {
+          given: "Falco+nginx plugin+detection rules enabled",
+          when: "Send nginx log with XSS pattern (<script> tag)",
+          then: "[NGINX XSS] alert fires"
+        },
+        criteria: "'NGINX XSS' alert fires (1 or more)",
+        actual: "Success: 7 alerts detected"
+      }
+    }
+  }
+
   // Test report data structure based on the actual E2E results
   const reportData = {
     metadata: {
@@ -121,8 +453,6 @@ export default function E2EReport() {
       {
         id: "basic",
         name: "BASIC",
-        title: "基本機能テスト",
-        description: "Falco とプラグインの基本動作確認",
         tests: [
           {
             id: "BASIC_001",
@@ -570,9 +900,9 @@ export default function E2EReport() {
               <div key={category.id} className="category-section">
                 <h2 className="category-title">
                   <span className="category-badge">{category.name}</span>
-                  {category.title}
+                  {categoryTranslations[category.id] ? categoryTranslations[category.id][language].title : category.title}
                 </h2>
-                <p className="category-description">{category.description}</p>
+                <p className="category-description">{categoryTranslations[category.id] ? categoryTranslations[category.id][language].description : category.description}</p>
                 
                 <div className="tests-list">
                   {category.tests.map(test => (
@@ -581,7 +911,7 @@ export default function E2EReport() {
                         <div className="test-info">
                           <span className="test-status">{getStatusIcon(test.status)}</span>
                           <span className="test-id">{test.id}</span>
-                          <span className="test-title">{test.title}</span>
+                          <span className="test-title">{testTranslations[test.id] ? testTranslations[test.id][language].title : test.title}</span>
                         </div>
                         <div className="test-meta">
                           <span className="test-duration">{test.duration}</span>
@@ -596,24 +926,24 @@ export default function E2EReport() {
                           <div className="scenario">
                             <h4>{currentContent.testDetails.scenario}</h4>
                             <div className="scenario-item">
-                              <strong>Given:</strong> {test.scenario.given}
+                              <strong>Given:</strong> {testTranslations[test.id] ? testTranslations[test.id][language].scenario.given : test.scenario.given}
                             </div>
                             <div className="scenario-item">
-                              <strong>When:</strong> {test.scenario.when}
+                              <strong>When:</strong> {testTranslations[test.id] ? testTranslations[test.id][language].scenario.when : test.scenario.when}
                             </div>
                             <div className="scenario-item">
-                              <strong>Then:</strong> {test.scenario.then}
+                              <strong>Then:</strong> {testTranslations[test.id] ? testTranslations[test.id][language].scenario.then : test.scenario.then}
                             </div>
                           </div>
                           
                           <div className="criteria">
                             <h4>{currentContent.testDetails.criteria}</h4>
-                            <div className="criteria-item">{test.criteria}</div>
+                            <div className="criteria-item">{testTranslations[test.id] ? testTranslations[test.id][language].criteria : test.criteria}</div>
                           </div>
                           
                           <div className="actual">
                             <h4>{currentContent.testDetails.actual}</h4>
-                            <div className="actual-item">{test.actual}</div>
+                            <div className="actual-item">{testTranslations[test.id] ? testTranslations[test.id][language].actual : test.actual}</div>
                           </div>
 
                           {test.detectionSample && (
