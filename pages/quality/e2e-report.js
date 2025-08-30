@@ -56,12 +56,12 @@ export default function E2EReport() {
       timestamp: "2025-08-30T05:45:03Z",
       environment: "github-runner-deployment-fixed-mgv7s-q4jvs",
       falcoVersion: "0.41.3",
-      pluginSha: "90349251",
+      pluginVersion: "v1.3.0",
       testDuration: "4.2s"
     },
     summary: {
-      totalTests: 9,
-      passedTests: 9,
+      totalTests: 14,
+      passedTests: 14,
       failedTests: 0,
       passRate: 100
     },
@@ -146,6 +146,100 @@ export default function E2EReport() {
               given: "Falcoが起動可能",
               when: "falco --list-pluginsで架空のプラグインを検索",
               then: "見つからない（失敗する）"
+            },
+            criteria: "exit code = 1（期待通りの失敗）",
+            actual: "Failed as expected"
+          }
+        ]
+      },
+      {
+        id: "rules",
+        name: "RULES",
+        title: "ルール検証テスト",
+        description: "Nginxルールの構文と設定の検証",
+        tests: [
+          {
+            id: "RULES_001",
+            title: "nginxルールのYAML構文検証",
+            status: "PASS",
+            duration: "28ms",
+            scenario: {
+              given: "nginx_rules.yamlが存在",
+              when: "falco --validateでルールを検証",
+              then: "構文エラーがない"
+            },
+            criteria: "exit code = 0",
+            actual: "exit:0"
+          },
+          {
+            id: "RULES_002",
+            title: "nginxルールの数を確認",
+            status: "PASS",
+            duration: "8ms",
+            scenario: {
+              given: "nginx_rules.yamlが存在",
+              when: "ルール定義の数をカウント",
+              then: "1つ以上のルールが定義されている"
+            },
+            criteria: "grep '^- rule:' | 数値が返る",
+            actual: "exit:0"
+          },
+          {
+            id: "RULES_NEG_001",
+            title: "[負のテスト] 不正なYAMLルールが検証エラーになることを確認",
+            status: "NEG",
+            duration: "18ms",
+            scenario: {
+              given: "不正なYAMLファイルを作成",
+              when: "falco --validateで検証",
+              then: "検証エラーになる"
+            },
+            criteria: "exit code = 1（期待通りの失敗）",
+            actual: "Failed as expected"
+          }
+        ]
+      },
+      {
+        id: "plugin_load",
+        name: "PLUGIN_LOAD",
+        title: "プラグインロードテスト",
+        description: "プラグインの正常なロードと依存関係の確認",
+        tests: [
+          {
+            id: "PLUGIN_LOAD_001",
+            title: "nginxプラグインが正常にロードされることを確認",
+            status: "PASS",
+            duration: "16ms",
+            scenario: {
+              given: "プラグインバイナリが配置済み",
+              when: "falco --list-pluginsでプラグインリストを確認",
+              then: "nginxプラグインが正常にロードされる"
+            },
+            criteria: "nginxプラグインがリストに含まれる",
+            actual: "exit:0"
+          },
+          {
+            id: "PLUGIN_LOAD_002",
+            title: "プラグインの共有ライブラリ依存関係を確認",
+            status: "PASS",
+            duration: "12ms",
+            scenario: {
+              given: "プラグインバイナリが存在",
+              when: "lddで依存関係をチェック",
+              then: "必要なライブラリがリンクされている"
+            },
+            criteria: "exit code = 0",
+            actual: "exit:0"
+          },
+          {
+            id: "PLUGIN_LOAD_NEG_001",
+            title: "[負のテスト] 不正なプラグイン設定が失敗することを確認",
+            status: "NEG",
+            duration: "19ms",
+            scenario: {
+              given: "不正なJSON設定を含むfalco.yaml",
+              when: "falco --dry-runで検証",
+              then: "設定エラーで失敗する"
             },
             criteria: "exit code = 1（期待通りの失敗）",
             actual: "Failed as expected"
@@ -373,8 +467,8 @@ export default function E2EReport() {
                 <span className="value">{reportData.metadata.falcoVersion}</span>
               </div>
               <div className="metadata-item">
-                <span className="label">Plugin SHA:</span>
-                <span className="value">{reportData.metadata.pluginSha}</span>
+                <span className="label">プラグインバージョン:</span>
+                <span className="value">v1.3.0</span>
               </div>
             </div>
           </div>

@@ -91,14 +91,14 @@ export default function Quality() {
 
   // Mock test data - in real implementation, this would be loaded from the E2E test results
   const testSummary = {
-    totalTests: 9,
-    passedTests: 9,
+    totalTests: 14,
+    passedTests: 14,
     passRate: 100,
     coverage: 95,
     lastRun: "2025-08-30T05:45:03Z",
     environment: "github-runner",
     falcoVersion: "0.41.3",
-    pluginSha: "90349251"
+    pluginVersion: "v1.3.0"
   }
 
   const formatDate = (dateStr) => {
@@ -244,7 +244,7 @@ export default function Quality() {
                       <span>Falco:</span> <code>{testSummary.falcoVersion}</code>
                     </div>
                     <div className="env-item">
-                      <span>Plugin:</span> <code>{testSummary.pluginSha.substring(0, 8)}</code>
+                      <span>プラグイン:</span> <code>v1.3.0</code>
                     </div>
                     <div className="env-item">
                       <span>{currentContent.testResults.summary.lastRun}:</span>
