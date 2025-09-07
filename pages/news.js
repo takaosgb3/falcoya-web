@@ -629,7 +629,26 @@ export default function News() {
                     </span>
                   </div>
                   
-                  <h2 className="news-title">{item.title}</h2>
+                  <h2 className="news-title">
+                    {item.link ? (
+                      item.link.startsWith('http') ? (
+                        <a 
+                          href={item.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="title-link"
+                        >
+                          {item.title}
+                        </a>
+                      ) : (
+                        <Link href={item.link}>
+                          <a className="title-link">{item.title}</a>
+                        </Link>
+                      )
+                    ) : (
+                      item.title
+                    )}
+                  </h2>
                   <p className="news-description">{item.content}</p>
                   
                   {item.highlights && item.highlights.length > 0 && (
@@ -889,6 +908,16 @@ export default function News() {
           font-weight: 600;
           margin-bottom: 12px;
           color: var(--text-primary);
+        }
+
+        .title-link {
+          color: var(--text-primary);
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .title-link:hover {
+          color: var(--primary-blue);
         }
 
         .news-description {
