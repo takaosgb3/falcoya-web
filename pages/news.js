@@ -41,7 +41,7 @@ export default function News() {
             "i18n（国際化対応）の実装",
             "攻撃検証の再挑戦と過検知調整",
             "37ルール・810+攻撃パターンへの大幅拡充",
-            "統合ドキュメントの作成（37ルール・810+パターンの全容記録）",
+            "統合ドキュメント IMPLEMENTED_RULES_OVERVIEW.md の作成",
             "OSSとしての透明性の実現"
           ],
           link: "/blog/falco-plugin-development-days51-56"
@@ -266,7 +266,7 @@ export default function News() {
             "i18n (internationalization) implementation",
             "Attack verification re-challenge and false positive adjustment",
             "Massive expansion to 37 rules and 810+ attack patterns",
-            "Creation of integrated documentation (complete record of 37 rules and 810+ patterns)",
+            "Creation of integrated documentation IMPLEMENTED_RULES_OVERVIEW.md",
             "Achieving OSS transparency"
           ],
           link: "/blog/falco-plugin-development-days51-56-en"
