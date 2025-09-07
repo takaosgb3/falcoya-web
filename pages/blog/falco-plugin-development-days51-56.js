@@ -175,7 +175,7 @@ export default function FalcoPluginDevelopmentDays51to56() {
             <h2>Day 51（08/30）— End-to-End テストレポート公開</h2>
             <p>
               この日、ついに <strong>End-to-End テストレポート (Phase 1)</strong> を公開した。
-              👉 <Link href="/news">ニュース記事</Link>
+              👉 <Link href="/quality">ニュース記事</Link>
             </p>
             <p>
               全14件のシナリオを流し込み、<strong>12件で検知成功（SQLi: 5、XSS: 7）／2件は未検出</strong>という結果をそのまま公表した。
