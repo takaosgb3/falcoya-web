@@ -30,6 +30,23 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-09-07-oss-development-blog-part8",
+          date: "2025-09-07",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の51日目から56日目」を公開",
+          content: "テストレポート公開、UI修正と国際化、そして攻撃検証の再挑戦。37ルール・810+攻撃パターンの拡充から統合ドキュメント作成まで、OSSとしての透明性を示す取り組みを記録しました。",
+          highlights: [
+            "End-to-End テストレポート (Phase 1) の公開",
+            "i18n（国際化対応）の実装",
+            "攻撃検証の再挑戦と過検知調整",
+            "37ルール・810+攻撃パターンへの大幅拡充",
+            "統合ドキュメント IMPLEMENTED_RULES_OVERVIEW.md の作成",
+            "OSSとしての透明性の実現"
+          ],
+          link: "/blog/falco-plugin-development-days51-56"
+        },
+        {
           id: "2025-08-30-e2e-test-report",
           date: "2025-08-30",
           category: "feature",
@@ -237,6 +254,23 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-09-07-oss-development-blog-part8-en",
+          date: "2025-09-07",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Days 51-56 of Falcoya\" Published",
+          content: "Test report publication, UI fixes and internationalization, and attack verification re-challenge. From 37 rules and 810+ attack patterns expansion to integrated documentation creation, recording efforts to demonstrate OSS transparency.",
+          highlights: [
+            "End-to-End Test Report (Phase 1) publication",
+            "i18n (internationalization) implementation",
+            "Attack verification re-challenge and false positive adjustment",
+            "Massive expansion to 37 rules and 810+ attack patterns",
+            "Creation of integrated documentation IMPLEMENTED_RULES_OVERVIEW.md",
+            "Achieving OSS transparency"
+          ],
+          link: "/blog/falco-plugin-development-days51-56-en"
+        },
         {
           id: "2025-08-30-e2e-test-report",
           date: "2025-08-30",
@@ -595,7 +629,26 @@ export default function News() {
                     </span>
                   </div>
                   
-                  <h2 className="news-title">{item.title}</h2>
+                  <h2 className="news-title">
+                    {item.link ? (
+                      item.link.startsWith('http') ? (
+                        <a 
+                          href={item.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="title-link"
+                        >
+                          {item.title}
+                        </a>
+                      ) : (
+                        <Link href={item.link}>
+                          <a className="title-link">{item.title}</a>
+                        </Link>
+                      )
+                    ) : (
+                      item.title
+                    )}
+                  </h2>
                   <p className="news-description">{item.content}</p>
                   
                   {item.highlights && item.highlights.length > 0 && (
@@ -855,6 +908,16 @@ export default function News() {
           font-weight: 600;
           margin-bottom: 12px;
           color: var(--text-primary);
+        }
+
+        .title-link {
+          color: var(--text-primary);
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .title-link:hover {
+          color: var(--primary-blue);
         }
 
         .news-description {

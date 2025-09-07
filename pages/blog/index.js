@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days51-56',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の51日目から56日目',
+      description: 'テストレポート公開、UI修正と国際化、そして攻撃検証の再挑戦。37ルール・810+攻撃パターンの拡充から統合ドキュメント作成まで、OSSとしての透明性を示す取り組みを記録。',
+      date: '2025-09-07',
+      readTime: '12分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2Eテスト', '国際化', '攻撃検証', '統合ドキュメント'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days51-56'
+    },
+    {
       id: 'falco-plugin-development-days45-50',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の45日目から50日目',
       description: 'テスト改善とHTMLレポート修正、そして攻撃トラフィックへの挑戦。E2Eテストの観測点強化とXSS検出サンプルの表示問題への対処を記録。',
@@ -97,6 +107,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days51-56-en',
+      title: 'Falco + Nginx Plugin Development: Days 51-56 of Falcoya',
+      description: 'Test report publication, UI fixes and internationalization, and attack verification re-challenge. From 37 rules and 810+ attack patterns expansion to integrated documentation creation, recording efforts to demonstrate OSS transparency.',
+      date: '2025-09-07',
+      readTime: '12 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Testing', 'Internationalization', 'Attack Verification', 'Integrated Documentation'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days51-56-en'
+    },
     {
       id: 'falco-plugin-development-days45-50-en',
       title: 'Falco + Nginx Plugin Development: Days 45-50 of Falcoya',
@@ -232,7 +252,7 @@ export default function BlogIndex() {
         quality: "テストレポート"
       },
       categoryList: [
-        { name: "OSS開発", count: 7 },
+        { name: "OSS開発", count: 8 },
         { name: "セキュリティ", count: 1 }
       ],
       tags: ["Falco", "Nginx", "OSS開発", "CI/CD", "Docker", "テスト", "デバッグ", "プロジェクト管理", "ポリシー", "文化", "ドキュメント", "セキュリティ", "検知ルール", "Go言語", "GitHub Actions", "AWS", "EC2", "Web攻撃検知", "E2Eテスト", "テスト設計", "品質保証"]
@@ -255,7 +275,7 @@ export default function BlogIndex() {
         quality: "Test Report"
       },
       categoryList: [
-        { name: "OSS Development", count: 7 },
+        { name: "OSS Development", count: 8 },
         { name: "Security", count: 1 }
       ],
       tags: ["Falco", "Nginx", "OSS Development", "CI/CD", "Docker", "Testing", "Debugging", "Project Management", "Policy", "Culture", "Documentation", "Security", "Detection Rules", "Go", "GitHub Actions", "AWS", "EC2", "Web Attack Detection", "E2E Testing", "Test Design", "Quality Assurance"]
