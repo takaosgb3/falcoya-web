@@ -257,7 +257,7 @@ export default function FalcoPluginDevelopmentDays51to56En() {
               On this day, based on all previous adjustments, we <strong>massively expanded rules and attack patterns</strong> and documented the entire scope.
             </p>
             <p>
-              The deliverable was <code>docs/security/IMPLEMENTED_RULES_OVERVIEW.md</code>.
+              The deliverable was the integrated documentation.
               This includes:
             </p>
             <ul className="task-list">
@@ -293,7 +293,7 @@ export default function FalcoPluginDevelopmentDays51to56En() {
               <li>Attack traffic verification re-challenge (confirming false positives and negatives)</li>
               <li>False positive adjustment and recording in integration-test-requirements.md</li>
               <li>Massive expansion of rules and attack patterns (37 rules, 810+ patterns)</li>
-              <li>Creation of integrated documentation IMPLEMENTED_RULES_OVERVIEW.md</li>
+              <li>Creation of integrated documentation (complete record of 37 rules and 810+ patterns)</li>
             </ul>
           </section>
 
@@ -308,7 +308,7 @@ export default function FalcoPluginDevelopmentDays51to56En() {
               <p>→ Newly added "false positive issues" and "undetected scenarios"</p>
             </div>
             <div className="document-item">
-              <h3><code>docs/security/IMPLEMENTED_RULES_OVERVIEW.md</code></h3>
+              <h3>Integrated Documentation</h3>
               <p>→ Recorded the complete scope of 37 rules and 810+ attack patterns</p>
             </div>
           </section>

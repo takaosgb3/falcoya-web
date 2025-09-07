@@ -257,7 +257,7 @@ export default function FalcoPluginDevelopmentDays51to56() {
               この日は、これまでの調整を踏まえて <strong>ルールと攻撃パターンを一気に拡充</strong>し、さらにその全容をドキュメントにまとめた。
             </p>
             <p>
-              成果物は <code>docs/security/IMPLEMENTED_RULES_OVERVIEW.md</code>。
+              成果物は統合ドキュメント。
               ここには、
             </p>
             <ul className="task-list">
@@ -294,7 +294,7 @@ export default function FalcoPluginDevelopmentDays51to56() {
               <li>攻撃トラフィック検証の再挑戦（過検知と未検出の確認）</li>
               <li>過検知の調整と integration-test-requirements.md への記録</li>
               <li>ルールと攻撃パターンの大幅拡充（37ルール・810+パターン）</li>
-              <li>統合ドキュメント IMPLEMENTED_RULES_OVERVIEW.md の作成</li>
+              <li>統合ドキュメントの作成（37ルール・810+パターンの全容記録）</li>
             </ul>
           </section>
 
@@ -309,7 +309,7 @@ export default function FalcoPluginDevelopmentDays51to56() {
               <p>→ 「過検知問題」や「未検出シナリオ」などを新規追加</p>
             </div>
             <div className="document-item">
-              <h3><code>docs/security/IMPLEMENTED_RULES_OVERVIEW.md</code></h3>
+              <h3>統合ドキュメント</h3>
               <p>→ 37ルール・810+攻撃パターンの全容を記録</p>
             </div>
           </section>
