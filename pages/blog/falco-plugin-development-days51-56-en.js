@@ -175,7 +175,7 @@ export default function FalcoPluginDevelopmentDays51to56En() {
             <h2>Day 51 (08/30) — End-to-End Test Report Publication</h2>
             <p>
               On this day, we finally published the <strong>End-to-End Test Report (Phase 1)</strong>.
-              👉 News article
+              👉 <Link href="/news">News article</Link>
             </p>
             <p>
               We fed 14 scenarios into the system and published the results as they were: <strong>12 successful detections (SQLi: 5, XSS: 7) / 2 undetected</strong>.
