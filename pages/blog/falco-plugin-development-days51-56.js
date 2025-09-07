@@ -397,7 +397,7 @@ export default function FalcoPluginDevelopmentDays51to56() {
         }
 
         .article-image img {
-          max-width: 100%;
+          max-width: 70%;
           height: auto;
           border-radius: 10px;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -629,6 +629,10 @@ export default function FalcoPluginDevelopmentDays51to56() {
 
           .share-button {
             text-align: center;
+          }
+
+          .article-image img {
+            max-width: 90%;
           }
         }
         
