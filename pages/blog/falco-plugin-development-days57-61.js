@@ -154,7 +154,7 @@ export default function FalcoPluginDevelopmentDays57to61() {
 
           <div className="article-image">
             <img
-              src="/img/blog/blog9.png"
+              src="/img/blog/blog10.png"
               alt="大規模攻撃検証とE2Eテストデバッグの様子"
             />
           </div>
