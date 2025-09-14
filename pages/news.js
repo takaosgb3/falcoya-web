@@ -30,6 +30,23 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-09-14-oss-development-blog-part9",
+          date: "2025-09-14",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の57日目から61日目」を公開",
+          content: "大規模攻撃検証とE2Eテストのデバッグ戦記。出力仕様変更による致命的な不具合を経験し、ドキュメント参照の重要性を痛感。失敗を財産に変える5日間の記録を公開しました。",
+          highlights: [
+            "大規模攻撃シナリオの検証と失敗ケースの記録",
+            "出力仕様変更による致命的な不具合とその修正",
+            "ドキュメント遵守チェック項目の追加",
+            "CI基盤の不具合調査と記録",
+            "セキュリティE2Eテストのデバッグとルール調整",
+            "失敗を再発防止の仕組みへ昇華"
+          ],
+          link: "/blog/falco-plugin-development-days57-61"
+        },
+        {
           id: "2025-09-07-oss-development-blog-part8",
           date: "2025-09-07",
           category: "feature",
@@ -254,6 +271,23 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-09-14-oss-development-blog-part9-en",
+          date: "2025-09-14",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya Days 57-61\" Published",
+          content: "Large-scale attack verification and E2E test debugging chronicle. Experiencing critical issues from output specification changes, learning the importance of documentation. A 5-day record of turning failures into assets.",
+          highlights: [
+            "Large-scale attack scenario verification and failure case recording",
+            "Critical bug from output specification changes and its fix",
+            "Addition of documentation compliance check items",
+            "CI infrastructure issue investigation and recording",
+            "Security E2E test debugging and rule adjustments",
+            "Transforming failures into recurrence prevention mechanisms"
+          ],
+          link: "/blog/falco-plugin-development-days57-61-en"
+        },
         {
           id: "2025-09-07-oss-development-blog-part8-en",
           date: "2025-09-07",

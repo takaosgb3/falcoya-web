@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days57-61',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の57日目から61日目',
+      description: '大規模攻撃検証とE2Eテストのデバッグ戦記。出力仕様変更による致命的な不具合を経験し、ドキュメント参照の重要性を痛感。失敗を財産に変える5日間の記録。',
+      date: '2025-09-14',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2Eテスト', 'デバッグ', '攻撃検証', 'ドキュメント'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days57-61'
+    },
+    {
       id: 'falco-plugin-development-days51-56',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の51日目から56日目',
       description: 'テストレポート公開、UI修正と国際化、そして攻撃検証の再挑戦。37ルール・810+攻撃パターンの拡充から統合ドキュメント作成まで、OSSとしての透明性を示す取り組みを記録。',
@@ -107,6 +117,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days57-61-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya Days 57-61',
+      description: 'Large-scale attack verification and E2E test debugging chronicle. Experiencing critical issues from output specification changes, learning the importance of documentation. A 5-day record of turning failures into assets.',
+      date: '2025-09-14',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Testing', 'Debugging', 'Attack Verification', 'Documentation'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days57-61-en'
+    },
     {
       id: 'falco-plugin-development-days51-56-en',
       title: 'Falco + Nginx Plugin Development: Days 51-56 of Falcoya',
