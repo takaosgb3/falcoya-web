@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days62-67',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の62日目から67日目',
+      description: 'モグラ叩きから体系化へ、計画と現実のギャップ。場当たり的な修正を繰り返す日々から、体系的な品質管理へと進化した6日間の記録。',
+      date: '2025-09-21',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'テスト戦略', '品質管理', '体系化', 'CI/CD'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days62-67'
+    },
+    {
       id: 'falco-plugin-development-days57-61',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の57日目から61日目',
       description: '大規模攻撃検証とE2Eテストのデバッグ戦記。出力仕様変更による致命的な不具合を経験し、ドキュメント参照の重要性を痛感。失敗を財産に変える5日間の記録。',
@@ -117,6 +127,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days62-67-en',
+      title: 'Falco + Nginx Plugin Development: Days 62-67 of Falcoya',
+      description: 'From whack-a-mole to systematization, the gap between planning and reality. A 6-day record of evolution from repetitive ad-hoc fixes to systematic quality management.',
+      date: '2025-09-21',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'Test Strategy', 'Quality Management', 'Systematization', 'CI/CD'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days62-67-en'
+    },
     {
       id: 'falco-plugin-development-days57-61-en',
       title: 'Falco + Nginx Plugin Development: Falcoya Days 57-61',

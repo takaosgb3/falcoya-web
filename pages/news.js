@@ -30,6 +30,23 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-09-21-oss-development-blog-part10",
+          date: "2025-09-21",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の62日目から67日目」を公開",
+          content: "モグラ叩きから体系化へ、計画と現実のギャップ。場当たり的な修正を繰り返す日々から、体系的な品質管理へと進化した6日間の記録を公開しました。",
+          highlights: [
+            "モグラ叩き型の修正から体系化への転換",
+            "攻撃カテゴリ×ルール×結果のマトリクス作成",
+            "攻撃パターンの代表性と重要度による整理",
+            "テストレポートのカテゴリ別改善",
+            "Phase 2テストレポート公開計画の策定",
+            "810+パターンのうち69パターンでの進捗状況"
+          ],
+          link: "/blog/falco-plugin-development-days62-67"
+        },
+        {
           id: "2025-09-14-oss-development-blog-part9",
           date: "2025-09-14",
           category: "feature",
@@ -271,6 +288,23 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-09-21-oss-development-blog-part10-en",
+          date: "2025-09-21",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Days 62-67 of Falcoya\" Published",
+          content: "From whack-a-mole to systematization, the gap between planning and reality. A 6-day record of evolution from repetitive ad-hoc fixes to systematic quality management.",
+          highlights: [
+            "Shifted from whack-a-mole fixes to systematization",
+            "Created attack category × rule × result matrix",
+            "Organized attack patterns by representativeness and importance",
+            "Improved test reports by category",
+            "Formulated Phase 2 test report publication plan",
+            "Progress status: 69 patterns out of 810+"
+          ],
+          link: "/blog/falco-plugin-development-days62-67-en"
+        },
         {
           id: "2025-09-14-oss-development-blog-part9-en",
           date: "2025-09-14",
