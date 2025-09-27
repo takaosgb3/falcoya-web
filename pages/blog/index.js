@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days68-72',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の68日目から72日目',
+      description: '検知率ゼロの衝撃から体系的な改善へ。失敗を見える化する勇気、構造が安心を生むこと、小さな改善が安定を育てること、負債と向き合う覚悟、制約を受け入れて進む力。5日間で学んだ開発の本質。',
+      date: '2025-09-27',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'テスト戦略', 'Kubernetes', '品質管理'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days68-72'
+    },
+    {
       id: 'falco-plugin-development-days62-67',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の62日目から67日目',
       description: 'モグラ叩きから体系化へ、計画と現実のギャップ。場当たり的な修正を繰り返す日々から、体系的な品質管理へと進化した6日間の記録。',
@@ -127,6 +137,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days68-72-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 68-72',
+      description: 'From zero detection rate to systematic improvements. The courage to visualize failure, how structure creates security, small improvements build stability, facing technical debt, and the power of accepting constraints.',
+      date: '2025-09-27',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Test Strategy', 'Kubernetes', 'Quality Control'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days68-72-en'
+    },
     {
       id: 'falco-plugin-development-days62-67-en',
       title: 'Falco + Nginx Plugin Development: Days 62-67 of Falcoya',

@@ -30,6 +30,23 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-09-27-oss-development-blog-part11",
+          date: "2025-09-27",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の68日目から72日目」を公開",
+          content: "検知率ゼロの衝撃から体系的な改善へ。失敗を見える化する勇気、構造が安心を生むこと、小さな改善が安定を育てること、負債と向き合う覚悟、制約を受け入れて進む力。5日間で学んだ開発の本質を公開しました。",
+          highlights: [
+            "検知率0%からの改善と summary.json 強制生成",
+            "ドキュメントの三層構造化（要件定義・実装ガイド・タスク定義）",
+            "PR #394-#401によるCI/CD安定化（成功率0%→80%）",
+            "約10,000個のオフラインランナー削除作業",
+            "Docker in Docker からの脱却と Kubernetes Pod 対応",
+            "PROBLEM_PATTERNS.md へのパターン追加（#A010-#A078）"
+          ],
+          link: "/blog/falco-plugin-development-days68-72"
+        },
+        {
           id: "2025-09-21-oss-development-blog-part10",
           date: "2025-09-21",
           category: "feature",
@@ -288,6 +305,23 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-09-27-oss-development-blog-part11-en",
+          date: "2025-09-27",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 68-72\" Published",
+          content: "From zero detection rate to systematic improvements. The courage to visualize failure, how structure creates security, small improvements build stability, facing technical debt, and the power of accepting constraints. Five essential lessons from development.",
+          highlights: [
+            "Improvement from 0% detection rate and forced summary.json generation",
+            "Three-layer documentation structure (requirements, implementation, tasks)",
+            "CI/CD stabilization via PR #394-#401 (success rate 0% → 80%)",
+            "Cleanup of approximately 10,000 offline runners",
+            "Migration from Docker in Docker to Kubernetes Pod support",
+            "Pattern additions to PROBLEM_PATTERNS.md (#A010-#A078)"
+          ],
+          link: "/blog/falco-plugin-development-days68-72-en"
+        },
         {
           id: "2025-09-21-oss-development-blog-part10-en",
           date: "2025-09-21",
