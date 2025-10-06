@@ -30,6 +30,23 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-10-03-oss-development-blog-part12",
+          date: "2025-10-03",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の73日目から77日目」を公開",
+          content: "小さな制御から回復設計へ。バッチタイムアウト対策、nginx環境変化への対応、二重修正の交差点、回復を設計したテスト、そしてsummary.html生成機能の追加。5日間で学んだ開発の教訓を公開しました。",
+          highlights: [
+            "Issue #42 修正（バッチタイムアウト対策）",
+            "nginx 自動インストール対応（GitHub Actions環境更新）",
+            "E2Eワークフローの依存関係再構築",
+            "リトライ制御によるテスト安定化",
+            "summary.html 生成機能の追加（テスト結果可視化）",
+            "Phase 2 ドキュメント更新（Operational Notes・Pattern一覧）"
+          ],
+          link: "/blog/falco-plugin-development-days73-77"
+        },
+        {
           id: "2025-09-27-oss-development-blog-part11",
           date: "2025-09-27",
           category: "feature",
@@ -305,6 +322,23 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-10-03-oss-development-blog-part12-en",
+          date: "2025-10-03",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 73-77\" Published",
+          content: "From small controls to recovery design. Batch timeout countermeasures, nginx environment changes, intersection of dual fixes, designing recovery in tests, and summary.html generation. Five days of development lessons.",
+          highlights: [
+            "Issue #42 fix (batch timeout countermeasures)",
+            "nginx auto-installation support (GitHub Actions environment update)",
+            "E2E workflow dependency reconstruction",
+            "Test stabilization through retry controls",
+            "summary.html generation feature addition (test result visualization)",
+            "Phase 2 document updates (Operational Notes, Pattern lists)"
+          ],
+          link: "/blog/falco-plugin-development-days73-77-en"
+        },
         {
           id: "2025-09-27-oss-development-blog-part11-en",
           date: "2025-09-27",
