@@ -219,11 +219,8 @@ export default function FalcoPluginDevelopmentDays73to77() {
               「入ってないんじゃない？」
             </p>
             <p>
-              調べてみると、GitHub Actionsの <code>ubuntu-latest</code> イメージ更新で、nginxパッケージが削除されていた。
-              環境の裏側は、誰も教えてくれないうちに変わる。
-            </p>
-            <p>
-              <code>apt-get install nginx</code> の1行を追加し、再ビルド。
+              調べてみると、調べてみると、実行環境に nginx がインストールされていなかった。CI のセットアップ過程でパッケージが入らないまま進んでいたのだ。
+              環境の裏側は、誰も教えてくれないうちに変わる。<code>apt-get install nginx</code> の1行を追加し、再ビルド。
             </p>
             <p>
               今度は、nginxが静かに立ち上がった。

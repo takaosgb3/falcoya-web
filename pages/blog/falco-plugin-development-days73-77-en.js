@@ -219,11 +219,8 @@ export default function FalcoPluginDevelopmentDays73to77En() {
               "Maybe it's not installed?"
             </p>
             <p>
-              Upon investigation, the GitHub Actions <code>ubuntu-latest</code> image update had removed the nginx package.
-              The environment changes behind the scenes without anyone noticing.
-            </p>
-            <p>
-              I added one line: <code>apt-get install nginx</code>, and rebuilt.
+              Upon investigation, nginx was not installed in the execution environment. The package hadn't been included during the CI setup process.
+              The environment changes behind the scenes without anyone noticing. I added one line: <code>apt-get install nginx</code>, and rebuilt.
             </p>
             <p>
               This time, nginx quietly started up.
