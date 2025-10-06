@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days73-77',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の73日目から77日目',
+      description: '小さな制御から回復設計へ。バッチタイムアウト対策、nginx環境変化への対応、二重修正の交差点、回復を設計したテスト、そしてsummary.html生成機能の追加。5日間で学んだ開発の教訓。',
+      date: '2025-10-03',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'テスト戦略', 'Kubernetes', '品質管理', 'E2E'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days73-77'
+    },
+    {
       id: 'falco-plugin-development-days68-72',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の68日目から72日目',
       description: '検知率ゼロの衝撃から体系的な改善へ。失敗を見える化する勇気、構造が安心を生むこと、小さな改善が安定を育てること、負債と向き合う覚悟、制約を受け入れて進む力。5日間で学んだ開発の本質。',
@@ -137,6 +147,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days73-77-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 73-77',
+      description: 'From small controls to recovery design. Batch timeout countermeasures, nginx environment changes, intersection of dual fixes, designing recovery in tests, and summary.html generation. Five days of development lessons.',
+      date: '2025-10-03',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Test Strategy', 'Kubernetes', 'Quality Control', 'E2E'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days73-77-en'
+    },
     {
       id: 'falco-plugin-development-days68-72-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 68-72',
