@@ -235,10 +235,13 @@ export default function FalcoPluginDevelopmentDays78to84En() {
           <section className="content-section">
             <h2>Day 82 (Oct 9) — PR #410 Update</h2>
             <p>
-              Reflected Pod support micro-differences into PR #410. Picked up pointed-out items and re-executed full runs each time.
+              This day was focused on reflecting the achievements of Kubernetes support and non-privileged container adaptation into PR #410. While carefully reviewing micro-differences like port switching within Pods, log path adjustments, and environment auto-detection logic, I picked up items pointed out during review.
             </p>
             <p>
-              TK: "Don't rush, first get everything through." Small differences, but certain.
+              The changes were small. However, to ensure that each modification wouldn't affect other environments, I needed to re-execute full runs each time. Local environment, Pod environment, self-hosted environment—running tests in each, checking logs, and confirming no unexpected side effects. It was a steady, time-consuming task, but I had learned from experience that cutting corners here would lead to major problems later.
+            </p>
+            <p>
+              TK: "Don't rush, first get everything through." Encouraged by those words, I carefully worked through each checklist item one by one. Small differences, but certain. That was the best approach I could take right now.
             </p>
 
             <div className="lesson-box">
@@ -250,12 +253,8 @@ export default function FalcoPluginDevelopmentDays78to84En() {
           <section className="content-section">
             <h2>Day 83 (Oct 10) — Integration Test Re-run and Re-review Request</h2>
             <p>
-              Added ENV-MIGRATE-004/005 fixes to the PR. Re-executed TEST-VERIFY-001, added results to PR comments, and requested re-confirmation.
+              Added ENV-MIGRATE-004/005 fixes to the PR. Re-executed TEST-VERIFY-001, added results to PR comments, and requested re-confirmation. In terms of work status, uncompleted checklist items still remained, and work was continuing. The overall flow had come together, but I had a feeling that we were still <strong>"in the finishing phase."</strong>
             </p>
-            <ul className="task-list">
-              <li>Status: Uncompleted checklist items remain, work continues</li>
-              <li>Feeling: The flow is there, but still <strong>"in the finishing phase"</strong></li>
-            </ul>
             <p>
               TK: "Finishing takes time." I watched the logs while holding the reality of "not yet done."
             </p>
