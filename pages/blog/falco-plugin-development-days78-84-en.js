@@ -175,13 +175,8 @@ export default function FalcoPluginDevelopmentDays78to84En() {
           <section className="content-section">
             <h2>Day 78 (Oct 5) — Finalizing Kubernetes Support</h2>
             <p>
-              Within Pods, systemctl is unavailable. Accepting this head-on, we consolidated to direct startup operations.
+              Within Pods, systemctl is unavailable. Accepting this head-on, we consolidated to direct startup operations. We unified the startup method to <code>nginx -g "daemon off;"</code> and created a new script <code>run-single-pattern-k8s.sh</code> for environment auto-detection that switches between Kubernetes and standard environments. The goal was to <strong>"unify the startup method"</strong> to stabilize subsequent validation and diagnostics.
             </p>
-            <ul className="task-list">
-              <li>Startup method: <code>nginx -g "daemon off;"</code></li>
-              <li>Environment auto-detection: New script <code>run-single-pattern-k8s.sh</code> (switches between Kubernetes/standard)</li>
-              <li>Goal: <strong>"Unify the startup method"</strong> to stabilize subsequent validation and diagnostics</li>
-            </ul>
             <p>
               "The strongest approach is one that works the same way everywhere" — As TK said, just eliminating small branches reduced log variations and improved reproducibility.
             </p>
@@ -195,13 +190,8 @@ export default function FalcoPluginDevelopmentDays78to84En() {
           <section className="content-section">
             <h2>Day 79 (Oct 6) — ENV-MIGRATE Expansion and Non-Privileged Design</h2>
             <p>
-              ENV-MIGRATE-004/005. Assuming non-privileged containers, we added environment detection logic to each Category Runner (sqli / xss / cmd_injection / path_traversal / emerging_threats).
+              ENV-MIGRATE-004/005. Assuming non-privileged containers, we added environment detection logic to each Category Runner (sqli / xss / cmd_injection / path_traversal / emerging_threats). Ports automatically switch from 80 to 8080, eliminating the need for root and avoiding conflicts. The purpose was to <strong>"absorb environment differences upfront"</strong> to eliminate downstream failures. As a result, we confirmed the same procedure works in Pods, locally, and on self-hosted runners.
             </p>
-            <ul className="task-list">
-              <li>Automatic port switching: 80→8080 (no root required, avoiding conflicts)</li>
-              <li>Purpose: <strong>"Absorb environment differences upfront"</strong> to eliminate downstream failures</li>
-              <li>Result: Confirmed the same procedure works in Pods, locally, and on self-hosted runners</li>
-            </ul>
             <p>
               TK: "Resilient systems are determined by 'initial assumptions.'" Just a few lines of branching eliminated many downstream errors.
             </p>
@@ -215,12 +205,8 @@ export default function FalcoPluginDevelopmentDays78to84En() {
           <section className="content-section">
             <h2>Day 80 (Oct 7) — TEST-VERIFY-001: Integration Verification</h2>
             <p>
-              Reconfirmed end-to-end coordination between <code>run-single-pattern-k8s.sh</code> and Runners, aggregation via orchestrator.
+              Reconfirmed end-to-end coordination between <code>run-single-pattern-k8s.sh</code> and Runners, aggregation via orchestrator. We acquired tests across three surfaces—local, Pod, and self-hosted—with the goal of guaranteeing that it <strong>"works with the same meaning regardless of environment."</strong>
             </p>
-            <ul className="task-list">
-              <li>Verification: Test acquisition across three surfaces—local/Pod/self-hosted</li>
-              <li>Goal: <strong>"Works with the same meaning regardless of environment"</strong> guarantee</li>
-            </ul>
             <p>
               Logs were quiet, recovery was stable. TK: "Quiet logs are a reward."
             </p>
@@ -234,12 +220,8 @@ export default function FalcoPluginDevelopmentDays78to84En() {
           <section className="content-section">
             <h2>Day 81 (Oct 8) — Documenting "Why It Works"</h2>
             <p>
-              Documents updated:
+              On this day, we added progress and implementation procedures to <code>E2E_NGINX_MIGRATION_TASKS.md</code>, and organized port constraints, log paths, and startup procedures in <code>KUBERNETES_POD_COMPATIBILITY.md</code>.
             </p>
-            <ul className="task-list">
-              <li><code>E2E_NGINX_MIGRATION_TASKS.md</code>: Added progress and implementation procedures</li>
-              <li><code>KUBERNETES_POD_COMPATIBILITY.md</code>: Organized port constraints, log paths, startup procedures</li>
-            </ul>
             <p>
               TK: "If you don't write down why it worked, your future self will struggle." We documented verification procedures and reproduction conditions with specific logs, turning reproducibility into specifications.
             </p>

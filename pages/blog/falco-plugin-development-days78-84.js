@@ -175,13 +175,8 @@ export default function FalcoPluginDevelopmentDays78to84() {
           <section className="content-section">
             <h2>Day 78（10/5）— Kubernetes対応の仕上げ</h2>
             <p>
-              Pod 内では systemctl が使えない。ここを正面から受け止め、直接起動の運用に一本化した。
+              Pod 内では systemctl が使えない。ここを正面から受け止め、直接起動の運用に一本化した。起動方式は <code>nginx -g "daemon off;"</code> に統一し、環境自動判別のための新しいスクリプト <code>run-single-pattern-k8s.sh</code> を作成した。このスクリプトはKubernetes環境と通常環境を自動的に切り替える。狙いは、<strong>"起動のしかたを1つにする"</strong>ことで、以降の検証や診断を安定させることだった。
             </p>
-            <ul className="task-list">
-              <li>起動方式：<code>nginx -g "daemon off;"</code></li>
-              <li>環境自動判別：新スクリプト <code>run-single-pattern-k8s.sh</code>（Kubernetes/通常を切替）</li>
-              <li>狙い：<strong>"起動のしかたを1つにする"</strong>ことで、以降の検証や診断を安定させる</li>
-            </ul>
             <p>
               「どこでも同じ手順で動くのが一番強い」——TK の言葉どおり、小さな分岐をなくしただけでログのブレが減り、再現性が上がった。
             </p>
@@ -195,13 +190,8 @@ export default function FalcoPluginDevelopmentDays78to84() {
           <section className="content-section">
             <h2>Day 79（10/6）— ENV-MIGRATEの拡張と非特権設計</h2>
             <p>
-              ENV-MIGRATE-004/005。非特権コンテナを前提に、各 Category Runner（sqli / xss / cmd_injection / path_traversal / emerging_threats）へ環境検出ロジックを追加。
+              ENV-MIGRATE-004/005。非特権コンテナを前提に、各 Category Runner（sqli / xss / cmd_injection / path_traversal / emerging_threats）へ環境検出ロジックを追加した。ポートは80から8080へ自動的に切り替わるようにし、root権限を不要にすることで衝突を回避できるようにした。目的は、<strong>「環境差異を最初に吸収」</strong>し、後段の失敗を消すことだった。結果として、Pod でもローカルでもセルフホストでも、同一手順で通ることを確認できた。
             </p>
-            <ul className="task-list">
-              <li>ポート自動切替：80→8080（root不要で衝突回避）</li>
-              <li>目的：<strong>「環境差異を最初に吸収」</strong>し、後段の失敗を消す</li>
-              <li>結果：Pod でもローカルでもセルフホストでも、同一手順で通ることを確認</li>
-            </ul>
             <p>
               TK「崩れない仕組みは"最初の前提"で決まる」。ほんの数行の分岐で、後ろにある多くの誤差が消えた。
             </p>
@@ -215,12 +205,8 @@ export default function FalcoPluginDevelopmentDays78to84() {
           <section className="content-section">
             <h2>Day 80（10/7）— TEST-VERIFY-001：統合確認</h2>
             <p>
-              <code>run-single-pattern-k8s.sh</code> と Runner の連携、オーケストレータ経由の集計を通しで再確認。
+              <code>run-single-pattern-k8s.sh</code> と Runner の連携、オーケストレータ経由の集計を通しで再確認した。ローカル、Pod、セルフホストの3つの環境でテストを取得し、<strong>「環境が変わっても同じ意味で動く」</strong>ことを保証することを狙いとした。
             </p>
-            <ul className="task-list">
-              <li>検証：ローカル／Pod／セルフホストの3面でテスト取得</li>
-              <li>ねらい：<strong>「環境が変わっても同じ意味で動く」</strong>ことの保証</li>
-            </ul>
             <p>
               ログが静かで、復帰も安定。TK「静かなログはご褒美だね」。
             </p>
@@ -234,12 +220,8 @@ export default function FalcoPluginDevelopmentDays78to84() {
           <section className="content-section">
             <h2>Day 81（10/8）— ドキュメントの"動く理由"を残す</h2>
             <p>
-              更新したドキュメント：
+              この日は、<code>E2E_NGINX_MIGRATION_TASKS.md</code> に進捗と実施手順を追記し、<code>KUBERNETES_POD_COMPATIBILITY.md</code> でポート制約、ログパス、起動手順を整理した。
             </p>
-            <ul className="task-list">
-              <li><code>E2E_NGINX_MIGRATION_TASKS.md</code>：進捗・実施手順追記</li>
-              <li><code>KUBERNETES_POD_COMPATIBILITY.md</code>：ポート制約、ログパス、起動手順の整理</li>
-            </ul>
             <p>
               TK「"動いた理由"を書かないと未来の自分が困る」。検証手順と再現条件を具体ログとともに残し、再現性を仕様化した。
             </p>
