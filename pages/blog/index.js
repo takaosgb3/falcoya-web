@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days78-84',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の78日目から84日目',
+      description: '環境差異と起動順序という硬い壁。Kubernetes対応の仕上げ、非特権設計、ENV-MIGRATE拡張、そしてPattern A154からA155への進化。設定と起動の分離設計を学んだ7日間の記録。',
+      date: '2025-10-12',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'Kubernetes', '非特権コンテナ', '環境対応', '起動設計'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days78-84'
+    },
+    {
       id: 'falco-plugin-development-days73-77',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の73日目から77日目',
       description: '小さな制御から回復設計へ。バッチタイムアウト対策、nginx環境変化への対応、二重修正の交差点、回復を設計したテスト、そしてsummary.html生成機能の追加。5日間で学んだ開発の教訓。',
@@ -147,6 +157,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days78-84-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 78-84',
+      description: 'The hard wall of environment differences and startup sequence. Kubernetes compatibility completion, non-privileged design, ENV-MIGRATE expansion, and evolution from Pattern A154 to A155. Seven days of learning about separation of configuration and startup design.',
+      date: '2025-10-12',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Kubernetes', 'Non-Privileged Containers', 'Environment Adaptation', 'Startup Design'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days78-84-en'
+    },
     {
       id: 'falco-plugin-development-days73-77-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 73-77',
