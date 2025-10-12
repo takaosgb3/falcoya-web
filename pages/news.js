@@ -30,6 +30,24 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-10-12-oss-development-blog-part13",
+          date: "2025-10-12",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の78日目から84日目」を公開",
+          content: "環境差異と起動順序という硬い壁。Kubernetes対応の仕上げ、非特権設計、ENV-MIGRATE拡張、そしてPattern A154からA155への進化。設定と起動の分離設計を学んだ7日間の記録を公開しました。",
+          highlights: [
+            "Kubernetes対応の仕上げ（起動方式の一本化）",
+            "ENV-MIGRATE-004/005 実装（80↔8080 自動切替・非特権対応）",
+            "TEST-VERIFY-001 実行／再実行（各環境で確認）",
+            "ドキュメント更新（E2E_NGINX_MIGRATION_TASKS.md、KUBERNETES_POD_COMPATIBILITY.md）",
+            "PR #491 マージ（A154: 環境対応設定）",
+            "Pattern #A155 発見と記録（設定と起動の分離）",
+            "Issue #496 作成、PROBLEM_PATTERNS.md A155 追記（Lines 1088–1346）"
+          ],
+          link: "/blog/falco-plugin-development-days78-84"
+        },
+        {
           id: "2025-10-03-oss-development-blog-part12",
           date: "2025-10-03",
           category: "feature",
@@ -322,6 +340,24 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-10-12-oss-development-blog-part13-en",
+          date: "2025-10-12",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 78-84\" Published",
+          content: "The hard wall of environment differences and startup sequence. Kubernetes compatibility completion, non-privileged design, ENV-MIGRATE expansion, and evolution from Pattern A154 to A155. Seven days of learning about separation of configuration and startup design.",
+          highlights: [
+            "Finalizing Kubernetes support (unifying startup methods)",
+            "ENV-MIGRATE-004/005 implementation (80↔8080 automatic switching, non-privileged support)",
+            "TEST-VERIFY-001 execution/re-execution (confirmation in each environment)",
+            "Document updates (E2E_NGINX_MIGRATION_TASKS.md, KUBERNETES_POD_COMPATIBILITY.md)",
+            "PR #491 merged (A154: environment adaptation configuration)",
+            "Pattern #A155 discovery and recording (separation of configuration and startup)",
+            "Issue #496 creation, PROBLEM_PATTERNS.md A155 addition (Lines 1088–1346)"
+          ],
+          link: "/blog/falco-plugin-development-days78-84-en"
+        },
         {
           id: "2025-10-03-oss-development-blog-part12-en",
           date: "2025-10-03",
