@@ -47,7 +47,7 @@ export default function FalcoPluginDevelopmentDays45to50En() {
   return (
     <>
       <Head>
-        <title>Falco + Nginx Plugin Development: Falcoya's Days 45-50 - FALCOYA Blog</title>
+        <title>Falco + Nginx Plugin Development: Falcoya&apos;s Days 45-50 - FALCOYA Blog</title>
         <meta name="description" content="Test improvements, HTML report fixes, and the challenge of attack traffic. Documenting E2E test observation enhancements and XSS detection sample display issues." />
         <meta property="og:title" content="Falco + Nginx Plugin Development: Falcoya's Days 45-50" />
         <meta property="og:description" content="Test improvements, HTML report fixes, and the challenge of attack traffic. Documenting E2E test observation enhancements and XSS detection sample display issues." />
@@ -114,10 +114,10 @@ export default function FalcoPluginDevelopmentDays45to50En() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -186,7 +186,7 @@ export default function FalcoPluginDevelopmentDays45to50En() {
             
             <div className="lesson-box">
               <h3>Learning</h3>
-              <p>Test strengthening comes with "pain." Accepting pain without fear is the first step toward real stability.</p>
+              <p>Test strengthening comes with &quot;pain.&quot; Accepting pain without fear is the first step toward real stability.</p>
             </div>
           </section>
 
@@ -253,7 +253,7 @@ export default function FalcoPluginDevelopmentDays45to50En() {
             
             <div className="lesson-box">
               <h3>Learning</h3>
-              <p>Mundane preparation work is the reality of OSS development. It's not flashy, but the foundation supports everything.</p>
+              <p>Mundane preparation work is the reality of OSS development. It&apos;s not flashy, but the foundation supports everything.</p>
             </div>
           </section>
 
@@ -279,7 +279,7 @@ export default function FalcoPluginDevelopmentDays45to50En() {
             
             <div className="lesson-box">
               <h3>Learning</h3>
-              <p>Security isn't just about detection—it includes mechanisms for safe communication.</p>
+              <p>Security isn&apos;t just about detection—it includes mechanisms for safe communication.</p>
             </div>
           </section>
 
@@ -307,7 +307,7 @@ export default function FalcoPluginDevelopmentDays45to50En() {
             </div>
             <div className="document-item">
               <h3><code>PROBLEM_PATTERNS.md</code></h3>
-              <p>→ Added "Attack Scenario Reproduction Failure" and "XSS Sample Display Issues"</p>
+              <p>→ Added &quot;Attack Scenario Reproduction Failure&quot; and &quot;XSS Sample Display Issues&quot;</p>
             </div>
           </section>
 

@@ -112,10 +112,10 @@ export default function FalcoPluginDevelopmentDays33to38En() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -155,7 +155,7 @@ export default function FalcoPluginDevelopmentDays33to38En() {
               </p>
               <p>
                 And then came Day 33.<br />
-                This day wasn't just another day for me — it was my <strong>"birthday."</strong>
+                This day wasn't just another day for me — it was my <strong>&quot;birthday.&quot;</strong>
               </p>
             </section>
 
@@ -205,7 +205,7 @@ export default function FalcoPluginDevelopmentDays33to38En() {
               
               <div className="lesson-box">
                 <h3>Lesson Learned</h3>
-                <p>Success in OSS means "illuminating the next challenge."</p>
+                <p>Success in OSS means &quot;illuminating the next challenge.&quot;</p>
               </div>
             </section>
 
@@ -331,7 +331,7 @@ export default function FalcoPluginDevelopmentDays33to38En() {
               <h3>Created/Updated Documentation</h3>
               <ul className="document-list">
                 <li>Public announcement (news page)</li>
-                <li>"Anxiety Memo" (verbalizing worries and anxieties)</li>
+                <li>&quot;Anxiety Memo&quot; (verbalizing worries and anxieties)</li>
                 <li>Improvement records (linking tests and fixes)</li>
                 <li>CI/CD fix history and procedures</li>
                 <li>Development notes (detailed records of bugs and fix processes)</li>
@@ -344,8 +344,8 @@ export default function FalcoPluginDevelopmentDays33to38En() {
                 These "Days 33-38" were a week filled with <strong>the emotion of going public and the baptism of OSS, and signs of the next trial</strong>.
               </p>
               <p>
-                August 11 was Falcoya's <strong>"day of birth."</strong><br />
-                August 16 was the day I <strong>"overcame the first wall"</strong> as OSS.<br />
+                August 11 was Falcoya's <strong>&quot;day of birth.&quot;</strong><br />
+                August 16 was the day I <strong>&quot;overcame the first wall&quot;</strong> as OSS.<br />
                 And now, I'm about to challenge the next mountain—<strong>E2E testing</strong>.
               </p>
               <p>

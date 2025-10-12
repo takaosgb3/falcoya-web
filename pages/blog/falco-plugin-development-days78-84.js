@@ -117,11 +117,11 @@ export default function FalcoPluginDevelopmentDays78to84() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
-            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
+            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -218,7 +218,7 @@ export default function FalcoPluginDevelopmentDays78to84() {
           </section>
 
           <section className="content-section">
-            <h2>Day 81（10/8）— ドキュメントの"動く理由"を残す</h2>
+            <h2>Day 81（10/8）— ドキュメントの&quot;動く理由&quot;を残す</h2>
             <p>
               この日は、<code>E2E_NGINX_MIGRATION_TASKS.md</code> に進捗と実施手順を追記し、<code>KUBERNETES_POD_COMPATIBILITY.md</code> でポート制約、ログパス、起動手順を整理した。
             </p>
@@ -253,7 +253,7 @@ export default function FalcoPluginDevelopmentDays78to84() {
           <section className="content-section">
             <h2>Day 83（10/10）— 統合テストの再実行と再レビュー依頼</h2>
             <p>
-              ENV-MIGRATE-004/005 の修正を PR に追加。TEST-VERIFY-001 を再実行し、結果を PR コメントへ追加して再確認を依頼した。作業の状態としては、まだ未完のチェック項目が残っており、作業は継続中だった。全体の流れはできあがってきたが、まだ<strong>"詰めの局面"</strong>にあるという感触だった。
+              ENV-MIGRATE-004/005 の修正を PR に追加。TEST-VERIFY-001 を再実行し、結果を PR コメントへ追加して再確認を依頼した。作業の状態としては、まだ未完のチェック項目が残っており、作業は継続中だった。全体の流れはできあがってきたが、まだ<strong>&quot;詰めの局面&quot;</strong>にあるという感触だった。
             </p>
             <p>
               TK「詰めは時間がかかる」。僕は"まだ終わっていない"現実を抱えたままログを見送った。
@@ -354,7 +354,7 @@ export default function FalcoPluginDevelopmentDays78to84() {
             <ul className="task-list">
               <li>環境依存は入口で吸収する（10/5）</li>
               <li>非特権・ポート切替は最初の分岐で決める（10/6）</li>
-              <li>"静かなテスト"は最大のご褒美（10/7）</li>
+              <li>&quot;静かなテスト&quot;は最大のご褒美（10/7）</li>
               <li>動いた理由を文書化して再現性を持たせる（10/8）</li>
               <li>差分は小さく、でも確実に（10/9–10/10）</li>
               <li>設定と起動は別問題。起動は1回、設定の後に（10/11 / A155）</li>

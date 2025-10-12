@@ -112,10 +112,10 @@ export default function FalcoPluginDevelopmentDays28to32En() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -178,7 +178,7 @@ export default function FalcoPluginDevelopmentDays28to32En() {
               <ul>
                 <li><strong>Unclear feature priorities</strong>: Wavering between advancing SQLi/XSS detection or prioritizing noise reduction.</li>
                 <li><strong>Blurred user persona</strong>: Should we target all Nginx users or focus on a subset of Falco users?</li>
-                <li><strong>Documentation chaos</strong>: README, Contributing Guide, and others scattered, unclear what's latest and what to prioritize.</li>
+                <li><strong>Documentation chaos</strong>: README, Contributing Guide, and others scattered, unclear what&apos;s latest and what to prioritize.</li>
               </ul>
 
               <h3>Review Process</h3>
@@ -190,16 +190,16 @@ export default function FalcoPluginDevelopmentDays28to32En() {
                 Opening a Markdown memo, I organized the following:
               </p>
               <ol>
-                <li><strong>Purpose</strong>: "Visualize Nginx attack patterns with Falco"</li>
-                <li><strong>MVP</strong>: "Support standard Nginx log format, detect SQLi/XSS/Path Traversal"</li>
-                <li><strong>Room</strong>: "Leave extension points for users to adapt to custom logs"</li>
+                <li><strong>Purpose</strong>: &quot;Visualize Nginx attack patterns with Falco&quot;</li>
+                <li><strong>MVP</strong>: &quot;Support standard Nginx log format, detect SQLi/XSS/Path Traversal&quot;</li>
+                <li><strong>Room</strong>: &quot;Leave extension points for users to adapt to custom logs&quot;</li>
               </ol>
 
               <h3>Results</h3>
               <ul>
-                <li>Documented as "Project Direction Memo" and added "Problems to Solve" to README.</li>
-                <li>Narrowed user persona to "Falco users who use Nginx."</li>
-                <li>Organized tasks into two tracks: "detection rule enhancement" and "noise reduction."</li>
+                <li>Documented as &quot;Project Direction Memo&quot; and added &quot;Problems to Solve&quot; to README.</li>
+                <li>Narrowed user persona to &quot;Falco users who use Nginx.&quot;</li>
+                <li>Organized tasks into two tracks: &quot;detection rule enhancement&quot; and &quot;noise reduction.&quot;</li>
               </ul>
 
               <div className="learning-box">

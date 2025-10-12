@@ -114,10 +114,10 @@ export default function FalcoPluginDevelopmentDays45to50() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -186,7 +186,7 @@ export default function FalcoPluginDevelopmentDays45to50() {
             
             <div className="lesson-box">
               <h3>学び</h3>
-              <p>テスト強化は"痛み"とセット。痛みを恐れず受け入れることこそ、本物の安定性への第一歩だ。</p>
+              <p>テスト強化は&quot;痛み&quot;とセット。痛みを恐れず受け入れることこそ、本物の安定性への第一歩だ。</p>
             </div>
           </section>
 

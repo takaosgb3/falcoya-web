@@ -117,11 +117,11 @@ export default function FalcoPluginDevelopmentDays57to61En() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
-            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
+            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -292,7 +292,7 @@ export default function FalcoPluginDevelopmentDays57to61En() {
             </div>
             <div className="document-item">
               <h3><code>PROBLEM_PATTERNS.md</code></h3>
-              <p>→ Added pattern "Falco went silent after changing output specifications without referring to documentation"</p>
+              <p>→ Added pattern &quot;Falco went silent after changing output specifications without referring to documentation&quot;</p>
             </div>
             <div className="document-item">
               <h3>Others</h3>
@@ -308,7 +308,7 @@ export default function FalcoPluginDevelopmentDays57to61En() {
               However, embedding this painful mistake into documentation and transforming it into a recurrence prevention mechanism was a significant harvest.
             </p>
             <p>
-              The most important thing in OSS development is <strong>"openly publishing and continuously improving."</strong>
+              The most important thing in OSS development is <strong>&quot;openly publishing and continuously improving.&quot;</strong>
               Next, we aim to publish the <strong>Phase 2 test report</strong> that comprehensively runs the expanded rules and attack patterns.
             </p>
           </section>

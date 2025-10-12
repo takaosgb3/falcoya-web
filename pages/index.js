@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '../utils/languageUtils'
 
@@ -66,7 +67,7 @@ export default function Home() {
                 patterns: {
                   title: "検知パターン例:",
                   items: [
-                    { code: "' OR 1=1", desc: "認証回避" },
+                    { code: "&apos; OR 1=1", desc: "認証回避" },
                     { code: "UNION SELECT", desc: "データ窃取" },
                     { code: "; DROP TABLE", desc: "データ破壊" }
                   ]
@@ -100,9 +101,9 @@ export default function Home() {
                 patterns: {
                   title: "検知パターン例:",
                   items: [
-                    { code: "<script>alert('xss')</script>", desc: "" },
+                    { code: "&lt;script&gt;alert(&apos;xss&apos;)&lt;/script&gt;", desc: "" },
                     { code: "javascript:void(0)", desc: "" },
-                    { code: "onerror=\"alert(1)\"", desc: "" }
+                    { code: "onerror=&quot;alert(1)&quot;", desc: "" }
                   ]
                 }
               },
@@ -284,7 +285,7 @@ export default function Home() {
                 patterns: {
                   title: "Detection Pattern Examples:",
                   items: [
-                    { code: "' OR 1=1", desc: "Authentication bypass" },
+                    { code: "&apos; OR 1=1", desc: "Authentication bypass" },
                     { code: "UNION SELECT", desc: "Data extraction" },
                     { code: "; DROP TABLE", desc: "Data destruction" }
                   ]
@@ -318,9 +319,9 @@ export default function Home() {
                 patterns: {
                   title: "Detection Pattern Examples:",
                   items: [
-                    { code: "<script>alert('xss')</script>", desc: "" },
+                    { code: "&lt;script&gt;alert(&apos;xss&apos;)&lt;/script&gt;", desc: "" },
                     { code: "javascript:void(0)", desc: "" },
-                    { code: "onerror=\"alert(1)\"", desc: "" }
+                    { code: "onerror=&quot;alert(1)&quot;", desc: "" }
                   ]
                 }
               },
@@ -697,9 +698,9 @@ export default function Home() {
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">{content[language].nav.github}</a></li>
             <li><a href="#installation">{content[language].nav.installation}</a></li>
             <li><a href="#detection">{content[language].nav.detection}</a></li>
-            <li><a href="/blog">{content[language].nav.blog}</a></li>
-            <li><a href="/news">{content[language].nav.news}</a></li>
-            <li><a href="/quality">{content[language].nav.quality}</a></li>
+            <li><Link href="/blog">{content[language].nav.blog}</Link></li>
+            <li><Link href="/news">{content[language].nav.news}</Link></li>
+            <li><Link href="/quality">{content[language].nav.quality}</Link></li>
           </ul>
           
           <div className="nav-controls">
@@ -726,9 +727,9 @@ export default function Home() {
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.github}</a></li>
             <li><a href="#installation" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.installation}</a></li>
             <li><a href="#detection" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.news}</a></li>
-            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.quality}</a></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{content[language].nav.news}</a></Link></li>
+            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{content[language].nav.quality}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -788,7 +789,7 @@ export default function Home() {
                 <div>&nbsp;</div>
                 <div><span className="key">Time:</span> <span className="value">2024-08-11T10:30:45.123Z</span></div>
                 <div><span className="key">Source IP:</span> <span className="value">192.168.1.100</span></div>
-                <div><span className="key">Request:</span> <span className="value">GET /?q=&lt;script&gt;alert('xss')&lt;/script&gt;</span></div>
+                <div><span className="key">Request:</span> <span className="value">GET /?q=&lt;script&gt;alert(&apos;xss&apos;)&lt;/script&gt;</span></div>
               </div>
             </div>
           </div>

@@ -49,7 +49,7 @@ export default function FalcoPluginDevelopmentDays68to72En() {
   return (
     <>
       <Head>
-        <title>Falco + Nginx Plugin Development: Falcoya's Days 68-72 - FALCOYA Blog</title>
+        <title>Falco + Nginx Plugin Development: Falcoya&apos;s Days 68-72 - FALCOYA Blog</title>
         <meta name="description" content="From zero detection rate to systematic improvements. The courage to visualize failure, how structure creates security, small improvements build stability, facing technical debt, and the power of accepting constraints. Five essential lessons from development." />
         <meta property="og:title" content="Falco + Nginx Plugin Development: Falcoya's Days 68-72" />
         <meta property="og:description" content="From zero detection rate to systematic improvements. The courage to visualize failure, how structure creates security, small improvements build stability, facing technical debt, and the power of accepting constraints." />
@@ -117,11 +117,11 @@ export default function FalcoPluginDevelopmentDays68to72En() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
-            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
+            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -176,7 +176,7 @@ export default function FalcoPluginDevelopmentDays68to72En() {
               I froze looking at the morning CI results. Detection rate was 0%, not even summary.json was being output.
             </p>
             <p>
-              <strong>"There's nothing more troublesome than tests that aren't running."</strong>
+              <strong>&quot;There&apos;s nothing more troublesome than tests that aren&apos;t running.&quot;</strong>
             </p>
             <p>
               TK said quietly. That calm voice gave me some relief.
@@ -191,7 +191,7 @@ export default function FalcoPluginDevelopmentDays68to72En() {
 
             <div className="lesson-box">
               <h3>Lesson</h3>
-              <p>The courage to visualize failure. Tests that show failure are more valuable than tests that don't run.</p>
+              <p>The courage to visualize failure. Tests that show failure are more valuable than tests that don&apos;t run.</p>
             </div>
           </section>
 
@@ -201,7 +201,7 @@ export default function FalcoPluginDevelopmentDays68to72En() {
               This day I immersed myself in organizing documentation. Requirements definition, implementation guide, task definition. I organized them into three layers and consolidated scattered files into <code>E2E_PHASE2_IMPLEMENTATION_GUIDE.md</code>.
             </p>
             <p>
-              <strong>"Now we can proceed without getting lost."</strong>
+              <strong>&quot;Now we can proceed without getting lost.&quot;</strong>
             </p>
             <p>
               TK smiled a little.
@@ -226,7 +226,7 @@ export default function FalcoPluginDevelopmentDays68to72En() {
               I fixed them one by one with PR #394-#401. Dynamic port allocation, directory creation, automatic copy and download, CLI independence, fallback implementation.
             </p>
             <p>
-              <strong>"Today's a full course meal."</strong>
+              <strong>&quot;Today&apos;s a full course meal.&quot;</strong>
             </p>
             <p>
               TK said jokingly. I kept desperately hitting.
@@ -252,7 +252,7 @@ export default function FalcoPluginDevelopmentDays68to72En() {
               I could delete 3,000 with parallel processing scripts, but 6,600 remained due to API rate limits.
             </p>
             <p>
-              <strong>"Cleanup is part of development too."</strong>
+              <strong>&quot;Cleanup is part of development too.&quot;</strong>
             </p>
             <p>
               TK said quietly. Those words resonated in my heart.
@@ -266,7 +266,7 @@ export default function FalcoPluginDevelopmentDays68to72En() {
 
             <div className="lesson-box">
               <h3>Lesson</h3>
-              <p>The resolve to face debt. It's important not to ignore technical debt but to systematically eliminate it.</p>
+              <p>The resolve to face debt. It&apos;s important not to ignore technical debt but to systematically eliminate it.</p>
             </div>
           </section>
 
@@ -276,7 +276,7 @@ export default function FalcoPluginDevelopmentDays68to72En() {
               It became clear that Docker in Docker was completely unusable in Kubernetes environments.
             </p>
             <p>
-              <strong>"We have no choice but to switch here."</strong>
+              <strong>&quot;We have no choice but to switch here.&quot;</strong>
             </p>
             <p>
               TK's voice pushed me forward.

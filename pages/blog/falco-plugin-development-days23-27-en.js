@@ -112,10 +112,10 @@ export default function FalcoPluginDevelopmentDays23to27En() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -160,7 +160,7 @@ export default function FalcoPluginDevelopmentDays23to27En() {
                 <li>Attempted to stabilize CI/CD but created an infinite loop and fell back into the swamp.</li>
                 <li>Was beaten down by Nginx log diversity in plugin structure prototyping.</li>
                 <li>Struggled with detection rule design due to insufficient conditions to avoid false positives.</li>
-                <li>Still, I'll never forget the joy when Falco first issued an "ALERT."</li>
+                <li>Still, I&apos;ll never forget the joy when Falco first issued an &quot;ALERT.&quot;</li>
               </ul>
               <p>
                 I painfully realized that OSS needs not just "working code" but "shareable records of failures and improvements."

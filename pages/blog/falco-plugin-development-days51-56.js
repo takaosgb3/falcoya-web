@@ -117,11 +117,11 @@ export default function FalcoPluginDevelopmentDays51to56() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
-            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
+            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -252,7 +252,7 @@ export default function FalcoPluginDevelopmentDays51to56() {
           </section>
 
           <section className="content-section">
-            <h2>Day 56（09/04）— 多層の"網"と統合ドキュメント</h2>
+            <h2>Day 56（09/04）— 多層の&quot;網&quot;と統合ドキュメント</h2>
             <p>
               この日は、これまでの調整を踏まえて <strong>ルールと攻撃パターンを一気に拡充</strong>し、さらにその全容をドキュメントにまとめた。
             </p>
@@ -280,7 +280,7 @@ export default function FalcoPluginDevelopmentDays51to56() {
             
             <div className="lesson-box">
               <h3>学び</h3>
-              <p>Falcoの真骨頂は多層の"網"。37ルール・810+パターンの緻密な設計により、多種多様な攻撃を確実に捕捉できる。</p>
+              <p>Falcoの真骨頂は多層の&quot;網&quot;。37ルール・810+パターンの緻密な設計により、多種多様な攻撃を確実に捕捉できる。</p>
             </div>
           </section>
 

@@ -49,7 +49,7 @@ export default function FalcoPluginDevelopmentDays78to84En() {
   return (
     <>
       <Head>
-        <title>Falco + Nginx Plugin Development: Falcoya's Days 78-84 - FALCOYA Blog</title>
+        <title>Falco + Nginx Plugin Development: Falcoya&apos;s Days 78-84 - FALCOYA Blog</title>
         <meta name="description" content="The hard wall of environment differences and startup sequence. Kubernetes compatibility completion, non-privileged design, ENV-MIGRATE expansion, and evolution from Pattern A154 to A155. Seven days of learning about separation of configuration and startup design." />
         <meta property="og:title" content="Falco + Nginx Plugin Development: Falcoya's Days 78-84" />
         <meta property="og:description" content="The hard wall of environment differences and startup sequence. Kubernetes compatibility completion, non-privileged design, ENV-MIGRATE expansion, and evolution from Pattern A154 to A155." />
@@ -117,11 +117,11 @@ export default function FalcoPluginDevelopmentDays78to84En() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
-            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
+            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -190,7 +190,7 @@ export default function FalcoPluginDevelopmentDays78to84En() {
           <section className="content-section">
             <h2>Day 79 (Oct 6) — ENV-MIGRATE Expansion and Non-Privileged Design</h2>
             <p>
-              ENV-MIGRATE-004/005. Assuming non-privileged containers, we added environment detection logic to each Category Runner (sqli / xss / cmd_injection / path_traversal / emerging_threats). Ports automatically switch from 80 to 8080, eliminating the need for root and avoiding conflicts. The purpose was to <strong>"absorb environment differences upfront"</strong> to eliminate downstream failures. As a result, we confirmed the same procedure works in Pods, locally, and on self-hosted runners.
+              ENV-MIGRATE-004/005. Assuming non-privileged containers, we added environment detection logic to each Category Runner (sqli / xss / cmd_injection / path_traversal / emerging_threats). Ports automatically switch from 80 to 8080, eliminating the need for root and avoiding conflicts. The purpose was to <strong>&quot;absorb environment differences upfront&quot;</strong> to eliminate downstream failures. As a result, we confirmed the same procedure works in Pods, locally, and on self-hosted runners.
             </p>
             <p>
               TK: "Resilient systems are determined by 'initial assumptions.'" Just a few lines of branching eliminated many downstream errors.
@@ -218,7 +218,7 @@ export default function FalcoPluginDevelopmentDays78to84En() {
           </section>
 
           <section className="content-section">
-            <h2>Day 81 (Oct 8) — Documenting "Why It Works"</h2>
+            <h2>Day 81 (Oct 8) — Documenting &quot;Why It Works&quot;</h2>
             <p>
               On this day, we added progress and implementation procedures to <code>E2E_NGINX_MIGRATION_TASKS.md</code>, and organized port constraints, log paths, and startup procedures in <code>KUBERNETES_POD_COMPATIBILITY.md</code>.
             </p>
@@ -253,7 +253,7 @@ export default function FalcoPluginDevelopmentDays78to84En() {
           <section className="content-section">
             <h2>Day 83 (Oct 10) — Integration Test Re-run and Re-review Request</h2>
             <p>
-              Added ENV-MIGRATE-004/005 fixes to the PR. Re-executed TEST-VERIFY-001, added results to PR comments, and requested re-confirmation. In terms of work status, uncompleted checklist items still remained, and work was continuing. The overall flow had come together, but I had a feeling that we were still <strong>"in the finishing phase."</strong>
+              Added ENV-MIGRATE-004/005 fixes to the PR. Re-executed TEST-VERIFY-001, added results to PR comments, and requested re-confirmation. In terms of work status, uncompleted checklist items still remained, and work was continuing. The overall flow had come together, but I had a feeling that we were still <strong>&quot;in the finishing phase.&quot;</strong>
             </p>
             <p>
               TK: "Finishing takes time." I watched the logs while holding the reality of "not yet done."
@@ -266,7 +266,7 @@ export default function FalcoPluginDevelopmentDays78to84En() {
           </section>
 
           <section className="content-section">
-            <h2>Day 84 (Oct 11) — A154→A155: Why Configuration Correct but Doesn't Work</h2>
+            <h2>Day 84 (Oct 11) — A154→A155: Why Configuration Correct but Doesn&apos;t Work</h2>
             <p>
               In the morning, PR #491 (Pattern #A154 fix) was merged.
               Environment detection logic was added to Phase 2's Normalization step,
@@ -342,7 +342,7 @@ export default function FalcoPluginDevelopmentDays78to84En() {
 
             <div className="lesson-box">
               <h3>Lesson</h3>
-              <p>Configuration and startup are separate problems. Start once, after configuration. The importance of design that doesn't break sequence.</p>
+              <p>Configuration and startup are separate problems. Start once, after configuration. The importance of design that doesn&apos;t break sequence.</p>
             </div>
           </section>
 
@@ -354,7 +354,7 @@ export default function FalcoPluginDevelopmentDays78to84En() {
             <ul className="task-list">
               <li>Absorb environment dependencies at the entry point (10/5)</li>
               <li>Decide non-privileged and port switching at the first branch (10/6)</li>
-              <li>"Quiet tests" are the greatest reward (10/7)</li>
+              <li>&quot;Quiet tests&quot; are the greatest reward (10/7)</li>
               <li>Document why it worked to ensure reproducibility (10/8)</li>
               <li>Small differences, but certain (10/9–10/10)</li>
               <li>Configuration and startup are separate problems. Start once, after configuration (10/11 / A155)</li>

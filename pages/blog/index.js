@@ -422,13 +422,13 @@ export default function BlogIndex() {
           
           <div className="nav-controls">
             <div className="language-switcher">
-              <button 
+              <button
                 className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
                 onClick={() => setLanguage('ja')}
               >
                 日本語
               </button>
-              <button 
+              <button
                 className={`lang-btn ${language === 'en' ? 'active' : ''}`}
                 onClick={() => setLanguage('en')}
               >
@@ -442,11 +442,11 @@ export default function BlogIndex() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.detection}</a></li>
-            <li><a href="/blog" className="active" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.news}</a></li>
-            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.quality}</a></li>
+            <li><Link href="/#installation" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.installation}</Link></li>
+            <li><Link href="/#detection" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.detection}</Link></li>
+            <li><Link href="/blog" className="active" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</Link></li>
+            <li><Link href="/news" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.news}</Link></li>
+            <li><Link href="/quality" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.quality}</Link></li>
           </ul>
         </div>
       </nav>

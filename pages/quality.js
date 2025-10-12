@@ -333,7 +333,7 @@ export default function Quality() {
                   <h3>{currentContent.detectionExamples.sqlInjection.title}</h3>
                   <div className="payload">
                     <strong>Payload:</strong>
-                    <code>/users?id=1' OR '1'='1</code>
+                    <code>/users?id=1&apos; OR &apos;1&apos;=&apos;1</code>
                   </div>
                   <div className="detection-result">
                     <strong>{currentContent.detectionExamples.sqlInjection.result}</strong>

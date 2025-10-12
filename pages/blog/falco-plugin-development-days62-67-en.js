@@ -117,11 +117,11 @@ export default function FalcoPluginDevelopmentDays62to67En() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
-            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
+            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -182,7 +182,7 @@ export default function FalcoPluginDevelopmentDays62to67En() {
             </p>
             <p>
               TK pointed out the same thing.
-              <strong>"Continuing this won't lead to an exit. Let's systematize it."</strong>
+              <strong>&quot;Continuing this won&apos;t lead to an exit. Let&apos;s systematize it.&quot;</strong>
               Taking those words to heart, I decided to shift from handling improvements ad-hoc to organizing them systematically.
             </p>
 
@@ -214,7 +214,7 @@ export default function FalcoPluginDevelopmentDays62to67En() {
 
             <div className="lesson-box">
               <h3>Lesson</h3>
-              <p>Matrix visualization enables understanding of the whole picture. A bird's-eye view is essential for strategic improvements.</p>
+              <p>Matrix visualization enables understanding of the whole picture. A bird&apos;s-eye view is essential for strategic improvements.</p>
             </div>
           </section>
 
@@ -225,7 +225,7 @@ export default function FalcoPluginDevelopmentDays62to67En() {
               SQLi has nearly 300 variations, some almost identical while others have completely different properties.
             </p>
             <p>
-              So I began organizing representative patterns and their derivatives, classifying them by <strong>"representativeness" and "importance."</strong>
+              So I began organizing representative patterns and their derivatives, classifying them by <strong>&quot;representativeness&quot; and &quot;importance.&quot;</strong>
               I repeated the tedious work of sorting while scrutinizing subtle differences.
             </p>
             <p>

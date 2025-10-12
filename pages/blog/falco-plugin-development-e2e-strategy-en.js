@@ -47,7 +47,7 @@ export default function FalcoPluginDevelopmentE2EStrategyEn() {
   return (
     <>
       <Head>
-        <title>Special Edition: The Eve of E2E Testing — Falcoya's Strategy Meeting - FALCOYA Blog</title>
+        <title>Special Edition: The Eve of E2E Testing — Falcoya&apos;s Strategy Meeting - FALCOYA Blog</title>
         <meta name="description" content="The challenge of comprehensive E2E testing. Days of refining design and specifications, the scale of testing, and commitment as OSS. The story of the night before Falcoya challenges the true boss battle of E2E testing." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Special Edition: The Eve of E2E Testing — Falcoya's Strategy Meeting" />
@@ -112,10 +112,10 @@ export default function FalcoPluginDevelopmentE2EStrategyEn() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
+            <li><Link href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</Link></li>
+            <li><Link href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</Link></li>
+            <li><Link href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</Link></li>
+            <li><Link href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</Link></li>
           </ul>
         </div>
       </nav>
@@ -260,7 +260,7 @@ export default function FalcoPluginDevelopmentE2EStrategyEn() {
             </section>
 
             <section className="content-section">
-              <h2>Setting the Stage for What's Next</h2>
+              <h2>Setting the Stage for What&apos;s Next</h2>
               <p>
                 I took a deep breath.<br />
                 Everything is ready. We have the design and specifications. The advisor's wisdom and my partner's strategy.
@@ -268,7 +268,7 @@ export default function FalcoPluginDevelopmentE2EStrategyEn() {
               
               <p>
                 But——deep inside, I know.<br />
-                <strong>What I'm about to challenge surpasses everything so far.</strong>
+                <strong>What I&apos;m about to challenge surpasses everything so far.</strong>
               </p>
               
               <p>

@@ -119,10 +119,10 @@ export default function FalcoNginxTutorial() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
+            <li><Link href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</Link></li>
+            <li><Link href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</Link></li>
+            <li><Link href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</Link></li>
+            <li><Link href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</Link></li>
           </ul>
         </div>
       </nav>
@@ -297,7 +297,7 @@ export default function FalcoNginxTutorial() {
                         <td><strong>SQL Injection</strong></td>
                         <td><span className="severity critical">Critical</span></td>
                         <td>クエリパラメータ</td>
-                        <td><code>' OR '1'='1</code></td>
+                        <td><code>&apos; OR &apos;1&apos;=&apos;1</code></td>
                       </tr>
                       <tr>
                         <td><strong>XSS</strong></td>
@@ -476,7 +476,7 @@ export default function FalcoNginxTutorial() {
                   </div>
                   
                   <div className="attack-explanation">
-                    <p><strong>URLデコード後:</strong> <code>' OR '1'='1</code></p>
+                    <p><strong>URLデコード後:</strong> <code>&apos; OR &apos;1&apos;=&apos;1</code></p>
                     <p>この攻撃は、SQL文の論理条件を常に真にして認証を回避しようとします。</p>
                   </div>
                   
@@ -591,7 +591,7 @@ export default function FalcoNginxTutorial() {
                     <div className="step">
                       <h5>3. 動作確認</h5>
                       <div className="code-block">
-                        <pre><code>curl "http://localhost/admin/" -H "User-Agent: testbot"</code></pre>
+                        <pre><code>curl &quot;http://localhost/admin/&quot; -H &quot;User-Agent: testbot&quot;</code></pre>
                       </div>
                     </div>
                   </div>

@@ -49,7 +49,7 @@ export default function FalcoPluginDevelopmentDays73to77En() {
   return (
     <>
       <Head>
-        <title>Falco + Nginx Plugin Development: Falcoya's Days 73-77 - FALCOYA Blog</title>
+        <title>Falco + Nginx Plugin Development: Falcoya&apos;s Days 73-77 - FALCOYA Blog</title>
         <meta name="description" content="From small controls to recovery design. Batch timeout countermeasures, nginx environment changes, intersection of dual fixes, designing recovery in tests, and summary.html generation. Five days of development lessons." />
         <meta property="og:title" content="Falco + Nginx Plugin Development: Falcoya's Days 73-77" />
         <meta property="og:description" content="From small controls to recovery design. Batch timeout countermeasures, nginx environment changes, intersection of dual fixes, designing recovery in tests, and summary.html generation." />
@@ -117,11 +117,11 @@ export default function FalcoPluginDevelopmentDays73to77En() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
-            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
+            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -312,7 +312,7 @@ export default function FalcoPluginDevelopmentDays73to77En() {
 
             <div className="lesson-box">
               <h3>Lesson</h3>
-              <p>Tests become the team's language. Visualization creates shared understanding.</p>
+              <p>Tests become the team&apos;s language. Visualization creates shared understanding.</p>
             </div>
           </section>
 
@@ -326,7 +326,7 @@ export default function FalcoPluginDevelopmentDays73to77En() {
               <li>Courage to question assumptions prevents troubles (9/28)</li>
               <li>The order of fixes determines success (9/28 evening)</li>
               <li>Stability is designing recovery (9/30)</li>
-              <li>Tests become the team's language (10/3)</li>
+              <li>Tests become the team&apos;s language (10/3)</li>
             </ul>
           </section>
 

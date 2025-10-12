@@ -119,10 +119,10 @@ export default function FalcoNginxTutorialEn() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -297,7 +297,7 @@ export default function FalcoNginxTutorialEn() {
                         <td><strong>SQL Injection</strong></td>
                         <td><span className="severity critical">Critical</span></td>
                         <td>Query Parameters</td>
-                        <td><code>' OR '1'='1</code></td>
+                        <td><code>&apos; OR &apos;1&apos;=&apos;1</code></td>
                       </tr>
                       <tr>
                         <td><strong>XSS</strong></td>
@@ -471,11 +471,11 @@ export default function FalcoNginxTutorialEn() {
                 <div className="attack-demo">
                   <div className="code-block">
                     <div className="code-header">SQL Injection Attack Command</div>
-                    <pre><code>curl "http://localhost/search.php?q=%27%20OR%20%271%27%3D%271"</code></pre>
+                    <pre><code>curl &quot;http://localhost/search.php?q=%27%20OR%20%271%27%3D%271&quot;</code></pre>
                   </div>
                   
                   <div className="attack-explanation">
-                    <p><strong>After URL decoding:</strong> <code>' OR '1'='1</code></p>
+                    <p><strong>After URL decoding:</strong> <code>&apos; OR &apos;1&apos;=&apos;1</code></p>
                     <p>This attack attempts to bypass authentication by making the logical condition of the SQL statement always true.</p>
                   </div>
                   
@@ -491,7 +491,7 @@ export default function FalcoNginxTutorialEn() {
                 <div className="attack-demo">
                   <div className="code-block">
                     <div className="code-header">XSS Attack Command</div>
-                    <pre><code>curl "http://localhost/search.php?q=%3Cscript%3Ealert(1)%3C/script%3E"</code></pre>
+                    <pre><code>curl &quot;http://localhost/search.php?q=%3Cscript%3Ealert(1)%3C/script%3E&quot;</code></pre>
                   </div>
                   
                   <div className="attack-explanation">
@@ -590,7 +590,7 @@ export default function FalcoNginxTutorialEn() {
                     <div className="step">
                       <h5>3. Operation Verification</h5>
                       <div className="code-block">
-                        <pre><code>curl "http://localhost/admin/" -H "User-Agent: testbot"</code></pre>
+                        <pre><code>curl &quot;http://localhost/admin/&quot; -H &quot;User-Agent: testbot&quot;</code></pre>
                       </div>
                     </div>
                   </div>

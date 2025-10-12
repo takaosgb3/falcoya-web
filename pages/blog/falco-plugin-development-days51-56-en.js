@@ -117,11 +117,11 @@ export default function FalcoPluginDevelopmentDays51to56En() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><a href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></li>
-            <li><a href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></li>
-            <li><a href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></li>
-            <li><a href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></li>
-            <li><a href="/quality" onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></li>
+            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
+            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
+            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
+            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].quality}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -252,7 +252,7 @@ export default function FalcoPluginDevelopmentDays51to56En() {
           </section>
 
           <section className="content-section">
-            <h2>Day 56 (09/04) — Multi-layered "Net" and Integrated Documentation</h2>
+            <h2>Day 56 (09/04) — Multi-layered &quot;Net&quot; and Integrated Documentation</h2>
             <p>
               On this day, based on all previous adjustments, we <strong>massively expanded rules and attack patterns</strong> and documented the entire scope.
             </p>
@@ -279,7 +279,7 @@ export default function FalcoPluginDevelopmentDays51to56En() {
             
             <div className="lesson-box">
               <h3>Learning</h3>
-              <p>Falco's essence is the multi-layered "net". With meticulous design of 37 rules and 810+ patterns, diverse attacks can be reliably captured.</p>
+              <p>Falco&apos;s essence is the multi-layered &quot;net&quot;. With meticulous design of 37 rules and 810+ patterns, diverse attacks can be reliably captured.</p>
             </div>
           </section>
 
@@ -305,7 +305,7 @@ export default function FalcoPluginDevelopmentDays51to56En() {
             </div>
             <div className="document-item">
               <h3><code>PROBLEM_PATTERNS.md</code></h3>
-              <p>→ Newly added "false positive issues" and "undetected scenarios"</p>
+              <p>→ Newly added &quot;false positive issues&quot; and &quot;undetected scenarios&quot;</p>
             </div>
             <div className="document-item">
               <h3><code>IMPLEMENTED_RULES_OVERVIEW.md</code></h3>
@@ -316,7 +316,7 @@ export default function FalcoPluginDevelopmentDays51to56En() {
           <section className="content-section">
             <h2>Summary</h2>
             <p>
-              Days 51-56 had <strong>"How to demonstrate OSS transparency"</strong> as a major theme.
+              Days 51-56 had <strong>&quot;How to demonstrate OSS transparency&quot;</strong> as a major theme.
               Particularly with the E2E test report publication, we demonstrated OSS honesty by publishing results of 6 rules and 18 patterns including both successes and undetected cases.
             </p>
             <p>
