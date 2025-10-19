@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days85-91',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の85日目から91日目',
+      description: '設計の順序が安定を生む。A155修正の実装、A170クリティカルバグの発見と修正、残存プロセスとポート競合対策、そして再現性の確認。順序を設計することで"説明できる安定"へと進化した7日間の記録。',
+      date: '2025-10-19',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'Kubernetes', 'Pattern修正', '起動設計', 'タイミング設計'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days85-91'
+    },
+    {
       id: 'falco-plugin-development-days78-84',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の78日目から84日目',
       description: '環境差異と起動順序という硬い壁。Kubernetes対応の仕上げ、非特権設計、ENV-MIGRATE拡張、そしてPattern A154からA155への進化。設定と起動の分離設計を学んだ7日間の記録。',
@@ -157,6 +167,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days85-91-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 85-91',
+      description: 'The order of design creates stability. A155 fix implementation, A170 critical bug discovery and fix, residual process and port conflict measures, and reproducibility verification. Seven days of evolution toward "explainable stability" through designing order.',
+      date: '2025-10-19',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Kubernetes', 'Pattern Fix', 'Startup Design', 'Timing Design'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days85-91-en'
+    },
     {
       id: 'falco-plugin-development-days78-84-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 78-84',

@@ -30,6 +30,24 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-10-19-oss-development-blog-part14",
+          date: "2025-10-19",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の85日目から91日目」を公開",
+          content: "設計の順序が安定を生む。A155修正の実装、A170クリティカルバグの発見と修正、残存プロセスとポート競合対策、そして再現性の確認。順序を設計することで\"説明できる安定\"へと進化した7日間の記録を公開しました。",
+          highlights: [
+            "A155修正の実装開始（起動試行削除、Pre-flight check強化）",
+            "Pattern #A170 発見と記録（環境検出と設定順序の不整合）",
+            "A170クリティカルバグの修正（determine_environment優先実行）",
+            "残存プロセスとポート競合対策（quit→sleep→start）",
+            "ドキュメント整備（E2E_PHASE2_IMPLEMENTATION_GUIDE.md、E2E_NGINX_MIGRATION_TASKS.md、PROBLEM_PATTERNS.md）",
+            "全体検証と再現性の確認（Run #18432286002）",
+            "タイミング設計の課題整理（待機処理とリトライ導入）"
+          ],
+          link: "/blog/falco-plugin-development-days85-91"
+        },
+        {
           id: "2025-10-12-oss-development-blog-part13",
           date: "2025-10-12",
           category: "feature",
@@ -340,6 +358,24 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-10-19-oss-development-blog-part14-en",
+          date: "2025-10-19",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 85-91\" Published",
+          content: "The order of design creates stability. A155 fix implementation, A170 critical bug discovery and fix, residual process and port conflict measures, and reproducibility verification. Seven days of evolution toward \"explainable stability\" through designing order.",
+          highlights: [
+            "A155 fix implementation start (startup attempt removal, Pre-flight check enhancement)",
+            "Pattern #A170 discovery and recording (environment detection and configuration order mismatch)",
+            "A170 critical bug fix (determine_environment priority execution)",
+            "Residual process and port conflict measures (quit→sleep→start)",
+            "Documentation maintenance (E2E_PHASE2_IMPLEMENTATION_GUIDE.md, E2E_NGINX_MIGRATION_TASKS.md, PROBLEM_PATTERNS.md)",
+            "Overall verification and reproducibility confirmation (Run #18432286002)",
+            "Timing design task organization (wait processing and retry introduction)"
+          ],
+          link: "/blog/falco-plugin-development-days85-91-en"
+        },
         {
           id: "2025-10-12-oss-development-blog-part13-en",
           date: "2025-10-12",
