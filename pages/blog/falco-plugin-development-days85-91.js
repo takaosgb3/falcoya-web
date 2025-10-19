@@ -50,7 +50,7 @@ export default function FalcoPluginDevelopmentDays85to91() {
     <>
       <Head>
         <title>Falco + Nginx プラグイン開発：Falcoya君の85日目から91日目 - FALCOYA Blog</title>
-        <meta name="description" content="設計の順序が安定を生む。A155修正の実装、A170クリティカルバグの発見と修正、残存プロセスとポート競合対策、そして再現性の確認。順序を設計することで"説明できる安定"へと進化した7日間の記録。" />
+        <meta name="description" content="設計の順序が安定を生む。A155修正の実装、A170クリティカルバグの発見と修正、残存プロセスとポート競合対策、そして再現性の確認。順序を設計することで&quot;説明できる安定&quot;へと進化した7日間の記録。" />
         <meta property="og:title" content="Falco + Nginx プラグイン開発：Falcoya君の85日目から91日目" />
         <meta property="og:description" content="設計の順序が安定を生む。A155修正の実装、A170クリティカルバグの発見と修正、残存プロセスとポート競合対策、そして再現性の確認。" />
         <meta property="og:type" content="article" />
