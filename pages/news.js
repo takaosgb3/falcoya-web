@@ -30,6 +30,24 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-10-26-oss-development-blog-part15",
+          date: "2025-10-26",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の92日目から98日目」を公開",
+          content: "環境が安定を作る。A170修正版の検証、再試行ロジック導入、Pattern A171発見と修正、Falco出力制限の理解、Pattern A216統合テスト（検知率74.4%）。環境設計もアーキテクチャの一部である7日間の記録を公開しました。",
+          highlights: [
+            "A170修正版の再テストと分析（Pre-flight check 通過、timeout 原因分析）",
+            "再試行ロジックの導入（curl 失敗時に最大3回・3秒間隔で再実行）",
+            "Pattern #A171 の発見（grep の正規表現解釈問題）",
+            "A171修正と再検証（正規表現から単純な文字列検索へ変更）",
+            "テスト全体の整理（環境・設定・論理の3分類）",
+            "Falco の出力制限を発見（rate: .03333 → 1, max_burst: 1 → 100）",
+            "Pattern #A216 統合テスト（125パターン、検知率74.4%）"
+          ],
+          link: "/blog/falco-plugin-development-days92-98"
+        },
+        {
           id: "2025-10-19-oss-development-blog-part14",
           date: "2025-10-19",
           category: "feature",
@@ -358,6 +376,24 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-10-26-oss-development-blog-part15-en",
+          date: "2025-10-26",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 92-98\" Published",
+          content: "Environment creates stability. A170 fix verification, retry logic introduction, Pattern A171 discovery and fix, understanding Falco output limits, Pattern A216 integration test (74.4% detection rate). Seven days of learning that environment design is part of architecture.",
+          highlights: [
+            "A170 fix re-testing and analysis (Pre-flight check passed, timeout cause analysis)",
+            "Retry logic introduction (curl failure retry up to 3 times at 3-second intervals)",
+            "Pattern #A171 discovery (grep regular expression interpretation issue)",
+            "A171 fix and re-verification (changed from regex to simple string search)",
+            "Overall test organization (environment, configuration, logic classification)",
+            "Falco output limit discovery (rate: .03333 → 1, max_burst: 1 → 100)",
+            "Pattern #A216 integration test (125 patterns, 74.4% detection rate)"
+          ],
+          link: "/blog/falco-plugin-development-days92-98-en"
+        },
         {
           id: "2025-10-19-oss-development-blog-part14-en",
           date: "2025-10-19",

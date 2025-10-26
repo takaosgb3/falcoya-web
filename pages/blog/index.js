@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days92-98',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の92日目から98日目',
+      description: '環境が安定を作る。A170修正版の検証、再試行ロジック導入、Pattern A171発見と修正、Falco出力制限の理解、Pattern A216統合テスト（検知率74.4%）。環境設計もアーキテクチャの一部である7日間の記録。',
+      date: '2025-10-26',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'Pattern修正', '環境設計', '出力制御'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days92-98'
+    },
+    {
       id: 'falco-plugin-development-days85-91',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の85日目から91日目',
       description: '設計の順序が安定を生む。A155修正の実装、A170クリティカルバグの発見と修正、残存プロセスとポート競合対策、そして再現性の確認。順序を設計することで"説明できる安定"へと進化した7日間の記録。',
@@ -167,6 +177,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days92-98-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 92-98',
+      description: 'Environment creates stability. A170 fix verification, retry logic introduction, Pattern A171 discovery and fix, understanding Falco output limits, Pattern A216 integration test (74.4% detection rate). Seven days of learning that environment design is part of architecture.',
+      date: '2025-10-26',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'Pattern Fix', 'Environment Design', 'Output Control'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days92-98-en'
+    },
     {
       id: 'falco-plugin-development-days85-91-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 85-91',
