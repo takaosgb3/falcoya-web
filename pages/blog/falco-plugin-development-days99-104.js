@@ -336,7 +336,7 @@ export default function () &#123;<br />
           </section>
 
           <section className="content-section">
-            <h2>Day 104（10/31 夜）— Terraformで動かす環境を設計する</h2>
+            <h2>Day 104（11/1）— Terraformで動かす環境を設計する</h2>
             <p>
               夜、TerraformでAWS環境をデプロイした。<br />
               VPC、サブネット、セキュリティグループを自動構築し、<br />

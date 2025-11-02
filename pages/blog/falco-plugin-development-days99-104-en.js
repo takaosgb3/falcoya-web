@@ -336,9 +336,9 @@ export default function () &#123;<br />
           </section>
 
           <section className="content-section">
-            <h2>Day 104 (10/31 Evening) — Designing the Environment with Terraform</h2>
+            <h2>Day 104 (November 1) — Designing the Environment with Terraform</h2>
             <p>
-              In the evening, we deployed an AWS environment with Terraform.<br />
+              We deployed an AWS environment with Terraform.<br />
               We automatically built VPC, subnet, and security groups,<br />
               launching an EC2 instance with k6 installed.
             </p>
