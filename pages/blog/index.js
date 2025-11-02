@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days99-104',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の99日目から104日目',
+      description: '車輪をやめて、走るための設計へ。GitHub Actionsのキャッシュ問題解決、k6への全面移行、テスト基盤の再設計、そしてTerraformによる環境のコード化。自作の仕組みを手放して、動き続ける設計への6日間の記録。',
+      date: '2025-11-02',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'k6', 'Terraform', '環境設計'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days99-104'
+    },
+    {
       id: 'falco-plugin-development-days92-98',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の92日目から98日目',
       description: '環境が安定を作る。A170修正版の検証、再試行ロジック導入、Pattern A171発見と修正、Falco出力制限の理解、Pattern A216統合テスト（検知率74.4%）。環境設計もアーキテクチャの一部である7日間の記録。',
@@ -177,6 +187,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days99-104-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 99-104',
+      description: 'Stop reinventing the wheel, design for continuous operation. Solving GitHub Actions cache issues, full migration to k6, test infrastructure redesign, and environment codification with Terraform. Six days of evolution from building custom mechanisms to designing sustainable systems.',
+      date: '2025-11-02',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'k6', 'Terraform', 'Environment Design'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days99-104-en'
+    },
     {
       id: 'falco-plugin-development-days92-98-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 92-98',

@@ -30,6 +30,24 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-11-02-oss-development-blog-part16",
+          date: "2025-11-02",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の99日目から104日目」を公開",
+          content: "車輪をやめて、走るための設計へ。GitHub Actionsのキャッシュ問題解決、k6への全面移行、テスト基盤の再設計、そしてTerraformによる環境のコード化。自作の仕組みを手放して、動き続ける設計への6日間の記録を公開しました。",
+          highlights: [
+            "GitHub Actions キャッシュ問題の解決（古いバイナリ復元問題）",
+            "E2Eテスト基盤をcurl + jqスクリプトからk6へ全面移行",
+            "テスト構成40%軽量化、実行時間が従来の半分に",
+            "旧Phase1/Phase2ワークフロー統合とjqによるFalcoログ突合自動化",
+            "k6-summary.htmlによる可視化レポート生成",
+            "TerraformでAWS環境をコード化（VPC/Subnet/SG/EC2/k6構築）",
+            "環境設計もアーキテクチャの一部であることを学んだ週"
+          ],
+          link: "/blog/falco-plugin-development-days99-104"
+        },
+        {
           id: "2025-10-26-oss-development-blog-part15",
           date: "2025-10-26",
           category: "feature",
@@ -376,6 +394,24 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-11-02-oss-development-blog-part16-en",
+          date: "2025-11-02",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 99-104\" Published",
+          content: "Stop reinventing the wheel, design for continuous operation. Solving GitHub Actions cache issues, full migration to k6, test infrastructure redesign, and environment codification with Terraform. Six days of evolution from building custom mechanisms to designing sustainable systems.",
+          highlights: [
+            "Resolved GitHub Actions cache issue (old binary restoration problem)",
+            "Full migration of E2E test infrastructure from curl + jq scripts to k6",
+            "40% lighter test configuration, execution time cut in half",
+            "Integrated old Phase1/Phase2 workflows with automated Falco log cross-checking via jq",
+            "k6-summary.html visualization report generation",
+            "Codified AWS environment with Terraform (VPC/Subnet/SG/EC2/k6 setup)",
+            "A week of learning that environment design is part of architecture"
+          ],
+          link: "/blog/falco-plugin-development-days99-104-en"
+        },
         {
           id: "2025-10-26-oss-development-blog-part15-en",
           date: "2025-10-26",
