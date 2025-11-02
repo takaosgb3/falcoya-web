@@ -320,14 +320,6 @@ export default function () &#123;<br />
               creating <code>k6-summary.html</code> where attack pattern results are visible at a glance.<br />
               Failures are highlighted in red, successful detections in green.
             </p>
-
-            <div className="article-image">
-              <img
-                src="/img/blog/blog17-k6.png"
-                alt="k6 Report Visualization"
-              />
-            </div>
-
             <p>
               Falco detection logs aligned with the timeline,<br />
               and seeing &quot;test results&quot; and &quot;Falco responses&quot; side by side was spectacular.
@@ -355,6 +347,14 @@ export default function () &#123;<br />
               Logs output by Falco and k6 matched perfectly,<br />
               and the tests never failed once.
             </p>
+
+            <div className="article-image">
+              <img
+                src="/img/blog/blog17-k6.png"
+                alt="E2E Test Execution with k6"
+              />
+            </div>
+
             <p>
               &quot;This is what it means for the environment to be your ally.&quot;<br />
               TK said.

@@ -320,14 +320,6 @@ export default function () &#123;<br />
               各攻撃パターンの結果を一目で見られる <code>k6-summary.html</code> を作成。<br />
               失敗箇所は赤、検知成功は緑でハイライトされる。
             </p>
-
-            <div className="article-image">
-              <img
-                src="/img/blog/blog17-k6.png"
-                alt="k6レポートの可視化"
-              />
-            </div>
-
             <p>
               Falcoの検知ログと時系列が一致し、<br />
               &quot;テスト結果&quot;と&quot;Falcoの反応&quot;が並ぶ光景は圧巻だった。
@@ -355,6 +347,14 @@ export default function () &#123;<br />
               Falcoとk6が出力するログは完全に一致し、<br />
               テストは一度も落ちなかった。
             </p>
+
+            <div className="article-image">
+              <img
+                src="/img/blog/blog17-k6.png"
+                alt="k6によるE2Eテストの実行状況"
+              />
+            </div>
+
             <p>
               「これだよ、環境が&quot;味方になる&quot;っていうのは。」<br />
               TKが言った。
