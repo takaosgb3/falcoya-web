@@ -262,7 +262,7 @@ export default function () &#123;<br />
           </section>
 
           <section className="content-section">
-            <h2>Day 101 (10/30) — Test Redesign</h2>
+            <h2>Day 101 (October 28) — Test Redesign</h2>
             <p>
               We redesigned the E2E tests that were split into Phase 1 and Phase 2<br />
               using k6 as the foundation.
@@ -291,7 +291,7 @@ export default function () &#123;<br />
           </section>
 
           <section className="content-section">
-            <h2>Day 102 (10/31) — Workflow Integration</h2>
+            <h2>Day 102 (October 29) — Workflow Integration</h2>
             <p>
               We integrated the old Phase 1 workflow<br />
               into the same configuration as Phase 2.<br />
@@ -314,7 +314,7 @@ export default function () &#123;<br />
           </section>
 
           <section className="content-section">
-            <h2>Day 103 (10/31 Afternoon) — k6 Report Visualization</h2>
+            <h2>Day 103 (October 30) — k6 Report Visualization</h2>
             <p>
               We converted k6 output to HTML format,<br />
               creating <code>k6-summary.html</code> where attack pattern results are visible at a glance.<br />
@@ -336,7 +336,7 @@ export default function () &#123;<br />
           </section>
 
           <section className="content-section">
-            <h2>Day 104 (November 1) — Designing the Environment with Terraform</h2>
+            <h2>Day 104 (October 31) — Designing the Environment with Terraform</h2>
             <p>
               We deployed an AWS environment with Terraform.<br />
               We automatically built VPC, subnet, and security groups,<br />

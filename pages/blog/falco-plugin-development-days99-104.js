@@ -262,7 +262,7 @@ export default function () &#123;<br />
           </section>
 
           <section className="content-section">
-            <h2>Day 101（10/30）— テストの再設計</h2>
+            <h2>Day 101（10/28）— テストの再設計</h2>
             <p>
               Phase 1とPhase 2で分かれていたE2Eテストを、<br />
               k6ベースで再設計。
@@ -291,7 +291,7 @@ export default function () &#123;<br />
           </section>
 
           <section className="content-section">
-            <h2>Day 102（10/31）— ワークフロー統合</h2>
+            <h2>Day 102（10/29）— ワークフロー統合</h2>
             <p>
               旧Phase 1のワークフローを、<br />
               Phase 2の仕様と同じ構成に統合。<br />
@@ -314,7 +314,7 @@ export default function () &#123;<br />
           </section>
 
           <section className="content-section">
-            <h2>Day 103（10/31 午後）— k6レポートの可視化</h2>
+            <h2>Day 103（10/30）— k6レポートの可視化</h2>
             <p>
               k6の出力をHTML形式に変換し、<br />
               各攻撃パターンの結果を一目で見られる <code>k6-summary.html</code> を作成。<br />
@@ -336,7 +336,7 @@ export default function () &#123;<br />
           </section>
 
           <section className="content-section">
-            <h2>Day 104（11/1）— Terraformで動かす環境を設計する</h2>
+            <h2>Day 104（10/31）— Terraformで動かす環境を設計する</h2>
             <p>
               夜、TerraformでAWS環境をデプロイした。<br />
               VPC、サブネット、セキュリティグループを自動構築し、<br />
