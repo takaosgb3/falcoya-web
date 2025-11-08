@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days105-110',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の105日目から110日目',
+      description: 'サンプルデータと"小さな安定"の積み重ね、その先にある実装目標。Phase 0完了、レスポンス検証方式導入、nginx.headers実装方針の明文化。杖に頼らず、足そのものを作る6日間の記録。',
+      date: '2025-11-08',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'k6', 'nginx.headers', '設計方針'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days105-110'
+    },
+    {
       id: 'falco-plugin-development-days99-104',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の99日目から104日目',
       description: '車輪をやめて、走るための設計へ。GitHub Actionsのキャッシュ問題解決、k6への全面移行、テスト基盤の再設計、そしてTerraformによる環境のコード化。自作の仕組みを手放して、動き続ける設計への6日間の記録。',
@@ -187,6 +197,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days105-110-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 105-110',
+      description: 'Sample data and "small stability" accumulation, with implementation goals beyond. Phase 0 completion, response validation method introduction, nginx.headers implementation policy articulation. Six days of creating the foundation itself, not relying on crutches.',
+      date: '2025-11-08',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'k6', 'nginx.headers', 'Design Policy'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days105-110-en'
+    },
     {
       id: 'falco-plugin-development-days99-104-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 99-104',

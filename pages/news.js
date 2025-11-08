@@ -30,6 +30,24 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-11-08-oss-development-blog-part17",
+          date: "2025-11-08",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の105日目から110日目」を公開",
+          content: "サンプルデータと\"小さな安定\"の積み重ね、その先にある実装目標。Phase 0完了、レスポンス検証方式導入、nginx.headers実装方針の明文化。杖に頼らず、足そのものを作る6日間の記録を公開しました。",
+          highlights: [
+            "Phase 0（サンプルデータ整備）の完了（同一入力比較の基盤確立）",
+            "レスポンス検証方式（暫定）導入（k6×Falco突合の安定化）",
+            "XSS修正（サニタイズ／アラート名正規化）",
+            "Pattern #A229 \"undefined\" 修正（null返却・k6側判定対応）",
+            "Root Cause分析：nginx.headers未実装とPR #601の参照削除",
+            "Proposed Solution：nginx.headers実装方針の明文化（Nginx JSON ログ推奨）",
+            "最終目標の明確化：test_id相関によるE2E検知追跡の実現"
+          ],
+          link: "/blog/falco-plugin-development-days105-110"
+        },
+        {
           id: "2025-11-02-oss-development-blog-part16",
           date: "2025-11-02",
           category: "feature",
@@ -394,6 +412,24 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-11-08-oss-development-blog-part17-en",
+          date: "2025-11-08",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 105-110\" Published",
+          content: "Sample data and \"small stability\" accumulation, with implementation goals beyond. Phase 0 completion, response validation method introduction, nginx.headers implementation policy articulation. Six days of creating the foundation itself, not relying on crutches.",
+          highlights: [
+            "Phase 0 (sample data preparation) completion (established foundation for identical input comparison)",
+            "Response validation method (provisional) introduction (k6×Falco cross-reference stabilization)",
+            "XSS fixes (sanitization / alert name normalization)",
+            "Pattern #A229 \"undefined\" fix (null return / k6-side determination support)",
+            "Root Cause analysis: nginx.headers non-implementation and PR #601's reference removal",
+            "Proposed Solution: nginx.headers implementation policy articulation (Nginx JSON log recommended)",
+            "Final goal clarification: E2E detection tracking via test_id correlation"
+          ],
+          link: "/blog/falco-plugin-development-days105-110-en"
+        },
         {
           id: "2025-11-02-oss-development-blog-part16-en",
           date: "2025-11-02",
