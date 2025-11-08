@@ -176,7 +176,7 @@ export default function FalcoPluginDevelopmentDays105to110En() {
           <section className="content-section">
             <h2>Day 105 (11/2) — Completing Phase 0 (Sample Data)</h2>
             <p>
-              Completed sample data generation for E2E (Phase 0: specific initiative).<br />
+              Completed sample data generation for E2E (Phase 0).<br />
               Regenerated SQLi / XSS / Path Traversal categories,<br />
               and unified JSON files referenced by k6 into <code>/data/samples/phase0/*.json</code>.<br />
               Now we have a foundation for &quot;comparing with the same input.&quot;

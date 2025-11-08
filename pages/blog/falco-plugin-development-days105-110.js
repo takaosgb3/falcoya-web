@@ -177,7 +177,7 @@ export default function FalcoPluginDevelopmentDays105to110() {
           <section className="content-section">
             <h2>Day 105（11/2）— Phase 0（サンプルデータ）の完了</h2>
             <p>
-              E2Eで使うサンプルデータ生成（Phase 0：特定取り組み）を締めた。<br />
+              E2Eで使うサンプルデータ生成（Phase 0）を締めた。<br />
               SQLi / XSS / Path Traversal の各カテゴリを再出力し、<br />
               k6 が参照する JSON を <code>/data/samples/phase0/*.json</code> に統一。<br />
               これで「同じ入力で比較できる」土台ができた。
