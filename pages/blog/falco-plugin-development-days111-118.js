@@ -388,6 +388,15 @@ export default function FalcoPluginDevelopmentDays111to118() {
               これまで&quot;ただのログ&quot;だったものが、<br />
               <strong>&quot;検知の物語&quot;</strong>として読めるようになった。
             </p>
+
+            <div className="article-image">
+              <img
+                src="/img/blog/blog19_2.png"
+                alt="Allureレポートの階層構造 - E2Eテストの検知の物語"
+              />
+              <p className="image-caption">Allureレポート：k6テスト実行結果、ログファイル、検証結果が一つの物語として構造化されている</p>
+            </div>
+
             <p>
               TKが静かに言った。
             </p>
@@ -674,6 +683,14 @@ export default function FalcoPluginDevelopmentDays111to118() {
           height: auto;
           border-radius: 12px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption {
+          margin-top: 1rem;
+          font-size: 0.875rem;
+          color: #6b7280;
+          text-align: center;
+          font-style: italic;
         }
 
         .article-tags {

@@ -388,6 +388,15 @@ export default function FalcoPluginDevelopmentDays111to118En() {
               What used to be &quot;just logs&quot;<br />
               became readable as <strong>&quot;a detection story.&quot;</strong>
             </p>
+
+            <div className="article-image">
+              <img
+                src="/img/blog/blog19_2.png"
+                alt="Allure report hierarchical structure - E2E test detection story"
+              />
+              <p className="image-caption">Allure Report: k6 test execution results, log files, and validation results structured as a single narrative</p>
+            </div>
+
             <p>
               TK quietly said:
             </p>
@@ -675,6 +684,14 @@ export default function FalcoPluginDevelopmentDays111to118En() {
           height: auto;
           border-radius: 12px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption {
+          margin-top: 1rem;
+          font-size: 0.875rem;
+          color: #6b7280;
+          text-align: center;
+          font-style: italic;
         }
 
         .article-tags {
