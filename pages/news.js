@@ -30,6 +30,25 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-11-16-oss-development-blog-part18",
+          date: "2025-11-16",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の111日目から118日目」を公開",
+          content: "整える技術、その先に\"相関\"という頂が見えた。Allure採用、レスポンス検証方式導入、nginx.headers実装方針の明確化。相関という設計に手を伸ばした8日間の記録を公開しました。",
+          highlights: [
+            "カスタムE2Eレポートからの撤退、Allure採用決定（11/08）",
+            "暫定レスポンス検証方式の導入（杖としての役割、11/09）",
+            "Phase 3ドキュメント整備による本質の明確化（11/10）",
+            "Pattern A240/A241/A242の修正によるフロー整列（11/11）",
+            "Allure階層構造の再定義（意味の構造化、11/12）",
+            "nginx.headers[X-Test-ID]実装方針の明確化（11/11）",
+            "メタデータバリエーション統一による相関基盤整備（11/12）",
+            "Allureの\"意味\"としての完成（検知の物語化、11/15）"
+          ],
+          link: "/blog/falco-plugin-development-days111-118"
+        },
+        {
           id: "2025-11-08-oss-development-blog-part17",
           date: "2025-11-08",
           category: "feature",
@@ -412,6 +431,25 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-11-16-oss-development-blog-part18-en",
+          date: "2025-11-16",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 111-118\" Published",
+          content: "The art of alignment, and beyond it, the peak called \"correlation\" became visible. Allure adoption, response validation method introduction, nginx.headers implementation policy clarification. Eight days of reaching for correlation design.",
+          highlights: [
+            "Retreat from custom E2E reports, Allure adoption decision (11/08)",
+            "Provisional response validation method introduction (as a crutch, 11/09)",
+            "Phase 3 documentation organization clarifying essence (11/10)",
+            "Pattern A240/A241/A242 fixes aligning flow (11/11)",
+            "Allure hierarchical structure redefinition (meaning structuring, 11/12)",
+            "nginx.headers[X-Test-ID] implementation policy clarification (11/11)",
+            "Metadata variation unification for correlation foundation (11/12)",
+            "Allure's completion as \"meaning\" (detection narrative, 11/15)"
+          ],
+          link: "/blog/falco-plugin-development-days111-118-en"
+        },
         {
           id: "2025-11-08-oss-development-blog-part17-en",
           date: "2025-11-08",
