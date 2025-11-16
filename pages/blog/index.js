@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days111-118',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の111日目から118日目',
+      description: '整える技術、その先に"相関"という頂が見えた。Allure採用、レスポンス検証方式導入、nginx.headers実装方針の明確化。相関という設計に手を伸ばした8日間の記録。',
+      date: '2025-11-16',
+      readTime: '12分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'Allure', '相関設計', 'nginx.headers'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days111-118'
+    },
+    {
       id: 'falco-plugin-development-days105-110',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の105日目から110日目',
       description: 'サンプルデータと"小さな安定"の積み重ね、その先にある実装目標。Phase 0完了、レスポンス検証方式導入、nginx.headers実装方針の明文化。杖に頼らず、足そのものを作る6日間の記録。',
@@ -197,6 +207,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days111-118-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 111-118',
+      description: 'The art of alignment, and beyond it, the peak called "correlation" became visible. Allure adoption, response validation method introduction, nginx.headers implementation policy clarification. Eight days of reaching for correlation design.',
+      date: '2025-11-16',
+      readTime: '12 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'Allure', 'Correlation Design', 'nginx.headers'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days111-118-en'
+    },
     {
       id: 'falco-plugin-development-days105-110-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 105-110',
