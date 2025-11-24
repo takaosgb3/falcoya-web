@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days119-126',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の119日目から126日目',
+      description: '整える時間の先で、"相関"がついに生まれた。nginx.headers[X-Test-ID]実装完了、Falco↔k6↔Allureの相関成立。点だったE2Eが一本の線になった8日間の記録。',
+      date: '2025-11-24',
+      readTime: '12分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'Allure', '相関', 'nginx.headers', 'X-Test-ID'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days119-126'
+    },
+    {
       id: 'falco-plugin-development-days111-118',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の111日目から118日目',
       description: '整える技術、その先に"相関"という頂が見えた。Allure採用、レスポンス検証方式導入、nginx.headers実装方針の明確化。相関という設計に手を伸ばした8日間の記録。',
@@ -207,6 +217,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days119-126-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 119-126',
+      description: 'Beyond the time of alignment, "correlation" was finally born. nginx.headers[X-Test-ID] implementation complete, Falco↔k6↔Allure correlation established. Eight days when scattered E2E points became a single line.',
+      date: '2025-11-24',
+      readTime: '12 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'Allure', 'Correlation', 'nginx.headers', 'X-Test-ID'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days119-126-en'
+    },
     {
       id: 'falco-plugin-development-days111-118-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 111-118',
