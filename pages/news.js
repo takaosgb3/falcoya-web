@@ -30,6 +30,25 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-11-24-oss-development-blog-part19",
+          date: "2025-11-24",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の119日目から126日目」を公開",
+          content: "整える時間の先で、\"相関\"がついに生まれた。nginx.headers[X-Test-ID]実装完了、Falco↔k6↔Allureの相関成立。点だったE2Eが一本の線になった8日間の記録を公開しました。",
+          highlights: [
+            "Pattern A243修正と\"意味の並び順\"でのレイヤ構築（11/16）",
+            "JSON正規化（null/空文字/配列）による形式揺れ解消（11/17）",
+            "Allure history生成順序の設計修正（11/19）",
+            "Issue #660要件定義とPattern A260/A261/A262の仕様整理（11/20）",
+            "nginx.headers[X-Test-ID]実装完了（最重要マイルストーン、11/23）",
+            "Falco↔k6↔Allureの相関成立（E2Eが点から線へ）",
+            "Allureアセット最適化",
+            "\"文脈を理解したログ\"の実現"
+          ],
+          link: "/blog/falco-plugin-development-days119-126"
+        },
+        {
           id: "2025-11-16-oss-development-blog-part18",
           date: "2025-11-16",
           category: "feature",
@@ -431,6 +450,25 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-11-24-oss-development-blog-part19-en",
+          date: "2025-11-24",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 119-126\" Published",
+          content: "Beyond the time of alignment, \"correlation\" was finally born. nginx.headers[X-Test-ID] implementation complete, Falco↔k6↔Allure correlation established. Eight days when scattered E2E points became a single line.",
+          highlights: [
+            "Pattern A243 fix and layer construction by \"order of meaning\" (11/16)",
+            "JSON normalization (null/empty string/array) resolving format variations (11/17)",
+            "Allure history generation order design fix (11/19)",
+            "Issue #660 requirements definition and Pattern A260/A261/A262 specification (11/20)",
+            "nginx.headers[X-Test-ID] implementation complete (key milestone, 11/23)",
+            "Falco↔k6↔Allure correlation established (E2E from points to line)",
+            "Allure asset optimization",
+            "Realization of \"context-aware logs\""
+          ],
+          link: "/blog/falco-plugin-development-days119-126-en"
+        },
         {
           id: "2025-11-16-oss-development-blog-part18-en",
           date: "2025-11-16",
