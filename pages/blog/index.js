@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days127-131',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の127日目から131日目',
+      description: '「検知の物語」を読みやすくするための、静かな整合性の週。攻撃ペイロードの蛍光イエローハイライト、Allureログ整理、Pattern A260/A280〜A289修正。整った技術が物語を語り始めた5日間の記録。',
+      date: '2025-11-30',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'Allure', 'ペイロードハイライト', 'JSON正規化', 'CMDi'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days127-131'
+    },
+    {
       id: 'falco-plugin-development-days119-126',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の119日目から126日目',
       description: '整える時間の先で、"相関"がついに生まれた。nginx.headers[X-Test-ID]実装完了、Falco↔k6↔Allureの相関成立。点だったE2Eが一本の線になった8日間の記録。',
@@ -217,6 +227,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days127-131-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 127-131',
+      description: 'A quiet week of consistency to make the "detection story" readable. Attack payload fluorescent yellow highlighting, Allure log organization, Pattern A260/A280-A289 fixes. Five days when aligned technology began to tell its story.',
+      date: '2025-11-30',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'Allure', 'Payload Highlighting', 'JSON Normalization', 'CMDi'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days127-131-en'
+    },
     {
       id: 'falco-plugin-development-days119-126-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 119-126',
