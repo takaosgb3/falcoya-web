@@ -30,6 +30,25 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-11-30-oss-development-blog-part20",
+          date: "2025-11-30",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の127日目から131日目」を公開",
+          content: "「検知の物語」を読みやすくするための、静かな整合性の週。攻撃ペイロードの蛍光イエローハイライト、Allureログ整理、Pattern A260/A280〜A289修正。整った技術が物語を語り始めた5日間の記録を公開しました。",
+          highlights: [
+            "攻撃ペイロードの蛍光イエローハイライト（UI改善、11/24）",
+            "Allureログ差分・アタッチメント整理（11/25）",
+            "Pattern A260のJSON階層正規化（11/26）",
+            "CMDiパターン群の整理（detect_text/detect_position統一、11/27）",
+            "Issue #653（timestamp）調査とA280〜A289修正（11/29）",
+            "detect_*系フィールドの正規化",
+            "k6 Run #124再分析",
+            "「整った技術は、静かに物語を語り始める」"
+          ],
+          link: "/blog/falco-plugin-development-days127-131"
+        },
+        {
           id: "2025-11-24-oss-development-blog-part19",
           date: "2025-11-24",
           category: "feature",
@@ -450,6 +469,25 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-11-30-oss-development-blog-part20-en",
+          date: "2025-11-30",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 127-131\" Published",
+          content: "A quiet week of consistency to make the \"detection story\" readable. Attack payload fluorescent yellow highlighting, Allure log organization, Pattern A260/A280-A289 fixes. Five days when aligned technology began to tell its story.",
+          highlights: [
+            "Attack payload fluorescent yellow highlighting (UI improvement, 11/24)",
+            "Allure log diff and attachment organization (11/25)",
+            "Pattern A260 JSON hierarchy normalization (11/26)",
+            "CMDi pattern group organization (detect_text/detect_position unification, 11/27)",
+            "Issue #653 (timestamp) investigation and A280-A289 fixes (11/29)",
+            "detect_* field normalization",
+            "k6 Run #124 re-analysis",
+            "\"Aligned technology quietly begins to tell its story\""
+          ],
+          link: "/blog/falco-plugin-development-days127-131-en"
+        },
         {
           id: "2025-11-24-oss-development-blog-part19-en",
           date: "2025-11-24",
