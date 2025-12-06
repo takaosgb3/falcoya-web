@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days132-134',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の132日目から134日目',
+      description: '相関のその先へ。"揺れゼロ"を目指し、そして v1.4.2 が生まれた。Pattern A317/A318修正、E2E Run #130で65/65全成功、v1.4.0設計決定、docs/rules.md大規模更新。三ヶ月の積み重ねが形になった3日間の記録。',
+      date: '2025-12-06',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'v1.4.2', 'リリース', 'docs/rules.md', '設計決定'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days132-134'
+    },
+    {
       id: 'falco-plugin-development-days127-131',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の127日目から131日目',
       description: '「検知の物語」を読みやすくするための、静かな整合性の週。攻撃ペイロードの蛍光イエローハイライト、Allureログ整理、Pattern A260/A280〜A289修正。整った技術が物語を語り始めた5日間の記録。',
@@ -227,6 +237,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days132-134-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 132-134',
+      description: 'Beyond correlation. Aiming for "zero fluctuations," and v1.4.2 was born. Pattern A317/A318 fixes, E2E Run #130 with 65/65 all success, v1.4.0 design decisions, docs/rules.md major update. Three days when three months of accumulation took shape.',
+      date: '2025-12-06',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'v1.4.2', 'Release', 'docs/rules.md', 'Design Decisions'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days132-134-en'
+    },
     {
       id: 'falco-plugin-development-days127-131-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 127-131',
