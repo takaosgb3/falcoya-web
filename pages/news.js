@@ -30,6 +30,25 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-12-06-oss-development-blog-part21",
+          date: "2025-12-06",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の132日目から134日目」を公開",
+          content: "相関のその先へ。\"揺れゼロ\"を目指し、そして v1.4.2 が生まれた。Pattern A317/A318修正、E2E Run #130で65/65全成功、v1.4.0設計決定、docs/rules.md大規模更新。三ヶ月の積み重ねが形になった3日間の記録を公開しました。",
+          highlights: [
+            "Pattern A317修正（PR #765）— Normalization境界条件の揺れ解消（11/30）",
+            "Pattern A318修正（PR #768）— ruleメタ情報mapping揺れ解消（11/30）",
+            "E2E Run #130で65/65全成功達成",
+            "v1.4.0仕様策定（DD-001〜003：統合ファイル方式/専用スクリプト/stagingブランチ）（12/03）",
+            "Issue #770（空行誤検知）修正 — 検知ズレ0件達成（12/06）",
+            "docs/rules.md全面更新（Issue #773）— nginx.headers[key]正式文書化（12/06）",
+            "v1.4.2正式リリース — 三ヶ月の積み重ねが形に",
+            "「揺れのない世界って、静かでいいね」"
+          ],
+          link: "/blog/falco-plugin-development-days132-134"
+        },
+        {
           id: "2025-11-30-oss-development-blog-part20",
           date: "2025-11-30",
           category: "feature",
@@ -469,6 +488,25 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-12-06-oss-development-blog-part21-en",
+          date: "2025-12-06",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 132-134\" Published",
+          content: "Beyond correlation. Aiming for \"zero fluctuations,\" and v1.4.2 was born. Pattern A317/A318 fixes, E2E Run #130 with 65/65 all success, v1.4.0 design decisions, docs/rules.md major update. Three days when three months of accumulation took shape.",
+          highlights: [
+            "Pattern A317 fix (PR #765) — Normalization boundary condition fluctuation resolved (11/30)",
+            "Pattern A318 fix (PR #768) — rule metadata mapping fluctuation resolved (11/30)",
+            "E2E Run #130 achieved 65/65 all success",
+            "v1.4.0 specification formulation (DD-001-003: Integrated file method/Dedicated scripts/staging branch) (12/03)",
+            "Issue #770 (empty line false detection) fix — 0 detection mismatches achieved (12/06)",
+            "docs/rules.md complete update (Issue #773) — nginx.headers[key] official documentation (12/06)",
+            "v1.4.2 official release — Three months of accumulation took shape",
+            "\"A world without fluctuations is quiet and nice\""
+          ],
+          link: "/blog/falco-plugin-development-days132-134-en"
+        },
         {
           id: "2025-11-30-oss-development-blog-part20-en",
           date: "2025-11-30",
