@@ -154,9 +154,13 @@ export default function FalcoPluginDevelopmentE2EReportGuide() {
           </header>
 
           <div className="article-image">
-            <img
-              src="/img/blog/blogE2E_65.png"
-              alt="E2Eテストレポートの歩き方 - 65パターンの検知物語"
+            <video
+              src="/video/e2e-report-guide.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ width: '100%', borderRadius: '12px' }}
             />
           </div>
 
