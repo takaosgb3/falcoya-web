@@ -6,26 +6,110 @@ import { useLanguage } from '../utils/languageUtils'
 export default function Quality() {
   const [language, setLanguage] = useLanguage()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activePhase, setActivePhase] = useState('phase2') // Default to Phase 2
+  const [runNumber, setRunNumber] = useState('')
 
-  // Quality/Testing content data
+  // Phase 2 test data (65 patterns)
+  const phase2Data = {
+    metadata: {
+      runNumber: 26,
+      timestamp: "2025-12-07T22:46:34Z",
+      duration: "142ms",
+      environment: {
+        platform: "ubuntu-24.04",
+        falcoVersion: "0.42.1",
+        plugin: "falco-plugin-nginx",
+        nginxVersion: "1.24.0 (Ubuntu)",
+        k6Version: "linux/amd64"
+      }
+    },
+    summary: {
+      totalTests: 65,
+      passedTests: 65,
+      failedTests: 0,
+      passRate: 100
+    },
+    categories: {
+      SQLI: { count: 19, percentage: 29.2 },
+      PATH: { count: 20, percentage: 30.8 },
+      XSS: { count: 11, percentage: 16.9 },
+      CMDINJ: { count: 10, percentage: 15.4 },
+      OTHER: { count: 5, percentage: 7.7 }
+    },
+    urls: {
+      latest: "https://takaosgb3.github.io/falco-plugin-nginx/e2e-report/latest/",
+      byRun: "https://takaosgb3.github.io/falco-plugin-nginx/e2e-report/"
+    }
+  }
+
+  // Phase 1 test data (14 tests)
+  const phase1Data = {
+    totalTests: 14,
+    passedTests: 14,
+    passRate: 100,
+    coverage: 95,
+    lastRun: "2025-08-30T05:45:03Z",
+    environment: "github-runner",
+    falcoVersion: "0.41.3",
+    pluginVersion: "v1.3.0",
+    detectedAttacks: 12,
+    undetectedAttacks: 2
+  }
+
+  // Content object with ja/en translations
   const content = {
     ja: {
       title: "E2Eテスト & 検証",
       description: "falco-plugin-nginx の品質を支える包括的なテストとE2E検証結果",
       nav: {
         github: "GitHub",
-        installation: "インストール", 
+        installation: "インストール",
         detection: "検知機能",
         blog: "ブログ",
         news: "ニュース",
         quality: "テストレポート"
       },
       hero: {
-        title: "End-to-End テストレポート",
-        subtitle: "信頼性の高いセキュリティ監視を実現",
+        title: "E2E テストレポート",
+        subtitle: "65パターンの攻撃検知をAllureで可視化",
         description: "falco-plugin-nginx の品質は、包括的なE2Eテスト、自動化されたCI/CD、実証済みの検知精度、そして Falcoya君の頑張りによって支えられています。"
       },
-      testResults: {
+      phaseSelector: {
+        phase2: "Phase 2: 攻撃検知 (65パターン)",
+        phase1: "Phase 1: 基礎検証 (14テスト)"
+      },
+      phase2: {
+        summary: {
+          title: "Phase 2: 攻撃検知テスト",
+          totalTests: "テスト数",
+          passRate: "成功率",
+          lastRun: "最終実行",
+          environment: "環境",
+          duration: "実行時間"
+        },
+        categories: {
+          title: "攻撃カテゴリ別パターン",
+          sqli: { name: "SQL インジェクション", desc: "時間ベースブラインド、UNION、Error-based等" },
+          xss: { name: "クロスサイトスクリプティング", desc: "script、svg、iframe等" },
+          path: { name: "パストラバーサル", desc: "../etc/passwd、エンコーディング回避等" },
+          cmdinj: { name: "コマンドインジェクション", desc: ";ls、&& whoami等" },
+          other: { name: "その他", desc: "MongoDB $where、$regex等" },
+          patterns: "パターン"
+        },
+        buttons: {
+          viewAllure: "最新のAllureレポートを見る",
+          viewGuide: "レポートの読み方ガイド",
+          viewPhase1Detail: "Phase 1 詳細レポート"
+        },
+        reportAccess: {
+          title: "レポートへのアクセス",
+          latest: "最新版",
+          byRun: "Run番号で指定",
+          runPlaceholder: "Run番号を入力（例: 26）",
+          go: "表示"
+        }
+      },
+      phase1: {
         title: "最新テスト結果 (Phase 1)",
         subtitle: "End-to-End テスト完全レポート - 基礎検証フェーズ",
         summary: {
@@ -41,30 +125,41 @@ export default function Quality() {
           title: "環境",
           plugin: "プラグイン"
         },
-        categories: {
-          basic: "基本機能テスト",
-          rules: "ルール検証テスト", 
-          pluginLoad: "プラグインロードテスト",
-          eventDetection: "攻撃検知テスト"
+        phaseInfo: "現在のテスト結果はPhase 1（基礎検証フェーズ）の内容です。今後、Phase 2（高度な攻撃検知）、Phase 3（パフォーマンス・負荷テスト）を実施予定です。",
+        buttons: {
+          simple: "テストレポート（簡易版）",
+          detailed: "テストレポート（詳細版）"
         }
       },
-      detectionExamples: {
+      roadmap: {
+        title: "今後の展望",
+        current: "現在",
+        target: "目標",
+        progress: "進捗",
+        description: "850パターンへの拡大を計画中。より多くの攻撃バリエーション、より深いエッジケース、より広い守備範囲へ。",
+        patterns: "パターン"
+      },
+      detection: {
         title: "実際の検知例",
         subtitle: "E2Eテストで確認された攻撃検知サンプル",
-        sqlInjection: {
+        sqli: {
           title: "SQLインジェクション攻撃検知",
           result: "検知結果:",
-          success: "✅ 検知成功 (5件のアラート)"
+          success: "検知成功 (5件のアラート)"
         },
         xss: {
           title: "XSS攻撃検知",
           result: "検知結果:",
-          success: "✅ 検知成功 (7件のアラート)"
+          success: "検知成功 (7件のアラート)"
         }
       },
-      reportButtons: {
-        simple: "📊 テストレポート（簡易版）",
-        detailed: "🔍 テストレポート(詳細版)"
+      footer: {
+        description: "Nginxアクセスログをリアルタイムで監視し、Webアプリケーションへの脅威を検知するFalcoプラグイン",
+        links: "リンク",
+        githubRepo: "GitHubリポジトリ",
+        documentation: "ドキュメント",
+        license: "ライセンス",
+        oss: "オープンソースソフトウェア"
       }
     },
     en: {
@@ -73,23 +168,58 @@ export default function Quality() {
       nav: {
         github: "GitHub",
         installation: "Installation",
-        detection: "Detection", 
+        detection: "Detection",
         blog: "Blog",
         news: "News",
         quality: "Test Report"
       },
       hero: {
-        title: "End-to-End Test Report",
-        subtitle: "Achieving reliable security monitoring",
+        title: "E2E Test Report",
+        subtitle: "65 Attack Patterns Visualized with Allure",
         description: "The quality of falco-plugin-nginx is supported by comprehensive E2E testing, automated CI/CD, proven detection accuracy, and Falcoya-kun's dedication."
       },
-      testResults: {
+      phaseSelector: {
+        phase2: "Phase 2: Attack Detection (65 Patterns)",
+        phase1: "Phase 1: Foundation Verification (14 Tests)"
+      },
+      phase2: {
+        summary: {
+          title: "Phase 2: Attack Detection Tests",
+          totalTests: "Total Tests",
+          passRate: "Pass Rate",
+          lastRun: "Last Run",
+          environment: "Environment",
+          duration: "Duration"
+        },
+        categories: {
+          title: "Attack Patterns by Category",
+          sqli: { name: "SQL Injection", desc: "Time-based Blind, UNION, Error-based, etc." },
+          xss: { name: "Cross-Site Scripting", desc: "script, svg, iframe, etc." },
+          path: { name: "Path Traversal", desc: "../etc/passwd, encoding bypass, etc." },
+          cmdinj: { name: "Command Injection", desc: ";ls, && whoami, etc." },
+          other: { name: "Other", desc: "MongoDB $where, $regex, etc." },
+          patterns: "patterns"
+        },
+        buttons: {
+          viewAllure: "View Latest Allure Report",
+          viewGuide: "Report Reading Guide",
+          viewPhase1Detail: "Phase 1 Detailed Report"
+        },
+        reportAccess: {
+          title: "Report Access",
+          latest: "Latest",
+          byRun: "By Run Number",
+          runPlaceholder: "Enter Run number (e.g., 26)",
+          go: "Go"
+        }
+      },
+      phase1: {
         title: "Latest Test Results (Phase 1)",
         subtitle: "Complete End-to-End Test Report - Foundation Phase",
         summary: {
           title: "Test Summary",
           totalTests: "Total Tests",
-          passRate: "Pass Rate", 
+          passRate: "Pass Rate",
           coverage: "Coverage",
           lastRun: "Last Run",
           detectedAttacks: "Detected Attacks",
@@ -99,62 +229,63 @@ export default function Quality() {
           title: "Environment",
           plugin: "Plugin"
         },
-        categories: {
-          basic: "Basic Function Tests",
-          rules: "Rule Validation Tests",
-          pluginLoad: "Plugin Load Tests", 
-          eventDetection: "Attack Detection Tests"
+        phaseInfo: "Current test results are from Phase 1 (Foundation Verification). Phase 2 (Advanced Attack Detection) and Phase 3 (Performance & Load Testing) are planned for future implementation.",
+        buttons: {
+          simple: "Test Report (Simple Version)",
+          detailed: "Test Report (Detailed Version)"
         }
       },
-      detectionExamples: {
+      roadmap: {
+        title: "Future Roadmap",
+        current: "Current",
+        target: "Target",
+        progress: "Progress",
+        description: "Planning expansion to 850 patterns. More attack variations, deeper edge cases, broader coverage.",
+        patterns: "patterns"
+      },
+      detection: {
         title: "Real Detection Examples",
         subtitle: "Attack detection samples verified in E2E testing",
-        sqlInjection: {
+        sqli: {
           title: "SQL Injection Attack Detection",
           result: "Detection Result:",
-          success: "✅ Successfully Detected (5 alerts)"
+          success: "Successfully Detected (5 alerts)"
         },
         xss: {
           title: "XSS Attack Detection",
           result: "Detection Result:",
-          success: "✅ Successfully Detected (7 alerts)"
+          success: "Successfully Detected (7 alerts)"
         }
       },
-      reportButtons: {
-        simple: "📊 Test Report (Simple Version)",
-        detailed: "🔍 Test Report (Detailed Version)"
+      footer: {
+        description: "Falco plugin that monitors Nginx access logs in real-time and detects threats to web applications",
+        links: "Links",
+        githubRepo: "GitHub Repository",
+        documentation: "Documentation",
+        license: "License",
+        oss: "Open Source Software"
       }
     }
   }
 
   const currentContent = content[language]
 
-  // Mock test data - in real implementation, this would be loaded from the E2E test results
-  const testSummary = {
-    totalTests: 14,
-    passedTests: 14,
-    passRate: 100,
-    coverage: 95,
-    lastRun: "2025-08-30T05:45:03Z",
-    environment: "github-runner",
-    falcoVersion: "0.41.3",
-    pluginVersion: "v1.3.0",
-    detectedAttacks: 12,  // SQLi: 5, XSS: 7
-    undetectedAttacks: 2
-  }
-
   const formatDate = (dateStr) => {
     const date = new Date(dateStr)
     if (language === 'ja') {
-      return date.toLocaleDateString('ja-JP', { 
-        year: 'numeric', month: 'long', day: 'numeric',
-        hour: '2-digit', minute: '2-digit'
+      return date.toLocaleDateString('ja-JP', {
+        year: 'numeric', month: 'long', day: 'numeric'
       })
     } else {
-      return date.toLocaleDateString('en-US', { 
-        year: 'numeric', month: 'long', day: 'numeric',
-        hour: '2-digit', minute: '2-digit'
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric', month: 'short', day: 'numeric'
       })
+    }
+  }
+
+  const handleRunNumberGo = () => {
+    if (runNumber && !isNaN(runNumber)) {
+      window.open(`${phase2Data.urls.byRun}${runNumber}/`, '_blank', 'noopener,noreferrer')
     }
   }
 
@@ -166,9 +297,9 @@ export default function Quality() {
 
     window.addEventListener('resize', handleResize)
     window.addEventListener('orientationchange', handleResize)
-    
+
     handleResize()
-    
+
     return () => {
       window.removeEventListener('resize', handleResize)
       window.removeEventListener('orientationchange', handleResize)
@@ -186,15 +317,15 @@ export default function Quality() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <Link href="/">
+            <Link href="/" legacyBehavior>
               <a style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                 <img src="/img/falcoya-logo-c.png" alt="FALCOYA" />
                 <span>FALCOYA</span>
               </a>
             </Link>
           </div>
-          
-          <button 
+
+          <button
             className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
@@ -203,7 +334,7 @@ export default function Quality() {
             <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
             <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
           </button>
-          
+
           <ul className="nav-menu desktop-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">{currentContent.nav.github}</a></li>
             <li><Link href="/#installation">{currentContent.nav.installation}</Link></li>
@@ -212,16 +343,16 @@ export default function Quality() {
             <li><Link href="/news">{currentContent.nav.news}</Link></li>
             <li><Link href="/quality" className="active">{currentContent.nav.quality}</Link></li>
           </ul>
-          
+
           <div className="nav-controls">
             <div className="language-switcher">
-              <button 
+              <button
                 className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
                 onClick={() => setLanguage('ja')}
               >
                 日本語
               </button>
-              <button 
+              <button
                 className={`lang-btn ${language === 'en' ? 'active' : ''}`}
                 onClick={() => setLanguage('en')}
               >
@@ -230,15 +361,15 @@ export default function Quality() {
             </div>
           </div>
         </div>
-        
+
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-nav-menu">
             <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{currentContent.nav.github}</a></li>
-            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{currentContent.nav.installation}</a></Link></li>
-            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{currentContent.nav.detection}</a></Link></li>
-            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{currentContent.nav.blog}</a></Link></li>
-            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{currentContent.nav.news}</a></Link></li>
-            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)} className="active">{currentContent.nav.quality}</a></Link></li>
+            <li><Link href="/#installation" legacyBehavior><a onClick={() => setMobileMenuOpen(false)}>{currentContent.nav.installation}</a></Link></li>
+            <li><Link href="/#detection" legacyBehavior><a onClick={() => setMobileMenuOpen(false)}>{currentContent.nav.detection}</a></Link></li>
+            <li><Link href="/blog" legacyBehavior><a onClick={() => setMobileMenuOpen(false)}>{currentContent.nav.blog}</a></Link></li>
+            <li><Link href="/news" legacyBehavior><a onClick={() => setMobileMenuOpen(false)}>{currentContent.nav.news}</a></Link></li>
+            <li><Link href="/quality" legacyBehavior><a onClick={() => setMobileMenuOpen(false)} className="active">{currentContent.nav.quality}</a></Link></li>
           </ul>
         </div>
       </nav>
@@ -253,128 +384,290 @@ export default function Quality() {
           </div>
         </section>
 
-        {/* Test Results Summary */}
-        <section className="test-summary">
+        {/* Phase Selector */}
+        <section className="phase-selector-section">
           <div className="container">
-            <h2>{currentContent.testResults.title}</h2>
-            <p className="section-subtitle">{currentContent.testResults.subtitle}</p>
-            
-            <div className="phase-info">
-              <div className="phase-badge">Phase 1</div>
-              <p className="phase-description">
-                {language === 'ja' 
-                  ? '現在のテスト結果はPhase 1（基礎検証フェーズ）の内容です。今後、Phase 2（高度な攻撃検知）、Phase 3（パフォーマンス・負荷テスト）を実施予定です。'
-                  : 'Current test results are from Phase 1 (Foundation Verification). Phase 2 (Advanced Attack Detection) and Phase 3 (Performance & Load Testing) are planned for future implementation.'
-                }
-              </p>
-            </div>
-            
-            <div className="summary-grid">
-              <div className="summary-card">
-                <div className="summary-icon">📊</div>
-                <div className="summary-content">
-                  <h3>{currentContent.testResults.summary.title}</h3>
-                  <div className="summary-stats">
-                    <div className="stat">
-                      <span className="stat-label">{currentContent.testResults.summary.totalTests}</span>
-                      <span className="stat-value">{testSummary.totalTests}</span>
-                    </div>
-                    <div className="stat">
-                      <span className="stat-label">{currentContent.testResults.summary.passRate}</span>
-                      <span className="stat-value success">{testSummary.passRate}%</span>
-                    </div>
-                    <div className="stat">
-                      <span className="stat-label">{currentContent.testResults.summary.detectedAttacks}</span>
-                      <span className="stat-value detected">{testSummary.detectedAttacks}</span>
-                    </div>
-                    <div className="stat">
-                      <span className="stat-label">{currentContent.testResults.summary.undetectedAttacks}</span>
-                      <span className="stat-value undetected">{testSummary.undetectedAttacks}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="summary-card">
-                <div className="summary-icon">🛡️</div>
-                <div className="summary-content">
-                  <h3>{currentContent.testResults.environment.title}</h3>
-                  <div className="env-details">
-                    <div className="env-item">
-                      <span>Falco:</span> <code>{testSummary.falcoVersion}</code>
-                    </div>
-                    <div className="env-item">
-                      <span>{currentContent.testResults.environment.plugin}:</span> <code>v1.3.0</code>
-                    </div>
-                    <div className="env-item">
-                      <span>{currentContent.testResults.summary.lastRun}:</span>
-                      <span>{formatDate(testSummary.lastRun)}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="phase-tabs">
+              <button
+                className={`phase-tab ${activePhase === 'phase2' ? 'active' : ''}`}
+                onClick={() => setActivePhase('phase2')}
+              >
+                {currentContent.phaseSelector.phase2}
+              </button>
+              <button
+                className={`phase-tab ${activePhase === 'phase1' ? 'active' : ''}`}
+                onClick={() => setActivePhase('phase1')}
+              >
+                {currentContent.phaseSelector.phase1}
+              </button>
             </div>
           </div>
         </section>
 
-        {/* Detection Examples */}
-        <section className="detection-examples">
+        {/* Phase 2 Content */}
+        {activePhase === 'phase2' && (
+          <>
+            {/* Quick Summary */}
+            <section className="phase2-summary">
+              <div className="container">
+                <div className="summary-card-large">
+                  <h2>{currentContent.phase2.summary.title}</h2>
+                  <div className="stats-row">
+                    <div className="stat-box">
+                      <span className="stat-number">{phase2Data.summary.totalTests}</span>
+                      <span className="stat-label">{currentContent.phase2.summary.totalTests}</span>
+                    </div>
+                    <div className="stat-box">
+                      <span className="stat-number success">{phase2Data.summary.passRate}%</span>
+                      <span className="stat-label">{currentContent.phase2.summary.passRate}</span>
+                    </div>
+                    <div className="stat-box">
+                      <span className="stat-number">{formatDate(phase2Data.metadata.timestamp)}</span>
+                      <span className="stat-label">{currentContent.phase2.summary.lastRun}</span>
+                    </div>
+                  </div>
+                  <div className="environment-info">
+                    <span className="env-label">{currentContent.phase2.summary.environment}:</span>
+                    <span className="env-value">Falco {phase2Data.metadata.environment.falcoVersion}</span>
+                    <span className="env-separator">|</span>
+                    <span className="env-value">{phase2Data.metadata.environment.plugin}</span>
+                    <span className="env-separator">|</span>
+                    <span className="env-value">nginx {phase2Data.metadata.environment.nginxVersion}</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Category Breakdown */}
+            <section className="category-breakdown">
+              <div className="container">
+                <h2>{currentContent.phase2.categories.title}</h2>
+                <div className="categories-grid">
+                  {Object.entries(phase2Data.categories).map(([key, data]) => {
+                    const categoryKey = key.toLowerCase()
+                    const categoryInfo = currentContent.phase2.categories[categoryKey]
+                    return (
+                      <div key={key} className="category-card">
+                        <div className="category-header">
+                          <span className="category-name">{categoryInfo?.name || key}</span>
+                          <span className="category-count">{data.count} {currentContent.phase2.categories.patterns}</span>
+                        </div>
+                        <p className="category-desc">{categoryInfo?.desc}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </section>
+
+            {/* Action Buttons */}
+            <section className="action-buttons">
+              <div className="container">
+                <div className="buttons-row">
+                  <a
+                    href={phase2Data.urls.latest}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="action-button primary"
+                  >
+                    {currentContent.phase2.buttons.viewAllure}
+                  </a>
+                  <Link href={language === 'ja' ? '/blog/falco-plugin-development-e2e-report-guide' : '/blog/falco-plugin-development-e2e-report-guide-en'} legacyBehavior>
+                    <a className="action-button secondary">
+                      {currentContent.phase2.buttons.viewGuide}
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </section>
+
+            {/* Report Access */}
+            <section className="report-access">
+              <div className="container">
+                <h3>{currentContent.phase2.reportAccess.title}</h3>
+                <div className="access-options">
+                  <div className="access-option">
+                    <span className="access-label">{currentContent.phase2.reportAccess.latest}:</span>
+                    <a
+                      href={phase2Data.urls.latest}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="access-link"
+                    >
+                      {phase2Data.urls.latest}
+                    </a>
+                  </div>
+                  <div className="access-option">
+                    <span className="access-label">{currentContent.phase2.reportAccess.byRun}:</span>
+                    <div className="run-input-group">
+                      <input
+                        type="text"
+                        placeholder={currentContent.phase2.reportAccess.runPlaceholder}
+                        value={runNumber}
+                        onChange={(e) => setRunNumber(e.target.value)}
+                        className="run-input"
+                      />
+                      <button
+                        onClick={handleRunNumberGo}
+                        className="run-go-button"
+                      >
+                        {currentContent.phase2.reportAccess.go}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* Phase 1 Content */}
+        {activePhase === 'phase1' && (
+          <>
+            <section className="test-summary">
+              <div className="container">
+                <h2>{currentContent.phase1.title}</h2>
+                <p className="section-subtitle">{currentContent.phase1.subtitle}</p>
+
+                <div className="phase-info">
+                  <div className="phase-badge">Phase 1</div>
+                  <p className="phase-description">{currentContent.phase1.phaseInfo}</p>
+                </div>
+
+                <div className="summary-grid">
+                  <div className="summary-card">
+                    <div className="summary-icon">📊</div>
+                    <div className="summary-content">
+                      <h3>{currentContent.phase1.summary.title}</h3>
+                      <div className="summary-stats">
+                        <div className="stat">
+                          <span className="stat-label">{currentContent.phase1.summary.totalTests}</span>
+                          <span className="stat-value">{phase1Data.totalTests}</span>
+                        </div>
+                        <div className="stat">
+                          <span className="stat-label">{currentContent.phase1.summary.passRate}</span>
+                          <span className="stat-value success">{phase1Data.passRate}%</span>
+                        </div>
+                        <div className="stat">
+                          <span className="stat-label">{currentContent.phase1.summary.detectedAttacks}</span>
+                          <span className="stat-value detected">{phase1Data.detectedAttacks}</span>
+                        </div>
+                        <div className="stat">
+                          <span className="stat-label">{currentContent.phase1.summary.undetectedAttacks}</span>
+                          <span className="stat-value undetected">{phase1Data.undetectedAttacks}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="summary-card">
+                    <div className="summary-icon">🛡️</div>
+                    <div className="summary-content">
+                      <h3>{currentContent.phase1.environment.title}</h3>
+                      <div className="env-details">
+                        <div className="env-item">
+                          <span>Falco:</span> <code>{phase1Data.falcoVersion}</code>
+                        </div>
+                        <div className="env-item">
+                          <span>{currentContent.phase1.environment.plugin}:</span> <code>{phase1Data.pluginVersion}</code>
+                        </div>
+                        <div className="env-item">
+                          <span>{currentContent.phase1.summary.lastRun}:</span>
+                          <span>{formatDate(phase1Data.lastRun)}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="report-links">
+                  <Link href="/quality/e2e-report" legacyBehavior>
+                    <a className="report-button primary">
+                      {currentContent.phase1.buttons.simple}
+                    </a>
+                  </Link>
+                  <a
+                    href="/reports/e2e-complete-results-17340066428/index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="report-button tertiary"
+                  >
+                    {currentContent.phase1.buttons.detailed}
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* Detection Examples */}
+            <section className="detection-examples">
+              <div className="container">
+                <h2>{currentContent.detection.title}</h2>
+                <p className="section-subtitle">{currentContent.detection.subtitle}</p>
+
+                <div className="examples-grid">
+                  <div className="example-card">
+                    <div className="example-header">
+                      <span className="attack-type">SQL Injection</span>
+                      <span className="severity critical">Critical</span>
+                    </div>
+                    <div className="example-content">
+                      <h3>{currentContent.detection.sqli.title}</h3>
+                      <div className="payload">
+                        <strong>Payload:</strong>
+                        <code>/users?id=1&apos; OR &apos;1&apos;=&apos;1</code>
+                      </div>
+                      <div className="detection-result">
+                        <strong>{currentContent.detection.sqli.result}</strong>
+                        <span className="result-badge success">{currentContent.detection.sqli.success}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="example-card">
+                    <div className="example-header">
+                      <span className="attack-type">XSS</span>
+                      <span className="severity warning">Warning</span>
+                    </div>
+                    <div className="example-content">
+                      <h3>{currentContent.detection.xss.title}</h3>
+                      <div className="payload">
+                        <strong>Payload:</strong>
+                        <code>/search?q=&lt;script&gt;alert(1)&lt;/script&gt;</code>
+                      </div>
+                      <div className="detection-result">
+                        <strong>{currentContent.detection.xss.result}</strong>
+                        <span className="result-badge success">{currentContent.detection.xss.success}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* Future Roadmap */}
+        <section className="roadmap-section">
           <div className="container">
-            <h2>{currentContent.detectionExamples.title}</h2>
-            <p className="section-subtitle">{currentContent.detectionExamples.subtitle}</p>
-            
-            <div className="examples-grid">
-              <div className="example-card">
-                <div className="example-header">
-                  <span className="attack-type">SQL Injection</span>
-                  <span className="severity critical">Critical</span>
+            <h2>{currentContent.roadmap.title}</h2>
+            <div className="roadmap-card">
+              <div className="roadmap-stats">
+                <div className="roadmap-stat">
+                  <span className="roadmap-label">{currentContent.roadmap.current}</span>
+                  <span className="roadmap-value">65 {currentContent.roadmap.patterns}</span>
                 </div>
-                <div className="example-content">
-                  <h3>{currentContent.detectionExamples.sqlInjection.title}</h3>
-                  <div className="payload">
-                    <strong>Payload:</strong>
-                    <code>/users?id=1&apos; OR &apos;1&apos;=&apos;1</code>
-                  </div>
-                  <div className="detection-result">
-                    <strong>{currentContent.detectionExamples.sqlInjection.result}</strong>
-                    <span className="result-badge success">{currentContent.detectionExamples.sqlInjection.success}</span>
-                  </div>
+                <div className="roadmap-stat">
+                  <span className="roadmap-label">{currentContent.roadmap.target}</span>
+                  <span className="roadmap-value">850 {currentContent.roadmap.patterns}</span>
                 </div>
               </div>
-
-              <div className="example-card">
-                <div className="example-header">
-                  <span className="attack-type">XSS</span>
-                  <span className="severity warning">Warning</span>
+              <div className="roadmap-progress">
+                <div className="progress-bar-container">
+                  <div className="progress-bar" style={{ width: '7.6%' }}></div>
                 </div>
-                <div className="example-content">
-                  <h3>{currentContent.detectionExamples.xss.title}</h3>
-                  <div className="payload">
-                    <strong>Payload:</strong>
-                    <code>/search?q=&lt;script&gt;alert(1)&lt;/script&gt;</code>
-                  </div>
-                  <div className="detection-result">
-                    <strong>{currentContent.detectionExamples.xss.result}</strong>
-                    <span className="result-badge success">{currentContent.detectionExamples.xss.success}</span>
-                  </div>
-                </div>
+                <span className="progress-percentage">7.6%</span>
               </div>
-            </div>
-
-            <div className="report-links">
-              <Link href="/quality/e2e-report">
-                <a className="report-button primary">
-                  {currentContent.reportButtons.simple}
-                </a>
-              </Link>
-              <a 
-                href="/reports/e2e-complete-results-17340066428/index.html" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="report-button tertiary"
-              >
-                {currentContent.reportButtons.detailed}
-              </a>
+              <p className="roadmap-description">{currentContent.roadmap.description}</p>
             </div>
           </div>
         </section>
@@ -385,28 +678,19 @@ export default function Quality() {
           <div className="footer-content">
             <div className="footer-section">
               <h4>falco-plugin-nginx</h4>
-              <p>
-                {language === 'ja' 
-                  ? 'Nginxアクセスログをリアルタイムで監視し、Webアプリケーションへの脅威を検知するFalcoプラグイン'
-                  : 'Falco plugin that monitors Nginx access logs in real-time and detects threats to web applications'
-                }
-              </p>
+              <p>{currentContent.footer.description}</p>
             </div>
             <div className="footer-section">
-              <h4>{language === 'ja' ? 'リンク' : 'Links'}</h4>
+              <h4>{currentContent.footer.links}</h4>
               <ul>
-                <li><a href="https://github.com/takaosgb3/falco-plugin-nginx">
-                  {language === 'ja' ? 'GitHubリポジトリ' : 'GitHub Repository'}
-                </a></li>
-                <li><a href="https://github.com/takaosgb3/falco-plugin-nginx/blob/main/README.md">
-                  {language === 'ja' ? 'ドキュメント' : 'Documentation'}
-                </a></li>
+                <li><a href="https://github.com/takaosgb3/falco-plugin-nginx">{currentContent.footer.githubRepo}</a></li>
+                <li><a href="https://github.com/takaosgb3/falco-plugin-nginx/blob/main/README.md">{currentContent.footer.documentation}</a></li>
               </ul>
             </div>
             <div className="footer-section">
-              <h4>{language === 'ja' ? 'ライセンス' : 'License'}</h4>
+              <h4>{currentContent.footer.license}</h4>
               <p>Apache License 2.0</p>
-              <p>{language === 'ja' ? 'オープンソースソフトウェア' : 'Open Source Software'}</p>
+              <p>{currentContent.footer.oss}</p>
             </div>
           </div>
           <div className="footer-bottom">
@@ -428,7 +712,7 @@ export default function Quality() {
           text-align: center;
           position: relative;
         }
-        
+
         .quality-hero::before {
           content: '';
           position: absolute;
@@ -471,6 +755,286 @@ export default function Quality() {
           word-break: keep-all;
         }
 
+        /* Phase Selector */
+        .phase-selector-section {
+          background: #f9fafb;
+          padding: 30px 0;
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+        .phase-tabs {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+
+        .phase-tab {
+          padding: 15px 30px;
+          border: 2px solid #e5e7eb;
+          background: white;
+          border-radius: 30px;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #6b7280;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .phase-tab:hover {
+          border-color: #6b46c1;
+          color: #6b46c1;
+        }
+
+        .phase-tab.active {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-color: transparent;
+          color: white;
+        }
+
+        /* Phase 2 Summary */
+        .phase2-summary {
+          padding: 60px 0;
+          background: white;
+        }
+
+        .summary-card-large {
+          background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+          border-radius: 20px;
+          padding: 40px;
+          max-width: 900px;
+          margin: 0 auto;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .summary-card-large h2 {
+          font-size: 1.8rem;
+          color: #2c3e50;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+
+        .stats-row {
+          display: flex;
+          justify-content: center;
+          gap: 50px;
+          margin-bottom: 30px;
+          flex-wrap: wrap;
+        }
+
+        .stat-box {
+          text-align: center;
+        }
+
+        .stat-number {
+          display: block;
+          font-size: 3rem;
+          font-weight: 700;
+          color: #2c3e50;
+        }
+
+        .stat-number.success {
+          color: #27ae60;
+        }
+
+        .stat-label {
+          font-size: 0.95rem;
+          color: #7f8c8d;
+        }
+
+        .environment-info {
+          text-align: center;
+          padding: 15px;
+          background: rgba(255, 255, 255, 0.7);
+          border-radius: 10px;
+          font-size: 0.9rem;
+        }
+
+        .env-label {
+          color: #7f8c8d;
+          margin-right: 10px;
+        }
+
+        .env-value {
+          color: #2c3e50;
+          font-weight: 500;
+        }
+
+        .env-separator {
+          color: #bdc3c7;
+          margin: 0 10px;
+        }
+
+        /* Category Breakdown */
+        .category-breakdown {
+          padding: 60px 0;
+          background: #f9fafb;
+        }
+
+        .category-breakdown h2 {
+          font-size: 2rem;
+          text-align: center;
+          margin-bottom: 40px;
+          color: #2c3e50;
+        }
+
+        .categories-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 20px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .category-card {
+          background: white;
+          border-radius: 12px;
+          padding: 25px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .category-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+
+        .category-name {
+          font-weight: 600;
+          color: #2c3e50;
+          font-size: 1.1rem;
+        }
+
+        .category-count {
+          font-size: 0.9rem;
+          color: #7f8c8d;
+        }
+
+        .category-desc {
+          font-size: 0.85rem;
+          color: #95a5a6;
+          margin: 12px 0 0 0;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+          padding: 40px 0;
+          background: white;
+        }
+
+        .buttons-row {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+
+        .action-button {
+          display: inline-block;
+          padding: 18px 40px;
+          border-radius: 30px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+
+        .action-button.primary {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+        }
+
+        .action-button.primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .action-button.secondary {
+          background: white;
+          color: #667eea;
+          border: 2px solid #667eea;
+        }
+
+        .action-button.secondary:hover {
+          background: #667eea;
+          color: white;
+        }
+
+        /* Report Access */
+        .report-access {
+          padding: 40px 0;
+          background: #f9fafb;
+        }
+
+        .report-access h3 {
+          text-align: center;
+          font-size: 1.5rem;
+          margin-bottom: 30px;
+          color: #2c3e50;
+        }
+
+        .access-options {
+          max-width: 700px;
+          margin: 0 auto;
+        }
+
+        .access-option {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin-bottom: 20px;
+          flex-wrap: wrap;
+        }
+
+        .access-label {
+          font-weight: 600;
+          color: #2c3e50;
+          min-width: 120px;
+        }
+
+        .access-link {
+          color: #667eea;
+          word-break: break-all;
+        }
+
+        .run-input-group {
+          display: flex;
+          gap: 10px;
+          flex: 1;
+        }
+
+        .run-input {
+          flex: 1;
+          padding: 12px 15px;
+          border: 2px solid #e5e7eb;
+          border-radius: 8px;
+          font-size: 1rem;
+          min-width: 200px;
+        }
+
+        .run-input:focus {
+          outline: none;
+          border-color: #667eea;
+        }
+
+        .run-go-button {
+          padding: 12px 25px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .run-go-button:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Phase 1 Styles (existing) */
         .test-summary {
           padding: 80px 0;
           background: #f9fafb;
@@ -524,7 +1088,7 @@ export default function Quality() {
           grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
           gap: 30px;
           max-width: 1000px;
-          margin: 0 auto;
+          margin: 0 auto 40px;
         }
 
         .summary-card {
@@ -550,17 +1114,13 @@ export default function Quality() {
         .summary-stats {
           display: flex;
           gap: 30px;
+          flex-wrap: wrap;
         }
 
         .stat {
           display: flex;
           flex-direction: column;
           gap: 5px;
-        }
-
-        .stat-label {
-          font-size: 0.9rem;
-          color: #7f8c8d;
         }
 
         .stat-value {
@@ -605,6 +1165,46 @@ export default function Quality() {
           font-family: 'Courier New', monospace;
         }
 
+        .report-links {
+          text-align: center;
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .report-button {
+          display: inline-block;
+          color: white;
+          padding: 15px 30px;
+          border-radius: 30px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 1.1rem;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .report-button.primary {
+          background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+
+        .report-button.tertiary {
+          background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+
+        .report-button:hover {
+          transform: translateY(-2px);
+        }
+
+        .report-button.primary:hover {
+          box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        .report-button.tertiary:hover {
+          box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
+        }
+
+        /* Detection Examples */
         .detection-examples {
           padding: 80px 0;
           background: white;
@@ -622,7 +1222,7 @@ export default function Quality() {
           grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
           gap: 30px;
           max-width: 1000px;
-          margin: 0 auto 60px;
+          margin: 0 auto;
         }
 
         .example-card {
@@ -719,51 +1319,83 @@ export default function Quality() {
           color: #155724;
         }
 
-        .report-links {
+        /* Roadmap Section */
+        .roadmap-section {
+          padding: 60px 0;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .roadmap-section h2 {
+          font-size: 2rem;
           text-align: center;
-          display: flex;
-          gap: 20px;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
-        .report-button {
-          display: inline-block;
           color: white;
-          padding: 15px 30px;
-          border-radius: 30px;
-          text-decoration: none;
-          font-weight: 600;
+          margin-bottom: 40px;
+        }
+
+        .roadmap-card {
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 20px;
+          padding: 40px;
+          max-width: 700px;
+          margin: 0 auto;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .roadmap-stats {
+          display: flex;
+          justify-content: space-around;
+          margin-bottom: 30px;
+        }
+
+        .roadmap-stat {
+          text-align: center;
+        }
+
+        .roadmap-label {
+          display: block;
+          font-size: 0.9rem;
+          color: #7f8c8d;
+          margin-bottom: 5px;
+        }
+
+        .roadmap-value {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #2c3e50;
+        }
+
+        .roadmap-progress {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin-bottom: 25px;
+        }
+
+        .progress-bar-container {
+          flex: 1;
+          height: 12px;
+          background: #ecf0f1;
+          border-radius: 6px;
+          overflow: hidden;
+        }
+
+        .progress-bar {
+          height: 100%;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 6px;
+          transition: width 0.5s ease;
+        }
+
+        .progress-percentage {
+          font-weight: 700;
+          color: #667eea;
           font-size: 1.1rem;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .report-button.primary {
-          background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-        }
-
-        .report-button.secondary {
-          background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-        }
-
-        .report-button.tertiary {
-          background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-        }
-
-        .report-button:hover {
-          transform: translateY(-2px);
-        }
-
-        .report-button.primary:hover {
-          box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
-        }
-
-        .report-button.secondary:hover {
-          box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
-        }
-
-        .report-button.tertiary:hover {
-          box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
+        .roadmap-description {
+          text-align: center;
+          color: #7f8c8d;
+          line-height: 1.7;
         }
 
         .nav-menu a.active,
@@ -783,6 +1415,41 @@ export default function Quality() {
 
           .hero-subtitle {
             font-size: 1.2rem;
+          }
+
+          .phase-tabs {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .phase-tab {
+            width: 100%;
+            max-width: 300px;
+          }
+
+          .stats-row {
+            gap: 30px;
+          }
+
+          .stat-number {
+            font-size: 2rem;
+          }
+
+          .environment-info {
+            font-size: 0.8rem;
+          }
+
+          .env-separator {
+            display: none;
+          }
+
+          .env-value {
+            display: block;
+            margin: 5px 0;
+          }
+
+          .categories-grid {
+            grid-template-columns: 1fr;
           }
 
           .test-summary h2,
@@ -807,6 +1474,15 @@ export default function Quality() {
           .example-header {
             flex-direction: column;
             gap: 10px;
+          }
+
+          .access-option {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .run-input-group {
+            width: 100%;
           }
         }
       `}</style>
