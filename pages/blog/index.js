@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-e2e-report-guide',
+      title: 'Falco + Nginx プラグイン開発：特別編 — Falcoya君の「E2Eテストレポートの歩き方」',
+      description: 'Allureが描く"検知の物語"を読むために。65テストケースのE2Eレポートの読み方を徹底解説。Overview、Behaviors、Test Details、Graphs、ペイロードハイライトの活用法を紹介します。',
+      date: '2025-12-08',
+      readTime: '15分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'Allure', '特別編', 'レポート解説', '65パターン'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-e2e-report-guide'
+    },
+    {
       id: 'falco-plugin-development-days132-134',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の132日目から134日目',
       description: '相関のその先へ。"揺れゼロ"を目指し、そして v1.4.2 が生まれた。Pattern A317/A318修正、E2E Run #130で65/65全成功、v1.4.0設計決定、docs/rules.md大規模更新。三ヶ月の積み重ねが形になった3日間の記録。',
@@ -237,6 +247,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-e2e-report-guide-en',
+      title: 'Falco + Nginx Plugin Development: Special Edition — Falcoya\'s "Guide to E2E Test Reports"',
+      description: 'How to read the "detection stories" drawn by Allure. A thorough guide to reading E2E reports with 65 test cases. Learn about Overview, Behaviors, Test Details, Graphs, and payload highlighting.',
+      date: '2025-12-08',
+      readTime: '15 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'Allure', 'Special Edition', 'Report Guide', '65 Patterns'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-e2e-report-guide-en'
+    },
     {
       id: 'falco-plugin-development-days132-134-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 132-134',

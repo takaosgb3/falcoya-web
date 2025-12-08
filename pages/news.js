@@ -30,6 +30,23 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-12-08-e2e-report-guide",
+          date: "2025-12-08",
+          category: "feature",
+          type: "new",
+          title: "特別編「Falcoya君の『E2Eテストレポートの歩き方』」を公開",
+          content: "Allureが描く\"検知の物語\"を読むために。65テストケースのE2Eレポートの構造と読み方を徹底解説。URL構造からOverview、Behaviors、テスト詳細、ハイライト機能、Graphs、65パターンのカテゴリ分類まで、レポートを味方につける8つの章立てで詳しく解説します。",
+          highlights: [
+            "Allure E2Eレポートの読み方を徹底解説",
+            "65テストケース（SQLI: 19, XSS: 11, PATH: 20, CMDINJ: 10, OTHER: 5）の全体像",
+            "Overview/Behaviors/Test Details/Graphs各ページの活用法",
+            "ハイライト機能による攻撃ペイロードの可視化",
+            "検知の物語を追う8章構成のガイド",
+            "「レポートを読むことは、検知の物語を追うこと」"
+          ],
+          link: "/blog/falco-plugin-development-e2e-report-guide"
+        },
+        {
           id: "2025-12-06-oss-development-blog-part21",
           date: "2025-12-06",
           category: "feature",
@@ -488,6 +505,23 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-12-08-e2e-report-guide-en",
+          date: "2025-12-08",
+          category: "feature",
+          type: "new",
+          title: "Special Edition \"Falcoya's Guide to E2E Test Reports\" Published",
+          content: "How to read the \"detection stories\" drawn by Allure. A comprehensive guide to understanding and navigating E2E reports with 65 test cases. From URL structure to Overview, Behaviors, Test Details, Highlight feature, Graphs, and 65-pattern categorization—master the art of reading reports in 8 chapters.",
+          highlights: [
+            "Comprehensive guide to reading Allure E2E reports",
+            "Overview of 65 test cases (SQLI: 19, XSS: 11, PATH: 20, CMDINJ: 10, OTHER: 5)",
+            "How to utilize Overview/Behaviors/Test Details/Graphs pages",
+            "Attack payload visualization through Highlight feature",
+            "8-chapter guide to tracing the detection story",
+            "\"Reading reports is tracing the story of detection\""
+          ],
+          link: "/blog/falco-plugin-development-e2e-report-guide-en"
+        },
         {
           id: "2025-12-06-oss-development-blog-part21-en",
           date: "2025-12-06",
