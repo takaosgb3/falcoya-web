@@ -30,6 +30,23 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-12-08-quality-page-redesign",
+          date: "2025-12-08",
+          category: "feature",
+          type: "update",
+          title: "テストレポートページをリニューアル",
+          content: "E2Eテストレポートページのデザインを一新しました。65パターンの攻撃検知テスト結果をより見やすく、Allureレポートへのアクセスもスムーズに。Phase 2の攻撃カテゴリ別パターン（SQLI/XSS/PATH/CMDINJ/OTHER）を視覚的に表示し、今後の850パターンへの拡大ロードマップも掲載しています。",
+          highlights: [
+            "モダンなライトテーマUIにリニューアル",
+            "Phase 1/Phase 2 切り替えタブの追加",
+            "攻撃カテゴリ別パターン数の可視化（カラーコード付き）",
+            "Allureレポートへの直接リンク（最新版/Run番号指定）",
+            "850パターンへの拡大ロードマップを掲載",
+            "レスポンシブデザイン対応"
+          ],
+          link: "/quality"
+        },
+        {
           id: "2025-12-08-e2e-report-guide",
           date: "2025-12-08",
           category: "feature",
@@ -505,6 +522,23 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-12-08-quality-page-redesign-en",
+          date: "2025-12-08",
+          category: "feature",
+          type: "update",
+          title: "Test Report Page Redesigned",
+          content: "The E2E test report page has been completely redesigned. View 65 attack detection test results more clearly with smoother access to Allure reports. Phase 2 attack categories (SQLI/XSS/PATH/CMDINJ/OTHER) are visually displayed, along with a roadmap for expansion to 850 patterns.",
+          highlights: [
+            "Modern light theme UI redesign",
+            "Phase 1/Phase 2 toggle tabs added",
+            "Attack category pattern visualization (color-coded)",
+            "Direct links to Allure reports (Latest/By Run number)",
+            "Roadmap for 850 pattern expansion",
+            "Responsive design support"
+          ],
+          link: "/quality"
+        },
         {
           id: "2025-12-08-e2e-report-guide-en",
           date: "2025-12-08",
