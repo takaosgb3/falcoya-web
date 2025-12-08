@@ -703,11 +703,11 @@ export default function Quality() {
         .quality-container {
           min-height: 100vh;
           padding-top: 80px;
-          background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+          background: #FFFFFF;
         }
 
         .quality-hero {
-          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+          background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #A855F7 100%);
           color: white;
           padding: 100px 0;
           text-align: center;
@@ -722,8 +722,8 @@ export default function Quality() {
           left: -50%;
           width: 200%;
           height: 200%;
-          background: radial-gradient(circle at 30% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 70% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+          background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
           animation: pulse 15s ease-in-out infinite;
           pointer-events: none;
         }
@@ -740,7 +740,7 @@ export default function Quality() {
           left: 0;
           right: 0;
           height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
         }
 
         .quality-hero h1 {
@@ -749,10 +749,7 @@ export default function Quality() {
           margin-bottom: 20px;
           position: relative;
           z-index: 1;
-          background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: white;
         }
 
         .hero-subtitle {
@@ -761,7 +758,7 @@ export default function Quality() {
           font-weight: 500;
           position: relative;
           z-index: 1;
-          color: #a5b4fc;
+          color: rgba(255, 255, 255, 0.95);
         }
 
         .hero-description {
@@ -770,7 +767,7 @@ export default function Quality() {
           margin: 0 auto;
           line-height: 1.8;
           font-weight: 400;
-          color: rgba(255, 255, 255, 0.8);
+          color: rgba(255, 255, 255, 0.9);
           position: relative;
           z-index: 1;
           word-break: keep-all;
@@ -778,9 +775,9 @@ export default function Quality() {
 
         /* Phase Selector */
         .phase-selector-section {
-          background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+          background: #F9FAFB;
           padding: 40px 0;
-          border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+          border-bottom: 1px solid #E5E7EB;
         }
 
         .phase-tabs {
@@ -792,63 +789,46 @@ export default function Quality() {
 
         .phase-tab {
           padding: 16px 32px;
-          border: 1px solid rgba(102, 126, 234, 0.3);
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(10px);
+          border: 2px solid #E5E7EB;
+          background: white;
           border-radius: 50px;
           font-size: 1rem;
           font-weight: 600;
-          color: rgba(255, 255, 255, 0.7);
+          color: #6B7280;
           cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
         }
 
-        .phase-tab::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-          transition: left 0.5s ease;
-        }
-
-        .phase-tab:hover::before {
-          left: 100%;
-        }
-
         .phase-tab:hover {
-          border-color: rgba(102, 126, 234, 0.6);
-          color: white;
+          border-color: #A855F7;
+          color: #7C3AED;
           transform: translateY(-2px);
-          box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+          box-shadow: 0 8px 25px rgba(168, 85, 247, 0.15);
         }
 
         .phase-tab.active {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, #4F46E5 0%, #A855F7 100%);
           border-color: transparent;
           color: white;
-          box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+          box-shadow: 0 8px 30px rgba(79, 70, 229, 0.3);
         }
 
         /* Phase 2 Summary */
         .phase2-summary {
           padding: 80px 0;
-          background: linear-gradient(180deg, #16213e 0%, #1a1a2e 100%);
+          background: white;
         }
 
         .summary-card-large {
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(102, 126, 234, 0.2);
+          background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+          border: 1px solid #E2E8F0;
           border-radius: 24px;
           padding: 50px;
           max-width: 950px;
           margin: 0 auto;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
           position: relative;
           overflow: hidden;
         }
@@ -859,13 +839,13 @@ export default function Quality() {
           top: 0;
           left: 0;
           right: 0;
-          height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
+          height: 4px;
+          background: linear-gradient(90deg, #4F46E5, #A855F7);
         }
 
         .summary-card-large h2 {
           font-size: 1.8rem;
-          color: white;
+          color: #1F2937;
           margin-bottom: 40px;
           text-align: center;
           font-weight: 700;
@@ -874,84 +854,79 @@ export default function Quality() {
         .stats-row {
           display: flex;
           justify-content: center;
-          gap: 60px;
+          gap: 40px;
           margin-bottom: 40px;
           flex-wrap: wrap;
         }
 
         .stat-box {
           text-align: center;
-          padding: 20px 30px;
-          background: rgba(255, 255, 255, 0.05);
+          padding: 24px 32px;
+          background: white;
           border-radius: 16px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid #E5E7EB;
           transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .stat-box:hover {
           transform: translateY(-5px);
-          background: rgba(255, 255, 255, 0.08);
-          border-color: rgba(102, 126, 234, 0.3);
+          box-shadow: 0 12px 30px rgba(79, 70, 229, 0.15);
+          border-color: #A855F7;
         }
 
         .stat-number {
           display: block;
           font-size: 3rem;
           font-weight: 800;
-          background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: #4F46E5;
         }
 
         .stat-number.success {
-          background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: #10B981;
         }
 
         .stat-label {
           font-size: 0.95rem;
-          color: rgba(255, 255, 255, 0.6);
+          color: #6B7280;
           margin-top: 8px;
         }
 
         .environment-info {
           text-align: center;
           padding: 20px;
-          background: rgba(255, 255, 255, 0.03);
+          background: white;
           border-radius: 12px;
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          border: 1px solid #E5E7EB;
           font-size: 0.9rem;
         }
 
         .env-label {
-          color: rgba(255, 255, 255, 0.5);
+          color: #6B7280;
           margin-right: 10px;
         }
 
         .env-value {
-          color: rgba(255, 255, 255, 0.9);
+          color: #1F2937;
           font-weight: 500;
         }
 
         .env-separator {
-          color: rgba(255, 255, 255, 0.2);
+          color: #D1D5DB;
           margin: 0 12px;
         }
 
         /* Category Breakdown */
         .category-breakdown {
           padding: 80px 0;
-          background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+          background: #F9FAFB;
         }
 
         .category-breakdown h2 {
           font-size: 2.2rem;
           text-align: center;
           margin-bottom: 50px;
-          color: white;
+          color: #1F2937;
           font-weight: 700;
         }
 
@@ -964,14 +939,14 @@ export default function Quality() {
         }
 
         .category-card {
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: white;
+          border: 1px solid #E5E7EB;
           border-radius: 20px;
           padding: 28px;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .category-card::before {
@@ -980,28 +955,21 @@ export default function Quality() {
           top: 0;
           left: 0;
           right: 0;
-          height: 3px;
-          background: linear-gradient(90deg, var(--category-color, #667eea), transparent);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .category-card:hover::before {
-          opacity: 1;
+          height: 4px;
+          background: linear-gradient(90deg, var(--category-color, #4F46E5), var(--category-color-light, #A855F7));
         }
 
         .category-card:hover {
-          transform: translateY(-8px);
-          background: rgba(255, 255, 255, 0.06);
-          border-color: rgba(102, 126, 234, 0.3);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          transform: translateY(-6px);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+          border-color: var(--category-color, #A855F7);
         }
 
-        .category-card:nth-child(1) { --category-color: #ef4444; }
-        .category-card:nth-child(2) { --category-color: #f97316; }
-        .category-card:nth-child(3) { --category-color: #eab308; }
-        .category-card:nth-child(4) { --category-color: #22c55e; }
-        .category-card:nth-child(5) { --category-color: #8b5cf6; }
+        .category-card:nth-child(1) { --category-color: #DC2626; --category-color-light: #F87171; }
+        .category-card:nth-child(2) { --category-color: #EA580C; --category-color-light: #FB923C; }
+        .category-card:nth-child(3) { --category-color: #CA8A04; --category-color-light: #FACC15; }
+        .category-card:nth-child(4) { --category-color: #16A34A; --category-color-light: #4ADE80; }
+        .category-card:nth-child(5) { --category-color: #7C3AED; --category-color-light: #A78BFA; }
 
         .category-header {
           display: flex;
@@ -1012,23 +980,22 @@ export default function Quality() {
 
         .category-name {
           font-weight: 700;
-          color: white;
+          color: #1F2937;
           font-size: 1.15rem;
         }
 
         .category-count {
-          font-size: 0.9rem;
-          color: var(--category-color, #a5b4fc);
+          font-size: 0.85rem;
+          color: var(--category-color, #4F46E5);
           font-weight: 600;
           padding: 6px 14px;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(79, 70, 229, 0.08);
           border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .category-desc {
           font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.5);
+          color: #6B7280;
           margin: 12px 0 0 0;
           line-height: 1.6;
         }
@@ -1036,7 +1003,7 @@ export default function Quality() {
         /* Action Buttons */
         .action-buttons {
           padding: 50px 0;
-          background: linear-gradient(180deg, #16213e 0%, #1a1a2e 100%);
+          background: white;
         }
 
         .buttons-row {
@@ -1055,47 +1022,31 @@ export default function Quality() {
           font-weight: 600;
           font-size: 1.05rem;
           text-decoration: none;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
         }
 
-        .action-button::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-          transition: left 0.5s ease;
-        }
-
-        .action-button:hover::before {
-          left: 100%;
-        }
-
         .action-button.primary {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, #4F46E5 0%, #A855F7 100%);
           color: white;
           border: none;
-          box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+          box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
         }
 
         .action-button.primary:hover {
           transform: translateY(-3px);
-          box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+          box-shadow: 0 12px 30px rgba(79, 70, 229, 0.4);
         }
 
         .action-button.secondary {
-          background: transparent;
-          color: #a5b4fc;
-          border: 2px solid rgba(102, 126, 234, 0.5);
+          background: white;
+          color: #4F46E5;
+          border: 2px solid #4F46E5;
         }
 
         .action-button.secondary:hover {
-          background: rgba(102, 126, 234, 0.1);
-          border-color: #667eea;
+          background: #4F46E5;
           color: white;
           transform: translateY(-3px);
         }
@@ -1103,25 +1054,26 @@ export default function Quality() {
         /* Report Access */
         .report-access {
           padding: 60px 0;
-          background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+          background: #F9FAFB;
+          border-top: 1px solid #E5E7EB;
         }
 
         .report-access h3 {
           text-align: center;
           font-size: 1.5rem;
           margin-bottom: 40px;
-          color: white;
+          color: #1F2937;
           font-weight: 600;
         }
 
         .access-options {
           max-width: 750px;
           margin: 0 auto;
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: white;
+          border: 1px solid #E5E7EB;
           border-radius: 20px;
           padding: 30px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .access-option {
@@ -1138,18 +1090,18 @@ export default function Quality() {
 
         .access-label {
           font-weight: 600;
-          color: rgba(255, 255, 255, 0.7);
+          color: #6B7280;
           min-width: 120px;
         }
 
         .access-link {
-          color: #a5b4fc;
+          color: #4F46E5;
           word-break: break-all;
           transition: color 0.3s ease;
         }
 
         .access-link:hover {
-          color: #667eea;
+          color: #7C3AED;
         }
 
         .run-input-group {
@@ -1161,28 +1113,28 @@ export default function Quality() {
         .run-input {
           flex: 1;
           padding: 14px 18px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid #E5E7EB;
           border-radius: 12px;
           font-size: 1rem;
           min-width: 200px;
-          background: rgba(255, 255, 255, 0.05);
-          color: white;
+          background: white;
+          color: #1F2937;
           transition: all 0.3s ease;
         }
 
         .run-input::placeholder {
-          color: rgba(255, 255, 255, 0.4);
+          color: #9CA3AF;
         }
 
         .run-input:focus {
           outline: none;
-          border-color: rgba(102, 126, 234, 0.5);
-          background: rgba(255, 255, 255, 0.08);
+          border-color: #A855F7;
+          box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
         }
 
         .run-go-button {
           padding: 14px 28px;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, #4F46E5 0%, #A855F7 100%);
           color: white;
           border: none;
           border-radius: 12px;
@@ -1193,7 +1145,7 @@ export default function Quality() {
 
         .run-go-button:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+          box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
         }
 
         /* Phase 1 Styles (existing) */
@@ -1484,7 +1436,7 @@ export default function Quality() {
         /* Roadmap Section */
         .roadmap-section {
           padding: 80px 0;
-          background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #1a1a2e 100%);
+          background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #A855F7 100%);
           position: relative;
           overflow: hidden;
         }
@@ -1496,7 +1448,7 @@ export default function Quality() {
           left: 0;
           right: 0;
           height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
         }
 
         .roadmap-section h2 {
@@ -1508,14 +1460,14 @@ export default function Quality() {
         }
 
         .roadmap-card {
-          background: rgba(255, 255, 255, 0.03);
+          background: rgba(255, 255, 255, 0.15);
           backdrop-filter: blur(20px);
-          border: 1px solid rgba(102, 126, 234, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.2);
           border-radius: 24px;
           padding: 50px;
           max-width: 750px;
           margin: 0 auto;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
           position: relative;
         }
 
@@ -1526,7 +1478,7 @@ export default function Quality() {
           left: 0;
           right: 0;
           height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
         }
 
         .roadmap-stats {
@@ -1538,25 +1490,22 @@ export default function Quality() {
         .roadmap-stat {
           text-align: center;
           padding: 20px 30px;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.1);
           border-radius: 16px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .roadmap-label {
           display: block;
           font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(255, 255, 255, 0.8);
           margin-bottom: 8px;
         }
 
         .roadmap-value {
           font-size: 1.6rem;
           font-weight: 800;
-          background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: white;
         }
 
         .roadmap-progress {
@@ -1569,7 +1518,7 @@ export default function Quality() {
         .progress-bar-container {
           flex: 1;
           height: 14px;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.2);
           border-radius: 7px;
           overflow: hidden;
           position: relative;
@@ -1577,7 +1526,7 @@ export default function Quality() {
 
         .progress-bar {
           height: 100%;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
           border-radius: 7px;
           transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
@@ -1590,7 +1539,7 @@ export default function Quality() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
           animation: shimmer 2s infinite;
         }
 
@@ -1601,14 +1550,14 @@ export default function Quality() {
 
         .progress-percentage {
           font-weight: 700;
-          color: #a5b4fc;
+          color: white;
           font-size: 1.2rem;
           min-width: 60px;
         }
 
         .roadmap-description {
           text-align: center;
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(255, 255, 255, 0.9);
           line-height: 1.8;
           font-size: 1rem;
         }
