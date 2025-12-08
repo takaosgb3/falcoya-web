@@ -506,9 +506,21 @@ export default function FalcoPluginDevelopmentE2EReportGuide() {
               「Falco がどんな世界を守っているのか」がよくわかります。
             </p>
 
+            <h3>今後の展望：850パターンへ</h3>
+            <p>
+              現在の65パターンは、まだ始まりに過ぎません。<br />
+              今後、<strong>850パターン</strong>までE2Eテストを拡大していく予定です。
+            </p>
+            <p>
+              より多くの攻撃バリエーション、<br />
+              より深いエッジケース、<br />
+              より広い守備範囲へ——<br />
+              Falco nginx プラグインの検知能力は、まだまだ進化します。
+            </p>
+
             <div className="lesson-box">
               <h3>学び</h3>
-              <p>65パターンはFalco nginx プラグインの守備範囲の地図。カテゴリを理解することで検知能力の全体像が見える。</p>
+              <p>65パターンはFalco nginx プラグインの守備範囲の地図。カテゴリを理解することで検知能力の全体像が見える。今後850パターンまで拡大予定。</p>
             </div>
           </section>
 

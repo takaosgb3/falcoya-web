@@ -506,9 +506,21 @@ export default function FalcoPluginDevelopmentE2EReportGuideEN() {
               you can clearly understand &quot;what kind of world Falco is protecting.&quot;
             </p>
 
+            <h3>Future Vision: Toward 850 Patterns</h3>
+            <p>
+              The current 65 patterns are just the beginning.<br />
+              We plan to expand E2E tests to <strong>850 patterns</strong> in the future.
+            </p>
+            <p>
+              More attack variations,<br />
+              deeper edge cases,<br />
+              broader coverage—<br />
+              the detection capabilities of the Falco nginx plugin will continue to evolve.
+            </p>
+
             <div className="lesson-box">
               <h3>Lesson</h3>
-              <p>65 patterns map the coverage of the Falco nginx plugin. Understanding categories reveals the full picture of detection capabilities.</p>
+              <p>65 patterns map the coverage of the Falco nginx plugin. Understanding categories reveals the full picture of detection capabilities. Expansion to 850 patterns planned.</p>
             </div>
           </section>
 
