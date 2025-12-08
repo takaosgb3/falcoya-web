@@ -13,7 +13,7 @@ export default function Quality() {
   const phase2Data = {
     metadata: {
       runNumber: 26,
-      timestamp: "2025-12-07T22:46:34Z",
+      timestamp: "2025-12-07T13:46:34Z",
       duration: "142ms",
       environment: {
         platform: "ubuntu-24.04",
