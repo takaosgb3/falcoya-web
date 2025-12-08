@@ -861,25 +861,27 @@ export default function Quality() {
 
         .stat-box {
           text-align: center;
-          padding: 24px 32px;
+          padding: 20px 28px;
           background: white;
-          border-radius: 16px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+          min-width: 140px;
         }
 
         .stat-box:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 12px 30px rgba(79, 70, 229, 0.15);
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(79, 70, 229, 0.12);
           border-color: #A855F7;
         }
 
         .stat-number {
           display: block;
-          font-size: 3rem;
-          font-weight: 800;
+          font-size: 1.75rem;
+          font-weight: 700;
           color: #4F46E5;
+          line-height: 1.2;
         }
 
         .stat-number.success {
@@ -887,9 +889,10 @@ export default function Quality() {
         }
 
         .stat-label {
-          font-size: 0.95rem;
+          font-size: 0.85rem;
           color: #6B7280;
-          margin-top: 8px;
+          margin-top: 6px;
+          font-weight: 500;
         }
 
         .environment-info {
@@ -1592,11 +1595,16 @@ export default function Quality() {
           }
 
           .stats-row {
-            gap: 30px;
+            gap: 16px;
+          }
+
+          .stat-box {
+            padding: 16px 20px;
+            min-width: 100px;
           }
 
           .stat-number {
-            font-size: 2rem;
+            font-size: 1.5rem;
           }
 
           .environment-info {
