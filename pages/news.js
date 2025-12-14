@@ -30,6 +30,25 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-12-14-oss-development-blog-part22",
+          date: "2025-12-14",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の135日目から137日目」を公開",
+          content: "開発密度が一段上がった日々。E2Eテストパターン65→100拡張、検知率100%達成、Allure Report改善（PR #26, #27）、Issue #777完了。E2Eテストが仕組みから運用できる体系になった3日間の記録を公開しました。",
+          highlights: [
+            "大規模な機能追加とバグ修正の並行実施（12/07）",
+            "E2Eテストワークフローの完成（12/09）",
+            "Allure Report改善：ソート機能追加（PR #26）",
+            "テストケース名に数値プレフィックス追加（PR #27）",
+            "Issue #777（E2Eテストパターン拡張 Phase 1）完了（12/11）",
+            "テストパターン 65 → 100 拡張、検知率 100% 達成",
+            "18個の PR / Issue クローズ",
+            "「やっとスタートラインかな」"
+          ],
+          link: "/blog/falco-plugin-development-days135-137"
+        },
+        {
           id: "2025-12-08-quality-page-redesign",
           date: "2025-12-08",
           category: "feature",
@@ -522,6 +541,25 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-12-14-oss-development-blog-part22-en",
+          date: "2025-12-14",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 135-137\" Published",
+          content: "Days when development intensity stepped up. E2E test patterns expanded from 65 to 100, achieving 100% detection rate, Allure Report improvements (PR #26, #27), Issue #777 completed. Three days when E2E testing became an \"operational system\" rather than just a \"mechanism\".",
+          highlights: [
+            "Parallel execution of large-scale feature additions and bug fixes (12/07)",
+            "E2E test workflow completion (12/09)",
+            "Allure Report improvement: sorting functionality added (PR #26)",
+            "Added numerical prefixes to test case names (PR #27)",
+            "Issue #777 (E2E Test Pattern Expansion Phase 1) completed (12/11)",
+            "Test patterns expanded from 65 → 100, achieved 100% detection rate",
+            "18 PRs / Issues closed",
+            "\"But we're just at the starting line now\""
+          ],
+          link: "/blog/falco-plugin-development-days135-137-en"
+        },
         {
           id: "2025-12-08-quality-page-redesign-en",
           date: "2025-12-08",

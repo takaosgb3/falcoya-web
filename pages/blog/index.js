@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days135-137',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の135日目から137日目',
+      description: '開発密度が一段上がった日々。E2Eテストパターン65→100拡張、検知率100%達成、Allure Report改善（PR #26, #27）、Issue #777完了。E2Eテストが仕組みから運用できる体系になった3日間の記録。',
+      date: '2025-12-14',
+      readTime: '10分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', '100パターン', 'Allure Report', 'Issue #777', '検知率100%'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days135-137'
+    },
+    {
       id: 'falco-plugin-development-e2e-report-guide',
       title: 'Falco + Nginx プラグイン開発：特別編 — Falcoya君の「E2Eテストレポートの歩き方」',
       description: 'Allureが描く"検知の物語"を読むために。65テストケースのE2Eレポートの読み方を徹底解説。Overview、Behaviors、Test Details、Graphs、ペイロードハイライトの活用法を紹介します。',
@@ -247,6 +257,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days135-137-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 135-137',
+      description: 'Days when development intensity stepped up. E2E test patterns expanded from 65 to 100, achieving 100% detection rate, Allure Report improvements (PR #26, #27), Issue #777 completed. Three days when E2E testing became an "operational system" rather than just a "mechanism".',
+      date: '2025-12-14',
+      readTime: '10 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', '100 Patterns', 'Allure Report', 'Issue #777', '100% Detection'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days135-137-en'
+    },
     {
       id: 'falco-plugin-development-e2e-report-guide-en',
       title: 'Falco + Nginx Plugin Development: Special Edition — Falcoya\'s "Guide to E2E Test Reports"',
