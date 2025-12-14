@@ -9,11 +9,11 @@ export default function Quality() {
   const [activePhase, setActivePhase] = useState('phase2') // Default to Phase 2
   const [runNumber, setRunNumber] = useState('')
 
-  // Phase 2 test data (65 patterns)
+  // Phase 2 test data (100 patterns)
   const phase2Data = {
     metadata: {
-      runNumber: 26,
-      timestamp: "2025-12-07T13:46:34Z",
+      runNumber: 37,
+      timestamp: "2025-12-12T13:46:34Z",
       duration: "142ms",
       environment: {
         platform: "ubuntu-24.04",
@@ -24,8 +24,8 @@ export default function Quality() {
       }
     },
     summary: {
-      totalTests: 65,
-      passedTests: 65,
+      totalTests: 100,
+      passedTests: 100,
       failedTests: 0,
       passRate: 100
     },
@@ -71,11 +71,11 @@ export default function Quality() {
       },
       hero: {
         title: "E2E テストレポート",
-        subtitle: "65パターンの攻撃検知をAllureで可視化",
+        subtitle: "100パターンの攻撃検知をAllureで可視化",
         description: "falco-plugin-nginx の品質は、包括的なE2Eテスト、自動化されたCI/CD、実証済みの検知精度、そして Falcoya君の頑張りによって支えられています。"
       },
       phaseSelector: {
-        phase2: "Phase 2: 攻撃検知 (65パターン)",
+        phase2: "Phase 2: 攻撃検知 (100パターン)",
         phase1: "Phase 1: 基礎検証 (14テスト)"
       },
       phase2: {
@@ -175,11 +175,11 @@ export default function Quality() {
       },
       hero: {
         title: "E2E Test Report",
-        subtitle: "65 Attack Patterns Visualized with Allure",
+        subtitle: "100 Attack Patterns Visualized with Allure",
         description: "The quality of falco-plugin-nginx is supported by comprehensive E2E testing, automated CI/CD, proven detection accuracy, and Falcoya-kun's dedication."
       },
       phaseSelector: {
-        phase2: "Phase 2: Attack Detection (65 Patterns)",
+        phase2: "Phase 2: Attack Detection (100 Patterns)",
         phase1: "Phase 1: Foundation Verification (14 Tests)"
       },
       phase2: {
@@ -654,7 +654,7 @@ export default function Quality() {
               <div className="roadmap-stats">
                 <div className="roadmap-stat">
                   <span className="roadmap-label">{currentContent.roadmap.current}</span>
-                  <span className="roadmap-value">65 {currentContent.roadmap.patterns}</span>
+                  <span className="roadmap-value">100 {currentContent.roadmap.patterns}</span>
                 </div>
                 <div className="roadmap-stat">
                   <span className="roadmap-label">{currentContent.roadmap.target}</span>
@@ -663,9 +663,9 @@ export default function Quality() {
               </div>
               <div className="roadmap-progress">
                 <div className="progress-bar-container">
-                  <div className="progress-bar" style={{ width: '7.6%' }}></div>
+                  <div className="progress-bar" style={{ width: '11.8%' }}></div>
                 </div>
-                <span className="progress-percentage">7.6%</span>
+                <span className="progress-percentage">11.8%</span>
               </div>
               <p className="roadmap-description">{currentContent.roadmap.description}</p>
             </div>
