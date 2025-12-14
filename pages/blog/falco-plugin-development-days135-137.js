@@ -153,10 +153,47 @@ export default function FalcoPluginDevelopmentDays135to137() {
             </div>
           </header>
 
-          <div className="article-image">
+          <div className="article-image"
+            onMouseEnter={(e) => {
+              const video = e.currentTarget.querySelector('video')
+              const img = e.currentTarget.querySelector('img')
+              if (video && img) {
+                img.style.opacity = '0'
+                video.style.opacity = '1'
+                video.play()
+              }
+            }}
+            onMouseLeave={(e) => {
+              const video = e.currentTarget.querySelector('video')
+              const img = e.currentTarget.querySelector('img')
+              if (video && img) {
+                video.pause()
+                video.currentTime = 0
+                img.style.opacity = '1'
+                video.style.opacity = '0'
+              }
+            }}
+          >
             <img
               src="/img/blog/blog23.png"
               alt="E2Eテストが体系になった - 100パターン達成"
+              style={{ transition: 'opacity 0.3s ease' }}
+            />
+            <video
+              src="/img/blog/blog23.mp4"
+              muted
+              loop
+              playsInline
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                opacity: 0,
+                transition: 'opacity 0.3s ease'
+              }}
             />
           </div>
 
@@ -595,14 +632,21 @@ export default function FalcoPluginDevelopmentDays135to137() {
         }
 
         .article-image {
+          position: relative;
           width: 100%;
           margin: 2rem 0;
           text-align: center;
+          cursor: pointer;
         }
 
         .article-image img {
           max-width: 100%;
           height: auto;
+          border-radius: 12px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-image video {
           border-radius: 12px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
