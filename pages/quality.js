@@ -30,11 +30,11 @@ export default function Quality() {
       passRate: 100
     },
     categories: {
-      SQLI: { count: 19, percentage: 29.2 },
-      PATH: { count: 20, percentage: 30.8 },
-      XSS: { count: 11, percentage: 16.9 },
-      CMDINJ: { count: 10, percentage: 15.4 },
-      OTHER: { count: 5, percentage: 7.7 }
+      SQLI: { count: 29, percentage: 29.0 },
+      PATH: { count: 25, percentage: 25.0 },
+      XSS: { count: 21, percentage: 21.0 },
+      CMDINJ: { count: 20, percentage: 20.0 },
+      OTHER: { count: 5, percentage: 5.0 }
     },
     urls: {
       latest: "https://takaosgb3.github.io/falco-plugin-nginx/e2e-report/latest/",
