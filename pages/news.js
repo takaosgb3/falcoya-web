@@ -30,6 +30,25 @@ export default function News() {
       },
       items: [
         {
+          id: "2025-12-21-oss-development-blog-part23",
+          date: "2025-12-21",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の138日目から139日目」を公開",
+          content: "静かに広がった、150の検証。E2Eテストパターン拡張 Phase 2 完了、100→150パターン拡張、新規Falcoルール9個追加、検知正当性レビューで88%精度を可視化。E2Eテストが広がりながら鋭くなり始めた2日間の記録を公開しました。",
+          highlights: [
+            "E2Eテストパターン拡張 Phase 2 完了（Issue #780）",
+            "テストパターン 100 → 150 拡張",
+            "新規 Falco ルール 9個追加",
+            "既存100パターンのリグレッション検証",
+            "検出率 100% 維持",
+            "検知正当性レビュー実施（E2E Run #42）",
+            "正しいルールマッピング 88% 達成",
+            "「いいテストは、次に直す場所を教えてくれる」"
+          ],
+          link: "/blog/falco-plugin-development-days138-139"
+        },
+        {
           id: "2025-12-14-oss-development-blog-part22",
           date: "2025-12-14",
           category: "feature",
@@ -541,6 +560,25 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2025-12-21-oss-development-blog-part23-en",
+          date: "2025-12-21",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 138-139\" Published",
+          content: "Quietly expanded to 150 verifications. E2E test pattern expansion Phase 2 completed, expanded from 100 to 150 patterns, added 9 new Falco rules, detection correctness review visualized 88% accuracy. Two days when E2E testing expanded while becoming sharper.",
+          highlights: [
+            "E2E test pattern expansion Phase 2 completed (Issue #780)",
+            "Test patterns expanded from 100 → 150",
+            "Added 9 new Falco rules",
+            "Regression verification of existing 100 patterns",
+            "Maintained 100% detection rate",
+            "Conducted detection correctness review (E2E Run #42)",
+            "Achieved 88% correct rule mapping",
+            "\"Good tests tell you where to fix next\""
+          ],
+          link: "/blog/falco-plugin-development-days138-139-en"
+        },
         {
           id: "2025-12-14-oss-development-blog-part22-en",
           date: "2025-12-14",

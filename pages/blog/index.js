@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days138-139',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の138日目から139日目',
+      description: '静かに広がった、150の検証。E2Eテストパターン拡張 Phase 2 完了、100→150パターン拡張、新規Falcoルール9個追加、検知正当性レビューで88%精度を可視化。E2Eテストが広がりながら鋭くなり始めた2日間の記録。',
+      date: '2025-12-21',
+      readTime: '8分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', '150パターン', 'Phase 2', 'Issue #780', '検知率100%'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days138-139'
+    },
+    {
       id: 'falco-plugin-development-days135-137',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の135日目から137日目',
       description: '開発密度が一段上がった日々。E2Eテストパターン65→100拡張、検知率100%達成、Allure Report改善（PR #26, #27）、Issue #777完了。E2Eテストが仕組みから運用できる体系になった3日間の記録。',
@@ -257,6 +267,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days138-139-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 138-139',
+      description: 'Quietly expanded to 150 verifications. E2E test pattern expansion Phase 2 completed, expanded from 100 to 150 patterns, added 9 new Falco rules, detection correctness review visualized 88% accuracy. Two days when E2E testing expanded while becoming sharper.',
+      date: '2025-12-21',
+      readTime: '8 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', '150 Patterns', 'Phase 2', 'Issue #780', '100% Detection'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days138-139-en'
+    },
     {
       id: 'falco-plugin-development-days135-137-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 135-137',
