@@ -137,14 +137,14 @@ export default function Home() {
           },
           {
             id: "notice",
-            title: "偵察・認証攻撃検知ルール",
-            severity: "NOTICE",
-            severityColor: "notice", 
+            title: "偵察・認証攻撃検知ルール（今後実装予定）",
+            severity: "COMING SOON",
+            severityColor: "notice",
             rules: [
               {
                 name: "セキュリティスキャン検知",
                 indicator: "🔵",
-                description: "攻撃前の偵察活動を検知し、事前に脅威を把握",
+                description: "攻撃前の偵察活動を検知し、事前に脅威を把握（実装予定）",
                 patterns: {
                   title: "検知対象:",
                   items: [
@@ -157,7 +157,7 @@ export default function Home() {
               {
                 name: "ブルートフォース攻撃検知",
                 indicator: "🔵",
-                description: "総当たり攻撃による認証突破の試みを検知",
+                description: "総当たり攻撃による認証突破の試みを検知（実装予定）",
                 patterns: {
                   title: "検知対象:",
                   items: [
@@ -171,14 +171,14 @@ export default function Home() {
           },
           {
             id: "info",
-            title: "システム監視ルール", 
-            severity: "INFO",
+            title: "システム監視ルール（今後実装予定）",
+            severity: "COMING SOON",
             severityColor: "info",
             rules: [
               {
                 name: "システム異常状態監視",
                 indicator: "🟢",
-                description: "Webサーバーの異常な動作やエラー状態を監視し、システムの健全性を確保",
+                description: "Webサーバーの異常な動作やエラー状態を監視し、システムの健全性を確保（実装予定）",
                 patterns: {
                   title: "監視項目:",
                   items: [
@@ -355,14 +355,14 @@ export default function Home() {
           },
           {
             id: "notice",
-            title: "Reconnaissance & Authentication Attack Detection Rules",
-            severity: "NOTICE",
-            severityColor: "notice", 
+            title: "Reconnaissance & Authentication Attack Detection Rules (Coming Soon)",
+            severity: "COMING SOON",
+            severityColor: "notice",
             rules: [
               {
                 name: "Security Scan Detection",
                 indicator: "🔵",
-                description: "Detects reconnaissance activities before attacks and identifies threats in advance",
+                description: "Detects reconnaissance activities before attacks and identifies threats in advance (Planned)",
                 patterns: {
                   title: "Detection Targets:",
                   items: [
@@ -375,7 +375,7 @@ export default function Home() {
               {
                 name: "Brute Force Attack Detection",
                 indicator: "🔵",
-                description: "Detects brute force attempts to break through authentication",
+                description: "Detects brute force attempts to break through authentication (Planned)",
                 patterns: {
                   title: "Detection Targets:",
                   items: [
@@ -389,14 +389,14 @@ export default function Home() {
           },
           {
             id: "info",
-            title: "System Monitoring Rules", 
-            severity: "INFO",
+            title: "System Monitoring Rules (Coming Soon)",
+            severity: "COMING SOON",
             severityColor: "info",
             rules: [
               {
                 name: "System Anomaly State Monitoring",
                 indicator: "🟢",
-                description: "Monitors abnormal web server behavior and error states to ensure system health",
+                description: "Monitors abnormal web server behavior and error states to ensure system health (Planned)",
                 patterns: {
                   title: "Monitoring Items:",
                   items: [
