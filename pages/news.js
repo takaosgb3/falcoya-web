@@ -49,6 +49,26 @@ export default function News() {
           link: "/blog/falco-plugin-development-days140-143"
         },
         {
+          id: "2026-01-03-quality-225-update",
+          date: "2026-01-03",
+          category: "feature",
+          type: "update",
+          title: "テストパターンを225に拡大",
+          content: "E2Eテストパターンを100から225に拡大しました。新たにXXE（XML External Entity）とLDAP Injectionカテゴリを追加し、攻撃検知の範囲を大幅に拡充。E2E Run #69で225パターン全て検知率100%を達成しました。",
+          highlights: [
+            "テストパターン 100 → 225 拡張",
+            "SQLi: 59パターン（26.2%）",
+            "XSS: 41パターン（18.2%）",
+            "Path Traversal: 40パターン（17.8%）",
+            "Command Injection: 34パターン（15.1%）",
+            "XXE: 11パターン（4.9%）- 新規追加",
+            "LDAP Injection: 10パターン（4.4%）- 新規追加",
+            "検知率 100% 達成（E2E Run #69）",
+            "ロードマップ進捗 26.5%（850パターン目標）"
+          ],
+          link: "/quality"
+        },
+        {
           id: "2025-12-21-oss-development-blog-part23",
           date: "2025-12-21",
           category: "feature",
@@ -597,6 +617,26 @@ export default function News() {
             "\"Will you understand this six months from now?\""
           ],
           link: "/blog/falco-plugin-development-days140-143-en"
+        },
+        {
+          id: "2026-01-03-quality-225-update-en",
+          date: "2026-01-03",
+          category: "feature",
+          type: "update",
+          title: "Test Patterns Expanded to 225",
+          content: "E2E test patterns expanded from 100 to 225. Added XXE (XML External Entity) and LDAP Injection categories, significantly expanding attack detection coverage. Achieved 100% detection rate across all 225 patterns in E2E Run #69.",
+          highlights: [
+            "Test patterns expanded: 100 → 225",
+            "SQLi: 59 patterns (26.2%)",
+            "XSS: 41 patterns (18.2%)",
+            "Path Traversal: 40 patterns (17.8%)",
+            "Command Injection: 34 patterns (15.1%)",
+            "XXE: 11 patterns (4.9%) - New",
+            "LDAP Injection: 10 patterns (4.4%) - New",
+            "100% detection rate achieved (E2E Run #69)",
+            "Roadmap progress: 26.5% (850 patterns goal)"
+          ],
+          link: "/quality"
         },
         {
           id: "2025-12-21-oss-development-blog-part23-en",
