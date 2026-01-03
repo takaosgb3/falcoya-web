@@ -30,6 +30,25 @@ export default function News() {
       },
       items: [
         {
+          id: "2026-01-03-oss-development-blog-part24",
+          date: "2026-01-03",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の140日目から143日目」を公開",
+          content: "検知とは、境界線を引く行為だった。E2Eテスト225ケース達成、検出成功率99.1%。例外定義と検出ルールの対応関係見直し、「検知しない」という判断の設計的重要性を発見。責務分離と設計意図の言語化に取り組んだ4日間の記録を公開しました。",
+          highlights: [
+            "例外定義と検出ルールの対応関係を見直し（Issue #36）",
+            "ドキュメントを利用者・運用者目線で書き直し",
+            "E2Eテスト 225ケース 達成",
+            "検出成功率 99.1% 達成",
+            "非検出ケースに「なぜ鳴らさないのか」の説明を添付",
+            "設計意図をコメントとして残す",
+            "「検知とは、何を見ないと決める行為」",
+            "「半年後の自分が読んで分かるか？」"
+          ],
+          link: "/blog/falco-plugin-development-days140-143"
+        },
+        {
           id: "2025-12-21-oss-development-blog-part23",
           date: "2025-12-21",
           category: "feature",
@@ -560,6 +579,25 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2026-01-03-oss-development-blog-part24-en",
+          date: "2026-01-03",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 140-143\" Published",
+          content: "Detection is the act of drawing boundary lines. E2E tests reached 225 cases with 99.1% detection success rate. Reviewed exception definitions and detection rule correspondence, discovered the design importance of deciding \"not to detect\". Four days of working on responsibility separation and verbalizing design intent.",
+          highlights: [
+            "Reviewed exception definition and detection rule correspondence (Issue #36)",
+            "Rewrote documentation from user/operator perspective",
+            "E2E tests reached 225 cases",
+            "Detection success rate reached 99.1%",
+            "Added explanations for non-detection cases: \"why not alert here\"",
+            "Documented design intent as comments",
+            "\"Detection is the act of deciding what not to see\"",
+            "\"Will you understand this six months from now?\""
+          ],
+          link: "/blog/falco-plugin-development-days140-143-en"
+        },
         {
           id: "2025-12-21-oss-development-blog-part23-en",
           date: "2025-12-21",
