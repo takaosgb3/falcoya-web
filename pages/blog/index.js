@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days140-143',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の140日目から143日目',
+      description: '検知とは、境界線を引く行為だった。E2Eテスト225ケース達成、検出成功率99.1%。例外定義と検出ルールの対応関係見直し、「検知しない」という判断の設計的重要性を発見。責務分離と設計意図の言語化に取り組んだ4日間の記録。',
+      date: '2026-01-03',
+      readTime: '12分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', '225ケース', '責務分離', '設計判断', '検出率99.1%'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days140-143'
+    },
+    {
       id: 'falco-plugin-development-days138-139',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の138日目から139日目',
       description: '静かに広がった、150の検証。E2Eテストパターン拡張 Phase 2 完了、100→150パターン拡張、新規Falcoルール9個追加、検知正当性レビューで88%精度を可視化。E2Eテストが広がりながら鋭くなり始めた2日間の記録。',
@@ -267,6 +277,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days140-143-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 140-143',
+      description: 'Detection is the act of drawing boundary lines. E2E tests reached 225 cases with 99.1% detection success rate. Reviewed exception definitions and detection rule correspondence, discovered the design importance of deciding "not to detect". Four days of working on responsibility separation and verbalizing design intent.',
+      date: '2026-01-03',
+      readTime: '12 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', '225 Cases', 'Responsibility Separation', 'Design Decision', '99.1% Detection'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days140-143-en'
+    },
     {
       id: 'falco-plugin-development-days138-139-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 138-139',
