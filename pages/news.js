@@ -30,6 +30,27 @@ export default function News() {
       },
       items: [
         {
+          id: "2026-01-10-quality-300-update",
+          date: "2026-01-10",
+          category: "feature",
+          type: "update",
+          title: "テストパターンを300に拡大",
+          content: "E2Eテストパターンを225から300に拡大しました。SSTIを独立カテゴリとして追加し、全カテゴリでテストパターンを強化。E2E Run #82で300パターン全て検知率100%を達成しました。",
+          highlights: [
+            "テストパターン 225 → 300 拡張",
+            "SQLi: 79パターン（26.3%）",
+            "XSS: 56パターン（18.7%）",
+            "Path Traversal: 45パターン（15.0%）",
+            "Command Injection: 41パターン（13.7%）",
+            "SSTI: 15パターン（5.0%）- 独立カテゴリ化",
+            "XXE: 11パターン（3.7%）",
+            "LDAP Injection: 15パターン（5.0%）",
+            "検知率 100% 達成（E2E Run #82）",
+            "ロードマップ進捗 35.3%（850パターン目標）"
+          ],
+          link: "/quality"
+        },
+        {
           id: "2026-01-03-oss-development-blog-part24",
           date: "2026-01-03",
           category: "feature",
@@ -599,6 +620,27 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2026-01-10-quality-300-update-en",
+          date: "2026-01-10",
+          category: "feature",
+          type: "update",
+          title: "Test Patterns Expanded to 300",
+          content: "E2E test patterns expanded from 225 to 300. SSTI added as independent category, strengthened test patterns across all categories. Achieved 100% detection rate across all 300 patterns in E2E Run #82.",
+          highlights: [
+            "Test patterns expanded: 225 → 300",
+            "SQLi: 79 patterns (26.3%)",
+            "XSS: 56 patterns (18.7%)",
+            "Path Traversal: 45 patterns (15.0%)",
+            "Command Injection: 41 patterns (13.7%)",
+            "SSTI: 15 patterns (5.0%) - Now independent category",
+            "XXE: 11 patterns (3.7%)",
+            "LDAP Injection: 15 patterns (5.0%)",
+            "100% detection rate achieved (E2E Run #82)",
+            "Roadmap progress: 35.3% (850 patterns goal)"
+          ],
+          link: "/quality"
+        },
         {
           id: "2026-01-03-oss-development-blog-part24-en",
           date: "2026-01-03",
