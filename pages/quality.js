@@ -9,12 +9,12 @@ export default function Quality() {
   const [activePhase, setActivePhase] = useState('phase2') // Default to Phase 2
   const [runNumber, setRunNumber] = useState('')
 
-  // Phase 2 test data (225 patterns)
+  // Phase 2 test data (300 patterns)
   const phase2Data = {
     metadata: {
-      runNumber: 69,
-      timestamp: "2026-01-02T12:00:00Z",
-      duration: "626ms",
+      runNumber: 82,
+      timestamp: "2026-01-10T12:00:00Z",
+      duration: "762ms",
       environment: {
         platform: "ubuntu-24.04",
         falcoVersion: "0.42.1",
@@ -24,19 +24,20 @@ export default function Quality() {
       }
     },
     summary: {
-      totalTests: 225,
-      passedTests: 225,
+      totalTests: 300,
+      passedTests: 300,
       failedTests: 0,
       passRate: 100
     },
     categories: {
-      SQLI: { count: 59, percentage: 26.2 },
-      XSS: { count: 41, percentage: 18.2 },
-      PATH: { count: 40, percentage: 17.8 },
-      CMDINJ: { count: 34, percentage: 15.1 },
-      XXE: { count: 11, percentage: 4.9 },
-      LDAP: { count: 10, percentage: 4.4 },
-      OTHER: { count: 30, percentage: 13.3 }
+      SQLI: { count: 79, percentage: 26.3 },
+      XSS: { count: 56, percentage: 18.7 },
+      PATH: { count: 45, percentage: 15.0 },
+      CMDINJ: { count: 41, percentage: 13.7 },
+      SSTI: { count: 15, percentage: 5.0 },
+      XXE: { count: 11, percentage: 3.7 },
+      LDAP: { count: 15, percentage: 5.0 },
+      OTHER: { count: 38, percentage: 12.7 }
     },
     urls: {
       latest: "https://takaosgb3.github.io/falco-plugin-nginx/e2e-report/latest/",
@@ -73,11 +74,11 @@ export default function Quality() {
       },
       hero: {
         title: "E2E テストレポート",
-        subtitle: "225パターンの攻撃検知をAllureで可視化",
+        subtitle: "300パターンの攻撃検知をAllureで可視化",
         description: "falco-plugin-nginx の品質は、包括的なE2Eテスト、自動化されたCI/CD、実証済みの検知精度、そして Falcoya君の頑張りによって支えられています。"
       },
       phaseSelector: {
-        phase2: "Phase 2: 攻撃検知 (225パターン)",
+        phase2: "Phase 2: 攻撃検知 (300パターン)",
         phase1: "Phase 1: 基礎検証 (14テスト)"
       },
       phase2: {
@@ -95,9 +96,10 @@ export default function Quality() {
           xss: { name: "クロスサイトスクリプティング", desc: "DOM、Reflected、Stored、Encoding等" },
           path: { name: "パストラバーサル", desc: "../etc/passwd、エンコーディング回避等" },
           cmdinj: { name: "コマンドインジェクション", desc: "Backtick、Pipe、Substitution等" },
+          ssti: { name: "サーバサイドテンプレートインジェクション", desc: "Jinja2、Twig、Freemarker等" },
           xxe: { name: "XML外部実体参照", desc: "Entity、JAR、Billion Laugh攻撃等" },
           ldap: { name: "LDAPインジェクション", desc: "認証バイパス、Blind LDAP等" },
-          other: { name: "その他", desc: "XPath、SSTI、GraphQL、NoSQL等" },
+          other: { name: "その他", desc: "XPath、GraphQL、NoSQL、API Security等" },
           patterns: "パターン"
         },
         buttons: {
@@ -179,11 +181,11 @@ export default function Quality() {
       },
       hero: {
         title: "E2E Test Report",
-        subtitle: "225 Attack Patterns Visualized with Allure",
+        subtitle: "300 Attack Patterns Visualized with Allure",
         description: "The quality of falco-plugin-nginx is supported by comprehensive E2E testing, automated CI/CD, proven detection accuracy, and Falcoya-kun's dedication."
       },
       phaseSelector: {
-        phase2: "Phase 2: Attack Detection (225 Patterns)",
+        phase2: "Phase 2: Attack Detection (300 Patterns)",
         phase1: "Phase 1: Foundation Verification (14 Tests)"
       },
       phase2: {
@@ -201,9 +203,10 @@ export default function Quality() {
           xss: { name: "Cross-Site Scripting", desc: "DOM, Reflected, Stored, Encoding, etc." },
           path: { name: "Path Traversal", desc: "../etc/passwd, encoding bypass, etc." },
           cmdinj: { name: "Command Injection", desc: "Backtick, Pipe, Substitution, etc." },
+          ssti: { name: "Server-Side Template Injection", desc: "Jinja2, Twig, Freemarker, etc." },
           xxe: { name: "XML External Entity", desc: "Entity, JAR, Billion Laugh attack, etc." },
           ldap: { name: "LDAP Injection", desc: "Auth bypass, Blind LDAP, etc." },
-          other: { name: "Other", desc: "XPath, SSTI, GraphQL, NoSQL, etc." },
+          other: { name: "Other", desc: "XPath, GraphQL, NoSQL, API Security, etc." },
           patterns: "patterns"
         },
         buttons: {
@@ -660,7 +663,7 @@ export default function Quality() {
               <div className="roadmap-stats">
                 <div className="roadmap-stat">
                   <span className="roadmap-label">{currentContent.roadmap.current}</span>
-                  <span className="roadmap-value">225 {currentContent.roadmap.patterns}</span>
+                  <span className="roadmap-value">300 {currentContent.roadmap.patterns}</span>
                 </div>
                 <div className="roadmap-stat">
                   <span className="roadmap-label">{currentContent.roadmap.target}</span>
@@ -669,9 +672,9 @@ export default function Quality() {
               </div>
               <div className="roadmap-progress">
                 <div className="progress-bar-container">
-                  <div className="progress-bar" style={{ width: '26.5%' }}></div>
+                  <div className="progress-bar" style={{ width: '35.3%' }}></div>
                 </div>
-                <span className="progress-percentage">26.5%</span>
+                <span className="progress-percentage">35.3%</span>
               </div>
               <p className="roadmap-description">{currentContent.roadmap.description}</p>
             </div>
