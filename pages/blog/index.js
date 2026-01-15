@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days144-149',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の144日目から149日目',
+      description: 'Where a Plugin Becomes Ready to Be Seen. Falco Plugin Registry登録という現実的な選択肢と、「並べられる状態」になるまでの1週間。READMEを何度も読み返し、Issue #786で思考を固定し、PR #1146でRegistryに登録完了。設計・説明・判断の一貫性を求められた日々の記録。',
+      date: '2026-01-15',
+      readTime: '12分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'Plugin Registry', 'PR #1146', 'Issue #786', 'v1.5.1', '外部ホスト型'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days144-149'
+    },
+    {
       id: 'falco-plugin-development-days140-143',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の140日目から143日目',
       description: '検知とは、境界線を引く行為だった。E2Eテスト225ケース達成、検出成功率99.1%。例外定義と検出ルールの対応関係見直し、「検知しない」という判断の設計的重要性を発見。責務分離と設計意図の言語化に取り組んだ4日間の記録。',
@@ -277,6 +287,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days144-149-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 144-149',
+      description: 'Where a Plugin Becomes Ready to Be Seen. A week of facing the realistic choice of registering in Falco Plugin Registry and reaching "a state ready to be listed". Reading the README repeatedly, fixing thoughts in Issue #786, and completing Registry registration with PR #1146.',
+      date: '2026-01-15',
+      readTime: '12 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'Plugin Registry', 'PR #1146', 'Issue #786', 'v1.5.1', 'External Plugin'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days144-149-en'
+    },
     {
       id: 'falco-plugin-development-days140-143-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 140-143',

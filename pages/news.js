@@ -30,6 +30,25 @@ export default function News() {
       },
       items: [
         {
+          id: "2026-01-15-oss-development-blog-part25",
+          date: "2026-01-15",
+          category: "feature",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の144日目から149日目」を公開",
+          content: "Where a Plugin Becomes Ready to Be Seen. Falco Plugin Registry登録という現実的な選択肢と、「並べられる状態」になるまでの1週間。READMEを何度も読み返し、Issue #786で思考を固定し、PR #1146でRegistryに登録完了。設計・説明・判断の一貫性を求められた日々の記録を公開しました。",
+          highlights: [
+            "Falco Plugin Registry 登録完了（PR #1146）",
+            "Issue #786：Registry 登録リサーチ",
+            "外部ホスト型プラグインとしての登録",
+            "90分間で全てを接続した夜（01/12）",
+            "v1.5.1 リリース",
+            "README / 開発日誌の整合性調整",
+            "「並んだのではなく、並べられる状態になった」",
+            "「説明できないものは、公開してはいけない」"
+          ],
+          link: "/blog/falco-plugin-development-days144-149"
+        },
+        {
           id: "2026-01-10-quality-300-update",
           date: "2026-01-10",
           category: "feature",
@@ -620,6 +639,25 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2026-01-15-oss-development-blog-part25-en",
+          date: "2026-01-15",
+          category: "feature",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 144-149\" Published",
+          content: "Where a Plugin Becomes Ready to Be Seen. A week of facing the realistic choice of registering in Falco Plugin Registry and reaching \"a state ready to be listed\". Reading the README repeatedly, fixing thoughts in Issue #786, and completing Registry registration with PR #1146.",
+          highlights: [
+            "Falco Plugin Registry registration complete (PR #1146)",
+            "Issue #786: Registry registration research",
+            "Registration as externally-hosted plugin",
+            "The night that connected everything in 90 minutes (01/12)",
+            "v1.5.1 release",
+            "README / development diary consistency adjustment",
+            "\"Not listed, but ready to be listed\"",
+            "\"You must not publish what you cannot explain\""
+          ],
+          link: "/blog/falco-plugin-development-days144-149-en"
+        },
         {
           id: "2026-01-10-quality-300-update-en",
           date: "2026-01-10",
