@@ -38,3 +38,7 @@ next-env.d.ts
 claude.md
 CLAUDE.md
 .claude/
+
+# sitemap (generated at build time)
+public/sitemap*.xml
+public/robots.txt
