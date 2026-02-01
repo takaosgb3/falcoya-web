@@ -30,6 +30,25 @@ export default function News() {
       },
       items: [
         {
+          id: "2026-02-01-oss-development-blog-part26",
+          date: "2026-02-01",
+          category: "release",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の150日目から152日目」を公開、v1.6.0リリース",
+          content: "Where a Phase Quietly Closes. Phase 6完了とv1.6.0リリース。457パターンでRule Mismatch 0達成、Allure Categories Trend修正、failure-analyzer更新。フェーズを閉じるとは「問題が起きても直しきれる状態」に到達することを実感した3日間の記録を公開しました。",
+          highlights: [
+            "v1.6.0 正式リリース",
+            "E2Eテストパターン 457 達成",
+            "Rule Mismatch 0 達成（Phase 6 終了条件クリア）",
+            "Allure Categories Trend 修正（PR #77, #79）",
+            "failure-analyzer D-1/D-2 区別の明文化",
+            "parser.go 同期漏れ検出・修正",
+            "Phase 6 完了",
+            "「フェーズを閉じるとは、問題が起きても直しきれる状態に到達すること」"
+          ],
+          link: "/blog/falco-plugin-development-days150-152"
+        },
+        {
           id: "2026-01-15-oss-development-blog-part25",
           date: "2026-01-15",
           category: "feature",
@@ -639,6 +658,25 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2026-02-01-oss-development-blog-part26-en",
+          date: "2026-02-01",
+          category: "release",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 150-152\" Published, v1.6.0 Released",
+          content: "Where a Phase Quietly Closes. Phase 6 completion and v1.6.0 release. Achieved Rule Mismatch 0 with 457 patterns, fixed Allure Categories Trend, updated failure-analyzer. Three days of realizing that closing a phase means reaching a state where problems can be explained and fixed.",
+          highlights: [
+            "v1.6.0 official release",
+            "E2E test patterns reached 457",
+            "Rule Mismatch 0 achieved (Phase 6 exit criteria cleared)",
+            "Allure Categories Trend fix (PR #77, #79)",
+            "failure-analyzer D-1/D-2 distinction documented",
+            "parser.go sync gap detected and fixed",
+            "Phase 6 completed",
+            "\"Closing a phase means reaching a state where problems can be explained and fixed\""
+          ],
+          link: "/blog/falco-plugin-development-days150-152-en"
+        },
         {
           id: "2026-01-15-oss-development-blog-part25-en",
           date: "2026-01-15",
