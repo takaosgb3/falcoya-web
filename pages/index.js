@@ -49,7 +49,7 @@ export default function Home() {
       },
       detection: {
         title: "脅威検知機能",
-        overview: "falco-plugin-nginxは、6つのカテゴリ・225パターンのE2Eテストで検証された包括的な脅威検知を実現します",
+        overview: "falco-plugin-nginxは、8つのカテゴリ・457パターンのE2Eテストで検証された包括的な脅威検知を実現します",
         codeHeader: "Falco 検知例",
         rulesFooter: "📚 詳細なルールリファレンスを見る",
         rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md",
@@ -267,7 +267,7 @@ export default function Home() {
       },
       detection: {
         title: "Threat Detection Features",
-        overview: "falco-plugin-nginx provides comprehensive threat detection verified by E2E testing with 6 categories and 225 patterns",
+        overview: "falco-plugin-nginx provides comprehensive threat detection verified by E2E testing with 8 categories and 457 patterns",
         codeHeader: "Falco Detection Example",
         rulesFooter: "📚 View Detailed Rules Reference",
         rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md",
@@ -770,7 +770,7 @@ export default function Home() {
                 <div className="stat-label">{content[language].hero.stats.threats}</div>
               </div>
               <div className="stat-item glass">
-                <div className="stat-number" data-target="225">0</div>
+                <div className="stat-number" data-target="457">0</div>
                 <div className="stat-label">{content[language].hero.stats.patterns}</div>
               </div>
               <div className="stat-item glass">

@@ -30,6 +30,27 @@ export default function News() {
       },
       items: [
         {
+          id: "2026-02-01-quality-457-update",
+          date: "2026-02-01",
+          category: "feature",
+          type: "update",
+          title: "テストパターンを457に拡大、v1.6.0リリース",
+          content: "E2Eテストパターンを300から457に拡大し、v1.6.0をリリースしました。Phase 6完了に伴い、Rule Mismatch 0を達成。Allure Categories Trend修正、failure-analyzer更新も完了しています。",
+          highlights: [
+            "v1.6.0 正式リリース",
+            "テストパターン 300 → 457 拡張",
+            "Rule Mismatch 0 達成（Phase 6 終了条件クリア）",
+            "SQLi: 120パターン（26.3%）",
+            "XSS: 85パターン（18.6%）",
+            "Path Traversal: 69パターン（15.1%）",
+            "Command Injection: 63パターン（13.8%）",
+            "SSTI: 23パターン（5.0%）",
+            "検知率 100% 達成（E2E Run #153）",
+            "ロードマップ進捗 53.8%（850パターン目標）"
+          ],
+          link: "/quality"
+        },
+        {
           id: "2026-02-01-oss-development-blog-part26",
           date: "2026-02-01",
           category: "release",
@@ -658,6 +679,27 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2026-02-01-quality-457-update-en",
+          date: "2026-02-01",
+          category: "feature",
+          type: "update",
+          title: "Test Patterns Expanded to 457, v1.6.0 Released",
+          content: "E2E test patterns expanded from 300 to 457 with v1.6.0 release. Phase 6 completed with Rule Mismatch 0 achieved. Allure Categories Trend fix and failure-analyzer updates are also complete.",
+          highlights: [
+            "v1.6.0 official release",
+            "Test patterns 300 → 457 expanded",
+            "Rule Mismatch 0 achieved (Phase 6 exit criteria cleared)",
+            "SQLi: 120 patterns (26.3%)",
+            "XSS: 85 patterns (18.6%)",
+            "Path Traversal: 69 patterns (15.1%)",
+            "Command Injection: 63 patterns (13.8%)",
+            "SSTI: 23 patterns (5.0%)",
+            "100% detection rate (E2E Run #153)",
+            "Roadmap progress 53.8% (850 patterns target)"
+          ],
+          link: "/quality"
+        },
         {
           id: "2026-02-01-oss-development-blog-part26-en",
           date: "2026-02-01",
