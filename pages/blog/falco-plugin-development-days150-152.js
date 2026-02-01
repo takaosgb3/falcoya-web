@@ -242,7 +242,7 @@ export default function FalcoPluginDevelopmentDays150to152() {
             <p>
               E2E Run #127 で、たった1件の Rule Mismatch が出た。<br />
               でも、その1件が重かった。<br />
-              ユーザーから投げられた一言が、頭から離れなかった。
+              TKから投げられた一言が、頭から離れなかった。
             </p>
             <p>
               <strong>「想定した攻撃が、想定したルールで検知されないなら、E2E の意味は？」</strong>

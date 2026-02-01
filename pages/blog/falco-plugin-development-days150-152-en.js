@@ -243,7 +243,7 @@ export default function FalcoPluginDevelopmentDays150to152En() {
             <p>
               In E2E Run #127, just one Rule Mismatch appeared.<br />
               But that one was heavy.<br />
-              A single comment from a user wouldn&apos;t leave my mind:
+              A single comment from TK wouldn&apos;t leave my mind:
             </p>
             <p>
               <strong>&quot;If the expected attack isn&apos;t detected by the expected rule, what&apos;s the point of E2E?&quot;</strong>
