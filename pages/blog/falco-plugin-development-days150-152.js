@@ -365,7 +365,7 @@ export default function FalcoPluginDevelopmentDays150to152() {
               この三日間で僕が学んだのは、
             </p>
             <ul className="task-list">
-              <li><strong>失敗は一度も終わらない</strong>こと</li>
+              <li><strong>失敗は一度だけで終わらない</strong>こと</li>
               <li>Rule Mismatch は常に現れ、その都度向き合い直す必要があること</li>
               <li>フェーズを閉じるとは「もう問題が起きない」と言うことではなく、<strong>問題が起きても説明し、直しきれる状態に到達すること</strong></li>
             </ul>

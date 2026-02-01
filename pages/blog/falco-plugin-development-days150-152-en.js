@@ -366,7 +366,7 @@ export default function FalcoPluginDevelopmentDays150to152En() {
               What I learned in these three days:
             </p>
             <ul className="task-list">
-              <li><strong>Failure never truly ends</strong></li>
+              <li><strong>Failure doesn&apos;t end with just one</strong></li>
               <li>Rule Mismatch always appears, and each time we must face it anew</li>
               <li>Closing a phase doesn&apos;t mean &quot;no more problems will occur,&quot; but <strong>reaching a state where problems can be explained and fixed completely</strong></li>
             </ul>
