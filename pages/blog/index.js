@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days150-152',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の150日目から152日目',
+      description: 'Where a Phase Quietly Closes. Phase 6完了とv1.6.0リリース。457パターンでRule Mismatch 0達成、Allure Categories Trend修正、failure-analyzer更新。フェーズを閉じるとは「問題が起きても直しきれる状態」に到達すること。',
+      date: '2026-02-01',
+      readTime: '12分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'v1.6.0', '457パターン', 'Phase 6', 'Allure', 'リリース'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days150-152'
+    },
+    {
       id: 'falco-plugin-development-days144-149',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の144日目から149日目',
       description: 'Where a Plugin Becomes Ready to Be Seen. Falco Plugin Registry登録という現実的な選択肢と、「並べられる状態」になるまでの1週間。READMEを何度も読み返し、Issue #786で思考を固定し、PR #1146でRegistryに登録完了。設計・説明・判断の一貫性を求められた日々の記録。',
@@ -287,6 +297,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days150-152-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 150-152',
+      description: 'Where a Phase Quietly Closes. Phase 6 completion and v1.6.0 release. Achieved Rule Mismatch 0 with 457 patterns, fixed Allure Categories Trend, updated failure-analyzer. Closing a phase means reaching a state where problems can be explained and fixed.',
+      date: '2026-02-01',
+      readTime: '12 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'v1.6.0', '457 Patterns', 'Phase 6', 'Allure', 'Release'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days150-152-en'
+    },
     {
       id: 'falco-plugin-development-days144-149-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 144-149',
