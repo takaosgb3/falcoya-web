@@ -30,6 +30,25 @@ export default function News() {
       },
       items: [
         {
+          id: "2026-02-23-oss-development-blog-part27",
+          date: "2026-02-23",
+          category: "release",
+          type: "new",
+          title: "ブログ記事「Falco + Nginx プラグイン開発：Falcoya君の153日目から156日目」を公開、v1.7.0リリース",
+          content: "CI は嘘をつかない。Phase 9/10実装完了とv1.7.0リリース。575→625パターン拡張、Skill Agentワークフロー実験、外部PR後のCI修復。準備に時間をかければ実装は静かに終わることを実感した4日間の記録を公開しました。",
+          highlights: [
+            "v1.7.0 正式リリース",
+            "E2Eテストパターン 575 → 625 拡張",
+            "Phase 9/10 実装完了",
+            "Skill Agent ワークフロー初回実行",
+            "CHANGELOG バイリンガル必須化（PROBLEM_PATTERNS #D001）",
+            "NewParser() フォーマット検証追加、公開CI修復",
+            "Phase 10 実装22分、初回E2E成功",
+            "「準備に時間をかければ、実装は静かに終わる」"
+          ],
+          link: "/blog/falco-plugin-development-days153-156"
+        },
+        {
           id: "2026-02-01-quality-457-update",
           date: "2026-02-01",
           category: "feature",
@@ -679,6 +698,25 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2026-02-23-oss-development-blog-part27-en",
+          date: "2026-02-23",
+          category: "release",
+          type: "new",
+          title: "Blog Post \"Falco + Nginx Plugin Development: Falcoya's Days 153-156\" Published, v1.7.0 Released",
+          content: "CI Never Lies. Phase 9/10 implementation complete and v1.7.0 released. 575→625 pattern expansion, Skill Agent workflow experiment, CI repair after external PR. Four days of realizing that when preparation takes time, implementation ends quietly.",
+          highlights: [
+            "v1.7.0 official release",
+            "E2E test patterns 575 → 625 expanded",
+            "Phase 9/10 implementation complete",
+            "Skill Agent workflow first end-to-end execution",
+            "CHANGELOG bilingual requirement added (PROBLEM_PATTERNS #D001)",
+            "NewParser() format validation added, public CI repaired",
+            "Phase 10 implemented in 22 minutes, first E2E success",
+            "\"When preparation takes time, implementation ends quietly\""
+          ],
+          link: "/blog/falco-plugin-development-days153-156-en"
+        },
         {
           id: "2026-02-01-quality-457-update-en",
           date: "2026-02-01",
