@@ -6,6 +6,16 @@ import { useLanguage } from '../../utils/languageUtils'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days153-156',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の153日目から156日目',
+      description: 'CI は嘘をつかない。Phase 9/10実装完了、v1.7.0リリース。575→625パターン拡張、Skill Agentワークフロー実験、外部PR後のCI修復。準備に時間をかければ、実装は静かに終わる。',
+      date: '2026-02-23',
+      readTime: '12分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'v1.7.0', '625パターン', 'Phase 9', 'Phase 10', 'CI'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days153-156'
+    },
+    {
       id: 'falco-plugin-development-days150-152',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の150日目から152日目',
       description: 'Where a Phase Quietly Closes. Phase 6完了とv1.6.0リリース。457パターンでRule Mismatch 0達成、Allure Categories Trend修正、failure-analyzer更新。フェーズを閉じるとは「問題が起きても直しきれる状態」に到達すること。',
@@ -297,6 +307,16 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days153-156-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 153-156',
+      description: 'CI Never Lies. Phase 9/10 implementation complete, v1.7.0 released. 575→625 pattern expansion, Skill Agent workflow experiment, CI repair after external PR. When preparation takes time, implementation ends quietly.',
+      date: '2026-02-23',
+      readTime: '12 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'v1.7.0', '625 Patterns', 'Phase 9', 'Phase 10', 'CI'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days153-156-en'
+    },
     {
       id: 'falco-plugin-development-days150-152-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 150-152',
