@@ -49,6 +49,27 @@ export default function News() {
           link: "/blog/falco-plugin-development-days153-156"
         },
         {
+          id: "2026-02-23-quality-625-update",
+          date: "2026-02-23",
+          category: "feature",
+          type: "update",
+          title: "テストパターンを625に拡大、v1.7.0対応",
+          content: "E2Eテストパターンを457から625に拡大しました。Phase 9/10完了に伴い、19サブカテゴリへ拡張。Falco 0.43.0環境でRun #185全パターン検知率100%を達成。ロードマップ進捗73.5%。",
+          highlights: [
+            "v1.7.0 対応（Falco 0.43.0）",
+            "テストパターン 457 → 625 拡張",
+            "Phase 9/10 実装完了",
+            "SQLi: 124パターン（19.8%）",
+            "CMDINJ: 89パターン（14.2%）",
+            "XSS: 86パターン（13.8%）",
+            "PATH: 73パターン（11.7%）",
+            "新規カテゴリ追加（CRLF、SSRF、HTTP Smuggling、Pickle、Prototype Pollution等）",
+            "検知率 100% 達成（E2E Run #185）",
+            "ロードマップ進捗 73.5%（850パターン目標）"
+          ],
+          link: "/quality"
+        },
+        {
           id: "2026-02-01-quality-457-update",
           date: "2026-02-01",
           category: "feature",
@@ -716,6 +737,27 @@ export default function News() {
             "\"When preparation takes time, implementation ends quietly\""
           ],
           link: "/blog/falco-plugin-development-days153-156-en"
+        },
+        {
+          id: "2026-02-23-quality-625-update-en",
+          date: "2026-02-23",
+          category: "feature",
+          type: "update",
+          title: "Test Patterns Expanded to 625, v1.7.0 Support",
+          content: "E2E test patterns expanded from 457 to 625. Phase 9/10 completed with expansion to 19 subcategories. Achieved 100% detection rate on all patterns with Run #185 under Falco 0.43.0. Roadmap progress 73.5%.",
+          highlights: [
+            "v1.7.0 support (Falco 0.43.0)",
+            "Test patterns 457 → 625 expanded",
+            "Phase 9/10 implementation complete",
+            "SQLi: 124 patterns (19.8%)",
+            "CMDINJ: 89 patterns (14.2%)",
+            "XSS: 86 patterns (13.8%)",
+            "PATH: 73 patterns (11.7%)",
+            "New categories added (CRLF, SSRF, HTTP Smuggling, Pickle, Prototype Pollution, etc.)",
+            "100% detection rate (E2E Run #185)",
+            "Roadmap progress 73.5% (850 patterns target)"
+          ],
+          link: "/quality"
         },
         {
           id: "2026-02-01-quality-457-update-en",
