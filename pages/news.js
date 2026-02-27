@@ -30,6 +30,24 @@ export default function News() {
       },
       items: [
         {
+          id: "2026-02-27-openclaw-v010-release",
+          date: "2026-02-27",
+          category: "release",
+          type: "new",
+          title: "OpenClaw v0.1.0 リリース — AI アシスタント向け Falco セキュリティプラグイン",
+          content: "FALCOYA プロジェクトの2つ目の OSS として、AI アシスタントのログをリアルタイム監視し、セキュリティ脅威を検出する Falco プラグイン「OpenClaw」v0.1.0 をリリースしました。7種類の脅威検出ルール、JSONL/プレーンテキスト自動判別、ReDoS 安全設計を備えています。",
+          highlights: [
+            "OpenClaw v0.1.0 初回リリース",
+            "7種類のセキュリティ検出ルール（CRITICAL 2 / WARNING 4 / NOTICE 1）",
+            "JSONL + プレーンテキスト自動検出",
+            "文字列マッチングベース（ReDoS 安全）",
+            "13のプラグインフィールド",
+            "テストカバレッジ 95.9%",
+            "Apache License 2.0"
+          ],
+          link: "/blog/openclaw-introduction"
+        },
+        {
           id: "2026-02-23-oss-development-blog-part27",
           date: "2026-02-23",
           category: "release",
@@ -719,6 +737,24 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2026-02-27-openclaw-v010-release-en",
+          date: "2026-02-27",
+          category: "release",
+          type: "new",
+          title: "OpenClaw v0.1.0 Released — Falco Security Plugin for AI Assistants",
+          content: "Released OpenClaw v0.1.0, the second open-source project from FALCOYA. A Falco plugin that monitors AI assistant logs in real-time and detects security threats. Features 7 threat detection rules, JSONL/plaintext auto-detection, and ReDoS-safe design.",
+          highlights: [
+            "OpenClaw v0.1.0 initial release",
+            "7 security detection rules (CRITICAL 2 / WARNING 4 / NOTICE 1)",
+            "JSONL + plaintext auto-detection",
+            "String-matching based (ReDoS-safe)",
+            "13 plugin fields",
+            "Test coverage 95.9%",
+            "Apache License 2.0"
+          ],
+          link: "/blog/openclaw-introduction-en"
+        },
         {
           id: "2026-02-23-oss-development-blog-part27-en",
           date: "2026-02-23",
