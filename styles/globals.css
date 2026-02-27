@@ -793,6 +793,143 @@ body {
   padding: 0 2rem;
 }
 
+/* Projects Section */
+.projects-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
+}
+
+.projects-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.projects-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 48px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.project-card-accent {
+  height: 4px;
+}
+
+.project-card-nginx .project-card-accent {
+  background: linear-gradient(90deg, #4F46E5, #A855F7);
+}
+
+.project-card-openclaw .project-card-accent {
+  background: linear-gradient(90deg, #0E7490, #06B6D4);
+}
+
+.project-card-nginx:hover {
+  border-color: #A855F7;
+}
+
+.project-card-openclaw:hover {
+  border-color: #0891B2;
+}
+
+.project-card-body {
+  padding: 32px;
+}
+
+.project-card-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.project-card-body h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.project-card-body p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.project-card-stats {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  padding: 8px 14px;
+  background: var(--bg-gray);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.project-card-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.project-card-nginx .project-card-btn {
+  background: linear-gradient(135deg, #4F46E5, #A855F7);
+  color: white;
+}
+
+.project-card-openclaw .project-card-btn {
+  background: linear-gradient(135deg, #0E7490, #0891B2);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 50px 0;
+  }
+
+  .projects-title {
+    font-size: 1.8rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
 /* About Section */
 .about {
   padding: 2rem 0;

@@ -38,6 +38,22 @@ export default function Home() {
         }
       },
       prototypeNotice: "falco-plugin-nginx は現在プロトタイプ公開段階です。開発更新・デバッグを高頻度で実施中のため、予期しない動作が発生する可能性があります。",
+      projects: {
+        title: 'FALCOYA プロジェクト',
+        subtitle: 'Falco プラグインでリアルタイムセキュリティ監視を実現',
+        nginx: {
+          name: 'falco-plugin-nginx',
+          desc: 'Nginx アクセスログをリアルタイム監視し、SQLi・XSS・パストラバーサル等の Web 攻撃を検知',
+          stats: '6種類の脅威 / 625パターン検証済み',
+          button: '詳しく見る',
+        },
+        openclaw: {
+          name: 'falco-plugin-openclaw',
+          desc: 'AI アシスタントのログをリアルタイム監視し、7種類のセキュリティ脅威を検出',
+          stats: '7種類の脅威 / ReDoS安全設計',
+          button: '詳しく見る',
+        },
+      },
       about: {
         title: "falco-plugin-nginxとは",
         items: [
@@ -256,6 +272,22 @@ export default function Home() {
         }
       },
       prototypeNotice: "falco-plugin-nginx is currently in prototype release stage. High-frequency development updates and debugging are in progress, so unexpected behavior may occur.",
+      projects: {
+        title: 'FALCOYA Projects',
+        subtitle: 'Real-time security monitoring with Falco plugins',
+        nginx: {
+          name: 'falco-plugin-nginx',
+          desc: 'Monitor Nginx access logs in real-time and detect web attacks like SQLi, XSS, and Path Traversal',
+          stats: '6 threat types / 625 patterns verified',
+          button: 'Learn More',
+        },
+        openclaw: {
+          name: 'falco-plugin-openclaw',
+          desc: 'Monitor AI assistant logs in real-time and detect 7 types of security threats',
+          stats: '7 threat types / ReDoS-safe design',
+          button: 'Learn More',
+        },
+      },
       about: {
         title: "About falco-plugin-nginx",
         items: [
@@ -711,6 +743,36 @@ export default function Home() {
         </div>
         <div className="hero-bg-circle"></div>
       </header>
+
+      {/* Projects Section */}
+      <section className="projects-section">
+        <div className="container">
+          <h2 className="projects-title">{content[language].projects.title}</h2>
+          <p className="projects-subtitle">{content[language].projects.subtitle}</p>
+          <div className="projects-grid">
+            <a href="#about" className="project-card project-card-nginx">
+              <div className="project-card-accent"></div>
+              <div className="project-card-body">
+                <span className="project-card-icon">🛡️</span>
+                <h3>{content[language].projects.nginx.name}</h3>
+                <p>{content[language].projects.nginx.desc}</p>
+                <span className="project-card-stats">{content[language].projects.nginx.stats}</span>
+                <span className="project-card-btn">{content[language].projects.nginx.button}</span>
+              </div>
+            </a>
+            <Link href="/openclaw" className="project-card project-card-openclaw">
+              <div className="project-card-accent"></div>
+              <div className="project-card-body">
+                <span className="project-card-icon">🔍</span>
+                <h3>{content[language].projects.openclaw.name}</h3>
+                <p>{content[language].projects.openclaw.desc}</p>
+                <span className="project-card-stats">{content[language].projects.openclaw.stats}</span>
+                <span className="project-card-btn">{content[language].projects.openclaw.button}</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section id="about" className="about">
         <div className="container">
