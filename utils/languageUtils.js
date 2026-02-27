@@ -35,11 +35,21 @@ export const useLanguage = () => {
     if (storedLang !== language) {
       setLanguageState(storedLang)
     }
+
+    // 他のuseLanguageインスタンスからの言語変更を同期
+    const handleLanguageChange = (e) => {
+      setLanguageState(e.detail)
+    }
+    window.addEventListener('falcoya-language-change', handleLanguageChange)
+    return () => window.removeEventListener('falcoya-language-change', handleLanguageChange)
   }, [])
 
   const setLanguage = (lang) => {
     setLanguageState(lang)
     setStoredLanguage(lang)
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('falcoya-language-change', { detail: lang }))
+    }
   }
 
   return [language, setLanguage]
