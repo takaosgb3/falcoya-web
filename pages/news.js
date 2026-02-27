@@ -1532,9 +1532,7 @@ export default function News() {
                           {item.title}
                         </a>
                       ) : (
-                        <Link href={item.link}>
-                          <a className="title-link">{item.title}</a>
-                        </Link>
+                        <Link href={item.link} className="title-link">{item.title}</Link>
                       )
                     ) : (
                       item.title
@@ -1561,10 +1559,8 @@ export default function News() {
                         {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
                       </a>
                     ) : (
-                      <Link href={item.link}>
-                        <a className="news-link">
-                          {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
-                        </a>
+                      <Link href={item.link} className="news-link">
+                        {language === 'ja' ? '詳細を見る →' : 'Learn more →'}
                       </Link>
                     )
                   )}
