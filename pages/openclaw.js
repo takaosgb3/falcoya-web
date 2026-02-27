@@ -217,11 +217,7 @@ export default function OpenClaw() {
         <link rel="canonical" href="https://falcoya.dev/openclaw" />
       </Head>
 
-      <Navbar
-        activePage="openclaw"
-        githubUrl="https://github.com/takaosgb3/falco-plugin-openclaw"
-        showPrototypeNotice={true}
-      />
+      <Navbar activePage="openclaw" />
 
       <main className="openclaw-container">
         {/* Hero */}
@@ -252,7 +248,7 @@ export default function OpenClaw() {
         </section>
 
         {/* Features */}
-        <section className="openclaw-features">
+        <section className="openclaw-features" id="features">
           <div className="container">
             <h2 className="openclaw-section-title">{c.features.title}</h2>
             <div className="openclaw-features-grid">
@@ -268,7 +264,7 @@ export default function OpenClaw() {
         </section>
 
         {/* Security Rules */}
-        <section className="openclaw-rules">
+        <section className="openclaw-rules" id="security-rules">
           <div className="container">
             <h2 className="openclaw-section-title">{c.rules.title}</h2>
             <p className="openclaw-section-subtitle">{c.rules.subtitle}</p>
@@ -434,7 +430,7 @@ stdout_output:
         /* ===== Container ===== */
         .openclaw-container {
           min-height: 100vh;
-          padding-top: 80px;
+          padding-top: 70px;
           background: #FFFFFF;
         }
 

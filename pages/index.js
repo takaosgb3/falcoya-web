@@ -37,7 +37,6 @@ export default function Home() {
           monitoring: "監視"
         }
       },
-      prototypeNotice: "falco-plugin-nginx は現在プロトタイプ公開段階です。開発更新・デバッグを高頻度で実施中のため、予期しない動作が発生する可能性があります。",
       projects: {
         title: 'FALCOYA プロジェクト',
         subtitle: 'Falco プラグインでリアルタイムセキュリティ監視を実現',
@@ -271,7 +270,6 @@ export default function Home() {
           monitoring: "Monitoring"
         }
       },
-      prototypeNotice: "falco-plugin-nginx is currently in prototype release stage. High-frequency development updates and debugging are in progress, so unexpected behavior may occur.",
       projects: {
         title: 'FALCOYA Projects',
         subtitle: 'Real-time security monitoring with Falco plugins',
@@ -679,7 +677,7 @@ export default function Home() {
 
       <canvas ref={canvasRef} className="particle-canvas" />
 
-      <Navbar showPrototypeNotice={true} />
+      <Navbar />
 
       <header className="hero">
         <div className="hero-glow"></div>
