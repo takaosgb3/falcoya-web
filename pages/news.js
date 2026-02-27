@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useLanguage } from '../utils/languageUtils'
+import Navbar from '../components/Navbar'
 
 export default function News() {
   const [language, setLanguage] = useLanguage() // localStorageで管理
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState('all')
 
   // ニュースデータ
@@ -1432,23 +1432,6 @@ export default function News() {
     }
   }
 
-  // 画面サイズ変更時にモバイルメニューを閉じる
-  useEffect(() => {
-    const handleResize = () => {
-      setMobileMenuOpen(false)
-    }
-
-    window.addEventListener('resize', handleResize)
-    window.addEventListener('orientationchange', handleResize)
-    
-    handleResize()
-    
-    return () => {
-      window.removeEventListener('resize', handleResize)
-      window.removeEventListener('orientationchange', handleResize)
-    }
-  }, [])
-
   return (
     <>
       <Head>
@@ -1457,65 +1440,7 @@ export default function News() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <Link href="/">
-              <a style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-                <img src="/img/falcoya-logo-c.png" alt="FALCOYA" />
-                <span>FALCOYA</span>
-              </a>
-            </Link>
-          </div>
-          
-          <button 
-            className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menu"
-          >
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-          </button>
-          
-          <ul className="nav-menu desktop-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">{content.nav.github}</a></li>
-            <li><Link href="/#installation">{content.nav.installation}</Link></li>
-            <li><Link href="/#detection">{content.nav.detection}</Link></li>
-            <li><Link href="/blog">{content.nav.blog}</Link></li>
-            <li><Link href="/news" className="active">{content.nav.news}</Link></li>
-            <li><Link href="/quality">{content.nav.quality}</Link></li>
-          </ul>
-          
-          <div className="nav-controls">
-            <div className="language-switcher">
-              <button 
-                className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
-                onClick={() => setLanguage('ja')}
-              >
-                日本語
-              </button>
-              <button 
-                className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-                onClick={() => setLanguage('en')}
-              >
-                English
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-          <ul className="mobile-nav-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{content.nav.github}</a></li>
-            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{content.nav.installation}</a></Link></li>
-            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{content.nav.detection}</a></Link></li>
-            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{content.nav.blog}</a></Link></li>
-            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)} className="active">{content.nav.news}</a></Link></li>
-            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{content.nav.quality}</a></Link></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar activePage="news" />
 
       <main className="news-container">
         <div className="container">

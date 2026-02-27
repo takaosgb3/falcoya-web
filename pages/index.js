@@ -2,13 +2,13 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '../utils/languageUtils'
+import Navbar from '../components/Navbar'
 
 export default function Home() {
   const statsRefs = useRef([])
   const [particles, setParticles] = useState([])
   const canvasRef = useRef(null)
   const [language, setLanguage] = useLanguage() // localStorageで管理
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // 多言語コンテンツデータ
   const content = {
@@ -462,25 +462,6 @@ export default function Home() {
     })
   }
 
-  // 画面サイズ変更時にモバイルメニューを閉じる
-  useEffect(() => {
-    const handleResize = () => {
-      // 画面幅に関わらず、リサイズ時は必ずメニューを閉じる
-      setMobileMenuOpen(false)
-    }
-
-    window.addEventListener('resize', handleResize)
-    window.addEventListener('orientationchange', handleResize)
-    
-    // 初回実行
-    handleResize()
-    
-    return () => {
-      window.removeEventListener('resize', handleResize)
-      window.removeEventListener('orientationchange', handleResize)
-    }
-  }, [])
-
   useEffect(() => {
     // Particle animation
     const initParticles = () => {
@@ -665,74 +646,8 @@ export default function Home() {
       </Head>
 
       <canvas ref={canvasRef} className="particle-canvas" />
-      
-      <div className="prototype-notice">
-        <div className="notice-container">
-          <span className="notice-icon">⚠️</span>
-          <span className="notice-text">
-            <strong>{language === 'ja' ? '開発段階のお知らせ:' : 'Development Notice:'}</strong> {content[language].prototypeNotice}
-          </span>
-        </div>
-      </div>
 
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <img src="/img/falcoya-logo-c.png" alt="FALCOYA" />
-            <span>FALCOYA</span>
-          </div>
-          
-          {/* ハンバーガーメニューボタン（モバイルのみ表示） */}
-          <button 
-            className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menu"
-          >
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-          </button>
-          
-          {/* デスクトップメニュー */}
-          <ul className="nav-menu desktop-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer">{content[language].nav.github}</a></li>
-            <li><a href="#installation">{content[language].nav.installation}</a></li>
-            <li><a href="#detection">{content[language].nav.detection}</a></li>
-            <li><Link href="/blog">{content[language].nav.blog}</Link></li>
-            <li><Link href="/news">{content[language].nav.news}</Link></li>
-            <li><Link href="/quality">{content[language].nav.quality}</Link></li>
-          </ul>
-          
-          <div className="nav-controls">
-            <div className="language-switcher">
-              <button 
-                className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
-                onClick={() => setLanguage('ja')}
-              >
-                日本語
-              </button>
-              <button 
-                className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-                onClick={() => setLanguage('en')}
-              >
-                English
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        {/* モバイルメニュー */}
-        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-          <ul className="mobile-nav-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.github}</a></li>
-            <li><a href="#installation" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.installation}</a></li>
-            <li><a href="#detection" onClick={() => setMobileMenuOpen(false)}>{content[language].nav.detection}</a></li>
-            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{content[language].nav.blog}</a></Link></li>
-            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{content[language].nav.news}</a></Link></li>
-            <li><Link href="/quality"><a onClick={() => setMobileMenuOpen(false)}>{content[language].nav.quality}</a></Link></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar showPrototypeNotice={true} />
 
       <header className="hero">
         <div className="hero-glow"></div>

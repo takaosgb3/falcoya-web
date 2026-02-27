@@ -1,48 +1,14 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useLanguage } from '../../utils/languageUtils'
+import Navbar from '../../components/Navbar'
 
 export default function FalcoPluginDevelopmentDays39to44En() {
   const [language, setLanguage] = useLanguage()
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
   
-  // ナビゲーションテキスト
-  const navText = {
-    ja: {
-      github: "GitHub",
-      installation: "インストール",
-      detection: "検知機能",
-      blog: "ブログ",
-      news: "ニュース"
-    },
-    en: {
-      github: "GitHub",
-      installation: "Installation",
-      detection: "Detection",
-      blog: "Blog",
-      news: "News"
-    }
-  }
   
-  // 画面サイズ変更時にモバイルメニューを閉じる
-  useEffect(() => {
-    const handleResize = () => {
-      setMobileMenuOpen(false)
-    }
-
-    window.addEventListener('resize', handleResize)
-    window.addEventListener('orientationchange', handleResize)
-    
-    handleResize()
-    
-    return () => {
-      window.removeEventListener('resize', handleResize)
-      window.removeEventListener('orientationchange', handleResize)
-    }
-  }, [])
   
   return (
     <>
@@ -55,70 +21,7 @@ export default function FalcoPluginDevelopmentDays39to44En() {
         <meta name="keywords" content="Falco, Nginx, OSS Development, CI/CD, GitHub Actions, Debugging, Documentation" />
       </Head>
 
-      {/* Navigation */}
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <Link href="/">
-              <img src="/img/falcoya-logo-c.png" alt="FALCOYA" />
-            </Link>
-          </div>
-          
-          <button 
-            className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menu"
-          >
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-          </button>
-          
-          <ul className="nav-menu desktop-menu">
-            <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">{navText[language].github}</Link></li>
-            <li><Link href="/#installation">{navText[language].installation}</Link></li>
-            <li><Link href="/#detection">{navText[language].detection}</Link></li>
-            <li><Link href="/blog">{navText[language].blog}</Link></li>
-            <li><Link href="/news">{navText[language].news}</Link></li>
-          </ul>
-          
-          <div className="nav-controls">
-            <div className="language-switcher">
-              <button 
-                className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
-                onClick={() => {
-                  if (language !== 'ja') {
-                    setLanguage('ja')
-                    router.push('/blog/falco-plugin-development-days39-44')
-                  }
-                }}
-              >
-                日本語
-              </button>
-              <button 
-                className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-                onClick={() => {
-                  if (language !== 'en') {
-                    setLanguage('en')
-                  }
-                }}
-              >
-                English
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-          <ul className="mobile-nav-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><Link href="/#installation"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</a></Link></li>
-            <li><Link href="/#detection"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</a></Link></li>
-            <li><Link href="/blog"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</a></Link></li>
-            <li><Link href="/news"><a onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</a></Link></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar activePage="blog" onLanguageChange={(lang) => { setLanguage(lang); router.push('/blog/falco-plugin-development-days39-44') }} />
 
       {/* Blog Article */}
       <article className="blog-article">

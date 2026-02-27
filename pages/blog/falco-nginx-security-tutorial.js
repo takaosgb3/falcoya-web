@@ -1,50 +1,14 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useLanguage } from '../../utils/languageUtils'
+import Navbar from '../../components/Navbar'
 
 export default function FalcoNginxTutorial() {
   const [language, setLanguage] = useLanguage() // localStorageで管理
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
   
-  // ナビゲーションテキスト
-  const navText = {
-    ja: {
-      github: "GitHub",
-      installation: "インストール",
-      detection: "検知機能",
-      blog: "ブログ",
-      news: "ニュース"
-    },
-    en: {
-      github: "GitHub",
-      installation: "Installation",
-      detection: "Detection",
-      blog: "Blog",
-      news: "News"
-    }
-  }
   
-  // 画面サイズ変更時にモバイルメニューを閉じる
-  useEffect(() => {
-    const handleResize = () => {
-      // 画面幅に関わらず、リサイズ時は必ずメニューを閉じる
-      setMobileMenuOpen(false)
-    }
-
-    window.addEventListener('resize', handleResize)
-    window.addEventListener('orientationchange', handleResize)
-    
-    // 初回実行
-    handleResize()
-    
-    return () => {
-      window.removeEventListener('resize', handleResize)
-      window.removeEventListener('orientationchange', handleResize)
-    }
-  }, [])
   
   return (
     <>
@@ -57,75 +21,7 @@ export default function FalcoNginxTutorial() {
         <meta name="keywords" content="Falco, Nginx, セキュリティ, AWS, EC2, Web攻撃検知, SQLインジェクション, XSS" />
       </Head>
 
-      {/* Navigation */}
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <Link href="/">
-              <img src="/img/falcoya-logo-c.png" alt="FALCOYA" />
-            </Link>
-          </div>
-          
-          {/* ハンバーガーメニューボタン（モバイルのみ表示） */}
-          <button 
-            className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menu"
-          >
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-          </button>
-          
-          {/* デスクトップメニュー */}
-          <ul className="nav-menu desktop-menu">
-            <li><Link href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank">{navText[language].github}</Link></li>
-            <li><Link href="/#installation">{navText[language].installation}</Link></li>
-            <li><Link href="/#detection">{navText[language].detection}</Link></li>
-            <li><Link href="/blog">{navText[language].blog}</Link></li>
-            <li><Link href="/news">{navText[language].news}</Link></li>
-          </ul>
-          
-          <div className="nav-controls">
-            <div className="language-switcher">
-              <button 
-                className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
-                onClick={() => {
-                  if (language !== 'ja') {
-                    setLanguage('ja')
-                    // 既に日本語ページにいるので何もしない
-                  }
-                }}
-              >
-                日本語
-              </button>
-              <button 
-                className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-                onClick={() => {
-                  if (language !== 'en') {
-                    setLanguage('en')
-                    // 英語版の記事ページへリダイレクト
-                    router.push('/blog/falco-nginx-security-tutorial-en')
-                  }
-                }}
-              >
-                English
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        {/* モバイルメニュー */}
-        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-          <ul className="mobile-nav-menu">
-            <li><a href="https://github.com/takaosgb3/falco-plugin-nginx" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{navText[language].github}</a></li>
-            <li><Link href="/#installation" onClick={() => setMobileMenuOpen(false)}>{navText[language].installation}</Link></li>
-            <li><Link href="/#detection" onClick={() => setMobileMenuOpen(false)}>{navText[language].detection}</Link></li>
-            <li><Link href="/blog" onClick={() => setMobileMenuOpen(false)}>{navText[language].blog}</Link></li>
-            <li><Link href="/news" onClick={() => setMobileMenuOpen(false)}>{navText[language].news}</Link></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar activePage="blog" onLanguageChange={(lang) => { setLanguage(lang); router.push('/blog/falco-nginx-security-tutorial-en') }} />
 
       {/* Article Header */}
       <header className="article-header">
@@ -367,7 +263,6 @@ export default function FalcoNginxTutorial() {
                     </tbody>
                   </table>
                 </div>
-
 
               </section>
 
@@ -625,7 +520,6 @@ export default function FalcoNginxTutorial() {
                   <li><strong>コスト効率</strong>: オープンソースで高機能なセキュリティ監視を実現</li>
                   <li><strong>統合性</strong>: 既存のモニタリング・アラート基盤との連携が容易</li>
                 </ul>
-
 
               </section>
 
