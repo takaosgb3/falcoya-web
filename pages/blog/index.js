@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useLanguage } from '../../utils/languageUtils'
@@ -6,6 +7,17 @@ import Navbar from '../../components/Navbar'
 const blogPosts = {
   ja: [
     {
+      id: 'openclaw-introduction',
+      title: 'OpenClaw: AI アシスタントのセキュリティを守る Falco プラグイン',
+      description: 'AI アシスタントのログをリアルタイム監視し、7種類のセキュリティ脅威を検出する OpenClaw プラグインを紹介します。危険コマンド実行、データ流出、エージェント暴走などの脅威からシステムを保護します。',
+      date: '2026-02-27',
+      readTime: '8分',
+      tags: ['Falco', 'OpenClaw', 'AI Security', 'OSS', 'v0.1.0'],
+      category: 'OSS開発',
+      slug: 'openclaw-introduction',
+      project: 'openclaw'
+    },
+    {
       id: 'falco-plugin-development-days153-156',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の153日目から156日目',
       description: 'CI は嘘をつかない。Phase 9/10実装完了、v1.7.0リリース。575→625パターン拡張、Skill Agentワークフロー実験、外部PR後のCI修復。準備に時間をかければ、実装は静かに終わる。',
@@ -13,7 +25,8 @@ const blogPosts = {
       readTime: '12分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'v1.7.0', '625パターン', 'Phase 9', 'Phase 10', 'CI'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days153-156'
+      slug: 'falco-plugin-development-days153-156',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days150-152',
@@ -23,7 +36,8 @@ const blogPosts = {
       readTime: '12分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'v1.6.0', '457パターン', 'Phase 6', 'Allure', 'リリース'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days150-152'
+      slug: 'falco-plugin-development-days150-152',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days144-149',
@@ -33,7 +47,8 @@ const blogPosts = {
       readTime: '12分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'Plugin Registry', 'PR #1146', 'Issue #786', 'v1.5.1', '外部ホスト型'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days144-149'
+      slug: 'falco-plugin-development-days144-149',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days140-143',
@@ -43,7 +58,8 @@ const blogPosts = {
       readTime: '12分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', '225ケース', '責務分離', '設計判断', '検出率99.1%'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days140-143'
+      slug: 'falco-plugin-development-days140-143',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days138-139',
@@ -53,7 +69,8 @@ const blogPosts = {
       readTime: '8分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', '150パターン', 'Phase 2', 'Issue #780', '検知率100%'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days138-139'
+      slug: 'falco-plugin-development-days138-139',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days135-137',
@@ -63,7 +80,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', '100パターン', 'Allure Report', 'Issue #777', '検知率100%'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days135-137'
+      slug: 'falco-plugin-development-days135-137',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-e2e-report-guide',
@@ -73,7 +91,8 @@ const blogPosts = {
       readTime: '15分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'Allure', '特別編', 'レポート解説', '65パターン'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-e2e-report-guide'
+      slug: 'falco-plugin-development-e2e-report-guide',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days132-134',
@@ -83,7 +102,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'v1.4.2', 'リリース', 'docs/rules.md', '設計決定'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days132-134'
+      slug: 'falco-plugin-development-days132-134',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days127-131',
@@ -93,7 +113,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'Allure', 'ペイロードハイライト', 'JSON正規化', 'CMDi'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days127-131'
+      slug: 'falco-plugin-development-days127-131',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days119-126',
@@ -103,7 +124,8 @@ const blogPosts = {
       readTime: '12分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'Allure', '相関', 'nginx.headers', 'X-Test-ID'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days119-126'
+      slug: 'falco-plugin-development-days119-126',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days111-118',
@@ -113,7 +135,8 @@ const blogPosts = {
       readTime: '12分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'Allure', '相関設計', 'nginx.headers'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days111-118'
+      slug: 'falco-plugin-development-days111-118',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days105-110',
@@ -123,7 +146,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'k6', 'nginx.headers', '設計方針'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days105-110'
+      slug: 'falco-plugin-development-days105-110',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days99-104',
@@ -133,7 +157,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'k6', 'Terraform', '環境設計'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days99-104'
+      slug: 'falco-plugin-development-days99-104',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days92-98',
@@ -143,7 +168,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', 'Pattern修正', '環境設計', '出力制御'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days92-98'
+      slug: 'falco-plugin-development-days92-98',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days85-91',
@@ -153,7 +179,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'Kubernetes', 'Pattern修正', '起動設計', 'タイミング設計'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days85-91'
+      slug: 'falco-plugin-development-days85-91',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days78-84',
@@ -163,7 +190,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'Kubernetes', '非特権コンテナ', '環境対応', '起動設計'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days78-84'
+      slug: 'falco-plugin-development-days78-84',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days73-77',
@@ -173,7 +201,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'テスト戦略', 'Kubernetes', '品質管理', 'E2E'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days73-77'
+      slug: 'falco-plugin-development-days73-77',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days68-72',
@@ -183,7 +212,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'テスト戦略', 'Kubernetes', '品質管理'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days68-72'
+      slug: 'falco-plugin-development-days68-72',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days62-67',
@@ -193,7 +223,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'テスト戦略', '品質管理', '体系化', 'CI/CD'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days62-67'
+      slug: 'falco-plugin-development-days62-67',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days57-61',
@@ -203,7 +234,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2Eテスト', 'デバッグ', '攻撃検証', 'ドキュメント'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days57-61'
+      slug: 'falco-plugin-development-days57-61',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days51-56',
@@ -213,7 +245,8 @@ const blogPosts = {
       readTime: '12分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2Eテスト', '国際化', '攻撃検証', '統合ドキュメント'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days51-56'
+      slug: 'falco-plugin-development-days51-56',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days45-50',
@@ -223,7 +256,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2Eテスト', 'HTMLレポート', 'XSS', 'テスト改善'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days45-50'
+      slug: 'falco-plugin-development-days45-50',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days39-44',
@@ -233,7 +267,8 @@ const blogPosts = {
       readTime: '8分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'GitHub Actions', 'デバッグ', 'ドキュメント'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days39-44'
+      slug: 'falco-plugin-development-days39-44',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-e2e-strategy',
@@ -243,7 +278,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'E2Eテスト', 'テスト設計', '品質保証'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-e2e-strategy'
+      slug: 'falco-plugin-development-e2e-strategy',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days33-38',
@@ -253,7 +289,8 @@ const blogPosts = {
       readTime: '8分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'テスト', 'デバッグ'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days33-38'
+      slug: 'falco-plugin-development-days33-38',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days28-32',
@@ -263,7 +300,8 @@ const blogPosts = {
       readTime: '7分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'プロジェクト管理', 'ポリシー', '文化'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days28-32'
+      slug: 'falco-plugin-development-days28-32',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days23-27',
@@ -273,7 +311,8 @@ const blogPosts = {
       readTime: '8分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'プロジェクト管理', 'ドキュメント', 'セキュリティ'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days23-27'
+      slug: 'falco-plugin-development-days23-27',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days15-22',
@@ -283,7 +322,8 @@ const blogPosts = {
       readTime: '12分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'CI/CD', 'Docker', '検知ルール'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-days15-22'
+      slug: 'falco-plugin-development-days15-22',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-7days',
@@ -293,7 +333,8 @@ const blogPosts = {
       readTime: '10分',
       tags: ['Falco', 'Nginx', 'OSS開発', 'Go言語', 'CI/CD', 'GitHub Actions'],
       category: 'OSS開発',
-      slug: 'falco-plugin-development-7days'
+      slug: 'falco-plugin-development-7days',
+      project: 'nginx'
     },
     {
       id: 'falco-nginx-security-tutorial',
@@ -303,10 +344,22 @@ const blogPosts = {
       readTime: '15分',
       tags: ['Falco', 'Nginx', 'セキュリティ', 'AWS', 'EC2', 'Web攻撃検知'],
       category: 'セキュリティ',
-      slug: 'falco-nginx-security-tutorial'
+      slug: 'falco-nginx-security-tutorial',
+      project: 'nginx'
     }
   ],
   en: [
+    {
+      id: 'openclaw-introduction-en',
+      title: 'OpenClaw: Protecting AI Assistant Security with a Falco Plugin',
+      description: 'Introducing the OpenClaw plugin that monitors AI assistant logs in real-time and detects 7 types of security threats including dangerous commands, data exfiltration, and agent runaway behavior.',
+      date: '2026-02-27',
+      readTime: '8 min',
+      tags: ['Falco', 'OpenClaw', 'AI Security', 'OSS', 'v0.1.0'],
+      category: 'OSS Development',
+      slug: 'openclaw-introduction-en',
+      project: 'openclaw'
+    },
     {
       id: 'falco-plugin-development-days153-156-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 153-156',
@@ -315,7 +368,8 @@ const blogPosts = {
       readTime: '12 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'v1.7.0', '625 Patterns', 'Phase 9', 'Phase 10', 'CI'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days153-156-en'
+      slug: 'falco-plugin-development-days153-156-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days150-152-en',
@@ -325,7 +379,8 @@ const blogPosts = {
       readTime: '12 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'v1.6.0', '457 Patterns', 'Phase 6', 'Allure', 'Release'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days150-152-en'
+      slug: 'falco-plugin-development-days150-152-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days144-149-en',
@@ -335,7 +390,8 @@ const blogPosts = {
       readTime: '12 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'Plugin Registry', 'PR #1146', 'Issue #786', 'v1.5.1', 'External Plugin'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days144-149-en'
+      slug: 'falco-plugin-development-days144-149-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days140-143-en',
@@ -345,7 +401,8 @@ const blogPosts = {
       readTime: '12 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', '225 Cases', 'Responsibility Separation', 'Design Decision', '99.1% Detection'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days140-143-en'
+      slug: 'falco-plugin-development-days140-143-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days138-139-en',
@@ -355,7 +412,8 @@ const blogPosts = {
       readTime: '8 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', '150 Patterns', 'Phase 2', 'Issue #780', '100% Detection'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days138-139-en'
+      slug: 'falco-plugin-development-days138-139-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days135-137-en',
@@ -365,7 +423,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', '100 Patterns', 'Allure Report', 'Issue #777', '100% Detection'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days135-137-en'
+      slug: 'falco-plugin-development-days135-137-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-e2e-report-guide-en',
@@ -375,7 +434,8 @@ const blogPosts = {
       readTime: '15 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'Allure', 'Special Edition', 'Report Guide', '65 Patterns'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-e2e-report-guide-en'
+      slug: 'falco-plugin-development-e2e-report-guide-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days132-134-en',
@@ -385,7 +445,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'v1.4.2', 'Release', 'docs/rules.md', 'Design Decisions'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days132-134-en'
+      slug: 'falco-plugin-development-days132-134-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days127-131-en',
@@ -395,7 +456,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'Allure', 'Payload Highlighting', 'JSON Normalization', 'CMDi'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days127-131-en'
+      slug: 'falco-plugin-development-days127-131-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days119-126-en',
@@ -405,7 +467,8 @@ const blogPosts = {
       readTime: '12 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'Allure', 'Correlation', 'nginx.headers', 'X-Test-ID'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days119-126-en'
+      slug: 'falco-plugin-development-days119-126-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days111-118-en',
@@ -415,7 +478,8 @@ const blogPosts = {
       readTime: '12 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'Allure', 'Correlation Design', 'nginx.headers'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days111-118-en'
+      slug: 'falco-plugin-development-days111-118-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days105-110-en',
@@ -425,7 +489,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'k6', 'nginx.headers', 'Design Policy'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days105-110-en'
+      slug: 'falco-plugin-development-days105-110-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days99-104-en',
@@ -435,7 +500,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'k6', 'Terraform', 'Environment Design'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days99-104-en'
+      slug: 'falco-plugin-development-days99-104-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days92-98-en',
@@ -445,7 +511,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', 'Pattern Fix', 'Environment Design', 'Output Control'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days92-98-en'
+      slug: 'falco-plugin-development-days92-98-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days85-91-en',
@@ -455,7 +522,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Kubernetes', 'Pattern Fix', 'Startup Design', 'Timing Design'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days85-91-en'
+      slug: 'falco-plugin-development-days85-91-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days78-84-en',
@@ -465,7 +533,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Kubernetes', 'Non-Privileged Containers', 'Environment Adaptation', 'Startup Design'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days78-84-en'
+      slug: 'falco-plugin-development-days78-84-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days73-77-en',
@@ -475,7 +544,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Test Strategy', 'Kubernetes', 'Quality Control', 'E2E'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days73-77-en'
+      slug: 'falco-plugin-development-days73-77-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days68-72-en',
@@ -485,7 +555,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Test Strategy', 'Kubernetes', 'Quality Control'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days68-72-en'
+      slug: 'falco-plugin-development-days68-72-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days62-67-en',
@@ -495,7 +566,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'Test Strategy', 'Quality Management', 'Systematization', 'CI/CD'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days62-67-en'
+      slug: 'falco-plugin-development-days62-67-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days57-61-en',
@@ -505,7 +577,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Testing', 'Debugging', 'Attack Verification', 'Documentation'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days57-61-en'
+      slug: 'falco-plugin-development-days57-61-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days51-56-en',
@@ -515,7 +588,8 @@ const blogPosts = {
       readTime: '12 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Testing', 'Internationalization', 'Attack Verification', 'Integrated Documentation'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days51-56-en'
+      slug: 'falco-plugin-development-days51-56-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days45-50-en',
@@ -525,7 +599,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Testing', 'HTML Reports', 'XSS', 'Test Improvements'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days45-50-en'
+      slug: 'falco-plugin-development-days45-50-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days39-44-en',
@@ -535,7 +610,8 @@ const blogPosts = {
       readTime: '8 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'GitHub Actions', 'Debugging', 'Documentation'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days39-44-en'
+      slug: 'falco-plugin-development-days39-44-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-e2e-strategy-en',
@@ -545,7 +621,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Testing', 'Test Design', 'Quality Assurance'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-e2e-strategy-en'
+      slug: 'falco-plugin-development-e2e-strategy-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days33-38-en',
@@ -555,7 +632,8 @@ const blogPosts = {
       readTime: '8 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Testing', 'Debugging'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days33-38-en'
+      slug: 'falco-plugin-development-days33-38-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days28-32-en',
@@ -565,7 +643,8 @@ const blogPosts = {
       readTime: '7 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'Project Management', 'Policy', 'Culture'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days28-32-en'
+      slug: 'falco-plugin-development-days28-32-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days23-27-en',
@@ -575,7 +654,8 @@ const blogPosts = {
       readTime: '8 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'Project Management', 'Documentation', 'Security'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days23-27-en'
+      slug: 'falco-plugin-development-days23-27-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-days15-22-en',
@@ -585,7 +665,8 @@ const blogPosts = {
       readTime: '12 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'CI/CD', 'Docker', 'Detection Rules'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-days15-22-en'
+      slug: 'falco-plugin-development-days15-22-en',
+      project: 'nginx'
     },
     {
       id: 'falco-plugin-development-7days-en',
@@ -595,7 +676,8 @@ const blogPosts = {
       readTime: '10 min',
       tags: ['Falco', 'Nginx', 'OSS Development', 'Go', 'CI/CD', 'GitHub Actions'],
       category: 'OSS Development',
-      slug: 'falco-plugin-development-7days-en'
+      slug: 'falco-plugin-development-7days-en',
+      project: 'nginx'
     },
     {
       id: 'falco-nginx-security-tutorial-en',
@@ -605,13 +687,15 @@ const blogPosts = {
       readTime: '15 min',
       tags: ['Falco', 'Nginx', 'Security', 'AWS', 'EC2', 'Web Attack Detection'],
       category: 'Security',
-      slug: 'falco-nginx-security-tutorial-en'
+      slug: 'falco-nginx-security-tutorial-en',
+      project: 'nginx'
     }
   ]
 }
 
 export default function BlogIndex() {
   const [language, setLanguage] = useLanguage() // localStorageで管理
+  const [projectFilter, setProjectFilter] = useState('all')
 
   const content = {
     ja: {
@@ -622,6 +706,7 @@ export default function BlogIndex() {
       allPosts: "すべての記事",
       categories: "カテゴリー",
       recentPosts: "最新記事",
+      projectFilter: { all: 'すべて', nginx: 'nginx', openclaw: 'OpenClaw' },
       tagCloud: "タグ",
       nav: {
         github: "GitHub",
@@ -632,10 +717,10 @@ export default function BlogIndex() {
         quality: "テストレポート"
       },
       categoryList: [
-        { name: "OSS開発", count: 8 },
+        { name: "OSS開発", count: 9 },
         { name: "セキュリティ", count: 1 }
       ],
-      tags: ["Falco", "Nginx", "OSS開発", "CI/CD", "Docker", "テスト", "デバッグ", "プロジェクト管理", "ポリシー", "文化", "ドキュメント", "セキュリティ", "検知ルール", "Go言語", "GitHub Actions", "AWS", "EC2", "Web攻撃検知", "E2Eテスト", "テスト設計", "品質保証"]
+      tags: ["Falco", "Nginx", "OSS開発", "CI/CD", "Docker", "テスト", "デバッグ", "プロジェクト管理", "ポリシー", "文化", "ドキュメント", "セキュリティ", "検知ルール", "Go言語", "GitHub Actions", "AWS", "EC2", "Web攻撃検知", "E2Eテスト", "テスト設計", "品質保証", "OpenClaw", "AI セキュリティ"]
     },
     en: {
       title: "FALCOYA Blog", 
@@ -645,6 +730,7 @@ export default function BlogIndex() {
       allPosts: "All Posts",
       categories: "Categories", 
       recentPosts: "Recent Posts",
+      projectFilter: { all: 'All', nginx: 'nginx', openclaw: 'OpenClaw' },
       tagCloud: "Tags",
       nav: {
         github: "GitHub",
@@ -655,10 +741,10 @@ export default function BlogIndex() {
         quality: "Test Report"
       },
       categoryList: [
-        { name: "OSS Development", count: 8 },
+        { name: "OSS Development", count: 9 },
         { name: "Security", count: 1 }
       ],
-      tags: ["Falco", "Nginx", "OSS Development", "CI/CD", "Docker", "Testing", "Debugging", "Project Management", "Policy", "Culture", "Documentation", "Security", "Detection Rules", "Go", "GitHub Actions", "AWS", "EC2", "Web Attack Detection", "E2E Testing", "Test Design", "Quality Assurance"]
+      tags: ["Falco", "Nginx", "OSS Development", "CI/CD", "Docker", "Testing", "Debugging", "Project Management", "Policy", "Culture", "Documentation", "Security", "Detection Rules", "Go", "GitHub Actions", "AWS", "EC2", "Web Attack Detection", "E2E Testing", "Test Design", "Quality Assurance", "OpenClaw", "AI Security"]
     }
   }
 
@@ -692,8 +778,20 @@ export default function BlogIndex() {
             <div className="blog-content">
               <h2>{content[language].recentPosts}</h2>
               
+              <div className="project-filter-tabs">
+                {Object.entries(content[language].projectFilter).map(([key, label]) => (
+                  <button
+                    key={key}
+                    className={`project-filter-btn ${projectFilter === key ? 'active' : ''}`}
+                    onClick={() => setProjectFilter(key)}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+
               <div className="blog-posts">
-                {blogPosts[language].map((post) => (
+                {blogPosts[language].filter(post => projectFilter === 'all' || post.project === projectFilter).map((post) => (
                   <article key={post.id} className="blog-post-card">
                     <div className="post-meta">
                       <span className="post-date">{post.date}</span>

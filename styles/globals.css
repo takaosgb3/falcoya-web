@@ -1514,6 +1514,37 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Project Filter Tabs */
+.project-filter-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.project-filter-btn {
+  padding: 8px 20px;
+  border: 2px solid var(--border-color);
+  background: white;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-filter-btn:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.project-filter-btn.active {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-color: transparent;
+  color: white;
+}
+
 .blog-posts {
   display: flex;
   flex-direction: column;
