@@ -2469,7 +2469,13 @@ body {
     max-width: 100%;
     overflow-x: hidden;
   }
-  
+
+  /* ナビバーのドロップダウンが overflow-x: hidden でクリップされないようにする */
+  .nav-container,
+  .project-selector {
+    overflow: visible;
+  }
+
   /* ナビゲーションのモバイル対応 */
   .navbar {
     padding: 0;
