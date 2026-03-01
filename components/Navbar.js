@@ -38,13 +38,13 @@ const PROJECT_CONFIG = {
         { label: 'GitHub', href: 'https://github.com/takaosgb3/falco-plugin-openclaw', external: true },
         { label: '機能', href: '/openclaw#features', page: 'features' },
         { label: 'セキュリティルール', href: '/openclaw#security-rules', page: 'security-rules' },
-        { label: 'クイックスタート', href: '/openclaw#quickstart', page: 'quickstart' },
+        { label: 'テストレポート', href: '/quality/openclaw', page: 'quality' },
       ],
       en: [
         { label: 'GitHub', href: 'https://github.com/takaosgb3/falco-plugin-openclaw', external: true },
         { label: 'Features', href: '/openclaw#features', page: 'features' },
         { label: 'Security Rules', href: '/openclaw#security-rules', page: 'security-rules' },
-        { label: 'Quick Start', href: '/openclaw#quickstart', page: 'quickstart' },
+        { label: 'Test Reports', href: '/quality/openclaw', page: 'quality' },
       ],
     },
   },
@@ -64,7 +64,7 @@ const SHARED_NAV_ITEMS = {
 const STORAGE_KEY = 'falcoya-active-project'
 
 function detectProjectFromPath(pathname) {
-  if (pathname.startsWith('/openclaw')) return 'openclaw'
+  if (pathname.startsWith('/openclaw') || pathname === '/quality/openclaw') return 'openclaw'
   if (pathname === '/' || pathname.startsWith('/#') || pathname.startsWith('/quality')) return 'nginx'
   return null
 }
