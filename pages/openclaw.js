@@ -80,7 +80,7 @@ export default function OpenClaw() {
         title: '動作要件',
         items: [
           { name: 'Falco', value: '0.36.0+' },
-          { name: 'OS', value: 'Linux / macOS 15 Sequoia' },
+          { name: 'OS', value: 'Linux / macOS 26.2 Tahoe' },
           { name: 'Go', value: '1.22+（ソースからビルドする場合のみ）' },
         ],
       },
@@ -167,7 +167,7 @@ export default function OpenClaw() {
         title: 'Requirements',
         items: [
           { name: 'Falco', value: '0.36.0+' },
-          { name: 'OS', value: 'Linux / macOS 15 Sequoia' },
+          { name: 'OS', value: 'Linux / macOS 26.2 Tahoe' },
           { name: 'Go', value: '1.22+ (for building from source only)' },
         ],
       },
