@@ -13,7 +13,7 @@ export default function OpenClaw() {
       },
       hero: {
         title: 'Falco Plugin for OpenClaw',
-        subtitle: 'AI アシスタント セキュリティモニター for Falco',
+        subtitle: 'AI アシスタントのリアルタイムセキュリティ監視',
         description: 'OpenClaw AI アシスタントのログをリアルタイム監視し、セキュリティ脅威を検出する Falco プラグインです。',
         github: 'GitHub',
         quickstart: 'クイックスタート',
@@ -100,7 +100,7 @@ export default function OpenClaw() {
       },
       hero: {
         title: 'Falco Plugin for OpenClaw',
-        subtitle: 'AI Assistant Security Monitor for Falco',
+        subtitle: 'Real-time Security Monitoring for AI Assistants',
         description: 'A Falco plugin for monitoring OpenClaw AI assistant logs and detecting security threats in real-time.',
         github: 'GitHub',
         quickstart: 'Quick Start',
