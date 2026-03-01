@@ -8,14 +8,14 @@ export default function OpenClawQuality() {
   const [language, setLanguage] = useLanguage()
   const [runNumber, setRunNumber] = useState('')
 
-  // OpenClaw E2E test data (Run #17)
+  // OpenClaw E2E test data (Run #18)
   const testData = {
     metadata: {
-      runNumber: 17,
-      timestamp: "2026-02-28T12:00:00Z",
-      duration: "55ms",
+      runNumber: 18,
+      timestamp: "2026-02-28T18:35:40Z",
+      duration: "122ms",
       environment: {
-        platform: "macOS",
+        platform: "GitHub Actions",
         plugin: "falco-plugin-openclaw",
         pluginVersion: "v0.1.0",
         branch: "main"
@@ -43,7 +43,7 @@ export default function OpenClawQuality() {
       BENIGN: { count: 10, percentage: 17.9 }
     },
     urls: {
-      latest: "https://takaosgb3.github.io/falco-plugin-openclaw/e2e-report/17/",
+      latest: "https://takaosgb3.github.io/falco-plugin-openclaw/e2e-report/latest/",
       byRun: "https://takaosgb3.github.io/falco-plugin-openclaw/e2e-report/"
     }
   }
