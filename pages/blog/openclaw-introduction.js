@@ -49,6 +49,13 @@ export default function OpenClawIntroduction() {
             </div>
           </header>
 
+          <div className="article-image">
+            <img
+              src="/img/blog/oc1-blog.png"
+              alt="守るって、何を守ることなんだ？ — OpenClaw 開発記"
+            />
+          </div>
+
           <section className="content-section">
             <h2>はじまり — 2つ目の問い</h2>
             <p>
@@ -483,6 +490,20 @@ export default function OpenClawIntroduction() {
           border-radius: 9999px;
           font-size: 0.875rem;
           font-weight: 500;
+        }
+
+        .article-image {
+          position: relative;
+          width: 100%;
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .article-image img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .content-section {
