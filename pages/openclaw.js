@@ -225,8 +225,6 @@ export default function OpenClaw() {
           <div className="openclaw-hero-grid" aria-hidden="true"></div>
           <div className="container">
             <div className="openclaw-hero-badges">
-              <span className="openclaw-badge">v0.1.0</span>
-              <span className="openclaw-badge">Apache-2.0</span>
             </div>
             <h1 className="openclaw-hero-title">{c.hero.title}</h1>
             <p className="openclaw-hero-subtitle">{c.hero.subtitle}</p>

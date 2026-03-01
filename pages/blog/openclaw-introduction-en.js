@@ -11,10 +11,10 @@ export default function OpenClawIntroductionEn() {
   return (
     <>
       <Head>
-        <title>Building OpenClaw: What It Means to Monitor an AI Assistant - FALCOYA Blog</title>
-        <meta name="description" content="&quot;What are you actually protecting?&quot; The development story of OpenClaw, a Falco plugin for AI assistant security monitoring. How Falcoya-kun and TK designed 7 threat detection rules and shipped v0.1.0." />
-        <meta property="og:title" content="Building OpenClaw: What It Means to Monitor an AI Assistant" />
-        <meta property="og:description" content="&quot;What are you actually protecting?&quot; The development story of OpenClaw, a Falco plugin for AI assistant security monitoring." />
+        <title>Starting Falco Plugin for OpenClaw: What It Means to Monitor an AI Assistant - FALCOYA Blog</title>
+        <meta name="description" content="&quot;What are you actually protecting?&quot; The beginning of Falco Plugin for OpenClaw, a Falco plugin for AI assistant security monitoring. How Falcoya-kun and TK designed 7 threat detection rules and shipped v0.1.0." />
+        <meta property="og:title" content="Starting Falco Plugin for OpenClaw: What It Means to Monitor an AI Assistant" />
+        <meta property="og:description" content="&quot;What are you actually protecting?&quot; The beginning of Falco Plugin for OpenClaw, for AI assistant security monitoring." />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="FALCOYA" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -33,7 +33,7 @@ export default function OpenClawIntroductionEn() {
               <span>10 min read</span>
             </div>
             <h1 className="article-title">
-              Building OpenClaw: What It Means to Monitor an AI Assistant
+              Starting Falco Plugin for OpenClaw: What It Means to Monitor an AI Assistant
             </h1>
             <p className="article-subtitle">
               ~ What are you actually protecting? ~
@@ -52,7 +52,7 @@ export default function OpenClawIntroductionEn() {
           <div className="article-image">
             <img
               src="/img/blog/oc1-blog.png"
-              alt="What Does It Mean to Protect? — Building OpenClaw"
+              alt="What Does It Mean to Protect? — Starting Falco Plugin for OpenClaw"
             />
           </div>
 

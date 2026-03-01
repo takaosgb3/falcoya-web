@@ -11,10 +11,10 @@ export default function OpenClawIntroduction() {
   return (
     <>
       <Head>
-        <title>OpenClaw 開発記：AI アシスタントを監視するということ - FALCOYA Blog</title>
-        <meta name="description" content="「守るって、何を守ることなんだ？」AI アシスタントのセキュリティ監視プラグイン OpenClaw の開発記。Falcoya 君が TK と共に、7つの脅威検出ルールを設計し、v0.1.0 をリリースするまでの物語。" />
-        <meta property="og:title" content="OpenClaw 開発記：AI アシスタントを監視するということ" />
-        <meta property="og:description" content="「守るって、何を守ることなんだ？」AI アシスタントのセキュリティ監視プラグイン OpenClaw v0.1.0 リリースまでの開発記。" />
+        <title>Falco Plugin for OpenClaw 開発開始：AI アシスタントを監視するということ - FALCOYA Blog</title>
+        <meta name="description" content="「守るって、何を守ることなんだ？」AI アシスタントのセキュリティ監視プラグイン OpenClaw の開発開始。Falcoya 君が TK と共に、7つの脅威検出ルールを設計し、v0.1.0 をリリースするまでの物語。" />
+        <meta property="og:title" content="Falco Plugin for OpenClaw 開発開始：AI アシスタントを監視するということ" />
+        <meta property="og:description" content="「守るって、何を守ることなんだ？」AI アシスタントのセキュリティ監視プラグイン OpenClaw v0.1.0 リリースまでの開発開始記。" />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="FALCOYA" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -33,7 +33,7 @@ export default function OpenClawIntroduction() {
               <span>10分で読む</span>
             </div>
             <h1 className="article-title">
-              OpenClaw 開発記：AI アシスタントを監視するということ
+              Falco Plugin for OpenClaw 開発開始：AI アシスタントを監視するということ
             </h1>
             <p className="article-subtitle">
               〜 守るって、何を守ることなんだ？ 〜
@@ -52,7 +52,7 @@ export default function OpenClawIntroduction() {
           <div className="article-image">
             <img
               src="/img/blog/oc1-blog.png"
-              alt="守るって、何を守ることなんだ？ — OpenClaw 開発記"
+              alt="守るって、何を守ることなんだ？ — Falco Plugin for OpenClaw 開発開始"
             />
           </div>
 

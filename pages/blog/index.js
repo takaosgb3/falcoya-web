@@ -8,7 +8,7 @@ const blogPosts = {
   ja: [
     {
       id: 'openclaw-introduction',
-      title: 'OpenClaw 開発記：AI アシスタントを監視するということ',
+      title: 'Falco Plugin for OpenClaw 開発開始：AI アシスタントを監視するということ',
       description: '「守るって、何を守ることなんだ？」AI アシスタントのセキュリティ監視プラグイン OpenClaw の開発記。7つの脅威検出ルールを設計し、v0.1.0 をリリースするまでの物語。',
       date: '2026-02-27',
       readTime: '10分',
@@ -351,7 +351,7 @@ const blogPosts = {
   en: [
     {
       id: 'openclaw-introduction-en',
-      title: 'Building OpenClaw: What It Means to Monitor an AI Assistant',
+      title: 'Starting Falco Plugin for OpenClaw: What It Means to Monitor an AI Assistant',
       description: '"What are you actually protecting?" The development story of OpenClaw, a Falco plugin for AI assistant security monitoring. Designing 7 threat detection rules and shipping v0.1.0.',
       date: '2026-02-27',
       readTime: '10 min',
