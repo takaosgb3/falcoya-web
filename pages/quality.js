@@ -77,6 +77,10 @@ export default function Quality() {
         subtitle: "625パターンの攻撃検知をAllureで可視化",
         description: "falco-plugin-nginx の品質は、包括的なE2Eテスト、自動化されたCI/CD、実証済みの検知精度、そして Falcoya君の頑張りによって支えられています。"
       },
+      pluginSwitch: {
+        nginx: "Nginx プラグイン",
+        openclaw: "OpenClaw"
+      },
       phaseSelector: {
         phase2: "Phase 2: 攻撃検知 (625パターン)",
         phase1: "Phase 1: 基礎検証 (14テスト)"
@@ -183,6 +187,10 @@ export default function Quality() {
         title: "E2E Test Report",
         subtitle: "625 Attack Patterns Visualized with Allure",
         description: "The quality of falco-plugin-nginx is supported by comprehensive E2E testing, automated CI/CD, proven detection accuracy, and Falcoya-kun's dedication."
+      },
+      pluginSwitch: {
+        nginx: "Nginx Plugin",
+        openclaw: "OpenClaw"
       },
       phaseSelector: {
         phase2: "Phase 2: Attack Detection (625 Patterns)",
@@ -315,6 +323,20 @@ export default function Quality() {
             <h1>{currentContent.hero.title}</h1>
             <p className="hero-subtitle">{currentContent.hero.subtitle}</p>
             <p className="hero-description">{currentContent.hero.description}</p>
+          </div>
+        </section>
+
+        {/* Plugin Switch */}
+        <section className="plugin-switch-section">
+          <div className="container">
+            <div className="plugin-tabs">
+              <button className="plugin-tab active">
+                {currentContent.pluginSwitch.nginx}
+              </button>
+              <Link href="/quality/openclaw" className="plugin-tab">
+                {currentContent.pluginSwitch.openclaw}
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -705,6 +727,47 @@ export default function Quality() {
           position: relative;
           z-index: 1;
           word-break: keep-all;
+        }
+
+        /* Plugin Switch */
+        .plugin-switch-section {
+          background: #F3F4F6;
+          padding: 30px 0;
+          border-bottom: 1px solid #E5E7EB;
+        }
+
+        .plugin-tabs {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          flex-wrap: wrap;
+        }
+
+        .plugin-tab {
+          padding: 12px 28px;
+          border: 2px solid #E5E7EB;
+          background: white;
+          border-radius: 50px;
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: #6B7280;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          text-decoration: none;
+        }
+
+        .plugin-tab:hover {
+          border-color: #A855F7;
+          color: #7C3AED;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(168, 85, 247, 0.15);
+        }
+
+        .plugin-tab.active {
+          background: linear-gradient(135deg, #4F46E5 0%, #A855F7 100%);
+          border-color: transparent;
+          color: white;
+          box-shadow: 0 8px 30px rgba(79, 70, 229, 0.3);
         }
 
         /* Phase Selector */
