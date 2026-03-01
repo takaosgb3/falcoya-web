@@ -570,7 +570,7 @@ export default function OpenClawIntroductionEn() {
         }
 
         .task-list li::before {
-          content: '\u2022';
+          content: '•';
           position: absolute;
           left: 0.5rem;
           color: #667eea;
