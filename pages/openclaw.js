@@ -210,7 +210,7 @@ export default function OpenClaw() {
         <meta property="og:description" content={c.meta.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://falcoya.dev/openclaw" />
-        <meta property="og:image" content="https://falcoya.dev/img/openclaw/og-openclaw.png" />
+        <meta property="og:image" content="https://falcoya.dev/img/falcoya-logo-c.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={c.meta.title} />
         <meta name="twitter:description" content={c.meta.description} />
@@ -272,9 +272,9 @@ export default function OpenClaw() {
               <table className="openclaw-table">
                 <thead>
                   <tr>
-                    <th>{c.rules.headers.rule}</th>
-                    <th>{c.rules.headers.description}</th>
-                    <th>{c.rules.headers.priority}</th>
+                    <th scope="col">{c.rules.headers.rule}</th>
+                    <th scope="col">{c.rules.headers.description}</th>
+                    <th scope="col">{c.rules.headers.priority}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -304,9 +304,9 @@ export default function OpenClaw() {
               <table className="openclaw-table openclaw-table-fields">
                 <thead>
                   <tr>
-                    <th>{c.fields.headers.field}</th>
-                    <th>{c.fields.headers.type}</th>
-                    <th>{c.fields.headers.description}</th>
+                    <th scope="col">{c.fields.headers.field}</th>
+                    <th scope="col">{c.fields.headers.type}</th>
+                    <th scope="col">{c.fields.headers.description}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -421,7 +421,7 @@ stdout_output:
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 falco-plugin-openclaw by FALCOYA. Licensed under Apache License 2.0</p>
+            <p>&copy; 2025-2026 falco-plugin-openclaw by FALCOYA. Licensed under Apache License 2.0</p>
           </div>
         </div>
       </footer>
@@ -495,7 +495,7 @@ stdout_output:
           display: inline-block;
           padding: 6px 18px;
           background: rgba(255, 255, 255, 0.15);
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.4);
           border-radius: 20px;
           font-size: 0.85rem;
           font-weight: 600;
@@ -504,7 +504,7 @@ stdout_output:
         }
 
         .openclaw-hero-title {
-          font-size: 4rem;
+          font-size: 3.5rem;
           font-weight: 800;
           margin-bottom: 16px;
           position: relative;
@@ -546,7 +546,7 @@ stdout_output:
           align-items: center;
           gap: 10px;
           padding: 16px 36px;
-          border-radius: 50px;
+          border-radius: 12px;
           font-weight: 600;
           font-size: 1.05rem;
           text-decoration: none;
