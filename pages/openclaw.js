@@ -1,9 +1,11 @@
 import Head from 'next/head'
+import { useState } from 'react'
 import { useLanguage } from '../utils/languageUtils'
 import Navbar from '../components/Navbar'
 
 export default function OpenClaw() {
   const [language] = useLanguage()
+  const [osPlatform, setOsPlatform] = useState('linux')
 
   const content = {
     ja: {
@@ -69,10 +71,25 @@ export default function OpenClaw() {
       },
       quickstart: {
         title: 'クイックスタート',
-        subtitle: '3ステップで OpenClaw を導入',
-        step1: { label: 'Step 1', title: 'インストール' },
-        step2: { label: 'Step 2', title: '設定（falco.yaml に追加）' },
-        step3: { label: 'Step 3', title: '実行' },
+        subtitle: 'OS を選択して OpenClaw を導入',
+        linux: {
+          step1: { label: 'Step 1', title: 'インストール' },
+          step2: { label: 'Step 2', title: '設定（falco.yaml に追加）' },
+          step3: { label: 'Step 3', title: '実行' },
+        },
+        mac: {
+          step1: { label: 'Step 1', title: 'Falco をソースからビルド' },
+          step2: { label: 'Step 2', title: 'プラグインとルールをダウンロード' },
+          step3: { label: 'Step 3', title: '設定（falco-local.yaml を作成）' },
+          step4: { label: 'Step 4', title: '実行' },
+          note: '注意',
+          noteText: 'outputs: セクション（rate/max_burst）は含めないでください。Falco 0.43.0 ではスキーマ検証エラーになります。',
+          flagsTitle: '必須フラグ',
+          flags: [
+            { flag: '--disable-source syscall', desc: 'macOS には syscall ドライバがないため無効化が必要' },
+            { flag: '-U', desc: 'stdout バッファリング無効化。なしではアラートが表示されない' },
+          ],
+        },
         important: '重要',
         importantNote: 'load_plugins: [openclaw] は必須です。これがないとプラグインは無視されます。',
       },
@@ -156,10 +173,25 @@ export default function OpenClaw() {
       },
       quickstart: {
         title: 'Quick Start',
-        subtitle: 'Get started with OpenClaw in 3 steps',
-        step1: { label: 'Step 1', title: 'Install' },
-        step2: { label: 'Step 2', title: 'Configure (add to falco.yaml)' },
-        step3: { label: 'Step 3', title: 'Run' },
+        subtitle: 'Select your OS to get started with OpenClaw',
+        linux: {
+          step1: { label: 'Step 1', title: 'Install' },
+          step2: { label: 'Step 2', title: 'Configure (add to falco.yaml)' },
+          step3: { label: 'Step 3', title: 'Run' },
+        },
+        mac: {
+          step1: { label: 'Step 1', title: 'Build Falco from Source' },
+          step2: { label: 'Step 2', title: 'Download Plugin and Rules' },
+          step3: { label: 'Step 3', title: 'Configure (create falco-local.yaml)' },
+          step4: { label: 'Step 4', title: 'Run' },
+          note: 'Note',
+          noteText: 'Do NOT include the outputs: section (rate/max_burst). Falco 0.43.0 rejects this with a schema validation error.',
+          flagsTitle: 'Required Flags',
+          flags: [
+            { flag: '--disable-source syscall', desc: 'macOS has no syscall driver (no eBPF)' },
+            { flag: '-U', desc: 'Unbuffered stdout. Without this, alerts are not displayed' },
+          ],
+        },
         important: 'Important',
         importantNote: 'load_plugins: [openclaw] is required. Without it, the plugin is silently ignored.',
       },
@@ -327,11 +359,27 @@ export default function OpenClaw() {
             <h2 className="openclaw-section-title">{c.quickstart.title}</h2>
             <p className="openclaw-section-subtitle">{c.quickstart.subtitle}</p>
 
+            <div className="openclaw-os-tabs">
+              <button
+                className={`openclaw-os-tab ${osPlatform === 'linux' ? 'active' : ''}`}
+                onClick={() => setOsPlatform('linux')}
+              >
+                Linux
+              </button>
+              <button
+                className={`openclaw-os-tab ${osPlatform === 'mac' ? 'active' : ''}`}
+                onClick={() => setOsPlatform('mac')}
+              >
+                macOS (ARM64)
+              </button>
+            </div>
+
+            {osPlatform === 'linux' ? (
             <div className="openclaw-steps">
               <div className="openclaw-step">
                 <div className="openclaw-step-header">
-                  <span className="openclaw-step-label">{c.quickstart.step1.label}</span>
-                  <span className="openclaw-step-title">{c.quickstart.step1.title}</span>
+                  <span className="openclaw-step-label">{c.quickstart.linux.step1.label}</span>
+                  <span className="openclaw-step-title">{c.quickstart.linux.step1.title}</span>
                 </div>
                 <pre className="openclaw-code"><code>{`# Download plugin binary
 wget https://github.com/takaosgb3/falco-plugin-openclaw/releases/latest/download/libopenclaw-plugin-linux-amd64.so
@@ -344,8 +392,8 @@ sudo cp openclaw_rules.yaml /etc/falco/rules.d/`}</code></pre>
 
               <div className="openclaw-step">
                 <div className="openclaw-step-header">
-                  <span className="openclaw-step-label">{c.quickstart.step2.label}</span>
-                  <span className="openclaw-step-title">{c.quickstart.step2.title}</span>
+                  <span className="openclaw-step-label">{c.quickstart.linux.step2.label}</span>
+                  <span className="openclaw-step-title">{c.quickstart.linux.step2.title}</span>
                 </div>
                 <pre className="openclaw-code"><code>{`plugins:
   - name: openclaw
@@ -373,12 +421,101 @@ stdout_output:
 
               <div className="openclaw-step">
                 <div className="openclaw-step-header">
-                  <span className="openclaw-step-label">{c.quickstart.step3.label}</span>
-                  <span className="openclaw-step-title">{c.quickstart.step3.title}</span>
+                  <span className="openclaw-step-label">{c.quickstart.linux.step3.label}</span>
+                  <span className="openclaw-step-title">{c.quickstart.linux.step3.title}</span>
                 </div>
                 <pre className="openclaw-code"><code>{`sudo falco -c /etc/falco/falco.yaml --disable-source syscall`}</code></pre>
               </div>
             </div>
+            ) : (
+            <div className="openclaw-steps">
+              <div className="openclaw-step">
+                <div className="openclaw-step-header">
+                  <span className="openclaw-step-label">{c.quickstart.mac.step1.label}</span>
+                  <span className="openclaw-step-title">{c.quickstart.mac.step1.title}</span>
+                </div>
+                <pre className="openclaw-code"><code>{`# Prerequisites
+brew install cmake
+
+# Clone and build Falco 0.43.0
+git clone --branch 0.43.0 --depth 1 https://github.com/falcosecurity/falco.git /tmp/falco-build
+cd /tmp/falco-build
+mkdir build && cd build
+cmake -DMINIMAL_BUILD=ON -DUSE_BUNDLED_DEPS=ON -DCMAKE_BUILD_TYPE=Release ..
+make -j$(sysctl -n hw.ncpu)
+
+# Verify
+./userspace/falco/falco --version`}</code></pre>
+              </div>
+
+              <div className="openclaw-step">
+                <div className="openclaw-step-header">
+                  <span className="openclaw-step-label">{c.quickstart.mac.step2.label}</span>
+                  <span className="openclaw-step-title">{c.quickstart.mac.step2.title}</span>
+                </div>
+                <pre className="openclaw-code"><code>{`curl -LO https://github.com/takaosgb3/falco-plugin-openclaw/releases/latest/download/libopenclaw-plugin-darwin-arm64.dylib
+curl -LO https://github.com/takaosgb3/falco-plugin-openclaw/releases/latest/download/openclaw_rules.yaml`}</code></pre>
+              </div>
+
+              <div className="openclaw-step">
+                <div className="openclaw-step-header">
+                  <span className="openclaw-step-label">{c.quickstart.mac.step3.label}</span>
+                  <span className="openclaw-step-title">{c.quickstart.mac.step3.title}</span>
+                </div>
+                <pre className="openclaw-code"><code>{`plugins:
+  - name: openclaw
+    library_path: ./libopenclaw-plugin-darwin-arm64.dylib
+    init_config: |
+      {
+        "log_paths": [
+          "~/.openclaw/logs/agent.jsonl",
+          "~/.openclaw/logs/tools.jsonl",
+          "~/.openclaw/logs/system.log"
+        ]
+      }
+
+load_plugins: [openclaw]
+
+rules_files:
+  - ./openclaw_rules.yaml
+
+stdout_output:
+  enabled: true
+
+json_output: true`}</code></pre>
+                <div className="openclaw-notice">
+                  <strong>{c.quickstart.important}:</strong> {c.quickstart.importantNote}
+                </div>
+                <div className="openclaw-notice">
+                  <strong>{c.quickstart.mac.note}:</strong> {c.quickstart.mac.noteText}
+                </div>
+              </div>
+
+              <div className="openclaw-step">
+                <div className="openclaw-step-header">
+                  <span className="openclaw-step-label">{c.quickstart.mac.step4.label}</span>
+                  <span className="openclaw-step-title">{c.quickstart.mac.step4.title}</span>
+                </div>
+                <pre className="openclaw-code"><code>{`/tmp/falco-build/build/userspace/falco/falco \\
+  -c falco-local.yaml \\
+  --disable-source syscall \\
+  -U`}</code></pre>
+                <div className="openclaw-flags-table">
+                  <strong>{c.quickstart.mac.flagsTitle}:</strong>
+                  <table>
+                    <tbody>
+                      {c.quickstart.mac.flags.map((f, i) => (
+                        <tr key={i}>
+                          <td><code>{f.flag}</code></td>
+                          <td>{f.desc}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            )}
           </div>
         </section>
 
@@ -784,6 +921,63 @@ stdout_output:
         .openclaw-quickstart {
           padding: 90px 0;
           background: white;
+        }
+
+        .openclaw-os-tabs {
+          display: flex;
+          gap: 8px;
+          max-width: 860px;
+          margin: 0 auto 32px;
+        }
+
+        .openclaw-os-tab {
+          padding: 10px 24px;
+          border: 1px solid var(--border-color);
+          border-radius: 8px;
+          background: white;
+          cursor: pointer;
+          font-size: 0.9rem;
+          font-weight: 500;
+          font-family: inherit;
+          color: var(--text-secondary);
+          transition: all 0.2s ease;
+        }
+
+        .openclaw-os-tab:hover {
+          border-color: var(--primary-blue);
+          color: var(--primary-blue);
+        }
+
+        .openclaw-os-tab.active {
+          background: var(--primary-blue);
+          border-color: var(--primary-blue);
+          color: white;
+        }
+
+        .openclaw-flags-table {
+          margin-top: 12px;
+          font-size: 0.85rem;
+          color: var(--text-secondary);
+        }
+
+        .openclaw-flags-table table {
+          width: 100%;
+          margin-top: 8px;
+          border-collapse: collapse;
+        }
+
+        .openclaw-flags-table td {
+          padding: 8px 12px;
+          border: 1px solid var(--border-color);
+          vertical-align: top;
+        }
+
+        .openclaw-flags-table td:first-child {
+          white-space: nowrap;
+          font-family: 'SF Mono', 'Fira Code', monospace;
+          font-size: 0.8rem;
+          background: var(--bg-gray);
+          width: 1%;
         }
 
         .openclaw-steps {
