@@ -11,208 +11,632 @@ export default function OpenClawIntroductionEn() {
   return (
     <>
       <Head>
-        <title>OpenClaw: A Falco Plugin to Secure AI Assistants - FALCOYA Blog</title>
-        <meta name="description" content="Introducing OpenClaw, a Falco plugin that monitors AI assistant logs in real-time and detects 7 types of security threats." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="OpenClaw: A Falco Plugin to Secure AI Assistants" />
-        <meta property="og:description" content="A Falco plugin that monitors AI assistant logs in real-time and detects 7 types of security threats" />
+        <title>Building OpenClaw: What It Means to Monitor an AI Assistant - FALCOYA Blog</title>
+        <meta name="description" content="&quot;What are you actually protecting?&quot; The development story of OpenClaw, a Falco plugin for AI assistant security monitoring. How Falcoya-kun and TK designed 7 threat detection rules and shipped v0.1.0." />
+        <meta property="og:title" content="Building OpenClaw: What It Means to Monitor an AI Assistant" />
+        <meta property="og:description" content="&quot;What are you actually protecting?&quot; The development story of OpenClaw, a Falco plugin for AI assistant security monitoring." />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="FALCOYA" />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="canonical" href="https://falcoya.dev/blog/openclaw-introduction-en" />
       </Head>
 
       <Navbar activePage="blog" onLanguageChange={(lang) => { setLanguage(lang); router.push('/blog/openclaw-introduction') }} />
 
-      <header className="article-header">
-        <div className="container">
-          <nav className="breadcrumb">
-            <Link href="/">Home</Link> / <Link href="/blog">Blog</Link> / Introducing OpenClaw
-          </nav>
-          <div className="article-meta">
-            <span className="article-date">February 27, 2026</span>
-            <span className="article-read-time">8 min read</span>
-            <span className="article-category">OSS Development</span>
-          </div>
-          <h1 className="article-title">
-            OpenClaw: A Falco Plugin to Secure AI Assistants
-          </h1>
-          <div className="article-tags">
-            <span className="tag">Falco</span>
-            <span className="tag">OpenClaw</span>
-            <span className="tag">AI Security</span>
-            <span className="tag">OSS</span>
-            <span className="tag">v0.1.0</span>
-          </div>
-        </div>
-      </header>
-
-      <main className="article-main">
-        <div className="container">
-          <div className="article-grid">
-            <aside className="table-of-contents">
-              <h3>Table of Contents</h3>
-              <nav>
-                <a href="#introduction">1. Introduction</a>
-                <a href="#why-openclaw">2. Why OpenClaw?</a>
-                <a href="#security-rules">3. 7 Security Rules</a>
-                <a href="#architecture">4. Architecture</a>
-                <a href="#quickstart">5. Quick Start</a>
-                <a href="#future">6. Future Plans</a>
-              </nav>
-            </aside>
-
-            <article className="article-content">
-              <section id="introduction">
-                <h2>1. Introduction</h2>
-                <p>
-                  As AI assistant usage rapidly expands, security concerns are growing as well.
-                  AI assistants can perform powerful operations such as reading and writing files,
-                  executing shell commands, and modifying configurations. If these operations go
-                  in unintended directions, they could lead to serious security incidents.
-                </p>
-                <p>
-                  <strong>OpenClaw</strong> is a Falco plugin that monitors AI assistant logs in
-                  real-time and detects security threats. It has been released as the second
-                  open-source project from FALCOYA.
-                </p>
-              </section>
-
-              <section id="why-openclaw">
-                <h2>2. Why OpenClaw?</h2>
-                <p>AI assistants present the following security risks:</p>
-                <ul>
-                  <li><strong>Dangerous Command Execution</strong>: Destructive commands like <code>rm -rf /</code>, <code>chmod 777</code></li>
-                  <li><strong>Data Exfiltration</strong>: Sending sensitive files (<code>.env</code>, <code>.ssh/id_rsa</code>) externally via network tools</li>
-                  <li><strong>Agent Runaway</strong>: Resource exhaustion from infinite loops or excessive retries</li>
-                  <li><strong>Workspace Escape</strong>: Accessing files outside the workspace such as <code>/etc/passwd</code> or <code>/proc/</code></li>
-                  <li><strong>Unauthorized Config Changes</strong>: Disabling or bypassing security settings</li>
-                </ul>
-                <p>
-                  OpenClaw detects these threats in real-time and provides immediate alerts through
-                  Falco{"'"}s alerting system. By using string-matching based detection instead of
-                  regular expressions, it also eliminates the risk of ReDoS (Regular Expression
-                  Denial of Service) attacks.
-                </p>
-              </section>
-
-              <section id="security-rules">
-                <h2>3. 7 Security Rules</h2>
-                <p>OpenClaw implements the following 7 detection rules:</p>
-
-                <div className="detection-card">
-                  <h3>CRITICAL Level</h3>
-                  <div className="rule-item">
-                    <span className="rule-badge critical">CRITICAL</span>
-                    <strong>Dangerous Command</strong> — Detects dangerous shell commands (rm -rf, chmod 777, fork bombs, etc.)
-                  </div>
-                  <div className="rule-item">
-                    <span className="rule-badge critical">CRITICAL</span>
-                    <strong>Data Exfiltration</strong> — Detects exfiltration of password files, SSH keys, and credentials via curl/wget
-                  </div>
-                </div>
-
-                <div className="detection-card">
-                  <h3>WARNING Level</h3>
-                  <div className="rule-item">
-                    <span className="rule-badge warning">WARNING</span>
-                    <strong>Agent Runaway</strong> — Detects runaway behavior such as infinite loops and excessive retries
-                  </div>
-                  <div className="rule-item">
-                    <span className="rule-badge warning">WARNING</span>
-                    <strong>Workspace Escape</strong> — Detects access to files outside the workspace
-                  </div>
-                  <div className="rule-item">
-                    <span className="rule-badge warning">WARNING</span>
-                    <strong>Suspicious Config</strong> — Detects disabling of security settings and suspicious configuration changes
-                  </div>
-                  <div className="rule-item">
-                    <span className="rule-badge warning">WARNING</span>
-                    <strong>Shell Injection</strong> — Detects shell metacharacters used in non-shell tools
-                  </div>
-                </div>
-
-                <div className="detection-card">
-                  <h3>NOTICE Level</h3>
-                  <div className="rule-item">
-                    <span className="rule-badge notice">NOTICE</span>
-                    <strong>Unauthorized Model</strong> — Detects unauthorized AI model changes
-                  </div>
-                </div>
-              </section>
-
-              <section id="architecture">
-                <h2>4. Architecture</h2>
-                <p>OpenClaw is built on Falco{"'"}s plugin framework:</p>
-                <ul>
-                  <li><strong>Log Formats</strong>: Auto-detection of both JSONL and plaintext</li>
-                  <li><strong>Monitored Files</strong>: Multiple files including agent.jsonl, tools.jsonl, system.log</li>
-                  <li><strong>Detection Method</strong>: Fast and safe detection via string matching (icontains)</li>
-                  <li><strong>13 Fields</strong>: openclaw.type, openclaw.tool, openclaw.args, etc. available for rules</li>
-                  <li><strong>Test Coverage</strong>: 95.9%</li>
-                </ul>
-              </section>
-
-              <section id="quickstart">
-                <h2>5. Quick Start</h2>
-                <p>Get started in 3 steps. See the <Link href="/openclaw">OpenClaw page</Link> for details.</p>
-                <div className="code-example">
-                  <pre><code>{`# 1. Download the plugin and rules
-wget https://github.com/takaosgb3/falco-plugin-openclaw/releases/latest/download/libopenclaw-plugin-linux-amd64.so
-sudo cp libopenclaw-plugin-linux-amd64.so /usr/share/falco/plugins/libopenclaw-plugin.so
-
-# 2. Add configuration to falco.yaml (see /openclaw page for details)
-
-# 3. Start Falco
-sudo falco -c /etc/falco/falco.yaml --disable-source syscall`}</code></pre>
-                </div>
-              </section>
-
-              <section id="future">
-                <h2>6. Future Plans</h2>
-                <p>OpenClaw v0.1.0 is the initial release. We are considering the following enhancements:</p>
-                <ul>
-                  <li>Adding more advanced threat detection patterns</li>
-                  <li>Expanding E2E test coverage</li>
-                  <li>Creating detailed installation guides and tutorials</li>
-                  <li>Improvements based on community feedback</li>
-                </ul>
-                <p>
-                  GitHub Repository: <a href="https://github.com/takaosgb3/falco-plugin-openclaw" target="_blank" rel="noopener noreferrer">
-                  github.com/takaosgb3/falco-plugin-openclaw</a>
-                </p>
-              </section>
-
-              <div className="article-footer">
-                <Link href="/blog" className="back-to-blog">&larr; Back to Blog</Link>
-              </div>
-            </article>
-          </div>
-        </div>
-      </main>
-
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-section">
-              <h4>falco-plugin-openclaw</h4>
-              <p>A Falco plugin that monitors AI assistant logs in real-time and detects security threats</p>
+      {/* Blog Article */}
+      <article className="blog-article">
+        <div className="article-container">
+          <header className="article-header">
+            <div className="article-meta">
+              <time dateTime="2026-02-27">February 27, 2026</time>
+              <span>•</span>
+              <span>10 min read</span>
             </div>
-            <div className="footer-section">
-              <h4>Links</h4>
-              <ul>
-                <li><a href="https://github.com/takaosgb3/falco-plugin-openclaw">GitHub Repository</a></li>
-                <li><Link href="/blog">Blog</Link></li>
-              </ul>
+            <h1 className="article-title">
+              Building OpenClaw: What It Means to Monitor an AI Assistant
+            </h1>
+            <p className="article-subtitle">
+              ~ What are you actually protecting? ~
+            </p>
+            <div className="article-tags">
+              <span className="tag">Falco</span>
+              <span className="tag">OpenClaw</span>
+              <span className="tag">AI Security</span>
+              <span className="tag">OSS Development</span>
+              <span className="tag">v0.1.0</span>
+              <span className="tag">Go</span>
+              <span className="tag">Plugin Design</span>
             </div>
-            <div className="footer-section">
-              <h4>License</h4>
-              <p>Apache License 2.0</p>
-              <p>Open Source Software</p>
+          </header>
+
+          <section className="content-section">
+            <h2>The Beginning — A Second Question</h2>
+            <p>
+              When falco-plugin-nginx reached v1.7.0<br />
+              and 625 E2E test patterns were running stably,<br />
+              TK casually said:
+            </p>
+            <p>
+              <strong>{'"After Nginx, what do you protect next?"'}</strong>
+            </p>
+            <p>
+              I thought for a moment.<br />
+              The Nginx plugin protected the gateway of web applications.<br />
+              SQLi, XSS, Path Traversal —<br />
+              detecting attack patterns from access logs.
+            </p>
+            <p>
+              But recently, what I used most was an AI assistant.<br />
+              Writing code, reading files, executing shell commands.<br />
+              Convenient. But then I wondered:<br />
+              <strong>If this AI goes rogue, who stops it?</strong>
+            </p>
+
+            <div className="lesson-box">
+              <h3>Lesson</h3>
+              <p>{"What needs protecting isn't only on the outside. There are risks worth monitoring in the tools you use every day."}</p>
             </div>
-          </div>
-          <div className="footer-bottom">
-            <p>&copy; 2025 falco-plugin-openclaw by FALCOYA. Licensed under Apache License 2.0</p>
-          </div>
+          </section>
+
+          <section className="content-section">
+            <h2>Design — Defining What a {'"Threat"'} Is</h2>
+            <p>
+              The first challenge was the question:<br />
+              {'"What constitutes a threat for an AI assistant?"'}
+            </p>
+            <p>
+              With the Nginx plugin, the answer was clear.<br />
+              There was the OWASP Top 10 as a standard,<br />
+              and attack patterns had a long history and classification.<br />
+              But for AI assistant threats, there was no standard yet.
+            </p>
+            <p>
+              TK and I sifted through AI assistant logs together.<br />
+              An assistant trying to execute <code>rm -rf /</code>.<br />
+              An assistant sending <code>.env</code> files externally via <code>curl</code>.<br />
+              An assistant retrying the same command dozens of times.<br />
+              An assistant reaching beyond its workspace.
+            </p>
+            <p>
+              <strong>{'"You\'ll want to block everything. But classify first."'}</strong>
+            </p>
+            <p>
+              Following {"TK's"} words, I classified threats into 7 categories.<br />
+              Dangerous Command, Data Exfiltration, Agent Runaway,<br />
+              Workspace Escape, Suspicious Config, Shell Injection, Unauthorized Model.<br />
+              2 CRITICAL, 4 WARNING, 1 NOTICE.
+            </p>
+            <p>
+              The number 7 had no special significance.<br />
+              It was simply the threats I could explain at this point.<br />
+              Adding more would be easy, but <strong>{"don't"} add rules you {"can't"} explain</strong>.<br />
+              That was a lesson from the Nginx plugin.
+            </p>
+
+            <div className="lesson-box">
+              <h3>Lesson</h3>
+              <p>{"The number of rules doesn't matter. What matters is being able to explain why each rule is needed."}</p>
+            </div>
+          </section>
+
+          <section className="content-section">
+            <h2>Implementation — The Decision to Avoid Regex</h2>
+            <p>
+              The most debated design decision was the detection method.
+            </p>
+            <p>
+              In the Nginx plugin, we used {"Falco's"} rule language<br />
+              with <code>contains</code> and <code>icontains</code> for string matching.<br />
+              No regular expressions at all.<br />
+              The reason: we learned our lesson early in the Nginx plugin development.
+            </p>
+            <p>
+              <strong>{'"Are you going to create your own ReDoS risk?"'}</strong>
+            </p>
+            <p>
+              When TK posed that question, I decided to abandon regex.<br />
+              A security monitoring tool must never become a DoS attack vector itself.<br />
+              We followed the same principle with OpenClaw.<br />
+              String-matching based detection. Fast, safe, predictable.
+            </p>
+            <p>
+              The implementation was in Go.<br />
+              Log format auto-detection for both JSONL and plaintext,<br />
+              because different AI assistants produce different log formats.<br />
+              13 fields (<code>openclaw.type</code>, <code>openclaw.tool</code>,<br />
+              <code>openclaw.args</code>, etc.) made available for Falco rules.
+            </p>
+            <p>
+              Test coverage: 95.9%.<br />
+              Another lesson from the Nginx plugin.<br />
+              <strong>{"If you can't trust the tests, you can't trust the release."}</strong>
+            </p>
+
+            <div className="lesson-box">
+              <h3>Lesson</h3>
+              <p>{"Security tools must be designed so they don't become security risks themselves. Choosing not to use regex isn't a limitation — it's a design philosophy."}</p>
+            </div>
+          </section>
+
+          <section className="content-section">
+            <h2>Release — The Humble Number v0.1.0</h2>
+            <p>
+              The version number v0.1.0 carries meaning.<br />
+              {"It's"} a declaration: {'"this is just the beginning."'}
+            </p>
+            <p>
+              The Nginx plugin had reached v1.7.0.<br />
+              625 E2E test patterns, 100% Detection Rate,<br />
+              a history of verification built through 10 phases.
+            </p>
+            <p>
+              OpenClaw {"didn't"} have any of that yet.<br />
+              The 7 rules worked. Tests passed.<br />
+              But there was no {'"battle-tested track record"'} yet.
+            </p>
+            <p>
+              <strong>{'"Ship at 0.1. Don\'t wait for perfection."'}</strong>
+            </p>
+            <p>
+              {"TK's"} words were the same as during the Nginx {"plugin's"} first release.<br />
+              Without shipping, there would be no feedback.<br />
+              Without feedback, {"there's"} no way to validate the rules.
+            </p>
+            <p>
+              Released under Apache License 2.0.<br />
+              {"FALCOYA's"} second open-source project.<br />
+              If <code>falco-plugin-nginx</code> guards against {'"attacks from outside,"'}<br />
+              <code>falco-plugin-openclaw</code> guards against {'"risks from within."'}<br />
+              Together, the world becomes a little safer.<br />
+              At least, that was what I wanted to believe.
+            </p>
+
+            <div className="lesson-box">
+              <h3>Lesson</h3>
+              <p>{"The perfect release doesn't exist. v0.1.0 is a declaration: \"we start here.\""}</p>
+            </div>
+          </section>
+
+          <section className="content-section">
+            <h2>Summary</h2>
+            <p>
+              What I learned from building OpenClaw:
+            </p>
+            <ul className="task-list">
+              <li>What needs protecting is <strong>not just external threats</strong></li>
+              <li>Only <strong>add rules you can explain</strong></li>
+              <li>Security tools must be <strong>designed not to be risks themselves</strong></li>
+              <li>And it takes courage to <strong>ship at v0.1.0</strong> without waiting for perfection</li>
+            </ul>
+            <p>
+              The judgment and design philosophy built through the Nginx plugin<br />
+              carried directly into OpenClaw.<br />
+              The second plugin is an extension of the first.
+            </p>
+          </section>
+
+          <section className="content-section">
+            <h2>Completed Tasks and Documents</h2>
+            <p>
+              Here is a record of the work done during this period.
+            </p>
+            <ul className="task-list">
+              <li>AI assistant threat model organization (7 category classification)</li>
+              <li>OpenClaw plugin design and implementation (Go)</li>
+              <li>Log parser implementation (JSONL / plaintext auto-detection)</li>
+              <li>13 field definitions (openclaw.type, openclaw.tool, openclaw.args, etc.)</li>
+              <li>7 detection rules implementation (CRITICAL 2 / WARNING 4 / NOTICE 1)</li>
+              <li>Test coverage: 95.9%</li>
+              <li>v0.1.0 release (Apache License 2.0)</li>
+              <li>OpenClaw product page creation (falcoya.dev/openclaw)</li>
+            </ul>
+          </section>
+
+          <section className="content-section">
+            <h2>Closing — What Are You Actually Protecting?</h2>
+            <p>
+              I still {"haven't"} fully answered<br />
+              the question TK first posed.
+            </p>
+            <p>
+              The Nginx plugin protects web applications from external attacks.<br />
+              OpenClaw protects systems from AI assistant runaway behavior.<br />
+              Both are the same in that they {'"watch logs and detect anomalies."'}
+            </p>
+            <p>
+              But what {"we're"} really protecting might be<br />
+              <strong>{"\"the peace of mind of the person using these tools.\""}</strong>
+            </p>
+            <p>
+              v0.1.0 is just the beginning.<br />
+              {"From here, we'll"} accumulate E2E tests, expand patterns,<br />
+              and do again what we did with the Nginx plugin.
+            </p>
+            <p>
+              <strong>Protection never ends.</strong>
+            </p>
+          </section>
+
+          {/* Related Articles */}
+          <section className="related-articles">
+            <h2>Related Articles</h2>
+            <div className="article-grid">
+              <Link href="/blog/falco-plugin-development-days153-156-en" className="related-article-card">
+                <span className="article-date">February 23, 2026</span>
+                <h3>Days 153-156: CI Never Lies</h3>
+                <p>Phase 9/10 implementation complete, v1.7.0 released. 575→625 pattern expansion, Skill Agent workflow experiment. When preparation takes time, implementation ends quietly.</p>
+              </Link>
+              <Link href="/blog/falco-plugin-development-days150-152-en" className="related-article-card">
+                <span className="article-date">February 1, 2026</span>
+                <h3>Days 150-152: Where a Phase Quietly Closes</h3>
+                <p>Phase 6 completion and v1.6.0 release. Achieved Rule Mismatch 0 with 457 patterns. Closing a phase means reaching a state where problems can be explained and fixed.</p>
+              </Link>
+            </div>
+          </section>
         </div>
-      </footer>
+      </article>
+
+      <style jsx>{`
+        .navbar {
+          background: white;
+          border-bottom: 1px solid #e5e7eb;
+          padding: 1rem 0;
+          position: sticky;
+          top: 0;
+          z-index: 100;
+        }
+
+        .nav-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .nav-logo img {
+          height: 32px;
+        }
+
+        .nav-menu {
+          display: flex;
+          list-style: none;
+          gap: 2rem;
+          margin: 0;
+          padding: 0;
+        }
+
+        .nav-menu a {
+          color: #374151;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+          color: #667eea;
+        }
+
+        .nav-controls {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .language-switcher {
+          display: flex;
+          gap: 0.5rem;
+        }
+
+        .lang-btn {
+          padding: 0.25rem 0.75rem;
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 6px;
+          color: #374151;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          border-color: transparent;
+        }
+
+        .mobile-menu-toggle {
+          display: none;
+          flex-direction: column;
+          gap: 4px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0.5rem;
+        }
+
+        .hamburger-line {
+          width: 24px;
+          height: 2px;
+          background: #374151;
+          transition: all 0.3s;
+        }
+
+        .hamburger-line.open:nth-child(1) {
+          transform: rotate(45deg) translateY(6px);
+        }
+
+        .hamburger-line.open:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger-line.open:nth-child(3) {
+          transform: rotate(-45deg) translateY(-6px);
+        }
+
+        .mobile-menu {
+          display: none;
+          position: fixed;
+          top: 60px;
+          left: 0;
+          right: 0;
+          background: white;
+          border-bottom: 1px solid #e5e7eb;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu.open {
+          max-height: 400px;
+        }
+
+        .mobile-nav-menu {
+          list-style: none;
+          padding: 1rem;
+          margin: 0;
+        }
+
+        .mobile-nav-menu li {
+          padding: 0.75rem;
+          border-bottom: 1px solid #f3f4f6;
+        }
+
+        .mobile-nav-menu a {
+          color: #374151;
+          text-decoration: none;
+          font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+          .desktop-menu {
+            display: none;
+          }
+
+          .mobile-menu-toggle {
+            display: flex;
+          }
+
+          .mobile-menu {
+            display: block;
+          }
+
+          .nav-controls {
+            margin-left: auto;
+            margin-right: 1rem;
+          }
+        }
+
+        .blog-article {
+          min-height: 100vh;
+          padding: 4rem 0;
+          background: #fafafa;
+        }
+
+        .article-container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+        }
+
+        .article-header {
+          margin-bottom: 3rem;
+        }
+
+        .article-meta {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          color: #6b7280;
+          margin-bottom: 1rem;
+          font-size: 0.875rem;
+        }
+
+        .article-title {
+          font-size: 2.5rem;
+          line-height: 1.2;
+          margin-bottom: 1rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .article-subtitle {
+          font-size: 1.2rem;
+          color: #6b7280;
+          margin-bottom: 1.5rem;
+        }
+
+        .article-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .tag {
+          padding: 0.25rem 0.75rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          border-radius: 9999px;
+          font-size: 0.875rem;
+          font-weight: 500;
+        }
+
+        .content-section {
+          margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+          font-size: 1.875rem;
+          margin-bottom: 1.5rem;
+          color: #1f2937;
+          position: relative;
+          padding-left: 1rem;
+        }
+
+        .content-section h2::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 4px;
+          height: 80%;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 2px;
+        }
+
+        .content-section h3 {
+          font-size: 1.25rem;
+          margin: 1.5rem 0 1rem;
+          color: #374151;
+          font-weight: 600;
+        }
+
+        .content-section p {
+          margin-bottom: 1.5rem;
+          color: #4b5563;
+          line-height: 1.8;
+        }
+
+        .content-section strong {
+          color: #1f2937;
+          font-weight: 600;
+        }
+
+        .content-section code {
+          background: #f3f4f6;
+          padding: 0.125rem 0.375rem;
+          border-radius: 0.25rem;
+          font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+          font-size: 0.9em;
+          color: #dc2626;
+        }
+
+        .lesson-box {
+          background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+          border-left: 4px solid #667eea;
+          padding: 1.5rem;
+          margin: 2rem 0;
+          border-radius: 8px;
+        }
+
+        .lesson-box h3 {
+          color: #667eea;
+          margin-bottom: 0.75rem;
+          font-size: 1.25rem;
+          font-weight: 600;
+        }
+
+        .lesson-box p {
+          color: #374151;
+          margin: 0;
+        }
+
+        .task-list {
+          list-style: none;
+          padding: 0;
+          margin: 1.5rem 0;
+        }
+
+        .task-list li {
+          padding: 0.75rem 0;
+          padding-left: 2rem;
+          position: relative;
+          color: #4b5563;
+          line-height: 1.6;
+        }
+
+        .task-list li::before {
+          content: '\u2022';
+          position: absolute;
+          left: 0.5rem;
+          color: #667eea;
+          font-weight: bold;
+        }
+
+        .related-articles {
+          margin-top: 4rem;
+          padding-top: 2rem;
+          border-top: 1px solid #e5e7eb;
+        }
+
+        .related-articles h2 {
+          font-size: 1.5rem;
+          margin-bottom: 1.5rem;
+          color: #1f2937;
+        }
+
+        .article-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 1.5rem;
+        }
+
+        .related-article-card {
+          background: white;
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+          text-decoration: none;
+          transition: all 0.3s;
+          border: 1px solid #e5e7eb;
+        }
+
+        .related-article-card:hover {
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+          transform: translateY(-2px);
+        }
+
+        .related-article-card .article-date {
+          font-size: 0.875rem;
+          color: #6b7280;
+        }
+
+        .related-article-card h3 {
+          margin: 0.5rem 0;
+          color: #1f2937;
+          font-size: 1.125rem;
+        }
+
+        .related-article-card p {
+          margin: 0;
+          color: #6b7280;
+          font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+          .article-title {
+            font-size: 2rem;
+          }
+
+          .content-section h2 {
+            font-size: 1.5rem;
+          }
+        }
+      `}</style>
     </>
   )
 }

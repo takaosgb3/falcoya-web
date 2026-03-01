@@ -8,11 +8,11 @@ const blogPosts = {
   ja: [
     {
       id: 'openclaw-introduction',
-      title: 'OpenClaw: AI アシスタントのセキュリティを守る Falco プラグイン',
-      description: 'AI アシスタントのログをリアルタイム監視し、7種類のセキュリティ脅威を検出する OpenClaw プラグインを紹介します。危険コマンド実行、データ流出、エージェント暴走などの脅威からシステムを保護します。',
+      title: 'OpenClaw 開発記：AI アシスタントを監視するということ',
+      description: '「守るって、何を守ることなんだ？」AI アシスタントのセキュリティ監視プラグイン OpenClaw の開発記。7つの脅威検出ルールを設計し、v0.1.0 をリリースするまでの物語。',
       date: '2026-02-27',
-      readTime: '8分',
-      tags: ['Falco', 'OpenClaw', 'AI Security', 'OSS', 'v0.1.0'],
+      readTime: '10分',
+      tags: ['Falco', 'OpenClaw', 'AI Security', 'OSS開発', 'v0.1.0', 'Go', 'プラグイン設計'],
       category: 'OSS開発',
       slug: 'openclaw-introduction',
       project: 'openclaw'
@@ -351,11 +351,11 @@ const blogPosts = {
   en: [
     {
       id: 'openclaw-introduction-en',
-      title: 'OpenClaw: Protecting AI Assistant Security with a Falco Plugin',
-      description: 'Introducing the OpenClaw plugin that monitors AI assistant logs in real-time and detects 7 types of security threats including dangerous commands, data exfiltration, and agent runaway behavior.',
+      title: 'Building OpenClaw: What It Means to Monitor an AI Assistant',
+      description: '"What are you actually protecting?" The development story of OpenClaw, a Falco plugin for AI assistant security monitoring. Designing 7 threat detection rules and shipping v0.1.0.',
       date: '2026-02-27',
-      readTime: '8 min',
-      tags: ['Falco', 'OpenClaw', 'AI Security', 'OSS', 'v0.1.0'],
+      readTime: '10 min',
+      tags: ['Falco', 'OpenClaw', 'AI Security', 'OSS Development', 'v0.1.0', 'Go', 'Plugin Design'],
       category: 'OSS Development',
       slug: 'openclaw-introduction-en',
       project: 'openclaw'
