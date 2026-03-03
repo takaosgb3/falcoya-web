@@ -7,6 +7,17 @@ import Navbar from '../../components/Navbar'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-development-days157-160',
+      title: 'Falco + Nginx プラグイン開発：Falcoya君の157日目から160日目',
+      description: '見えない穴を、ひとつずつ塞ぐ。7回のレビューを経た設計完成、39ファイルの資産棚卸し、775→850パターン拡張、Preflight Validator Check 4実装。安全網にも穴がある。穴を探す仕組みを作る。',
+      date: '2026-03-03',
+      readTime: '15分',
+      tags: ['Falco', 'Nginx', 'OSS開発', 'E2E Test', '850パターン', 'Phase 13', 'Agent Skills', 'Preflight Validator', 'CI'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-development-days157-160',
+      project: 'nginx'
+    },
+    {
       id: 'openclaw-introduction',
       title: 'Falco Plugin for OpenClaw 開発開始：AI アシスタントを監視するということ',
       description: '「守るって、何を守ることなんだ？」AI アシスタントのセキュリティ監視プラグイン OpenClaw の開発記。7つの脅威検出ルールを設計し、v0.1.0 をリリースするまでの物語。',
@@ -349,6 +360,17 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-development-days157-160-en',
+      title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 157-160',
+      description: 'Sealing invisible holes, one by one. Design completion after 7 review cycles, 39-file asset inventory, 775→850 pattern expansion, and Preflight Validator Check 4 implementation. Safety nets have holes too — build systems to find them.',
+      date: '2026-03-03',
+      readTime: '15 min',
+      tags: ['Falco', 'Nginx', 'OSS Development', 'E2E Test', '850 Patterns', 'Phase 13', 'Agent Skills', 'Preflight Validator', 'CI'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-development-days157-160-en',
+      project: 'nginx'
+    },
     {
       id: 'openclaw-introduction-en',
       title: 'Starting Falco Plugin for OpenClaw: What It Means to Monitor an AI Assistant',

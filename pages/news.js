@@ -30,6 +30,24 @@ export default function News() {
       },
       items: [
         {
+          id: "2026-03-03-oss-development-blog-part28",
+          date: "2026-03-03",
+          category: "release",
+          type: "new",
+          title: "ブログ記事「Falcoya君の157日目から160日目」を公開、850パターン到達",
+          content: "見えない穴を、ひとつずつ塞ぐ。Agent Skills設計の7回レビュー完了、39ファイルの資産棚卸し、Phase 13 E2Eパターン拡張（775→850）、Preflight Validator Check 4実装の記録を公開しました。",
+          highlights: [
+            "E2Eテストパターン 775 → 850 拡張（Phase 13完了）",
+            "Issue #801 Agent Skills設計 — 7回レビュー完了、全10タスク実装準備完了",
+            "Plugin Dev Kit ポータブルパッケージ作成（547KB、22ファイル）",
+            "テスト失敗分析 FA-806-001 全修正、PR #101マージ",
+            "FP_CRLF_001 修正、Preflight Validator Check 4実装（PR #102）",
+            "850/850 全テストPASS",
+            "「安全網にも穴がある。穴を探す仕組みを作る」"
+          ],
+          link: "/blog/falco-plugin-development-days157-160"
+        },
+        {
           id: "2026-02-27-openclaw-v010-release",
           date: "2026-02-27",
           category: "release",
@@ -737,6 +755,24 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2026-03-03-oss-development-blog-part28-en",
+          date: "2026-03-03",
+          category: "release",
+          type: "new",
+          title: "Blog Post \"Falcoya's Days 157-160\" Published, 850 Patterns Reached",
+          content: "Sealing invisible holes, one by one. Published the record of Agent Skills design completion after 7 review cycles, 39-file asset inventory, Phase 13 E2E pattern expansion (775→850), and Preflight Validator Check 4 implementation.",
+          highlights: [
+            "E2E test patterns 775 → 850 expanded (Phase 13 complete)",
+            "Issue #801 Agent Skills design — 7 review cycles complete, all 10 tasks implementation-ready",
+            "Plugin Dev Kit portable package created (547KB, 22 files)",
+            "Test failure analysis FA-806-001 all fixed, PR #101 merged",
+            "FP_CRLF_001 fix, Preflight Validator Check 4 implementation (PR #102)",
+            "850/850 all tests PASS",
+            "\"Safety nets have holes too. Build systems to find them.\""
+          ],
+          link: "/blog/falco-plugin-development-days157-160-en"
+        },
         {
           id: "2026-02-27-openclaw-v010-release-en",
           date: "2026-02-27",
