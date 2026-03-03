@@ -43,7 +43,7 @@ export default function Home() {
         nginx: {
           name: 'falco-plugin-nginx',
           desc: 'Nginx アクセスログをリアルタイム監視し、SQLi・XSS・パストラバーサル等の Web 攻撃を検知',
-          stats: '6種類の脅威 / 625パターン検証済み',
+          stats: '6種類の脅威 / 850パターン検証済み',
           button: '詳しく見る',
         },
         openclaw: {
@@ -64,7 +64,7 @@ export default function Home() {
       },
       detection: {
         title: "脅威検知機能",
-        overview: "falco-plugin-nginxは、8つのカテゴリ・625パターンのE2Eテストで検証された包括的な脅威検知を実現します",
+        overview: "falco-plugin-nginxは、8つのカテゴリ・850パターンのE2Eテストで検証された包括的な脅威検知を実現します",
         codeHeader: "Falco 検知例",
         rulesFooter: "📚 詳細なルールリファレンスを見る",
         rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md",
@@ -276,7 +276,7 @@ export default function Home() {
         nginx: {
           name: 'falco-plugin-nginx',
           desc: 'Monitor Nginx access logs in real-time and detect web attacks like SQLi, XSS, and Path Traversal',
-          stats: '6 threat types / 625 patterns verified',
+          stats: '6 threat types / 850 patterns verified',
           button: 'Learn More',
         },
         openclaw: {
@@ -297,7 +297,7 @@ export default function Home() {
       },
       detection: {
         title: "Threat Detection Features",
-        overview: "falco-plugin-nginx provides comprehensive threat detection verified by E2E testing with 8 categories and 625 patterns",
+        overview: "falco-plugin-nginx provides comprehensive threat detection verified by E2E testing with 8 categories and 850 patterns",
         codeHeader: "Falco Detection Example",
         rulesFooter: "📚 View Detailed Rules Reference",
         rulesLink: "https://github.com/takaosgb3/falco-plugin-nginx/blob/main/docs/NGINX_RULES_REFERENCE.md",
@@ -715,7 +715,7 @@ export default function Home() {
                 <div className="stat-label">{content[language].hero.stats.threats}</div>
               </div>
               <div className="stat-item glass">
-                <div className="stat-number" data-target="625">0</div>
+                <div className="stat-number" data-target="850">0</div>
                 <div className="stat-label">{content[language].hero.stats.patterns}</div>
               </div>
               <div className="stat-item glass">

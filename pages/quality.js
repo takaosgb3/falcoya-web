@@ -9,12 +9,12 @@ export default function Quality() {
   const [activePhase, setActivePhase] = useState('phase2') // Default to Phase 2
   const [runNumber, setRunNumber] = useState('')
 
-  // Phase 2 test data (625 patterns)
+  // Phase 2 test data (850 patterns)
   const phase2Data = {
     metadata: {
-      runNumber: 185,
-      timestamp: "2026-02-14T22:45:34Z",
-      duration: "2129ms",
+      runNumber: 212,
+      timestamp: "2026-03-03T04:22:07Z",
+      duration: "3077ms",
       environment: {
         platform: "ubuntu-24.04",
         falcoVersion: "0.43.0",
@@ -24,20 +24,20 @@ export default function Quality() {
       }
     },
     summary: {
-      totalTests: 625,
-      passedTests: 625,
+      totalTests: 850,
+      passedTests: 850,
       failedTests: 0,
       passRate: 100
     },
     categories: {
-      SQLI: { count: 124, percentage: 19.8 },
-      CMDINJ: { count: 89, percentage: 14.2 },
-      XSS: { count: 86, percentage: 13.8 },
-      PATH: { count: 73, percentage: 11.7 },
-      SSTI: { count: 25, percentage: 4.0 },
-      XXE: { count: 18, percentage: 2.9 },
-      LDAP: { count: 15, percentage: 2.4 },
-      OTHER: { count: 195, percentage: 31.2 }
+      SQLI: { count: 138, percentage: 16.2 },
+      CMDINJ: { count: 98, percentage: 11.5 },
+      XSS: { count: 96, percentage: 11.3 },
+      PATH: { count: 81, percentage: 9.5 },
+      SSTI: { count: 34, percentage: 4.0 },
+      LDAP: { count: 20, percentage: 2.4 },
+      XXE: { count: 18, percentage: 2.1 },
+      OTHER: { count: 365, percentage: 42.9 }
     },
     urls: {
       latest: "https://takaosgb3.github.io/falco-plugin-nginx/e2e-report/latest/",
@@ -74,7 +74,7 @@ export default function Quality() {
       },
       hero: {
         title: "E2E テストレポート",
-        subtitle: "625パターンの攻撃検知をAllureで可視化",
+        subtitle: "850パターンの攻撃検知をAllureで可視化",
         description: "falco-plugin-nginx の品質は、包括的なE2Eテスト、自動化されたCI/CD、実証済みの検知精度、そして Falcoya君の頑張りによって支えられています。"
       },
       pluginSwitch: {
@@ -82,7 +82,7 @@ export default function Quality() {
         openclaw: "OpenClaw"
       },
       phaseSelector: {
-        phase2: "Phase 2: 攻撃検知 (625パターン)",
+        phase2: "Phase 2: 攻撃検知 (850パターン)",
         phase1: "Phase 1: 基礎検証 (14テスト)"
       },
       phase2: {
@@ -100,10 +100,10 @@ export default function Quality() {
           xss: { name: "クロスサイトスクリプティング", desc: "DOM、Reflected、Stored、Encoding等" },
           path: { name: "パストラバーサル", desc: "../etc/passwd、エンコーディング回避等" },
           cmdinj: { name: "コマンドインジェクション", desc: "Backtick、Pipe、Substitution等" },
-          ssti: { name: "サーバサイドテンプレートインジェクション", desc: "Jinja2、Twig、Freemarker等" },
+          ssti: { name: "サーバサイドテンプレートインジェクション", desc: "Jinja2、Twig、Freemarker、Pug、EJS等" },
           xxe: { name: "XML外部実体参照", desc: "Entity、JAR、Billion Laugh攻撃等" },
           ldap: { name: "LDAPインジェクション", desc: "認証バイパス、Blind LDAP等" },
-          other: { name: "その他", desc: "XPath、GraphQL、NoSQL、CRLF、SSRF、HTTP Smuggling、API Security等" },
+          other: { name: "その他", desc: "SSRF、CRLF、JWT、Open Redirect、WAF Bypass、GraphQL、NoSQL、XPath、API Security等" },
           patterns: "パターン"
         },
         buttons: {
@@ -146,7 +146,7 @@ export default function Quality() {
         current: "現在",
         target: "目標",
         progress: "進捗",
-        description: "850パターンへの拡大を計画中。より多くの攻撃バリエーション、より深いエッジケース、より広い守備範囲へ。",
+        description: "850パターンを達成。1000パターンへの拡大を計画中。より多くの攻撃バリエーション、より深いエッジケース、より広い守備範囲へ。",
         patterns: "パターン"
       },
       detection: {
@@ -185,7 +185,7 @@ export default function Quality() {
       },
       hero: {
         title: "E2E Test Report",
-        subtitle: "625 Attack Patterns Visualized with Allure",
+        subtitle: "850 Attack Patterns Visualized with Allure",
         description: "The quality of falco-plugin-nginx is supported by comprehensive E2E testing, automated CI/CD, proven detection accuracy, and Falcoya-kun's dedication."
       },
       pluginSwitch: {
@@ -193,7 +193,7 @@ export default function Quality() {
         openclaw: "OpenClaw"
       },
       phaseSelector: {
-        phase2: "Phase 2: Attack Detection (625 Patterns)",
+        phase2: "Phase 2: Attack Detection (850 Patterns)",
         phase1: "Phase 1: Foundation Verification (14 Tests)"
       },
       phase2: {
@@ -211,10 +211,10 @@ export default function Quality() {
           xss: { name: "Cross-Site Scripting", desc: "DOM, Reflected, Stored, Encoding, etc." },
           path: { name: "Path Traversal", desc: "../etc/passwd, encoding bypass, etc." },
           cmdinj: { name: "Command Injection", desc: "Backtick, Pipe, Substitution, etc." },
-          ssti: { name: "Server-Side Template Injection", desc: "Jinja2, Twig, Freemarker, etc." },
+          ssti: { name: "Server-Side Template Injection", desc: "Jinja2, Twig, Freemarker, Pug, EJS, etc." },
           xxe: { name: "XML External Entity", desc: "Entity, JAR, Billion Laugh attack, etc." },
           ldap: { name: "LDAP Injection", desc: "Auth bypass, Blind LDAP, etc." },
-          other: { name: "Other", desc: "XPath, GraphQL, NoSQL, CRLF, SSRF, HTTP Smuggling, API Security, etc." },
+          other: { name: "Other", desc: "SSRF, CRLF, JWT, Open Redirect, WAF Bypass, GraphQL, NoSQL, XPath, API Security, etc." },
           patterns: "patterns"
         },
         buttons: {
@@ -257,7 +257,7 @@ export default function Quality() {
         current: "Current",
         target: "Target",
         progress: "Progress",
-        description: "Planning expansion to 850 patterns. More attack variations, deeper edge cases, broader coverage.",
+        description: "850 patterns achieved. Planning expansion to 1000 patterns. More attack variations, deeper edge cases, broader coverage.",
         patterns: "patterns"
       },
       detection: {
@@ -610,18 +610,18 @@ export default function Quality() {
               <div className="roadmap-stats">
                 <div className="roadmap-stat">
                   <span className="roadmap-label">{currentContent.roadmap.current}</span>
-                  <span className="roadmap-value">625 {currentContent.roadmap.patterns}</span>
+                  <span className="roadmap-value">850 {currentContent.roadmap.patterns}</span>
                 </div>
                 <div className="roadmap-stat">
                   <span className="roadmap-label">{currentContent.roadmap.target}</span>
-                  <span className="roadmap-value">850 {currentContent.roadmap.patterns}</span>
+                  <span className="roadmap-value">1000 {currentContent.roadmap.patterns}</span>
                 </div>
               </div>
               <div className="roadmap-progress">
                 <div className="progress-bar-container">
-                  <div className="progress-bar" style={{ width: '73.5%' }}></div>
+                  <div className="progress-bar" style={{ width: '85%' }}></div>
                 </div>
-                <span className="progress-percentage">73.5%</span>
+                <span className="progress-percentage">85%</span>
               </div>
               <p className="roadmap-description">{currentContent.roadmap.description}</p>
             </div>
