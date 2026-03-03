@@ -51,6 +51,14 @@ export default function FalcoPluginDevelopmentDays157to160() {
             </div>
           </header>
 
+          <div className="article-image">
+            <img
+              src="/img/blog/blog29.png"
+              alt="見えない穴を、ひとつずつ塞ぐ - 時計職人の工房で安全網を検査するFalcoya"
+              style={{ transition: 'opacity 0.3s ease' }}
+            />
+          </div>
+
           <section className="content-section">
             <h2>前回の振り返り</h2>
             <p>
@@ -375,6 +383,20 @@ export default function FalcoPluginDevelopmentDays157to160() {
           font-size: 1.2rem;
           color: #6b7280;
           margin-bottom: 1.5rem;
+        }
+
+        .article-image {
+          position: relative;
+          width: 100%;
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .article-image img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .article-tags {
