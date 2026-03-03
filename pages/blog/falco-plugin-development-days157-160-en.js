@@ -86,11 +86,11 @@ export default function FalcoPluginDevelopmentDays157to160En() {
               had been missed in the previous fix.
             </p>
             <p>
-              Task Agents cannot directly call Skills.<br />
-              The only available tools are basic ones like Read, Write, Edit, and Bash.<br />
+              The Task Agent&apos;s available tools didn&apos;t include Skill.<br />
+              The design needed to work with only basic tools like Read, Write, Edit, and Bash.<br />
               So we adopted the &quot;inline reference pattern&quot;—<br />
               reading and executing SKILL.md directly.<br />
-              This constraint was discovered in the first rehearsal<br />
+              This issue was discovered in the first rehearsal<br />
               and the missed fix was caught in the second.
             </p>
             <p>

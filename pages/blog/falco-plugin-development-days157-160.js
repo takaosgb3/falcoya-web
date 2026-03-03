@@ -86,11 +86,11 @@ export default function FalcoPluginDevelopmentDays157to160() {
               前回の修正で漏れていたものだった。
             </p>
             <p>
-              Task Agent は Skill を直接呼べない。<br />
-              利用可能なツールは Read、Write、Edit、Bash などの基本ツールのみ。<br />
+              Task Agent の利用可能ツールに Skill が含まれていなかった。<br />
+              Read、Write、Edit、Bash などの基本ツールだけで動く設計が必要だった。<br />
               だから SKILL.md を直接読み込んで実行する<br />
               「インライン参照方式」を採用した。<br />
-              この制約は1回目のリハーサルで発見し、2回目で修正漏れを検出した。
+              この問題は1回目のリハーサルで発見し、2回目で修正漏れを検出した。
             </p>
             <p>
               <strong>「最後の1件が、最も本質的な問題であることが多い」</strong>
