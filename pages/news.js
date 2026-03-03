@@ -53,7 +53,7 @@ export default function News() {
           category: "feature",
           type: "update",
           title: "テストパターンを850に拡大、Phase 13完了",
-          content: "E2Eテストパターンを625から850に拡大しました。Phase 13完了に伴い、24サブカテゴリへ拡張。Information DisclosureとAuth Bypass via Pathの2新カテゴリを追加。Falco 0.43.0環境でRun #212全パターン検知率100%を達成。ロードマップ進捗85%。",
+          content: "E2Eテストパターンを625から850に拡大しました。Phase 13完了に伴い、24サブカテゴリへ拡張。Information DisclosureとAuth Bypass via Pathの2新カテゴリを追加。Falco 0.43.0環境でRun #212全パターン検知率100%を達成。ロードマップ目標850パターン達成。",
           highlights: [
             "テストパターン 625 → 850 拡張（+225パターン）",
             "Phase 13 完了（24サブカテゴリ、52ルール）",
@@ -64,7 +64,7 @@ export default function News() {
             "PATH: 81パターン（9.5%）",
             "OTHER: 365パターン（42.9%）— JWT、Open Redirect、WAF Bypass等追加",
             "検知率 100% 達成（E2E Run #212）",
-            "ロードマップ進捗 85%（1000パターン目標）"
+            "ロードマップ目標 850パターン達成（100%）"
           ],
           link: "/quality"
         },
@@ -800,7 +800,7 @@ export default function News() {
           category: "feature",
           type: "update",
           title: "Test Patterns Expanded to 850, Phase 13 Complete",
-          content: "Expanded E2E test patterns from 625 to 850. With Phase 13 completion, expanded to 24 subcategories. Added 2 new categories: Information Disclosure and Auth Bypass via Path. Achieved 100% detection rate with all patterns in Run #212 on Falco 0.43.0. Roadmap progress 85%.",
+          content: "Expanded E2E test patterns from 625 to 850. With Phase 13 completion, expanded to 24 subcategories. Added 2 new categories: Information Disclosure and Auth Bypass via Path. Achieved 100% detection rate with all patterns in Run #212 on Falco 0.43.0. Roadmap target of 850 patterns achieved.",
           highlights: [
             "Test patterns 625 → 850 expanded (+225 patterns)",
             "Phase 13 complete (24 subcategories, 52 rules)",
@@ -811,7 +811,7 @@ export default function News() {
             "PATH: 81 patterns (9.5%)",
             "OTHER: 365 patterns (42.9%) — JWT, Open Redirect, WAF Bypass, etc. added",
             "Detection rate 100% achieved (E2E Run #212)",
-            "Roadmap progress 85% (1000 patterns target)"
+            "Roadmap target 850 patterns achieved (100%)"
           ],
           link: "/quality"
         },

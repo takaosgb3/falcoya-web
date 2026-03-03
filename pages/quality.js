@@ -146,7 +146,7 @@ export default function Quality() {
         current: "現在",
         target: "目標",
         progress: "進捗",
-        description: "850パターンを達成。1000パターンへの拡大を計画中。より多くの攻撃バリエーション、より深いエッジケース、より広い守備範囲へ。",
+        description: "850パターンの目標を達成。より多くの攻撃バリエーション、より深いエッジケース、より広い守備範囲へ継続的に拡張予定。",
         patterns: "パターン"
       },
       detection: {
@@ -257,7 +257,7 @@ export default function Quality() {
         current: "Current",
         target: "Target",
         progress: "Progress",
-        description: "850 patterns achieved. Planning expansion to 1000 patterns. More attack variations, deeper edge cases, broader coverage.",
+        description: "850 pattern target achieved. Continuously expanding with more attack variations, deeper edge cases, and broader coverage.",
         patterns: "patterns"
       },
       detection: {
@@ -614,14 +614,14 @@ export default function Quality() {
                 </div>
                 <div className="roadmap-stat">
                   <span className="roadmap-label">{currentContent.roadmap.target}</span>
-                  <span className="roadmap-value">1000 {currentContent.roadmap.patterns}</span>
+                  <span className="roadmap-value">850 {currentContent.roadmap.patterns}</span>
                 </div>
               </div>
               <div className="roadmap-progress">
                 <div className="progress-bar-container">
-                  <div className="progress-bar" style={{ width: '85%' }}></div>
+                  <div className="progress-bar" style={{ width: '100%' }}></div>
                 </div>
-                <span className="progress-percentage">85%</span>
+                <span className="progress-percentage">100%</span>
               </div>
               <p className="roadmap-description">{currentContent.roadmap.description}</p>
             </div>
