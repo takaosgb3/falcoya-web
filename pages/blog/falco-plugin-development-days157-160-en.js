@@ -107,6 +107,14 @@ export default function FalcoPluginDevelopmentDays157to160En() {
               <h3>Lesson</h3>
               <p>The last finding remaining after seven reviews is the one that touches the essence of the design. 100% conformance is proof of refusing to compromise.</p>
             </div>
+
+            <p className="epilogue">
+              <strong>Epilogue</strong> — The Agent Skills we finalized on this day<br />
+              would go on to create a new plugin called <Link href="/openclaw" style={{ color: '#667eea', textDecoration: 'none', borderBottom: '1px solid #667eea' }}>OpenClaw</Link>.<br />
+              A second FALCOYA project — monitoring the security of AI assistants.<br />
+              The tools polished through seven rounds of review<br />
+              worked exactly as designed.
+            </p>
           </section>
 
           <section className="content-section">
@@ -454,6 +462,17 @@ export default function FalcoPluginDevelopmentDays157to160En() {
         .lesson-box p {
           color: #374151;
           margin: 0;
+        }
+
+        .epilogue {
+          margin-top: 1.5rem;
+          padding: 1.25rem 1.5rem;
+          background: #fefce8;
+          border-left: 4px solid #eab308;
+          border-radius: 8px;
+          font-size: 0.95rem;
+          color: #4b5563;
+          line-height: 1.8;
         }
 
         .task-list {

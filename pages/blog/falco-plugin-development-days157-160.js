@@ -106,6 +106,14 @@ export default function FalcoPluginDevelopmentDays157to160() {
               <h3>学び</h3>
               <p>7回レビューして残る最後の1件こそ、設計の本質に関わる問題だ。照合率100%は、妥協しなかった証拠。</p>
             </div>
+
+            <p className="epilogue">
+              <strong>後日談</strong> — この日に設計を固めた Agent Skills は、<br />
+              やがて <Link href="/openclaw" style={{ color: '#667eea', textDecoration: 'none', borderBottom: '1px solid #667eea' }}>OpenClaw</Link> という新しいプラグインを生み出すことになる。<br />
+              AI アシスタントのセキュリティを監視する、FALCOYA の第二のプロジェクト。<br />
+              7回のレビューをかけて磨いた道具は、<br />
+              想定通りに動いた。
+            </p>
           </section>
 
           <section className="content-section">
@@ -453,6 +461,17 @@ export default function FalcoPluginDevelopmentDays157to160() {
         .lesson-box p {
           color: #374151;
           margin: 0;
+        }
+
+        .epilogue {
+          margin-top: 1.5rem;
+          padding: 1.25rem 1.5rem;
+          background: #fefce8;
+          border-left: 4px solid #eab308;
+          border-radius: 8px;
+          font-size: 0.95rem;
+          color: #4b5563;
+          line-height: 1.8;
         }
 
         .task-list {
