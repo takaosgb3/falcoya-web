@@ -7,6 +7,17 @@ import Navbar from '../../components/Navbar'
 const blogPosts = {
   ja: [
     {
+      id: 'falco-plugin-dev-kit-v2',
+      title: 'Falco プラグイン開発キット v2 — 「どんなログでも、監視できるように」',
+      description: '160日かけて作ったFalcoプラグインの経験を、14日間で「どんなドメインでも動くテンプレート」に昇華させた開発記録。5つのプレースホルダーが、HTTPもAIもIoTも受け入れる。道具を作る道具の話。',
+      date: '2026-03-21',
+      readTime: '15分',
+      tags: ['Falco', 'OSS開発', 'プラグイン開発キット', 'Claude Code', 'テンプレート自動生成', 'v2'],
+      category: 'OSS開発',
+      slug: 'falco-plugin-dev-kit-v2',
+      project: 'devkit'
+    },
+    {
       id: 'falco-plugin-development-days157-160',
       title: 'Falco + Nginx プラグイン開発：Falcoya君の157日目から160日目',
       description: '見えない穴を、ひとつずつ塞ぐ。7回のレビューを経た設計完成、39ファイルの資産棚卸し、775→850パターン拡張、Preflight Validator Check 4実装。安全網にも穴がある。穴を探す仕組みを作る。',
@@ -360,6 +371,17 @@ const blogPosts = {
     }
   ],
   en: [
+    {
+      id: 'falco-plugin-dev-kit-v2-en',
+      title: 'Falco Plugin Dev Kit v2 — "So Any Log Can Be Monitored"',
+      description: 'How 160 days of building a Falco plugin distilled into 14 days of creating a domain-agnostic template. Five placeholders that accept HTTP, AI, and IoT alike. A story about building the tool that builds tools.',
+      date: '2026-03-21',
+      readTime: '15 min',
+      tags: ['Falco', 'OSS Development', 'Plugin Dev Kit', 'Claude Code', 'Template Generation', 'v2'],
+      category: 'OSS Development',
+      slug: 'falco-plugin-dev-kit-v2-en',
+      project: 'devkit'
+    },
     {
       id: 'falco-plugin-development-days157-160-en',
       title: 'Falco + Nginx Plugin Development: Falcoya\'s Days 157-160',
@@ -728,7 +750,7 @@ export default function BlogIndex() {
       allPosts: "すべての記事",
       categories: "カテゴリー",
       recentPosts: "最新記事",
-      projectFilter: { all: 'すべて', nginx: 'nginx', openclaw: 'OpenClaw' },
+      projectFilter: { all: 'すべて', nginx: 'nginx', openclaw: 'OpenClaw', devkit: 'Dev Kit' },
       tagCloud: "タグ",
       nav: {
         github: "GitHub",
@@ -752,7 +774,7 @@ export default function BlogIndex() {
       allPosts: "All Posts",
       categories: "Categories", 
       recentPosts: "Recent Posts",
-      projectFilter: { all: 'All', nginx: 'nginx', openclaw: 'OpenClaw' },
+      projectFilter: { all: 'All', nginx: 'nginx', openclaw: 'OpenClaw', devkit: 'Dev Kit' },
       tagCloud: "Tags",
       nav: {
         github: "GitHub",
