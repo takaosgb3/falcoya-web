@@ -34,8 +34,8 @@ export default function News() {
           date: "2026-03-21",
           category: "release",
           type: "new",
-          title: "Falco プラグイン開発キット v2 リリース — 「どんなログでも、監視できるように」",
-          content: "160日間の Falco プラグイン開発経験を14日間で抽象化し、ドメインに依存しない汎用テンプレートシステム v2 を完成させました。HTTP、AI アシスタント、IoT センサーの3ドメインで受け入れテスト合格。5つのプレースホルダーで、どんなログソースにも対応可能に。",
+          title: "どんなログでも監視できるように — Claude Code Skills × Falco プラグイン量産キット",
+          content: "Claude Code Agent Skills と23のテンプレートで、どんなログソースでも Falco プラグインを自動生成できる仕組みを完成させました。HTTP、AI アシスタント、IoT センサーの3ドメインで受け入れテスト合格。5つのプレースホルダーで、どんなログソースにも対応可能に。",
           highlights: [
             "23テンプレート + 7スキル + 1エージェントの開発キット完成",
             "5つのドメインプレースホルダーによる汎用テンプレート設計",
@@ -799,8 +799,8 @@ export default function News() {
           date: "2026-03-21",
           category: "release",
           type: "new",
-          title: "Falco Plugin Dev Kit v2 Released — \"So Any Log Can Be Monitored\"",
-          content: "Abstracted 160 days of Falco plugin development experience into a domain-agnostic template system in 14 days. Acceptance tests passed for HTTP, AI Assistant, and IoT Sensor domains. Five placeholders make any log source monitorable.",
+          title: "Monitor Any Log — Claude Code Skills × Falco Plugin Mass-Production Kit",
+          content: "Built a system to auto-generate Falco plugins for any log source using Claude Code Agent Skills and 23 templates. Acceptance tests passed for HTTP, AI Assistant, and IoT Sensor domains. Five placeholders make any log source monitorable.",
           highlights: [
             "Complete dev kit: 23 templates + 7 skills + 1 agent",
             "5 domain placeholder design for universal templates",

@@ -11,10 +11,10 @@ export default function FalcoPluginDevKitV2En() {
   return (
     <>
       <Head>
-        <title>Falco Plugin Dev Kit v2 — "So Any Log Can Be Monitored" - FALCOYA Blog</title>
-        <meta name="description" content="How 160 days of building a Falco plugin distilled into 14 days of creating a domain-agnostic template. Five placeholders that accept HTTP, AI, and IoT alike." />
-        <meta property="og:title" content="Falco Plugin Dev Kit v2 — So Any Log Can Be Monitored" />
-        <meta property="og:description" content="A story about building the tool that builds tools. 160 days of experience abstracted into a domain-free Falco plugin template in 14 days." />
+        <title>Monitor Any Log — Claude Code Skills × Falco Plugin Mass-Production Kit - FALCOYA Blog</title>
+        <meta name="description" content="Auto-generate Falco plugins for any log source using Claude Code Agent Skills and 23 templates. Proven with HTTP, AI, and IoT domains. 160 days of experience distilled into a tool in 14 days." />
+        <meta property="og:title" content="Monitor Any Log — Claude Code Skills × Falco Plugin Mass-Production Kit" />
+        <meta property="og:description" content="Built a system to mass-produce Falco plugins with Claude Code Agent Skills. Five placeholders that accept HTTP, AI, and IoT alike." />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="FALCOYA" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -33,7 +33,7 @@ export default function FalcoPluginDevKitV2En() {
               <span>15 min read</span>
             </div>
             <h1 className="article-title">
-              Falco Plugin Dev Kit v2 — "So Any Log Can Be Monitored"
+              Monitor Any Log — Claude Code Skills × Falco Plugin Mass-Production Kit
             </h1>
             <p className="article-subtitle">
               ~ A story about building the tool that builds tools ~

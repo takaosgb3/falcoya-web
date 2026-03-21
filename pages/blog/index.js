@@ -8,8 +8,8 @@ const blogPosts = {
   ja: [
     {
       id: 'falco-plugin-dev-kit-v2',
-      title: 'Falco プラグイン開発キット v2 — 「どんなログでも、監視できるように」',
-      description: '160日かけて作ったFalcoプラグインの経験を、14日間で「どんなドメインでも動くテンプレート」に昇華させた開発記録。5つのプレースホルダーが、HTTPもAIもIoTも受け入れる。道具を作る道具の話。',
+      title: 'どんなログでも監視できるように — Claude Code Skills × Falco プラグイン量産キット',
+      description: 'Claude Code Agent Skills と23のテンプレートで、どんなログソースでも Falco プラグインを自動生成。HTTP・AI・IoT の3ドメインで実証済み。160日の経験を14日で道具に昇華させた開発記録。',
       date: '2026-03-21',
       readTime: '15分',
       tags: ['Falco', 'OSS開発', 'プラグイン開発キット', 'Claude Code', 'テンプレート自動生成', 'v2'],
@@ -373,8 +373,8 @@ const blogPosts = {
   en: [
     {
       id: 'falco-plugin-dev-kit-v2-en',
-      title: 'Falco Plugin Dev Kit v2 — "So Any Log Can Be Monitored"',
-      description: 'How 160 days of building a Falco plugin distilled into 14 days of creating a domain-agnostic template. Five placeholders that accept HTTP, AI, and IoT alike. A story about building the tool that builds tools.',
+      title: 'Monitor Any Log — Claude Code Skills × Falco Plugin Mass-Production Kit',
+      description: 'Auto-generate Falco plugins for any log source using Claude Code Agent Skills and 23 templates. Proven with HTTP, AI, and IoT domains. 160 days of experience distilled into a tool in 14 days.',
       date: '2026-03-21',
       readTime: '15 min',
       tags: ['Falco', 'OSS Development', 'Plugin Dev Kit', 'Claude Code', 'Template Generation', 'v2'],

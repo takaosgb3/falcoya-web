@@ -11,10 +11,10 @@ export default function FalcoPluginDevKitV2() {
   return (
     <>
       <Head>
-        <title>Falco プラグイン開発キット v2 — 「どんなログでも、監視できるように」 - FALCOYA Blog</title>
-        <meta name="description" content="160日かけて作ったFalcoプラグインの経験を、14日間で「どんなドメインでも動くテンプレート」に昇華させた開発記録。5つのプレースホルダーが、HTTPもAIもIoTも受け入れる。" />
-        <meta property="og:title" content="Falco プラグイン開発キット v2 — 「どんなログでも、監視できるように」" />
-        <meta property="og:description" content="道具を作る道具の話。160日の経験を14日で抽象化し、ドメインに依存しないFalcoプラグインテンプレートを完成させた記録。" />
+        <title>どんなログでも監視できるように — Claude Code Skills × Falco プラグイン量産キット - FALCOYA Blog</title>
+        <meta name="description" content="Claude Code Agent Skills と23のテンプレートで、どんなログソースでも Falco プラグインを自動生成。HTTP・AI・IoT の3ドメインで実証済み。160日の経験を14日で道具に昇華させた開発記録。" />
+        <meta property="og:title" content="どんなログでも監視できるように — Claude Code Skills × Falco プラグイン量産キット" />
+        <meta property="og:description" content="Claude Code Agent Skills で Falco プラグインを量産する仕組みを作った。5つのプレースホルダーが、HTTPもAIもIoTも受け入れる。" />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="FALCOYA" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -33,7 +33,7 @@ export default function FalcoPluginDevKitV2() {
               <span>15分で読む</span>
             </div>
             <h1 className="article-title">
-              Falco プラグイン開発キット v2 — 「どんなログでも、監視できるように」
+              どんなログでも監視できるように — Claude Code Skills × Falco プラグイン量産キット
             </h1>
             <p className="article-subtitle">
               〜 道具を作る道具の話 〜
