@@ -48,6 +48,14 @@ export default function FalcoPluginDevKitV2En() {
             </div>
           </header>
 
+          <div className="article-image">
+            <img
+              src="/img/blog/blog30.png"
+              alt="Building the tool that builds tools — Falcoya conducting three holographic orchestras of HTTP, AI, and IoT from a single score on a park stage at night"
+              style={{ transition: 'opacity 0.3s ease' }}
+            />
+          </div>
+
           <section className="content-section">
             <h2>A Question One Day</h2>
             <p>
@@ -441,6 +449,20 @@ OK: Valid Mach-O shared library`}</code>
           font-size: 1.2rem;
           color: #6b7280;
           margin-bottom: 1.5rem;
+        }
+
+        .article-image {
+          position: relative;
+          width: 100%;
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .article-image img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .article-tags {
