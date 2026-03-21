@@ -30,6 +30,24 @@ export default function News() {
       },
       items: [
         {
+          id: "2026-03-21-falco-plugin-dev-kit-v2",
+          date: "2026-03-21",
+          category: "release",
+          type: "new",
+          title: "Falco プラグイン開発キット v2 リリース — 「どんなログでも、監視できるように」",
+          content: "160日間の Falco プラグイン開発経験を14日間で抽象化し、ドメインに依存しない汎用テンプレートシステム v2 を完成させました。HTTP、AI アシスタント、IoT センサーの3ドメインで受け入れテスト合格。5つのプレースホルダーで、どんなログソースにも対応可能に。",
+          highlights: [
+            "23テンプレート + 7スキル + 1エージェントの開発キット完成",
+            "5つのドメインプレースホルダーによる汎用テンプレート設計",
+            "HTTP / AI / IoT の3ドメインで受け入れテスト全パス",
+            "Level 2 パイプラインテスト 17/17 PASS、14,238 events/sec",
+            "設計レビュー7回（81件修正）、コードレビュー3ラウンド（17件修正）",
+            "14日間で29タスク完了、+13,812行追加",
+            "「道具を作る道具」— テンプレートはドメインを知らない"
+          ],
+          link: "/blog/falco-plugin-dev-kit-v2"
+        },
+        {
           id: "2026-03-03-oss-development-blog-part28",
           date: "2026-03-03",
           category: "release",
@@ -776,6 +794,24 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2026-03-21-falco-plugin-dev-kit-v2-en",
+          date: "2026-03-21",
+          category: "release",
+          type: "new",
+          title: "Falco Plugin Dev Kit v2 Released — \"So Any Log Can Be Monitored\"",
+          content: "Abstracted 160 days of Falco plugin development experience into a domain-agnostic template system in 14 days. Acceptance tests passed for HTTP, AI Assistant, and IoT Sensor domains. Five placeholders make any log source monitorable.",
+          highlights: [
+            "Complete dev kit: 23 templates + 7 skills + 1 agent",
+            "5 domain placeholder design for universal templates",
+            "Acceptance tests passed for HTTP / AI / IoT domains",
+            "Level 2 pipeline tests 17/17 PASS, 14,238 events/sec",
+            "7 design reviews (81 fixes), 3 code review rounds (17 fixes)",
+            "29 tasks completed in 14 days, +13,812 lines added",
+            "\"A tool that builds tools\" — the template knows nothing about the domain"
+          ],
+          link: "/blog/falco-plugin-dev-kit-v2-en"
+        },
         {
           id: "2026-03-03-oss-development-blog-part28-en",
           date: "2026-03-03",
