@@ -30,6 +30,20 @@ export default function News() {
       },
       items: [
         {
+          id: "2026-10-30-security-assessment",
+          date: "2026-10-30",
+          category: "feature",
+          type: "new",
+          title: "クラウドセキュリティ診断サイト info.falcoya.dev へのリンクを追加",
+          content: "43の質問で、あなたの組織のクラウドセキュリティの現在地を「アーキタイプ」として診断する「FALCOYA ゆるふわ質問・ガチレポート診断」へのリンクを、ナビゲーションのドロップダウンメニューに追加しました。",
+          highlights: [
+            "AI時代のクラウドセキュリティ アーキタイプ診断",
+            "43の質問で組織の現在地を可視化",
+            "ナビゲーションのドロップダウン（モバイルはメニュー内）からアクセス可能"
+          ],
+          link: "https://info.falcoya.dev/"
+        },
+        {
           id: "2026-03-21-falco-plugin-dev-kit-v2",
           date: "2026-03-21",
           category: "release",
@@ -794,6 +808,20 @@ export default function News() {
         bugfix: "Bug Fixes"
       },
       items: [
+        {
+          id: "2026-10-30-security-assessment-en",
+          date: "2026-10-30",
+          category: "feature",
+          type: "new",
+          title: "Added a Link to the Cloud Security Assessment Site info.falcoya.dev",
+          content: "Added a link to the FALCOYA cloud security assessment to the navigation dropdown menu. Answer 43 questions to identify where your organization's cloud security stands today as an \"archetype\".",
+          highlights: [
+            "Cloud security archetype assessment for the AI era",
+            "43 questions to visualize your organization's current position",
+            "Accessible from the navigation dropdown (in the menu on mobile)"
+          ],
+          link: "https://info.falcoya.dev/"
+        },
         {
           id: "2026-03-21-falco-plugin-dev-kit-v2-en",
           date: "2026-03-21",
