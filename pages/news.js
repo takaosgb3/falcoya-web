@@ -12,7 +12,7 @@ export default function News() {
   const newsData = {
     ja: {
       title: "ニュース & アップデート",
-      description: "falco-plugin-nginx の最新情報、リリースノート、セキュリティアップデートをお届けします",
+      description: "最新情報、リリースノート、セキュリティアップデートをお届けします",
       nav: {
         github: "GitHub",
         installation: "インストール",
@@ -791,7 +791,7 @@ export default function News() {
     },
     en: {
       title: "News & Updates",
-      description: "Latest news, release notes, and security updates for falco-plugin-nginx",
+      description: "Latest news, release notes, and security updates",
       nav: {
         github: "GitHub",
         installation: "Installation",
