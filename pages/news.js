@@ -1623,8 +1623,8 @@ export default function News() {
       <main className="news-container">
         <div className="container">
           <div className="news-header">
-            <h1>{content.title}</h1>
-            <p>{content.description}</p>
+            <h1 lang={language}>{content.title}</h1>
+            <p lang={language}>{content.description}</p>
           </div>
 
           <div className="news-filters">
@@ -1782,13 +1782,17 @@ export default function News() {
           background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          text-wrap: balance;
+          word-break: auto-phrase;
         }
 
         .news-header p {
           font-size: 1.2rem;
           color: var(--text-secondary);
-          max-width: 600px;
+          max-width: 720px;
           margin: 0 auto;
+          text-wrap: balance;
+          word-break: auto-phrase;
         }
 
         .news-filters {
