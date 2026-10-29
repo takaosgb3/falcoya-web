@@ -491,6 +491,35 @@ body {
   flex-shrink: 0;
 }
 
+.project-dropdown-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 6px 8px;
+}
+
+.project-dropdown-external {
+  text-decoration: none;
+}
+
+.project-dropdown-external-icon {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+/* Mobile External Link (below project selector) */
+.mobile-external-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 1.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
 /* Nav Separator (vertical divider between project and shared items) */
 .nav-separator {
   width: 1px;
