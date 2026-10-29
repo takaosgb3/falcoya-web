@@ -61,6 +61,17 @@ const SHARED_NAV_ITEMS = {
   ],
 }
 
+// External sites listed below the projects in the dropdown (open in a new tab)
+const EXTERNAL_LINKS = [
+  {
+    id: 'info',
+    icon: '🩺',
+    href: 'https://info.falcoya.dev/',
+    label: { ja: 'セキュリティ診断', en: 'Security Assessment' },
+    description: { ja: '43の質問でアーキタイプ診断', en: 'Find your archetype in 43 questions' },
+  },
+]
+
 const STORAGE_KEY = 'falcoya-active-project'
 
 function detectProjectFromPath(pathname) {
@@ -203,6 +214,26 @@ export default function Navbar({ githubUrl, activePage, onLanguageChange }) {
                     )}
                   </button>
                 ))}
+                <div className="project-dropdown-divider" role="separator" />
+                {EXTERNAL_LINKS.map((link) => (
+                  <a
+                    key={link.id}
+                    href={link.href}
+                    className="project-dropdown-item project-dropdown-external"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    <span className="project-dropdown-icon">{link.icon}</span>
+                    <div className="project-dropdown-info">
+                      <span className="project-dropdown-name">{link.label[nav]}</span>
+                      <span className="project-dropdown-desc">{link.description[nav]}</span>
+                    </div>
+                    <svg className="project-dropdown-external-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M9 3H13V7M13 3L7 9M11 10V13H3V5H6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                ))}
               </div>
             )}
           </div>
@@ -275,6 +306,20 @@ export default function Navbar({ githubUrl, activePage, onLanguageChange }) {
               </button>
             ))}
           </div>
+          {EXTERNAL_LINKS.map((link) => (
+            <a
+              key={link.id}
+              href={link.href}
+              className="mobile-external-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMobile}
+            >
+              <span>{link.icon}</span>
+              <span>{link.label[nav]}</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          ))}
 
           <ul className="mobile-nav-menu">
             {projectNavItems.map((item, i) => (
